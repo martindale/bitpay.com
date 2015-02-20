@@ -9,8 +9,6 @@ var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
 
-var bitpayDesign = 'components/bitpay-design/';
-
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 8',
   'ff >= 30',
@@ -47,6 +45,7 @@ gulp.task('images', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'src/*',
+    '!src/_*',
     '!src/*.jade'
   ], {
     dot: true
@@ -87,7 +86,7 @@ gulp.task('styles', ['sass', 'jade'], function () {
 
 // compile Jade to pretty html in build
 gulp.task('jade', function () {
-  return gulp.src(['src/**/*.jade'])
+  return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
     .pipe($.jade({
       pretty: true
     }))
