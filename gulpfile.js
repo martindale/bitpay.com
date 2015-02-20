@@ -25,7 +25,7 @@ var AUTOPREFIXER_BROWSERS = [
 gulp.task('jshint', function () {
   return gulp.src('src/scripts/**/*.js')
     .pipe(reload({stream: true, once: true}))
-    .pipe(gulp.dest('dev/scripts'))
+    .pipe(gulp.dest('build/scripts'))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
@@ -34,7 +34,7 @@ gulp.task('jshint', function () {
 gulp.task('images', function () {
   return gulp.src('src/images/**/*')
     .pipe($.cached('images'))
-    .pipe(gulp.dest('dev/images'))
+    .pipe(gulp.dest('build/images'))
     .pipe($.imagemin({
       progressive: true,
       interlaced: true
@@ -50,7 +50,7 @@ gulp.task('copy', function () {
     '!src/*.jade'
   ], {
     dot: true
-  }).pipe(gulp.dest('dev'))
+  }).pipe(gulp.dest('build'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}));
 });
@@ -62,7 +62,7 @@ gulp.task('sass', function () {
       'src/styles/**/*.scss'
     ])
     .pipe($.sourcemaps.init())
-    .pipe($.changed('dev/styles', {extension: '.scss'}))
+    .pipe($.changed('build/styles', {extension: '.scss'}))
     .pipe($.sass({
         outputStyle: 'expanded',
         precision: 10,
@@ -70,36 +70,36 @@ gulp.task('sass', function () {
       }))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('dev/styles'))
+    .pipe(gulp.dest('build/styles'))
     .pipe($.size({title: 'styles'}));
 });
 
 gulp.task('styles', ['sass', 'jade'], function () {
-  return gulp.src(['dev/**/*.css'])
+  return gulp.src(['build/**/*.css'])
     .pipe($.uncss({
-      html: ['dev/**/*.html']
+      html: ['build/**/*.html']
     }))
-    .pipe(gulp.dest('dev'))
+    .pipe(gulp.dest('build'))
     .pipe($.csso())
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'uncss'}));
 });
 
-// compile Jade to pretty html in dev
+// compile Jade to pretty html in build
 gulp.task('jade', function () {
   return gulp.src([bitpayDesign + 'jade/**/*.jade', 'src/**/*.jade'])
     .pipe($.jade({
       pretty: true
     }))
-    .pipe(gulp.dest('dev'))
+    .pipe(gulp.dest('build'))
     .pipe($.size({title: 'jade'}));
 });
 
 // Scan HTML for build:js blocks. Clean, concat, minify js
 gulp.task('scripts', ['jade'], function () {
-  var assets = $.useref.assets({searchPath: '{dev,components,src}'});
+  var assets = $.useref.assets({searchPath: '{build,components,src}'});
 
-  return gulp.src(['src/**/*.html','dev/**/*.html'])
+  return gulp.src(['src/**/*.html','build/**/*.html'])
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe(assets.restore())
@@ -124,8 +124,8 @@ gulp.task('html', function() {
     .pipe(gulp.dest('dist'))
 });
 
-// delete dev and dist
-gulp.task('delete', del.bind(null, ['dev', 'dist']));
+// delete build and dist
+gulp.task('delete', del.bind(null, ['build', 'dist']));
 
 // Watch for changes & reload
 gulp.task('serve', ['default'], function () {
@@ -133,8 +133,8 @@ gulp.task('serve', ['default'], function () {
     notify: false,
     logPrefix: 'serve',
     server: {
-      //serve from dev, fall back to src
-      baseDir: ['dev', 'components', 'src']
+      //serve from build, fall back to src
+      baseDir: ['build', 'components', 'src']
     }
   });
 
@@ -159,12 +159,6 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['delete'], function (cb) {
   runSequence('sass', ['jade','jshint', 'scripts', 'images', 'copy', 'styles'], 'hash', 'html', cb);
 });
-
-// Run PageSpeed Insights
-gulp.task('pagespeed', pagespeed.bind(null, {
-  url: 'http://bitpay.com',
-  strategy: 'mobile'
-}));
 
 // Load custom tasks from the `tasks` directory
 try { require('require-dir')('tasks'); } catch (err) { console.error(err); }

@@ -1,6 +1,6 @@
 node_modules
 .sass-cache
+build
 dist
-dev
 .DS_Store
 .idea
