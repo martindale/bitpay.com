@@ -1,0 +1,17 @@
+{
+  "name": "analytics",
+  "version": "2.6.3",
+  "main": "analytics.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/segmentio/analytics.js",
+  "_release": "2.6.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.6.3",
+    "commit": "f3a26fbcbe32935dee33e1836fc5c85528f5355d"
+  },
+  "_source": "git://github.com/segmentio/analytics.js.git",
+  "_target": "~2.6.3",
+  "_originalSource": "analytics"
+}

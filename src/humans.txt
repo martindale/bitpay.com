@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  [TODO: generate this]
+  Jason Dreyzehner -- Design Lead -- https://twitter.com/bitjson
+
+
+# TECHNOLOGY COLOPHON
+
+  HTTP, Electricity, Synergy, Magic Internet Money

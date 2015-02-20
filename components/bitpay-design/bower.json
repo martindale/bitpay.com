@@ -1,0 +1,9 @@
+{
+  "name": "bitpay-design",
+  "version": "0.0.1",
+  "homepage": "https://bitpay.com/",
+  "private": true,
+  "dependencies": {
+    "foundation": "~5.5.1"
+  }
+}
