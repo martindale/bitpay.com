@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    block title
+      title BitPay
+    
+    block meta
+      meta(name='description', content='desc')
+
+      // Twitter Card data
+      meta(name='twitter:card', content='summary')
+      meta(name='twitter:site', content='@BitPay')
+      meta(name='twitter:title', content='BitPay')
+      meta(name='twitter:description', content='desc')
+      meta(name='twitter:image', content='https://bitpay.com/apple-touch-icon-precomposed.png')
+
+      // Open Graph data (Facebook and Reddit)
+      meta(property='og:title', content='BitPay')
+      meta(property='og:type', content='article')
+      meta(property='og:url', content='https://bitpay.com/')
+      meta(property='og:image', content='https://bitpay.com/apple-touch-icon-precomposed.png')
+      meta(property='og:description', content='The real-time Bit price.')
+      meta(property='og:site_name', content='BitPay')
+
+    // Add to homescreen for Chrome on Android
+    meta(name='mobile-web-app-capable', content='yes')
+    link(rel='icon', sizes='192x192', href='images/touch/chrome-touch-icon-192x192.png')
+
+    // Add to homescreen for Safari on iOS
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(name='apple-mobile-web-app-title', content='BitPay Website')
+    link(rel='apple-touch-icon-precomposed', href='apple-touch-icon-precomposed.png')
+
+    // Tile icon for Win8 (144x144 + tile color)
+    meta(name='msapplication-TileImage', content='images/touch/ms-touch-icon-144x144-precomposed.png')
+    meta(name='msapplication-TileColor', content='#F5AB35')
+
+    link(rel='stylesheet', href='styles/main.css')
+    base(href='/')
+
+  body
+    block body
+
+    block scripts
+      // build:js scripts/main.min.js
+      script(src='instantclick/instantclick.js')
+      script(src='analytics/analytics.js')
+      script(src='scripts/main.js')
+      script(src='scripts/another.js')
+      // endbuild

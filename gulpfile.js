@@ -87,7 +87,7 @@ gulp.task('styles', ['sass', 'jade'], function () {
 
 // compile Jade to pretty html in build
 gulp.task('jade', function () {
-  return gulp.src([bitpayDesign + 'jade/**/*.jade', 'src/**/*.jade'])
+  return gulp.src(['src/**/*.jade'])
     .pipe($.jade({
       pretty: true
     }))
@@ -138,8 +138,8 @@ gulp.task('serve', ['default'], function () {
     }
   });
 
-  gulp.watch(['src/**/*.html'], reload);
-  gulp.watch([bitpayDesign + 'scss/**/*.scss', 'src/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['src/**/*.jade','src/**/*.html'], ['jade', reload]);
+  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['src/scripts/**/*.js'], ['jshint']);
   gulp.watch(['src/images/**/*'], reload);
 });
