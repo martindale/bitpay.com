@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/bitjson/static.png?label=ready&title=Ready)](https://waffle.io/bitjson/static)
 ## Developing
 
 ```sh
