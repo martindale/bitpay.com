@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var path = require('path');
+var fs = require('fs');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
@@ -20,13 +21,78 @@ var AUTOPREFIXER_BROWSERS = [
   '> 0.25%' //global market share
 ];
 
-gulp.task('jshint', function () {
-  return gulp.src('src/scripts/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe(gulp.dest('build/scripts'))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+gulp.task('default', ['delete'], function(cb){
+  runSequence(
+    ['sass', 'jade'],
+    ['styles', 'scripts', 'images', 'copy'],
+    'hash',
+    'build-localizations',
+    'html',
+    cb);
+});
+
+// delete build and dist
+gulp.task('delete', del.bind(null, ['build', 'dist']));
+
+// Compile & autoprefix styles
+gulp.task('sass', function () {
+  // For best performance, don't add partials to `gulp.src`
+  return gulp.src([
+      'src/styles/**/*.scss'
+    ])
+    .pipe($.sourcemaps.init())
+    .pipe($.changed('build/styles', {extension: '.scss'}))
+    .pipe($.sass({
+        outputStyle: 'expanded',
+        precision: 10,
+        onError: console.error.bind(console, 'Sass error:')
+      }))
+    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('build/styles'))
+    .pipe($.size({title: 'styles'}));
+});
+
+// compile Jade to pretty html in build
+gulp.task('jade', function () {
+  var JADE_LOCALS = {
+    getObjectFromJson: function(path){
+      return JSON.parse(String(fs.readFileSync(path)));
+    }
+  }
+
+  return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
+    .pipe($.jade({
+      pretty: true,
+      locals: JADE_LOCALS
+    }))
+    .pipe(gulp.dest('build'))
+    .pipe($.size({title: 'jade'}));
+});
+
+
+gulp.task('styles', function () {
+  return gulp.src(['build/**/*.css'])
+    .pipe($.uncss({
+      html: ['build/**/*.html']
+    }))
+    .pipe(gulp.dest('build'))
+    .pipe($.csso())
+    .pipe(gulp.dest('dist'))
+    .pipe($.size({title: 'uncss'}));
+});
+
+// Scan HTML for build:js blocks. Clean, concat, minify js
+gulp.task('scripts', function () {
+  var assets = $.useref.assets({searchPath: '{build,components,src}'});
+
+  return gulp.src(['src/**/*.html','build/**/*.html'])
+    .pipe(assets)
+    .pipe($.if('*.js', $.uglify()))
+    .pipe(assets.restore())
+    .pipe($.useref())
+    .pipe(gulp.dest('dist'))
+    .pipe($.size({title: 'html'}));
 });
 
 gulp.task('images', function () {
@@ -54,59 +120,6 @@ gulp.task('copy', function () {
     .pipe($.size({title: 'copy'}));
 });
 
-// Compile & autoprefix styles
-gulp.task('sass', function () {
-  // For best performance, don't add partials to `gulp.src`
-  return gulp.src([
-      'src/styles/**/*.scss'
-    ])
-    .pipe($.sourcemaps.init())
-    .pipe($.changed('build/styles', {extension: '.scss'}))
-    .pipe($.sass({
-        outputStyle: 'expanded',
-        precision: 10,
-        onError: console.error.bind(console, 'Sass error:')
-      }))
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('build/styles'))
-    .pipe($.size({title: 'styles'}));
-});
-
-gulp.task('styles', ['sass', 'jade'], function () {
-  return gulp.src(['build/**/*.css'])
-    .pipe($.uncss({
-      html: ['build/**/*.html']
-    }))
-    .pipe(gulp.dest('build'))
-    .pipe($.csso())
-    .pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'uncss'}));
-});
-
-// compile Jade to pretty html in build
-gulp.task('jade', function () {
-  return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
-    .pipe($.jade({
-      pretty: true
-    }))
-    .pipe(gulp.dest('build'))
-    .pipe($.size({title: 'jade'}));
-});
-
-// Scan HTML for build:js blocks. Clean, concat, minify js
-gulp.task('scripts', ['jade'], function () {
-  var assets = $.useref.assets({searchPath: '{build,components,src}'});
-
-  return gulp.src(['src/**/*.html','build/**/*.html'])
-    .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
-    .pipe(assets.restore())
-    .pipe($.useref())
-    .pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'html'}));
-});
-
 //add hashes to filenames to bust caches, write rev-manifest.json
 gulp.task('hash', function() {
   return gulp.src(['dist/**/*.html', 'dist/**/*.css', 'dist/**/*.js', 'dist/images/**/*'], { base: path.join(process.cwd(), 'dist') })
@@ -123,8 +136,14 @@ gulp.task('html', function() {
     .pipe(gulp.dest('dist'))
 });
 
-// delete build and dist
-gulp.task('delete', del.bind(null, ['build', 'dist']));
+gulp.task('jshint', function () {
+  return gulp.src('src/scripts/**/*.js')
+    .pipe(reload({stream: true, once: true}))
+    .pipe(gulp.dest('build/scripts'))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
 
 // Watch for changes & reload
 gulp.task('serve', ['default'], function () {
@@ -153,10 +172,6 @@ gulp.task('serve:dist', ['default'], function () {
       baseDir: 'dist'
     }
   });
-});
-
-gulp.task('default', ['delete'], function (cb) {
-  runSequence('sass', ['jade','jshint', 'scripts', 'images', 'copy', 'styles'], 'hash', 'html', cb);
 });
 
 // Load custom tasks from the `tasks` directory
