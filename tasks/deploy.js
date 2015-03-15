@@ -1,10 +1,10 @@
 var gulp = require('gulp');
-var deploy = require('gulp-gh-pages');
+var $ = require('gulp-load-plugins')();
 
 /**
  * Push build to gh-pages
  */
 gulp.task('deploy', ['default'], function () {
-  return gulp.src("./dist/**/*")
-    .pipe(deploy())
+  return gulp.src('./dist/**/*')
+    .pipe($.deploy())
 });
