@@ -156,7 +156,7 @@ gulp.task('serve', ['default'], function () {
     }
   });
 
-  gulp.watch(['src/**/*.jade','src/**/*.html'], ['jade', reload]);
+  gulp.watch(['src/**/*.jade','src/**/*.html'], ['jade', 'build-localizations', reload]);
   gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['src/scripts/**/*.js'], ['jshint']);
   gulp.watch(['src/images/**/*'], reload);
