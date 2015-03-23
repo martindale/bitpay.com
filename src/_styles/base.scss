@@ -1,5 +1,8 @@
 @import '../../components/foundation/scss/normalize';
 
+// @import "../../components/foundation/scss/foundation.scss";
+
+
 @import "../../components/foundation/scss/foundation/components/grid";
 // @import "../../components/foundation/scss/foundation/components/accordion";
 // @import "../../components/foundation/scss/foundation/components/alert-boxes";
@@ -11,7 +14,7 @@
 // @import "../../components/foundation/scss/foundation/components/dropdown";
 // @import "../../components/foundation/scss/foundation/components/dropdown-buttons";
 // @import "../../components/foundation/scss/foundation/components/flex-video";
-// @import "../../components/foundation/scss/foundation/components/forms";
+@import "../../components/foundation/scss/foundation/components/forms";
 // @import "../../components/foundation/scss/foundation/components/icon-bar";
 // @import "../../components/foundation/scss/foundation/components/inline-lists";
 // @import "../../components/foundation/scss/foundation/components/joyride";
@@ -36,7 +39,7 @@
 // @import "../../components/foundation/scss/foundation/components/top-bar";
 @import "../../components/foundation/scss/foundation/components/type";
 // @import "../../components/foundation/scss/foundation/components/offcanvas";
-// @import "../../components/foundation/scss/foundation/components/visibility";
+@import "../../components/foundation/scss/foundation/components/visibility";
 
 @import 'elements';
 @import 'utils';

@@ -23,11 +23,24 @@ var AUTOPREFIXER_BROWSERS = [
 
 gulp.task('default', ['delete'], function(cb){
   runSequence(
-    ['sass', 'jade'],
-    ['styles', 'scripts', 'images', 'copy'],
+    ['build', 'images', 'copy'],
     'hash',
     'build-localizations',
     'html',
+    cb);
+});
+
+gulp.task('build', function(cb){
+  runSequence(
+    ['sass', 'jade'],
+    ['styles', 'scripts'],
+    cb);
+});
+
+gulp.task('rebuild-styles', function(cb){
+  runSequence(
+    ['sass'],
+    ['styles'],
     cb);
 });
 
@@ -156,8 +169,8 @@ gulp.task('serve', ['default'], function () {
     }
   });
 
-  gulp.watch(['src/**/*.jade','src/**/*.html'], ['jade', 'build-localizations', reload]);
-  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['src/**/*.jade','src/**/*.html'], ['build', reload]);
+  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', reload]);
   gulp.watch(['src/scripts/**/*.js'], ['jshint']);
   gulp.watch(['src/images/**/*'], reload);
 });
