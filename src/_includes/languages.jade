@@ -1,0 +1,5 @@
+-var locales = getObjectFromJson('./locales/_locales.json')
+
+select
+  each val, index in locales
+    option(value=val.shortCode) #{val.native}

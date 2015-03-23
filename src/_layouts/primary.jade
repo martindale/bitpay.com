@@ -40,16 +40,19 @@ html(lang='en')
     meta(name='msapplication-TileImage', content='images/touch/ms-touch-icon-144x144-precomposed.png')
     meta(name='msapplication-TileColor', content='#F5AB35')
 
-    link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='/styles/main.css')
     base(href='/')
 
   body
     block body
+      
+    block footer
+      p This is a footer
 
     block scripts
-      // build:js scripts/main.min.js
-      script(src='instantclick/instantclick.js')
-      script(src='analytics/analytics.js')
-      script(src='scripts/main.js')
-      script(src='scripts/another.js')
+      // build:js /scripts/main.min.js
+      script(src='/instantclick/instantclick.js')
+      script(src='/analytics/analytics.js')
+      script(src='/scripts/main.js')
+      script(src='/scripts/another.js')
       // endbuild
