@@ -39,8 +39,8 @@ gulp.task('build', function(cb){
 
 gulp.task('rebuild-styles', function(cb){
   runSequence(
-    ['sass'],
-    ['styles'],
+    'sass',
+    'styles',
     cb);
 });
 
@@ -99,7 +99,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   var assets = $.useref.assets({searchPath: '{build,components,src}'});
 
-  return gulp.src(['src/**/*.html','build/**/*.html'])
+  return gulp.src(['src/**/*.html'].concat(tasks.localization.getHtmlExcludingLocales()))
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe(assets.restore())
@@ -188,4 +188,9 @@ gulp.task('serve:dist', ['default'], function () {
 });
 
 // Load custom tasks from the `tasks` directory
-try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+var tasks;
+try {
+  tasks = require('require-dir')('tasks');
+} catch (err) {
+  console.error(err);
+}
