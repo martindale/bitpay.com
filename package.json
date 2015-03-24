@@ -27,7 +27,6 @@
     "gulp-uncss": "^1.0.0",
     "gulp-useref": "^0.6.0",
     "jshint-stylish": "^0.4.0",
-    "psi": "^0.1.2",
     "require-dir": "^0.1.0",
     "run-sequence": "^0.3.6"
   },
