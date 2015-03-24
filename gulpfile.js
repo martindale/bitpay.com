@@ -150,7 +150,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('jshint', function () {
-  return gulp.src(['*.js', 'src/**/*.js'])
+  return gulp.src(['*.js', 'tasks/*.js', 'src/**/*.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -170,7 +170,7 @@ gulp.task('serve', ['default'], function () {
 
   gulp.watch(['src/**/*.jade','src/**/*.html'], ['build', reload]);
   gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', reload]);
-  gulp.watch(['*.js', 'src/**/*.js'], ['jshint']);
+  gulp.watch(['*.js', 'tasks/*.js', 'src/**/*.js'], ['jshint']);
   gulp.watch(['src/images/**/*'], reload);
 });
 
