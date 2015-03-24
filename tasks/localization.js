@@ -3,8 +3,8 @@ var $ = require('gulp-load-plugins')();
 var fs = require('fs');
 
 var localization = {
-  getLocaleIds: getLocaleIds,
-  getHtmlExcludingLocales: getHtmlExcludingLocales
+  localeIds: getLocaleIds(),
+  htmlExcludingLocales: getHtmlExcludingLocales()
 };
 
 module.exports = localization;
@@ -28,7 +28,7 @@ function getHtmlExcludingLocales() {
 }
 
 gulp.task('build-localizations', function () {
-  return gulp.src(localization.getHtmlExcludingLocales())
+  return gulp.src(localization.htmlExcludingLocales)
     .pipe($.l10n.localize({
       locales: './locales/*([^_]).json',
       nativeLocale: './locales/en.json'
@@ -39,7 +39,7 @@ gulp.task('build-localizations', function () {
 });
 
 gulp.task('localize', function () {
-  return gulp.src(localization.getHtmlExcludingLocales())
+  return gulp.src(localization.htmlExcludingLocales)
     .pipe($.debug())
     .pipe($.l10n.extractLocale())
     .pipe(gulp.dest('./locales'));
@@ -48,7 +48,7 @@ gulp.task('localize', function () {
 gulp.task('simulate-translations', function () {
   return gulp.src('./locales/en.json')
     .pipe($.l10n.simulateTranslation({
-      locales: localization.getLocaleIds()
+      locales: localization.localeIds
     }))
     .pipe(gulp.dest('./locales'));
 });

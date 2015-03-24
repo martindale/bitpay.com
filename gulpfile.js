@@ -8,6 +8,7 @@ var fs = require('fs');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var globby = require('globby');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 8',
@@ -71,7 +72,7 @@ gulp.task('jade', function () {
     getObjectFromJson: function(path){
       return JSON.parse(String(fs.readFileSync(path)));
     }
-  }
+  };
 
   return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
     .pipe($.jade({
@@ -86,7 +87,7 @@ gulp.task('jade', function () {
 gulp.task('styles', function () {
   return gulp.src(['build/**/*.css'])
     .pipe($.uncss({
-      html: ['build/**/*.html']
+      html: globby.sync(tasks.localization.htmlExcludingLocales)
     }))
     .pipe(gulp.dest('build'))
     .pipe($.csso())
@@ -95,10 +96,10 @@ gulp.task('styles', function () {
 });
 
 // Scan HTML for build:js blocks. Clean, concat, minify js
-gulp.task('scripts', function () {
+gulp.task('scripts', ['jshint'], function () {
   var assets = $.useref.assets({searchPath: '{build,components,src}'});
 
-  return gulp.src(['src/**/*.html'].concat(tasks.localization.getHtmlExcludingLocales()))
+  return gulp.src(['src/**/*.html'].concat(tasks.localization.htmlExcludingLocales))
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe(assets.restore())
@@ -145,13 +146,12 @@ gulp.task('hash', function() {
 gulp.task('html', function() {
   gulp.src('dist/**/*.html')
     .pipe($.minifyHtml({conditionals: true}))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('jshint', function () {
-  return gulp.src('src/scripts/**/*.js')
+  return gulp.src(['*.js', 'src/**/*.js'])
     .pipe(reload({stream: true, once: true}))
-    .pipe(gulp.dest('build/scripts'))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
@@ -170,7 +170,7 @@ gulp.task('serve', ['default'], function () {
 
   gulp.watch(['src/**/*.jade','src/**/*.html'], ['build', reload]);
   gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', reload]);
-  gulp.watch(['src/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['*.js', 'src/**/*.js'], ['jshint']);
   gulp.watch(['src/images/**/*'], reload);
 });
 
