@@ -7,7 +7,7 @@ html(lang='en')
 
     block title
       title BitPay
-    
+
     block meta
       meta(name='description', content='desc')
 
@@ -56,7 +56,7 @@ html(lang='en')
               a(href="#").uppercase Integrations
             li
               a(href="#").uppercase Pricing
-          
+
         .column.medium-6
           ul.inline-list
             li
@@ -65,75 +65,11 @@ html(lang='en')
               a(href="#").uppercase API
             li
               a(href="#").uppercase Login
-    
-    block body
-      
-    block footer
-      .row
-        .column.medium-2
-          h6.bold.uppercase Platform
-          ul.no-bullet
-            li
-              a(href="#") Tour
-            li
-              a(href="#") Features
-            li
-              a(href="#") Use Cases
-            li
-              a(href="#") Integrations
-            li
-              a(href="#") Enterprise
-            li
-              a(href="#") Pricing
-        .column.medium-2
-          h6.bold.uppercase Documentation
-          ul.no-bullet
-            li
-              a(href="#") Getting Started
-            li
-              a(href="#") Setup Guides
-            li
-              a(href="#") API & SDKs
-            li
-              a(href="#") Settlement
-            li
-              a(href="#") FAQs
 
-        .column.medium-2
-          h6.bold.uppercase Resources
-          ul.no-bullet
-            li
-              a(href="#") Help & Support
-            li
-              a(href="#") Exchange Rates
-        .column.medium-2
-          h6.bold.uppercase Open Source
-          ul.no-bullet
-            li
-              a(href="#") Bitcore
-            li
-              a(href="#") Copay
-            li
-              a(href="#") Forums
-            li
-              a(href="#") GitHub
-        .column.medium-2
-          h6.bold.uppercase Company
-          ul.no-bullet
-            li
-              a(href="#") Team
-            li
-              a(href="#") 
-                span Careers 
-                span.round.label.secondary we're hiring!
-            li
-              a(href="#") Blog
-            li
-              a(href="#") Press
-            li
-              a(href="#") Legal
-        .column.medium-2
-          include ../_includes/languages
+    block body
+
+    block footer
+      include ../_includes/footer.jade
 
     block scripts
       // build:js /scripts/main.min.js
