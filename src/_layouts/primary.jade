@@ -45,31 +45,12 @@ html(lang='en')
 
   body
     block header
-      .row.show-for-medium-up
-        .column.medium-6
-          ul.inline-list
-            li
-              a(href="#").uppercase logo
-            li
-              a(href="#").uppercase Tour
-            li
-              a(href="#").uppercase Integrations
-            li
-              a(href="#").uppercase Pricing
-
-        .column.medium-6
-          ul.inline-list
-            li
-              a(href="#").uppercase Documentation
-            li
-              a(href="#").uppercase API
-            li
-              a(href="#").uppercase Login
+      include ../_includes/header
 
     block body
 
     block footer
-      include ../_includes/footer.jade
+      include ../_includes/footer
 
     block scripts
       // build:js /scripts/main.min.js
