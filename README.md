@@ -1,4 +1,6 @@
+[![devDependency Status](https://david-dm.org/bitjson/static/dev-status.svg)](https://david-dm.org/bitjson/static#info=devDependencies)
 [![Stories in Ready](https://badge.waffle.io/bitjson/static.png?label=ready&title=Ready)](https://waffle.io/bitjson/static)
+
 ## Developing
 
 ```sh
