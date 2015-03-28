@@ -2,7 +2,7 @@
   "name": "bitpay-website",
   "version": "0.0.1",
   "devDependencies": {
-    "browser-sync": "^2.4.0",
+    "browser-sync": "git+ssh://git@github.com:bitjson/browser-sync.git#feature/static-server-extensions-option",
     "del": "^1.1.1",
     "globby": "^1.2.0",
     "gulp": "^3.8.11",
