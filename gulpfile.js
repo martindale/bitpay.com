@@ -164,7 +164,10 @@ gulp.task('serve', ['default'], function () {
     logPrefix: 'serve',
     server: {
       //serve from build, fall back to src
-      baseDir: ['build', 'components', 'src']
+      baseDir: ['build', 'components', 'src'],
+      serveStaticOptions: {
+        extensions: 'html'
+      }
     }
   });
 
@@ -181,7 +184,10 @@ gulp.task('serve:dist', ['default'], function () {
     logPrefix: 'serve:dist',
     https: true,
     server: {
-      baseDir: 'dist'
+      baseDir: 'dist',
+      serveStaticOptions: {
+        extensions: 'html'
+      }
     }
   });
 });
