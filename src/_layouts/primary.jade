@@ -46,8 +46,11 @@ html(lang='en')
   body
     block header
       include ../_includes/header
-
-    block body
+    
+    -var bodyClass = '';
+    block vars
+    body(class='#{bodyClass}')
+      block content
 
     block footer
       include ../_includes/footer
