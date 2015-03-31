@@ -1,5 +1,12 @@
-//working
+// temporary hiding of myfonts bar
+#mfPreviewBar {
+  display: none;
+}
 
 body {
   background-color: #ccc;
+}
+
+.main-menu {
+  float: right;
 }
