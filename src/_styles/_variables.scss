@@ -1,6 +1,21 @@
-//overriding variables
-$font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
-$header-font-family: 'Brandon Text Regular';
+//override foundation variables
+
+// Allows the use of rem-calc() or lower-bound()
+@import "../../components/foundation/scss/foundation/functions";
+
 $inline-list-padding: 1em 0 !default;
+
+$row-width: rem-calc(1100) !default;
 $small-range: (0, 42em) !default; // changed to fit nav menu better
 $medium-range: (42.063em, 66em) !default;
+
+$font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$header-font-family: $font-family-sans-serif !default;
+/* $header-font-family: 'Brandon Text Regular'; */
+$h1-font-size: rem-calc(40) !default;
+
+// custom variables
+
+$blue-dark: #0E1C40;
+$blue-medium: #18347B;
+$blue-light: #4683E8;
