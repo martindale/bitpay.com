@@ -1,3 +1,6 @@
 //overriding variables
 $font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
 $header-font-family: 'Brandon Text Regular';
+$inline-list-padding: 1em 0 !default;
+$small-range: (0, 42em) !default; // changed to fit nav menu better
+$medium-range: (42.063em, 66em) !default;
