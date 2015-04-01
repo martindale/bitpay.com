@@ -1,4 +1,5 @@
 @import 'variables'; /* overriding defaults- this should be done in settings but compiling breaks when importing settings- needs to be looked at */
+@import 'mixins';
 
 @import '../../components/foundation/scss/normalize';
 

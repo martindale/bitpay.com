@@ -11,3 +11,9 @@
   color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
 }
+
+.right-medium-up {
+  @media #{$medium-up} {
+    float: right !important;
+  }
+}
