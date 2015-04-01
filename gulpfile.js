@@ -103,6 +103,7 @@ gulp.task('scripts', ['jshint'], function () {
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe(assets.restore())
+    .pipe($.debug())
     .pipe($.useref())
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));

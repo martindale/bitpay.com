@@ -25,7 +25,7 @@ function getLocaleIds(){
 function getHtmlExcludingLocales() {
   return [
     './build/**/*.html',
-    '!./build/@(' + getLocaleIds().join('|') + ')**/*.html'
+    '!./build/@(' + getLocaleIds().join('|') + ')/**/*.html'
     ];
 }
 
