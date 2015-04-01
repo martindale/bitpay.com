@@ -8,7 +8,16 @@ body {
 }
 
 .section {
-  padding: 4em 0;
+  padding: 3em 0;
+  @media #{$medium-up} {
+    padding: 6em 0;
+  }
+  &__less-padding {
+    padding: 2em 0;
+    @media #{$medium-up} {
+      padding: 3em 0;
+    }
+  }
 }
 
 .main-menu {
@@ -97,7 +106,7 @@ p.h6 {
 
 .footer {
   background: #0E1C40;
-  padding: 50px 0;
+  @extend .section__less-padding;
   &-corporate {
     padding-top: 1.5em;
     margin-top: 1em;
@@ -149,6 +158,19 @@ a.footer-link {
   margin-left: 10px;
 }
 
+.social-icon {
+  padding: 10px;
+  @include white-link-opacity;
+  &.twitter {
+    background-image: url('../images/twitter.svg');
+  }
+  &.github {
+    background-image: url('../images/github.svg');
+  }
+  &.linkedin {
+    background-image: url('../images/linkedin.svg');
+  }
+}
 .language-selector {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -157,12 +179,12 @@ a.footer-link {
   appearance: none;
   border: 1px solid rgba(255,255,255,0.7);
   border-radius: 3px;
-  width: auto;
+  width: 100%;
   background-color: transparent;
   cursor: pointer;
   color: rgba(255,255,255,0.7);
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNDcgMzEgMjQgMyI+PHBvbHlnb24gZmlsbD0iI0ZGRkZGRiIgcG9pbnRzPSItMTMyLDMxIC0xMzUsMzQgLTEzOCwzMSIvPjwvc3ZnPg==);
-  background-size: 25%;
+  background-size: 35px;
   &:hover {
     background-color: rgba(255,255,255,0.05);
     border-color: #FFFFFF;
