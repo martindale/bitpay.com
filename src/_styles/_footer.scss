@@ -65,6 +65,7 @@ a.footer-link {
     background-image: url('../images/linkedin.svg');
   }
 }
+
 .language-selector {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -82,5 +83,15 @@ a.footer-link {
   &:hover {
     background-color: rgba(255,255,255,0.05);
     border-color: #FFFFFF;
+  }
+}
+
+.footer-logo {
+  background-image: url('../images/bitpay-logo-primary.svg');
+  width: 60px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
   }
 }
