@@ -1,0 +1,50 @@
+.main-menu {
+  float: right;
+  padding: 1em 0;
+}
+
+.logo {
+  width: 80px;
+  height: 25px;
+  display: inline-block;
+  background-image: url('../images/bitpay-logo-dark.svg');
+  background-repeat: no-repeat;
+  &-container {
+    margin-top: 10px;
+  }
+  &.footer-logo {
+    width: 60px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.navbar {
+  padding: 10px 0 30px 0;
+}
+
+.menu-item {
+  color: $blue-dark;
+  font-size: 0.9em;
+  @extend .uppercase;
+  letter-spacing: 1.2px;
+  opacity: 1;
+  transition: opacity 0.2s;
+  &:hover {
+    color: $blue-dark;
+    text-decoration: none;
+    opacity: 0.5;
+  }
+}
+
+.login-btn {
+  padding: 5px 15px 4px;
+  border-radius: 50px;
+  border: 1px solid;
+  display: inline-block;
+  position: relative;
+  top: -6px;
+}
