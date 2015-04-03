@@ -15,8 +15,7 @@
 
 .cta-content {
   position: absolute;
-  /* top: 4rem; */
-  top: 14rem;
+  top: 4rem;
   left: 0.9375rem;
   right: 0.9375rem;
   z-index: 10;
@@ -29,7 +28,12 @@
 }
 
 .bitcoin-logo {
+  width: 5rem;
+  @extend .image-center;
   padding: 1em;
+  @media #{$medium-up} {
+    width: 7rem;
+  }
 }
 
 .cta-btns {
@@ -50,7 +54,7 @@
 .map-box {
   position: relative;
   opacity: 0.5;
-  top: 2rem;
+  top: -2rem;
   @media #{$medium-up} {
     width: 110%;
     left: -5%;
@@ -60,10 +64,9 @@
 
 .trusted-by {
   @media #{$small-up} {
-    /* margin-top: 15em; */
-    margin-top: 27em;
+    margin-top: 22em;
   }
   @media #{$medium-up} {
-    margin-top: 5em;
+    margin-top: 0;
   }
 }
