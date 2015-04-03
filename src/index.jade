@@ -9,13 +9,14 @@ block content
   .row.hero
     .column.medium-12
       .map-box
-        img(src="../images/map.svg", alt="").home-map
+        img(src="../images/geometric_map.svg", alt="").home-map
         - var n = 0
         while n < 16
           div(class="pulse pulse"+ ++n)
             .pulse-center
       .cta-content
-        h1.text-center.white Bitcoin payments, deposited to your bank account
+        img(src="../images/bitcoin.svg", alt="").image-center.bitcoin-logo
+        h1.text-center.white.text-shadow Bitcoin payments, deposited to your bank account
         p.h4.subheader.text-center.white Offer your customers the world’s fastest and safest payment option,<br />we'll handle the bitcoin.
         .cta-btns
           a(href="/tour").btn.btn-secondary Start Tour
