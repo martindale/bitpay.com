@@ -16,7 +16,7 @@
       background: rgba(255,255,255,0.1);
     }
   }
-  @media screen and (max-width: 370px) {
+  @include x-small-screen {
     font-size: 0.7rem;
   }
   @media #{$small-only} {

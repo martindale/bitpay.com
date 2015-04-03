@@ -6,3 +6,10 @@
     opacity: 1;
   }
 }
+
+// to target smaller screens between 320px - 375px
+@mixin x-small-screen {
+  @media screen and (max-width: 370px) {
+    @content;
+  }
+}

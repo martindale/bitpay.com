@@ -19,7 +19,7 @@
   left: 0.9375rem;
   right: 0.9375rem;
   z-index: 10;
-  @media screen and (max-width: 370px) {
+  @include x-small-screen {
     top: -2rem;
   }
   @media #{$medium-up} {
@@ -48,7 +48,7 @@
     @extend .white;
     font-weight: bold;
   }
-  @media screen and (max-width: 370px) {
+  @include x-small-screen {
     margin-top: 3rem;
   }
 }
@@ -61,7 +61,7 @@
   position: relative;
   opacity: 0.5;
   top: -2rem;
-  @media screen and (max-width: 370px) {
+  @include x-small-screen {
     display: none;
   }
   @media #{$medium-up} {
