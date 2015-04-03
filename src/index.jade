@@ -3,8 +3,29 @@ extends _layouts/primary
 block title
   title Accept Bitcoin | BitPay
 
-block body
-  .row
+block vars
+  -var bodyClass = 'landing';
+block content
+  .row.hero
     .column.medium-12
-      h1.text-center Bitcoin payments, deposited to your bank account.
-      h3.text-center Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
+      .map-box
+        img(src="../images/map.svg", alt="").home-map
+        - var n = 0
+        while n < 16
+          div(class="pulse pulse"+ ++n)
+            .pulse-center
+      .cta-content
+        h1.text-center.white Bitcoin payments, deposited to your bank account
+        p.h4.subheader.text-center.white Offer your customers the world’s fastest and safest payment option,<br />we'll handle the bitcoin.
+        .cta-btns
+          a(href="/tour").btn.btn-secondary Start Tour
+          a(href="#").btn.btn-primary Accept Bitcoin
+      
+  .row.section.trusted-by
+    .column.medium-12
+      h5.uppercase.text-center.white trusted by over 60,000 merchants
+    .column.medium-6
+      img(src="../images/logos1.png", alt="").home-logos
+    .column.medium-6
+      img(src="../images/logos2.png", alt="").home-logos
+      

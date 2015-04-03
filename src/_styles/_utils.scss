@@ -4,4 +4,16 @@
 
 .uppercase {
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.white {
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+.right-medium-up {
+  @media #{$medium-up} {
+    float: right !important;
+  }
 }

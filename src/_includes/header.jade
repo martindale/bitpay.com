@@ -1,20 +1,19 @@
-.row.show-for-medium-up
-  .column.medium-6
-    ul.inline-list
-      li
-        a(href="/").uppercase logo
-      li
-        a(href="/tour").uppercase Tour
-      li
-        a(href="/integrations").uppercase Integrations
-      li
-        a(href="/pricing").uppercase Pricing
+.row.navbar(role="navigation")
+  .column.medium-1.logo-container
+    a(href="/").logo
 
-  .column.medium-6
-    ul.inline-list
+  .column.medium-11.show-for-medium-up
+    ul.inline-list.main-menu
       li
-        a(href="/docs").uppercase Documentation
+        a(href="/tour").menu-item Tour
       li
-        a(href="#").uppercase API
+        a(href="/integrations").menu-item Integrations
       li
-        a(href="#").uppercase Login
+        a(href="/pricing").menu-item Pricing
+      li
+        a(href="/docs").menu-item Documentation
+
+      li
+        a(href="#").menu-item API
+      li
+        a(href="#").menu-item.login-btn Log In
