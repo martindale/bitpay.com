@@ -1,3 +1,5 @@
+include ../_mixins/jademin
+
 doctype html
 html(lang='en')
   head
@@ -42,6 +44,7 @@ html(lang='en')
 
     link(rel='stylesheet', href='/styles/main.css')
     base(href='/')
+    include ../_includes/head.html
 
   body
     block header
@@ -51,11 +54,9 @@ html(lang='en')
 
     block footer
       include ../_includes/footer
-
+    
     block scripts
-      // build:js /scripts/main.min.js
-      script(src='/instantclick/instantclick.js')
-      script(src='/analytics/analytics.js')
-      script(src='/scripts/main.js')
-      script(src='/scripts/another.js')
-      // endbuild
+      +jademin('/scripts/main.mi.js')
+        script(src='/instantclick/instantclick.js')
+        script(src='/_scripts/one.js')
+        script(src='/_scripts/two.js')
