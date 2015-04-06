@@ -4,4 +4,25 @@
 
 .uppercase {
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.white {
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-shadow {
+  text-shadow: 1px 2px 0px rgba(0,0,0,0.50)
+}
+
+.image-center {
+  display: block;
+  margin: auto;
+}
+
+.right-medium-up {
+  @media #{$medium-up} {
+    float: right !important;
+  }
 }

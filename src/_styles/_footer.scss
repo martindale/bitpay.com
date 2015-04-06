@@ -1,0 +1,97 @@
+.footer {
+  background: #0E1C40;
+  @extend .section__less-padding;
+  &-corporate {
+    padding-top: 1.5em;
+    margin-top: 1em;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+.footer-text {
+  @extend .white;
+  opacity: 0.7;
+}
+
+.footer-nav-list {
+  & > p.h6 {
+    @extend .bold;
+    @extend .uppercase;
+    @extend .white;
+    opacity: 0.7;
+    position: relative;
+    padding-bottom: 10px;
+      &:after {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: #4683E8;
+      position: absolute;
+      top: 30px;
+      left: 0;
+    }
+  }
+}
+
+a.footer-link {
+  @include white-link-opacity;
+  display: inline-block;
+  margin-bottom: 0.25em;
+}
+
+.footer-label {
+  @extend .white;
+  font-size: 0.6em;
+  display: inline-block;
+  background: $blue-light;
+  background: linear-gradient(to bottom, $blue-light, darken($blue-light, 8%));
+  padding: 0 5px 1px;
+  border-radius: 10px;
+  position: relative;
+  top: -2px;
+  margin-left: 10px;
+}
+
+.social-icon {
+  padding: 10px;
+  @include white-link-opacity;
+  &.twitter {
+    background-image: url('../images/twitter.svg');
+  }
+  &.github {
+    background-image: url('../images/github.svg');
+  }
+  &.linkedin {
+    background-image: url('../images/linkedin.svg');
+  }
+}
+
+.language-selector {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 3px;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNDcgMzEgMjQgMyI+PHBvbHlnb24gZmlsbD0iI0ZGRkZGRiIgcG9pbnRzPSItMTMyLDMxIC0xMzUsMzQgLTEzOCwzMSIvPjwvc3ZnPg==);
+  background-size: 35px;
+  &:hover {
+    background-color: rgba(255,255,255,0.05);
+    border-color: #FFFFFF;
+  }
+}
+
+.footer-logo {
+  background-image: url('../images/bitpay-logo-primary.svg');
+  width: 60px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+}

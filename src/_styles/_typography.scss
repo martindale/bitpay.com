@@ -1,0 +1,18 @@
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+.h4 {
+  @extend h4;
+}
+
+.h6 {
+  @extend h6;
+}
+
+p.h4,
+p.h5,
+p.h6 {
+ font-family: $font-family-sans-serif;
+}
