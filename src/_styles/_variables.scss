@@ -6,8 +6,8 @@ $blue-light: #4683E8;
 
 $gray-dark: #565966;
 $gray-medium: #929396;
-$gray-light: #929396;
-$gray-xlight: #F5F6FB;
+$gray-light: #DEDFE1;
+$gray-xlight: #FAFAFD;
 
 //override foundation variables
 
@@ -22,7 +22,8 @@ $body-font-color: $gray-medium !default;
 $font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
 $header-font-family: $font-family-sans-serif !default;
 $header-font-color: $gray-dark !default;
-$h1-font-size: rem-calc(38) !default;
+$h1-font-size: rem-calc(36) !default;
+$h2-font-size: rem-calc(32) !default;
 $small-font-size: 80% !default;
 $subheader-top-margin: 2.5rem !default;
 $subheader-bottom-margin: 1rem !default;

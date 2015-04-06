@@ -1,7 +1,7 @@
 .section {
-  padding: 1em 0 3em;
+  padding: 3em 0;
   @media #{$medium-up} {
-    padding: 3em 0 6em;
+    padding: 6em 0;
   }
   .navbar + & {
     padding-top: 0;
@@ -14,5 +14,9 @@
   }
   &__gray {
     background: $gray-xlight;
+    border-top: 1px solid $gray-light;
+    & + .section {
+      border-top: 1px solid $gray-light;
+    }
   }
 }
