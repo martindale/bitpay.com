@@ -1,3 +1,5 @@
+include ../_mixins/jademin
+
 doctype html
 html(lang='en')
   head
@@ -41,8 +43,9 @@ html(lang='en')
     meta(name='msapplication-TileColor', content='#F5AB35')
 
     link(rel='stylesheet', href='/styles/main.css')
-    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Karla:400,700')
+    link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,700')
     base(href='/')
+    include ../_includes/head.html
 
   body
     block header
@@ -55,11 +58,9 @@ html(lang='en')
 
     block footer
       include ../_includes/footer
-
+    
     block scripts
-      // build:js /scripts/main.min.js
-      script(src='/instantclick/instantclick.js')
-      script(src='/analytics/analytics.js')
-      script(src='/scripts/main.js')
-      script(src='/scripts/another.js')
-      // endbuild
+      +jademin('/scripts/main.mi.js')
+        script(src='/instantclick/instantclick.js')
+        script(src='/_scripts/one.js')
+        script(src='/_scripts/two.js')

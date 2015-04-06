@@ -1,0 +1,6 @@
+mixin jademin(path)
+  if DEV
+    block
+  else
+    - jademin(block, path)
+    script(src=path)

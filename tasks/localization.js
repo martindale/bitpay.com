@@ -24,20 +24,19 @@ function getLocaleIds(){
 
 function getHtmlExcludingLocales() {
   return [
-    './build/**/*.html',
-    '!./build/@(' + getLocaleIds().join('|') + ')/**/*.html'
+    './dist/**/*.html',
+    '!./dist/@(' + getLocaleIds().join('|') + ')/**/*.html'
     ];
 }
 
 gulp.task('build-localizations', function () {
   return gulp.src(localization.htmlExcludingLocales)
+    .pipe($.cached('build-localizations'))
     .pipe($.l10n.localize({
       locales: './locales/*([^_]).json',
       nativeLocale: './locales/en.json'
     }))
-    .pipe(gulp.dest('build'))
-    .pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'build-localizations'}));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('localize', function () {
