@@ -1,12 +1,18 @@
 .section {
-  padding: 3em 0;
+  padding: 1em 0 3em;
   @media #{$medium-up} {
-    padding: 6em 0;
+    padding: 3em 0 6em;
+  }
+  .navbar + & {
+    padding-top: 0;
   }
   &__less-padding {
     padding: 2em 0;
     @media #{$medium-up} {
       padding: 3em 0;
     }
+  }
+  &__gray {
+    background: $gray-xlight;
   }
 }

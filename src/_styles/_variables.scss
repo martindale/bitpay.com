@@ -1,3 +1,14 @@
+// custom variables
+
+$blue-dark: #0E1C40;
+$blue-medium: #18347B;
+$blue-light: #4683E8;
+
+$gray-dark: #565966;
+$gray-medium: #929396;
+$gray-light: #929396;
+$gray-xlight: #F5F6FB;
+
 //override foundation variables
 
 // Allows the use of rem-calc() or lower-bound()
@@ -7,16 +18,11 @@ $row-width: rem-calc(1100) !default;
 $small-range: (0, 42em) !default; // changed to fit nav menu better
 $medium-range: (42.063em, 66em) !default;
 
+$body-font-color: $gray-medium !default;
 $font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
 $header-font-family: $font-family-sans-serif !default;
-/* $header-font-family: 'Brandon Text Regular'; */
-$h1-font-size: rem-calc(40) !default;
+$header-font-color: $gray-dark !default;
+$h1-font-size: rem-calc(38) !default;
 $small-font-size: 80% !default;
 $subheader-top-margin: 2.5rem !default;
 $subheader-bottom-margin: 1rem !default;
-
-// custom variables
-
-$blue-dark: #0E1C40;
-$blue-medium: #18347B;
-$blue-light: #4683E8;

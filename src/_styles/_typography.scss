@@ -16,3 +16,17 @@ p.h5,
 p.h6 {
  font-family: $font-family-sans-serif;
 }
+
+.header__bottom-border {
+  position: relative;
+  margin-bottom: 4rem;
+  &:after {
+    content: "";
+    height: 3px;
+    width: 4rem;
+    background: $blue-light;
+    position: absolute;
+    bottom: -1rem;
+    left: calc(50% - 2rem);
+  }
+}

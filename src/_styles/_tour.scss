@@ -1,0 +1,6 @@
+.reason {
+  margin-bottom: 3rem;
+  @media #{$medium-up} {
+    margin-bottom: 4rem;
+  }
+}
