@@ -15,13 +15,27 @@
 
 .cta-content {
   position: absolute;
-  /* top: 4rem; */
-  top: 14rem;
+  top: 4rem;
   left: 0.9375rem;
   right: 0.9375rem;
   z-index: 10;
+  @media screen and (max-width: 370px) {
+    top: -2rem;
+  }
+  @media #{$medium-up} {
+    top: 4rem;
+  }
   @media #{$large-up} {
     top: 8rem;
+  }
+}
+
+.bitcoin-logo {
+  width: 5rem;
+  @extend .image-center;
+  padding: 1em;
+  @media #{$medium-up} {
+    width: 7rem;
   }
 }
 
@@ -34,6 +48,9 @@
     @extend .white;
     font-weight: bold;
   }
+  @media screen and (max-width: 370px) {
+    margin-top: 3rem;
+  }
 }
 
 .home-logos {
@@ -43,7 +60,10 @@
 .map-box {
   position: relative;
   opacity: 0.5;
-  top: 2rem;
+  top: -2rem;
+  @media screen and (max-width: 370px) {
+    display: none;
+  }
   @media #{$medium-up} {
     width: 110%;
     left: -5%;
@@ -51,137 +71,11 @@
   }
 }
 
-@keyframes pulsate {
-  0% { transform: scale(0.1,0.1); opacity: 0.0}
-  50% { opacity: 1.0}
-  100% { transform: scale(1.4,1.4); opacity: 0.0}
-}
-
-@keyframes pulsate-center {
-  0% { opacity: 0.0}
-  100% { opacity: 1.0}
-}
-
-.pulse {
-  border: 2px solid $blue-light;
-  border: 2px solid #2F4AB5;
-  border-radius: 30px;
-  height: 18px;
-  width: 18px;
-  position: absolute;
-  opacity: 0;
-  animation: pulsate 1.4s ease-in-out 0.5s infinite;
-}
-
-.pulse-center {
-  height: 4px;
-  width: 4px;
-  border-radius: 10px;
-  background: $blue-light;
-  background: #00BCCC;
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  animation: pulsate-center 0.5s ease;
-}
-
-.pulse1 {
-  left: 15%;
-  top: 30%;
-}
-
-.pulse2 {
-  left: 16%;
-  top: 33%;
-  animation-delay: 2s;
-}
-
-.pulse3 {
-  left: 33%;
-  top: 65%;
-  animation-delay: 1.5s;
-}
-
-.pulse4 {
-  left: 32%;
-  top: 70%;
-}
-
-.pulse5 {
-  left: 22%;
-  top: 32%;
-  animation-delay: 4.5s;
-}
-
-.pulse6 {
-  left: 24%;
-  top: 35%;
-  animation-delay: 1s;
-}
-
-.pulse7 {
-  left: 28%;
-  top: 34%;
-  animation-delay: 2.3s;
-}
-
-.pulse8 {
-  right: 15%;
-  top: 30%;
-  animation-delay: 3s;
-}
-
-.pulse9 {
-  right: 45%;
-  top: 30%;
-  animation-delay: 5.3s;
-}
-
-.pulse10 {
-  right: 45%;
-  top: 33%;
-  animation-delay: 0.8s;
-}
-
-.pulse11 {
-  right: 50%;
-  top: 34%;
-  animation-delay: 1.3s;
-}
-
-.pulse12 {
-  right: 51%;
-  top: 40%;
-  animation-delay: 0.3s;
-}
-
-.pulse13 {
-  right: 46%;
-  top: 28%;
-  animation-delay: 2.7s;
-}
-
-.pulse14 {
-  right: 43%;
-  top: 30%;
-  animation-delay: 1.5s;
-}
-
-.pulse15 {
-  right: 37%;
-  top: 30%;
-  animation-delay: 3s;
-}
-
-.pulse16 {
-  right: 50%;
-  top: 37%;
-  animation-delay: 4s;
-}
-
 .trusted-by {
-  @media #{$small-only} {
-    /* margin-top: 15em; */
-    margin-top: 27em;
+  @media #{$small-up} {
+    margin-top: 22em;
+  }
+  @media #{$medium-up} {
+    margin-top: 0;
   }
 }
