@@ -50,12 +50,23 @@
   }
 }
 
+.padding-top-bottom-small {
+  padding: 1.5em 0;
+}
+
 .padding-top-small {
   padding-top: 1.5em;
 }
 
 .margin-top-small {
   margin-top: 1em;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 3rem;
+  @media #{$medium-up} {
+    margin-bottom: 4rem;
+  }
 }
 
 .top-border-light {
