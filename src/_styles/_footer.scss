@@ -1,6 +1,4 @@
 .footer {
-  background: #0E1C40;
-  @extend .section__less-padding;
   &-corporate {
     padding-top: 1.5em;
     margin-top: 1em;
@@ -8,36 +6,6 @@
   }
 }
 
-.footer-text {
-  @extend .white;
-  opacity: 0.7;
-}
-
-.footer-nav-list {
-  & > p.h6 {
-    @extend .bold;
-    @extend .uppercase;
-    @extend .white;
-    opacity: 0.7;
-    position: relative;
-    padding-bottom: 10px;
-      &:after {
-      content: "";
-      width: 25px;
-      height: 2px;
-      background: #4683E8;
-      position: absolute;
-      top: 30px;
-      left: 0;
-    }
-  }
-}
-
-a.footer-link {
-  @include white-link-opacity;
-  display: inline-block;
-  margin-bottom: 0.25em;
-}
 
 .footer-label {
   @extend .white;
@@ -54,7 +22,6 @@ a.footer-link {
 
 .social-icon {
   padding: 10px;
-  @include white-link-opacity;
   &.twitter {
     background-image: url('../images/twitter.svg');
   }
@@ -89,9 +56,9 @@ a.footer-link {
 .footer-logo {
   background-image: url('../images/bitpay-logo-primary.svg');
   width: 60px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-  &:hover {
-    opacity: 1;
-  }
+/*   opacity: 0.7;
+transition: opacity 0.2s;
+&:hover {
+  opacity: 1;
+} */
 }
