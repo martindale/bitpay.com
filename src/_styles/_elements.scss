@@ -6,17 +6,21 @@
   .navbar + & {
     padding-top: 0;
   }
-  &__less-padding {
+  &--less-padding {
     padding: 2em 0;
     @media #{$medium-up} {
       padding: 3em 0;
     }
   }
-  &__gray {
+  &--gray {
     background: $gray-xlight;
     border-top: 1px solid $gray-light;
     & + .section {
       border-top: 1px solid $gray-light;
     }
   }
+}
+
+ul {
+  line-height: 1.8;
 }

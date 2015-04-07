@@ -1,0 +1,33 @@
+// Font colors
+
+.white {
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+
+.white-opacity {
+  @extend .white;
+  opacity: 0.7;
+}
+
+.white-link--opacity {
+  @extend .white;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Background colors
+
+.bg-dark {
+  background: #0E1C40;
+}
+
+.bg-blue {
+  background: $blue-medium;
+}

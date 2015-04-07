@@ -17,6 +17,7 @@ p.h6 {
  font-family: $font-family-sans-serif;
 }
 
+// for the bottom centered border
 .header__bottom-border {
   position: relative;
   margin-bottom: 4rem;
@@ -29,4 +30,19 @@ p.h6 {
     bottom: -1rem;
     left: calc(50% - 2rem);
   }
+}
+
+.body-text__bottom-border {
+  position: relative;
+  padding-bottom: 10px;
+    &:after {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #4683E8;
+    position: absolute;
+    top: 30px;
+    left: 0;
+  }
+
 }
