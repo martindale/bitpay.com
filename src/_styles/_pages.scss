@@ -1,0 +1,70 @@
+// If possible, avoid adding to this file.
+// Whenever possible, styles should be abstracted from here into re-usable utilities.
+
+// Home Page
+
+.cta-content {
+  position: absolute;
+  top: 4rem;
+  left: 0.9375rem;
+  right: 0.9375rem;
+  z-index: 10;
+  @include x-small-screen {
+    top: -2rem;
+  }
+  @media #{$medium-up} {
+    top: 4rem;
+  }
+  @media #{$large-up} {
+    top: 8rem;
+  }
+}
+
+.bitcoin-logo {
+  width: 5rem;
+  @extend .image-center;
+  padding: 1em;
+  @media #{$medium-up} {
+    width: 7rem;
+  }
+}
+
+.cta-btns {
+  margin-top: 2rem;
+}
+
+.home-logos {
+  margin-top: 1.5em;
+}
+
+.map-box {
+  position: relative;
+  opacity: 0.5;
+  top: 0;
+  @include x-small-screen {
+    display: none;
+  }
+  @media #{$medium-up} {
+    width: 110%;
+    left: -5%;
+  }
+}
+
+.trusted-by {
+  @media #{$small-up} {
+    margin-top: 25em;
+  }
+  @media #{$medium-up} {
+    margin-top: 0;
+  }
+}
+
+// Tour- Overview
+
+.icon {
+  width: 100px;
+  height: 100px;
+  border: 1px solid $gray-light;
+  border-radius: 100px;
+  margin: 0 auto 2rem;
+}
