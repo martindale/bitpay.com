@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var mkdirp = require('mkdirp');
 var getDirName = require('path').dirname;
+var runSequence = require('run-sequence');
 var fs = require('fs');
 var globby = require('globby');
 var async = require('async');
@@ -30,9 +31,14 @@ gulp.task('jade', function() {
   }, 'jade');
 });
 
+gulp.task('uncached-rebuild-jade', function(cb) {
+  delete $.cached.caches.jade;
+  runSequence('rebuild-jade', cb);
+});
+
 function jade(options, cache) {
   return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
-    .pipe($.cached('cache'))
+    .pipe($.cached('jade'))
     .pipe($.jade(options))
     .pipe(gulp.dest('dist'));
 }
