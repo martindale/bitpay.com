@@ -6,31 +6,46 @@ block title
 block vars
   -var bodyClass = 'landing bg-blue';
 block content
-  .row.hero
-    .column.medium-12
-      .map-box
-        img(src="/images/geometric_map.svg", alt="").home-map
-        - var n = 0
-        while n < 16
-          div(class="pulse pulse"+ ++n)
-            .pulse-center
-      .cta-content
-        .bitcoin-logo.background-contain.margin-top-bottom-small(style="background-image: url('/images/bitcoin.svg');")
-        h1.text-center.white.text-shadow Bitcoin payments, deposited to your bank account
-        p.h4.subheader.text-center.white Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
+  .background-element.text-center.opacity-less
+    img(src="/images/geometric_map.svg" width="100%")
+    mixin pulse(left, top, msDelay)
+      .pulse(style="left:#{left}%; top:#{top}%; -webkit-animation-delay: #{msDelay}ms; animation-delay: #{msDelay}ms;")
+        .pulse-center
+    +pulse(15, 30, 0)
+    +pulse(16, 33, 2000)
+    +pulse(33, 65, 1500)
+    +pulse(32, 70, 0)
+    +pulse(22, 32, 4500)
+    +pulse(24, 35, 1000)
+    +pulse(28, 34, 2300)
+    +pulse(15, 30, 3000)
+    +pulse(45, 30, 5300)
+    +pulse(45, 33, 800)
+    +pulse(50, 34, 1300)
+    +pulse(51, 40, 300)
+    +pulse(46, 28, 2700)
+    +pulse(43, 30, 1500)
+    +pulse(37, 30, 3000)
+    +pulse(50, 37, 4000)
+      
+  .row
+    .column.large-10.large-offset-1.text-center.text-shadow
+        img.h1(src="/images/bitcoin.svg" style="width: 1.5em; height 1.5em").margin-top.margin-bottom-less
+        h1.white Bitcoin payments, deposited to your bank account.
+        h4.white.subheader.medium-8.medium-offset-2 Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
         .row
-          .cta-btns
+          .margin-top-less
             .column.medium-4.medium-offset-2.text-center
               a(href="/tour").white.btn.btn-blue-border.uppercase.bold.right-medium-up Start Tour
             .column.medium-4.text-center.end
               a(href="#").white.btn.btn-blue-solid.uppercase.bold.left-medium-up Accept Bitcoin
       
   .section
-    .row.trusted-by
+    .row
       .column.medium-12
-        h5.uppercase.text-center.white.margin-bottom-medium trusted by over 60,000 merchants
+        h5.uppercase.text-center.white.margin-bottom-medium Trusted by Over 60,000 Businesses and Organizations
       .column.medium-6
-        .home-logos.background-contain(style="background-image: url('/images/logos1.png');")
+        .home-logos.background-contain(style="background-image: url('/images/logos1.png')")
       .column.medium-6
-        .home-logos.background-contain(style="background-image: url('/images/logos2.png');")
+        .home-logos.background-contain(style="background-image: url('/images/logos2.png')")
       

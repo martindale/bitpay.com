@@ -1,3 +1,27 @@
+@mixin addUtililty($property, $less, $normal, $more){
+  .#{$property}-less {
+    #{$property}: $less
+  }
+  .#{$property} {
+    #{$property}: $normal
+  }
+  .#{$property}-more {
+    #{$property}: $more
+  }
+}
+
+@include addUtililty('padding-top',      1em, 2em, 3em);
+@include addUtililty('padding-right',    1em, 2em, 3em);
+@include addUtililty('padding-bottom',   1em, 2em, 3em);
+@include addUtililty('padding-left',     1em, 2em, 3em);
+
+@include addUtililty('margin-top',       1em, 2em, 3em);
+@include addUtililty('margin-right',     1em, 2em, 3em);
+@include addUtililty('margin-bottom',    1em, 2em, 3em);
+@include addUtililty('margin-left',      1em, 2em, 3em);
+
+@include addUtililty('opacity', 0.5, 0.75, 0.9);
+
 .bold {
   font-weight: bold;
 }
@@ -16,11 +40,6 @@
 
 .text-shadow {
   text-shadow: 1px 2px 0px rgba(0,0,0,0.50)
-}
-
-.image-center {
-  display: block;
-  margin: auto;
 }
 
 .border-top-gray {
@@ -52,46 +71,6 @@
 .center-text-small {
   @media #{$small-only} {
     text-align: center;
-  }
-}
-
-.padding-top-bottom-small {
-  padding: 1.5rem 0;
-}
-
-.padding-top-small {
-  padding-top: 1.5rem;
-}
-
-.margin-top-small {
-  margin-top: 1rem;
-}
-
-.margin-top-bottom-small {
-  margin: 1rem auto;
-  @media #{$medium-up} {
-    margin: 2rem auto;
-  }
-}
-
-.margin-bottom-medium {
-  margin-bottom: 1.5rem;
-  @media #{$medium-up} {
-    margin-bottom: 3rem;
-  }
-}
-
-.margin-bottom-large {
-  margin-bottom: 2.5rem;
-  @media #{$medium-up} {
-    margin-bottom: 4rem;
-  }
-}
-
-.margin-top-medium {
-  margin-top: 1.5rem;
-  @media #{$medium-up} {
-    margin-top: 3rem;
   }
 }
 

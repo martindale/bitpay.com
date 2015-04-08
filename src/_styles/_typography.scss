@@ -3,13 +3,18 @@ h2 {
   line-height: 1.2;
 }
 
-.h4 {
-  @extend h4;
+@mixin elementToClass($elem) {
+  .#{$elem}{
+      @extend #{$elem};
+  }
 }
 
-.h6 {
-  @extend h6;
-}
+@include elementToClass('h1');
+@include elementToClass('h2');
+@include elementToClass('h3');
+@include elementToClass('h4');
+@include elementToClass('h5');
+@include elementToClass('h6');
 
 p.h4,
 p.h5,

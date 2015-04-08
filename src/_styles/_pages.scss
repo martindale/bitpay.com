@@ -3,34 +3,15 @@
 
 // Home Page
 
-.cta-content {
+.background-element {
   position: absolute;
-  top: 4rem;
-  left: 0.9375rem;
-  right: 0.9375rem;
-  z-index: 10;
-  @include x-small-screen {
-    top: -2rem;
-  }
-  @media #{$medium-up} {
-    top: 4rem;
-  }
-  @media #{$large-up} {
-    top: 8rem;
-  }
-}
-
-.bitcoin-logo {
-  height: 3rem;
-  width: 3rem;
-  @media #{$medium-up} {
-    height: 5rem;
-    width: 5rem;
-  }
-}
-
-.cta-btns {
-  margin-top: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  display: block;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .home-logos {
@@ -39,36 +20,4 @@
   @media #{$medium-up} {
     height: 7rem;
   }
-}
-
-.map-box {
-  position: relative;
-  opacity: 0.5;
-  top: 0;
-  @include x-small-screen {
-    display: none;
-  }
-  @media #{$medium-up} {
-    width: 110%;
-    left: -5%;
-  }
-}
-
-.trusted-by {
-  @media #{$small-up} {
-    margin-top: 25em;
-  }
-  @media #{$medium-up} {
-    margin-top: 0;
-  }
-}
-
-// Tour- Overview
-
-.icon {
-  width: 100px;
-  height: 100px;
-  border: 1px solid $gray-light;
-  border-radius: 100px;
-  margin: 0 auto 2rem;
 }
