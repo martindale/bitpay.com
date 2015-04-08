@@ -16,6 +16,12 @@
   margin: auto;
 }
 
+.background-contain {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .left-medium-up {
   @media #{$medium-up} {
     float: left !important;
@@ -35,15 +41,29 @@
 }
 
 .padding-top-bottom-small {
-  padding: 1.5em 0;
+  padding: 1.5rem 0;
 }
 
 .padding-top-small {
-  padding-top: 1.5em;
+  padding-top: 1.5rem;
 }
 
 .margin-top-small {
-  margin-top: 1em;
+  margin-top: 1rem;
+}
+
+.margin-top-bottom-small {
+  margin: 1rem auto;
+  @media #{$medium-up} {
+    margin: 2rem auto;
+  }
+}
+
+.margin-bottom-medium {
+  margin-bottom: 1.5rem;
+  @media #{$medium-up} {
+    margin-bottom: 3rem;
+  }
 }
 
 .margin-bottom-large {

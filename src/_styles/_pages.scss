@@ -21,11 +21,11 @@
 }
 
 .bitcoin-logo {
-  width: 5rem;
-  @extend .image-center;
-  padding: 1em;
+  height: 3rem;
+  width: 3rem;
   @media #{$medium-up} {
-    width: 7rem;
+    height: 5rem;
+    width: 5rem;
   }
 }
 
@@ -34,7 +34,11 @@
 }
 
 .home-logos {
-  margin-top: 1.5em;
+  margin-top: 1rem;
+  height: 5rem;
+  @media #{$medium-up} {
+    height: 7rem;
+  }
 }
 
 .map-box {
