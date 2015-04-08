@@ -14,9 +14,9 @@
   }
   &--gray {
     background: $gray-xlight;
-    border-top: 1px solid $gray-light;
+    @extend .border-top-gray;
     & + .section {
-      border-top: 1px solid $gray-light;
+      @extend .border-top-gray;
     }
   }
 }
