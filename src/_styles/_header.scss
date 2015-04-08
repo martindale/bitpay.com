@@ -11,14 +11,14 @@
 }
 
 .menu-item {
-  color: $blue-dark;
+  color: $blue-darker;
   font-size: 0.9em;
   @extend .uppercase;
   letter-spacing: 1.2px;
   opacity: 1;
   transition: opacity 0.2s;
   &:hover {
-    color: $blue-dark;
+    color: $blue-darker;
     text-decoration: none;
     opacity: 0.5;
   }
