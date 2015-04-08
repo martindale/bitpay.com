@@ -17,6 +17,12 @@ p.h6 {
  font-family: $font-family-sans-serif;
 }
 
+p.lead {
+  @media #{$small-only} {
+    font-size: 1.11875rem;
+  }
+}
+
 // for the bottom centered border
 .header__bottom-border {
   position: relative;

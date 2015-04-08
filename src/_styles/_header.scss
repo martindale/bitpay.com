@@ -39,3 +39,22 @@
   position: relative;
   top: -6px;
 }
+
+// subnav
+
+.subnav {
+  margin-bottom: -1px;
+}
+
+.subnav-link {
+  color: $gray-medium;
+  padding-bottom: 0.4rem;
+  margin-right: 1rem;
+  &.active {
+    color: $blue-light;
+    border-bottom: 3px solid $blue-light;
+    &:hover {
+      cursor: default;
+    }
+  }
+}

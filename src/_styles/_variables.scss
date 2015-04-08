@@ -11,6 +11,8 @@ $gray-xlight: #FAFAFD;
 
 //override foundation variables
 
+$primary-color: $blue-light;
+
 // Allows the use of rem-calc() or lower-bound()
 @import "../../components/foundation/scss/foundation/functions";
 
