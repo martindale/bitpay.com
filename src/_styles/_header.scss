@@ -44,13 +44,17 @@
 
 .subnav {
   margin-bottom: -1px;
+  @media #{$small-only} {
+    margin-top: 1rem;
+  }
 }
 
 .subnav-link {
   color: $gray-medium;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.6rem;
   margin-right: 1rem;
-  &.active {
+  &.selected {
+    font-weight: 600;
     color: $blue-light;
     border-bottom: 3px solid $blue-light;
     &:hover {

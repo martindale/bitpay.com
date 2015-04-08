@@ -8,7 +8,10 @@
 }
 
 .small-text {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+  @media #{$medium-up} {
+    font-size: 0.9rem;
+  }
 }
 
 .text-shadow {
