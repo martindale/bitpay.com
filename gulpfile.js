@@ -40,6 +40,15 @@ gulp.task('serve', ['build:dev'], function() {
   browserSync({
     notify: false,
     logPrefix: 'serve',
+    minify: false,
+    snippetOptions: {
+      rule: {
+        fn: function (snippet, match){
+          snippet = snippet.replace('async', 'async data-no-instant');
+          return snippet + match;
+        }
+      }
+    },
     server: {
       //serve from build, fall back to src
       baseDir: ['dist', 'components', 'src'],
