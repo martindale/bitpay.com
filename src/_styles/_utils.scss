@@ -66,6 +66,12 @@
   background-size: contain;
 }
 
+.background-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .left-medium-up {
   @media #{$medium-up} {
     float: left !important;
