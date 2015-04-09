@@ -5,7 +5,7 @@ block title
 
 <<<<<<< HEAD
 append vars
-  -var bodyClass = 'bg-blue-gradient';
+  -var bodyClass = 'landing bg-blue-gradient';
 
 block content
   .background-element.text-center.opacity-less
@@ -37,17 +37,18 @@ block content
     +pulse(79, 82, 1320)
     +pulse(77, 48, 400)
       
-  .row
-    .column.large-10.large-offset-1.text-center.text-shadow
-        img.h1(src="/images/bitcoin.svg" style="width: 1.5em; height 1.5em").margin-top.margin-bottom-less
-        h1.white Bitcoin payments, deposited to your bank account.
-        h4.white.subheader.medium-8.medium-offset-2 Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
-        .row
-          .margin-top-less
-            .column.medium-4.medium-offset-2.text-center
-              a(href="/tour").white.btn.btn-blue-border.uppercase.bold.right-medium-up Start Tour
-            .column.medium-4.text-center.end
-              a(href="#").white.btn.btn-blue-solid.uppercase.bold.left-medium-up Accept Bitcoin
+  .section
+    .row
+      .column.large-10.large-offset-1.text-center.text-shadow
+          img.h1(src="/images/bitcoin.svg" style="width: 1.5em; height 1.5em").margin-top.margin-bottom-less
+          h1.white Bitcoin payments, deposited to your bank account.
+          h4.white.subheader.medium-8.medium-offset-2 Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
+          .row
+            .margin-top-less
+              .column.medium-4.medium-offset-2.text-center
+                a(href="/tour").white.btn.btn-blue-border.uppercase.bold.right-medium-up Start Tour
+              .column.medium-4.text-center.end
+                a(href="#").white.btn.btn-blue-solid.uppercase.bold.left-medium-up Accept Bitcoin
       
   .section
     .row
