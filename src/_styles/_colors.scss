@@ -43,3 +43,15 @@
 .bg-blue {
   background: $blue-dark;
 }
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-gray-gradient {
+  background-image: linear-gradient(-1deg, #FBFBFC 0%, #FEFEFE 11%, #FFFFFF 99%);
+}
+
+.bg-blue-gradient {
+  background-image: linear-gradient(-179deg, #1B377D 0%, #1D3E92 98%);
+}
