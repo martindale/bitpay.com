@@ -2,11 +2,13 @@ extends _layouts/primary
 
 block title
   title Tour | BitPay
+  
+append vars
+  -var tourSelected = 'Overview'
 
 block content
-  -var selected = 'Overview'
   include _includes/tour-nav
-  .section.section--gray
+  .padding-most.bg-gray
     .row
       h2.text-center.header__bottom-border Why Bitcoin?
       .column.medium-8.medium-offset-2
@@ -46,6 +48,6 @@ block content
         p.lead.text-center
           a(href="/integrations") View All Integrations
           
-.section.section--gray
+  .section.bg-gray
     .row
       .column.medium-8.medium-offset-2

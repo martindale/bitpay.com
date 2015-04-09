@@ -1,5 +1,8 @@
 include ../_mixins/jademin
 
+-var bodyClass = '';
+block vars
+
 doctype html
 html(lang='en')
   head
@@ -50,9 +53,7 @@ html(lang='en')
   body
     block header
       include ../_includes/header
-    
-    -var bodyClass = '';
-    block vars
+
     body(class='#{bodyClass}')
       block content
 
