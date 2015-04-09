@@ -1,24 +1,6 @@
 .section {
-  padding: 3em 0;
-  @media #{$medium-up} {
-    padding: 6em 0;
-  }
-  .navbar + & {
-    padding-top: 0;
-  }
-  &--less-padding {
-    padding: 2em 0;
-    @media #{$medium-up} {
-      padding: 3em 0;
-    }
-  }
-  &--gray {
-    background: $gray-xlight;
-    @extend .border-top-gray;
-    & + .section {
-      @extend .border-top-gray;
-    }
-  }
+  @extend .padding;
+  @extend .medium-padding-most;
 }
 
 ul {
