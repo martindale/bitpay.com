@@ -1,8 +1,7 @@
 .logo {
-  width: 80px;
+  width: 72px;
   height: 25px;
   display: inline-block;
-  margin-top: 1.25rem;
   background-image: url('../images/bitpay-logo-dark.svg');
   background-repeat: no-repeat;
   .landing & {
@@ -44,15 +43,16 @@
 
 .subnav {
   margin-bottom: -1px;
-  @media #{$small-only} {
-    margin-top: 1rem;
-  }
 }
 
 .subnav-link {
   color: $gray-medium;
   padding-bottom: 0.6rem;
   margin-right: 1rem;
+  font-size: 0.7rem;
+  @media #{$medium-up} {
+    font-size: 0.9rem;
+  }
   &.selected {
     font-weight: 600;
     color: $blue-light;
