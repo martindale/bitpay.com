@@ -50,10 +50,29 @@ block content
       
   .section
     .row
-      .column.medium-12
-        h5.uppercase.text-center.white.margin-bottom Trusted by Over 60,000 Businesses and Organizations
-      .column.medium-6
-        .home-logos.background-contain(style="background-image: url('/images/logos1.png')")
-      .column.medium-6
-        .home-logos.background-contain(style="background-image: url('/images/logos2.png')")
+      .column.medium-12.text-center
+        h5.uppercase.white.margin-bottom Trusted by Over 60,000 Businesses and Organizations
+        mixin logos(name, width, height)
+          .home-logo.h2.opacity(style="background-image: url('/images/logos/#{name}.png'); width: #{width}em; height: #{height}em;")
+        +logos("microsoft", 3.5, 2.5)
+        +logos("espn", 2.5, 2.5)
+        +logos("paypal", 2.5, 2.5)
+        +logos("adyen", 2.5, 2.5)
+        +logos("childfund", 2.5, 2.5)
+        +logos("virgin", 2, 1.5)
+        +logos("shopify", 2.5, 2.5)
+        +logos("global-payments", 3.5, 2.5)
+        +logos("tigerdirect", 2.5, 2.5)
+        +logos("gyft", 2.5, 1)
+        +logos("save-the-children", 3, 2.5)
+        +logos("wordpress", 3.5, 2.5)
+        +logos("rakuten", 3, 2.5)
+        +logos("zynga", 2.5, 2.5)
+        +logos("newegg", 2, 1.5)
+        +logos("namecheap", 3.5, 2.5)
+
+      //- .column.medium-6
+      //-   .home-logos.background-contain(style="background-image: url('/images/logos1.png')")
+      //- .column.medium-6
+      //-   .home-logos.background-contain(style="background-image: url('/images/logos2.png')")
       
