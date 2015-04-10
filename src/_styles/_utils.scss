@@ -1,72 +1,65 @@
-@include paddingAndMarginUtils(null);
-@each $breakpoint, $settings in $breakpoints {
-  @media #{$settings} {
-     @include paddingAndMarginUtils($breakpoint + '-');
-  }
-}
+// generic classes
 
 .opacity-less {
   opacity: 0.5;
 }
 
-.bold {
-  font-weight: bold;
-}
+// breakpoint classes
+// .breakpoint-class[-suffix]
 
-.uppercase {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+$breakpoints: (
+  'small-only': $small-only,
+  'small': $small-up,
+  'medium-only': $medium-only,
+  'medium': $medium-up,
+  'large-only': $large-only,
+  'large': $large-up,
+  'xlarge-only': $xlarge-only,
+  'xlarge': $xlarge-up,
+  'xxlarge-only': $xxlarge-only,
+  'xxlarge': $xxlarge-up,
+);
 
-.small-text {
-  font-size: 0.7rem;
-  @media #{$medium-up} {
-    font-size: 0.9rem;
+$suffixes: (
+  '-none': 0,
+  '-less': 1em,
+  ''     : 2em,
+  '-more': 3em,
+  '-most': 6em
+);
+
+@mixin breakpointedUtils($breakpoint){
+  @each $suffix, $val in $suffixes {
+    @each $property in 'padding', 'margin' {
+      @each $side in 'top', 'right', 'bottom', 'left' {
+        .#{$breakpoint}#{$property}-#{$side}#{$suffix}{
+          #{$property}-#{$side}: #{$val};
+        }
+      }
+      .#{$breakpoint}#{$property}-vertical#{$suffix}{
+        #{$property}-top: #{$val};
+        #{$property}-bottom: #{$val};
+      }
+      .#{$breakpoint}#{$property}-horizontal#{$suffix}{
+        #{$property}-left: #{$val};
+        #{$property}-right: #{$val};
+      }
+      .#{$breakpoint}#{$property}#{$suffix}{
+        #{$property}: #{$val};
+      }
+    }
   }
-}
-
-.text-shadow {
-  text-shadow: 1px 2px 0px rgba(0,0,0,0.50)
-}
-
-.border-top-gray {
-  border-top: 1px solid $gray-light;
-}
-
-.border-bottom-gray {
-  border-bottom: 1px solid $gray-light;
-}
-
-.background-contain {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.background-cover {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.left-medium-up {
-  @media #{$medium-up} {
+  .#{$breakpoint}float-left{
     float: left !important;
   }
-}
-
-.right-medium-up {
-  @media #{$medium-up} {
+  .#{$breakpoint}float-right{
     float: right !important;
   }
 }
 
-.center-text-small {
-  @media #{$small-only} {
-    text-align: center;
+@include breakpointedUtils(null);
+@each $breakpoint, $settings in $breakpoints {
+  @media #{$settings} {
+     @include breakpointedUtils($breakpoint + '-');
   }
-}
-
-.top-border-light {
-  border-top: 1px solid rgba(255,255,255,0.1);
 }

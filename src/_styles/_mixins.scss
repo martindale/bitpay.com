@@ -1,43 +1,7 @@
-$breakpoints: (
-  'small-only': $small-only,
-  'small': $small-up,
-  'medium-only': $medium-only,
-  'medium': $medium-up,
-  'large-only': $large-only,
-  'large': $large-up,
-  'xlarge-only': $xlarge-only,
-  'xlarge': $xlarge-up,
-  'xxlarge-only': $xxlarge-only,
-  'xxlarge': $xxlarge-up,
-);
+// generic mixins
 
-$suffixes: (
-  '-none': 0,
-  '-less': 1em,
-  ''     : 2em,
-  '-more': 3em,
-  '-most': 6em
-);
-
-@mixin paddingAndMarginUtils($breakpoint){
-  @each $suffix, $val in $suffixes {
-    @each $property in 'padding', 'margin' {
-      @each $side in 'top', 'right', 'bottom', 'left' {
-        .#{$breakpoint}#{$property}-#{$side}#{$suffix}{
-          #{$property}-#{$side}: #{$val};
-        }
-      }
-    }
-    .#{$breakpoint}padding-vertical#{$suffix}{
-        padding-top: #{$val};
-        padding-bottom: #{$val};
-    }
-    .#{$breakpoint}padding-horizontal#{$suffix}{
-        padding-left: #{$val};
-        padding-right: #{$val};
-    }
-    .#{$breakpoint}padding#{$suffix}{
-        padding: #{$val};
-    }
+@mixin elementToClass($elem) {
+  .#{$elem}{
+      @extend #{$elem};
   }
 }
