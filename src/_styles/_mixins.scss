@@ -1,99 +1,43 @@
-@mixin addUtililty($property, $none, $less, $normal, $more, $most){
-  @if $none != null {
-    .#{$property}-none {
-      #{$property}: $none
-    }
-  }
-  .#{$property}-less {
-    #{$property}: $less
-  }
-  .#{$property} {
-    #{$property}: $normal
-  }
-  .#{$property}-more {
-    #{$property}: $more
-  }
-  .#{$property}-most {
-    #{$property}: $most
-  }
-}
+$breakpoints: (
+  'small-only': $small-only,
+  'small': $small-up,
+  'medium-only': $medium-only,
+  'medium': $medium-up,
+  'large-only': $large-only,
+  'large': $large-up,
+  'xlarge-only': $xlarge-only,
+  'xlarge': $xlarge-up,
+  'xxlarge-only': $xxlarge-only,
+  'xxlarge': $xxlarge-up,
+);
 
-@mixin compoundUtility($name, $utilities, $hasNone:false){
-  @if hasNone {
-    .#{$name}-none {
-      @each $utility in $utilities {
-          @extend .#{$utility}-none;
+$suffixes: (
+  '-none': 0,
+  '-less': 1em,
+  ''     : 2em,
+  '-more': 3em,
+  '-most': 6em
+);
+
+@mixin paddingAndMarginUtils($breakpoint){
+  @each $suffix, $val in $suffixes {
+    @each $property in 'padding', 'margin' {
+      @each $side in 'top', 'right', 'bottom', 'left' {
+        .#{$breakpoint}#{$property}-#{$side}#{$suffix}{
+          #{$property}-#{$side}: #{$val};
+        }
       }
     }
-  }
-  .#{$name}-less {
-    @each $utility in $utilities {
-        @extend .#{$utility}-less;
+    .#{$breakpoint}padding-vertical#{$suffix}{
+        padding-top: #{$val};
+        padding-bottom: #{$val};
     }
-  }
-  .#{$name} {
-    @each $utility in $utilities {
-        @extend .#{$utility};
+    .#{$breakpoint}padding-horizontal#{$suffix}{
+        padding-left: #{$val};
+        padding-right: #{$val};
     }
-  }
-  .#{$name}-more {
-    @each $utility in $utilities {
-        @extend .#{$utility}-more;
+    .#{$breakpoint}padding#{$suffix}{
+        padding: #{$val};
     }
-  }
-  .#{$name}-most {
-    @each $utility in $utilities {
-        @extend .#{$utility}-most;
-    }
-  }
-}
-
-// adapted from foundation: _type.scss
-$breakpoint-class-names:
-  small-only,
-  small,
-  medium-only,
-  medium,
-  large-only,
-  large,
-  xlarge-only,
-  xlarge,
-  xxlarge-only,
-  xxlarge;
-
-$breakpoints:
-  $small-only,
-  $small-up,
-  $medium-only,
-  $medium-up,
-  $large-only,
-  $large-up,
-  $xlarge-only,
-  $xlarge-up,
-  $xxlarge-only,
-  $xxlarge-up;
-
-@mixin makeBreakpoint($utility, $suffix){
-  @for $i from 1 through length($breakpoint-class-names) {
-    @media #{(nth($breakpoints, $i))} {
-      .#{(nth($breakpoint-class-names, $i))}-#{$utility}#{$suffix} { @extend .#{$utility}#{$suffix}; }
-    }
-  }
-}
-
-@mixin breakpointifyUtility($utility, $hasNone:false){
-  @if hasNone {
-    @include makeBreakpoint($utility, '-none');
-  }
-  @include makeBreakpoint($utility, '-less');
-  @include makeBreakpoint($utility, '');
-  @include makeBreakpoint($utility, '-more');
-  @include makeBreakpoint($utility, '-most');
-}
-
-// to target smaller screens between 320px - 375px
-@mixin x-small-screen {
-  @media screen and (max-width: 370px) {
-    @content;
   }
 }

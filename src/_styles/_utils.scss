@@ -1,36 +1,13 @@
-@include addUtililty(    'padding-top',         0, 1em, 2em, 3em, 6em);
-@include addUtililty(    'padding-right',       0, 1em, 2em, 3em, 6em);
-@include addUtililty(    'padding-bottom',      0, 1em, 2em, 3em, 6em);
-@include addUtililty(    'padding-left',        0, 1em, 2em, 3em, 6em);
-@include compoundUtility('padding-vertical',    ('padding-top', 'padding-bottom'), true);
-@include compoundUtility('padding-horizontal',  ('padding-right', 'padding-left'), true);
-@include compoundUtility('padding',             ('padding-horizontal', 'padding-vertical'), true);
+@include paddingAndMarginUtils(null);
+@each $breakpoint, $settings in $breakpoints {
+  @media #{$settings} {
+     @include paddingAndMarginUtils($breakpoint + '-');
+  }
+}
 
-@include breakpointifyUtility('padding-top');
-@include breakpointifyUtility('padding-right');
-@include breakpointifyUtility('padding-bottom');
-@include breakpointifyUtility('padding-left');
-@include breakpointifyUtility('padding-vertical');
-@include breakpointifyUtility('padding-horizontal');
-@include breakpointifyUtility('padding');
-
-@include addUtililty(    'margin-top',         0, 1em, 2em, 3em, 6em);
-@include addUtililty(    'margin-right',       0, 1em, 2em, 3em, 6em);
-@include addUtililty(    'margin-bottom',      0, 1em, 2em, 3em, 6em);
-@include addUtililty(    'margin-left',        0, 1em, 2em, 3em, 6em);
-@include compoundUtility('margin-vertical',    ('margin-top', 'margin-bottom'), true);
-@include compoundUtility('margin-horizontal',  ('margin-right', 'margin-left'), true);
-@include compoundUtility('margin',             ('margin-horizontal', 'margin-vertical'), true);
-
-@include breakpointifyUtility('margin-top');
-@include breakpointifyUtility('margin-right');
-@include breakpointifyUtility('margin-bottom');
-@include breakpointifyUtility('margin-left');
-@include breakpointifyUtility('margin-vertical');
-@include breakpointifyUtility('margin-horizontal');
-@include breakpointifyUtility('margin');
-
-@include addUtililty('opacity', null, 0.5, 0.75, 0.85, 0.9);
+.opacity-less {
+  opacity: 0.5;
+}
 
 .bold {
   font-weight: bold;
