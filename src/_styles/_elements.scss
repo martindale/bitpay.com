@@ -1,6 +1,6 @@
 .section {
-  @extend .padding;
-  @extend .medium-padding-most;
+  @extend .padding-vertical;
+  @extend .medium-padding-vertical-most;
 }
 
 ul {

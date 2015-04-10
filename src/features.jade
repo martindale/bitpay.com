@@ -2,16 +2,20 @@ extends _layouts/primary
 block title
   title Features | BitPay
 
+append vars
+  -var tourSelected = 'Features'
+
 block content
-  -var selected = 'Features'
   include _includes/tour-nav
-  .section.bg-gray
+  .section.bg-gray.border-bottom-gray
     .row
       h2.text-center.header__bottom-border Our Features
+    .feature-diagram-container
+      img(src="/images/features_diagram.svg" width="100%")
   
   .section.border-bottom-gray
       .row
-        h2.text-center.header__bottom-border.blue-medium Platform
+        h2.text-center.header__bottom-border Platform
 
       .row.margin-bottom-more
         .column.medium-12.large-4
@@ -71,7 +75,7 @@ block content
 
   .section.border-bottom-gray
       .row.margin-bottom-more
-        h2.text-center.header__bottom-border.blue-medium E-Commerce
+        h2.text-center.header__bottom-border E-Commerce
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Payment Buttons and Hosted Checkout
@@ -93,7 +97,7 @@ block content
 
   .section.border-bottom-gray
       .row.margin-bottom-more
-        h2.text-center.header__bottom-border.blue-medium Billing
+        h2.text-center.header__bottom-border Billing
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Email Invoicing
@@ -111,7 +115,7 @@ block content
 
   .section.border-bottom-gray
       .row.margin-bottom-more
-        h2.text-center.header__bottom-border.blue-medium Retail
+        h2.text-center.header__bottom-border Retail
         .row.margin-bottom-more
           .column.medium-12.large-4
             h4 Mobile Point of Sale App
@@ -132,7 +136,7 @@ block content
             
   .section.border-bottom-gray
       .row.margin-bottom-more
-        h2.text-center.header__bottom-border.blue-medium Donations
+        h2.text-center.header__bottom-border Donations
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Web-Based Donation Buttons
@@ -150,7 +154,7 @@ block content
           
     .section.border-bottom-gray
         .row.margin-bottom-more
-          h2.text-center.header__bottom-border.blue-medium Support
+          h2.text-center.header__bottom-border Support
         .row.margin-bottom-more
           .column.medium-12.large-4
             h4 Email and Phone Availability
