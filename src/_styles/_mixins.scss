@@ -1,6 +1,7 @@
-// to target smaller screens between 320px - 375px
-@mixin x-small-screen {
-  @media screen and (max-width: 370px) {
-    @content;
+// generic mixins
+
+@mixin elementToClass($elem) {
+  .#{$elem}{
+      @extend #{$elem};
   }
 }

@@ -1,5 +1,8 @@
 include ../_mixins/jademin
 
+-var bodyClass = '';
+block vars
+
 doctype html
 html(lang='en')
   head
@@ -42,7 +45,7 @@ html(lang='en')
     meta(name='msapplication-TileImage', content='images/touch/ms-touch-icon-144x144-precomposed.png')
     meta(name='msapplication-TileColor', content='#F5AB35')
 
-    link(rel='stylesheet', href='/styles/main.css')
+    link(rel='stylesheet', href='/styles/main.css' data-instant-track)
     link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,700')
     base(href='/')
     include ../_includes/head.html
@@ -50,9 +53,7 @@ html(lang='en')
   body
     block header
       include ../_includes/header
-    
-    -var bodyClass = '';
-    block vars
+
     body(class='#{bodyClass}')
       block content
 
@@ -61,6 +62,11 @@ html(lang='en')
     
     block scripts
       +jademin('/scripts/main.min.js')
-        script(src='/instantclick/instantclick.js')
-        script(src='/_scripts/one.js')
-        script(src='/_scripts/two.js')
+        script(src='/instantclick/instantclick.js' data-instant-track)
+        script(src='/_scripts/one.js' data-instant-track)
+        script(src='/_scripts/two.js' data-instant-track)
+      script(data-no-instant).
+        InstantClick.on('change', function() {
+          window.analytics.page();
+        });
+        InstantClick.init();

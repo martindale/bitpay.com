@@ -3,4 +3,4 @@ mixin jademin(path)
     block
   else
     - jademin(block, path)
-    script(src=path)
+    script(src=path data-instant-track)

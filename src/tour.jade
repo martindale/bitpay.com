@@ -2,9 +2,11 @@ extends _layouts/primary
 
 block title
   title Tour | BitPay
+  
+append vars
+  -var tourSelected = 'Overview'
 
 block content
-  -var selected = 'Overview'
   include _includes/tour-nav
   .padding-vertical-most.bg-gray.border-bottom-gray
     .row
@@ -13,41 +15,35 @@ block content
         .margin-bottom-more
           .row
             .column.medium-3
-              .icon.h2.background-contain(style="background-image: url('/images/no-fees.svg'); height: 3em;")
+              .icon.h2.background-contain(style="background-image: url('/images/no-fees.svg'); height: 2.5em;")
             .column.medium-9
-              h4.center-text-small Eliminate Processing Fees
+              h4.small-only-text-center Eliminate Processing Fees
               p Receive 100% of what you charge for every transaction, with free, unlimited conversion to your own currency and settlement to your bank account.
-        .margin-bottom-large
+        .margin-bottom-more
           .row
             .column.medium-3
-              .icon.h2.background-contain(style="background-image: url('/images/global.svg'); height: 3em;")
+              .icon.h2.background-contain(style="background-image: url('/images/global.svg'); height: 2.5em;")
             .column.medium-9
-              h4.center-text-small Sell to Anyone, Anywhere
+              h4.small-only-text-center Sell to Anyone, Anywhere
               p Connect to the world’s first borderless payment network - Bitcoin. Accept payment in any amount, from anywhere in the world, from anyone with computer or mobile device.
-        .margin-bottom-large
+        .margin-bottom-more
           .row
             .column.medium-3
-              .icon.h2.background-contain(style="background-image: url('/images/security.svg'); height: 3em;")
+              .icon.h2.background-contain(style="background-image: url('/images/security.svg'); height: 2.5em;")
             .column.medium-9
-              h4.center-text-small End Chargebacks and Identity Theft
+              h4.small-only-text-center End Chargebacks and Identity Theft
               p Protect your customers and your business from the risks and costs of payment fraud with a payment method made for online commerce.
           
-  .section.section--gray
+  .section
     .row
       h2.text-center.header__bottom-border BitPay Makes it Easy
       .column.medium-8.medium-offset-2
         p.lead.text-center BitPay allows you to accept payments in bitcoin and receive exactly what you charge in your currency of choice, directly to your bank account - all with zero fees. It’s that simple.
 
-  .section
+  .section.bg-gray.border-top-gray
     .row
       h2.text-center.header__bottom-border Get Started
       .column.medium-8.medium-offset-2
         p.lead.text-center Starting out with a new technology doesn’t always have to be complicated. We make adding a bitcoin payment option easy with ready-built plugins, integrations, and payment tools.
         p.lead.text-center
           a(href="/integrations") View All Integrations
-          
-.section.section--gray
-    .row
-      .column.medium-8.medium-offset-2
-        
-        

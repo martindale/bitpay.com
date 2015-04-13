@@ -1,100 +1,65 @@
-.bold {
-  font-weight: bold;
+// generic classes
+
+.opacity-less {
+  opacity: 0.5;
 }
 
-.uppercase {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+// breakpoint classes
+// .breakpoint-class[-suffix]
 
-.small-text {
-  font-size: 0.7rem;
-  @media #{$medium-up} {
-    font-size: 0.9rem;
+$breakpoints: (
+  'small-only': $small-only,
+  'small': $small-up,
+  'medium-only': $medium-only,
+  'medium': $medium-up,
+  'large-only': $large-only,
+  'large': $large-up,
+  'xlarge-only': $xlarge-only,
+  'xlarge': $xlarge-up,
+  'xxlarge-only': $xxlarge-only,
+  'xxlarge': $xxlarge-up,
+);
+
+$suffixes: (
+  '-none': 0,
+  '-less': 1em,
+  ''     : 2em,
+  '-more': 3em,
+  '-most': 6em
+);
+
+@mixin breakpointedUtils($breakpoint){
+  @each $suffix, $val in $suffixes {
+    @each $property in 'padding', 'margin' {
+      @each $side in 'top', 'right', 'bottom', 'left' {
+        .#{$breakpoint}#{$property}-#{$side}#{$suffix}{
+          #{$property}-#{$side}: #{$val};
+        }
+      }
+      .#{$breakpoint}#{$property}-vertical#{$suffix}{
+        #{$property}-top: #{$val};
+        #{$property}-bottom: #{$val};
+      }
+      .#{$breakpoint}#{$property}-horizontal#{$suffix}{
+        #{$property}-left: #{$val};
+        #{$property}-right: #{$val};
+      }
+      .#{$breakpoint}#{$property}#{$suffix}{
+        #{$property}: #{$val};
+      }
+    }
   }
-}
-
-.text-shadow {
-  text-shadow: 1px 2px 0px rgba(0,0,0,0.50)
-}
-
-.image-center {
-  display: block;
-  margin: auto;
-}
-
-.border-top-gray {
-  border-top: 1px solid $gray-light;
-}
-
-.border-bottom-gray {
-  border-bottom: 1px solid $gray-light;
-}
-
-.background-contain {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.left-medium-up {
-  @media #{$medium-up} {
+  .#{$breakpoint}float-left{
     float: left !important;
   }
-}
-
-.right-medium-up {
-  @media #{$medium-up} {
+  .#{$breakpoint}float-right{
     float: right !important;
   }
 }
 
-.center-text-small {
-  @media #{$small-only} {
-    text-align: center;
+@include breakpointedUtils(null);
+@each $breakpoint, $settings in $breakpoints {
+  @media #{$settings} {
+     @include breakpointedUtils($breakpoint + '-');
   }
-}
-
-.padding-top-bottom-small {
-  padding: 1.5rem 0;
-}
-
-.padding-top-small {
-  padding-top: 1.5rem;
-}
-
-.margin-top-small {
-  margin-top: 1rem;
-}
-
-.margin-top-bottom-small {
-  margin: 1rem auto;
-  @media #{$medium-up} {
-    margin: 2rem auto;
-  }
-}
-
-.margin-bottom-medium {
-  margin-bottom: 1.5rem;
-  @media #{$medium-up} {
-    margin-bottom: 3rem;
-  }
-}
-
-.margin-bottom-large {
-  margin-bottom: 2.5rem;
-  @media #{$medium-up} {
-    margin-bottom: 4rem;
-  }
-}
-
-.margin-top-medium {
-  margin-top: 1.5rem;
-  @media #{$medium-up} {
-    margin-top: 3rem;
-  }
-}
-
-.top-border-light {
-  border-top: 1px solid rgba(255,255,255,0.1);
 }

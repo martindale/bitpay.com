@@ -1,11 +1,31 @@
 extends _layouts/primary
 
 block title
-  title Use Cases | BitPay
+  title Enterprise | BitPay
+
+append vars
+  -var tourSelected = 'Enterprise'
 
 block content
-  -var selected = 'Enterprise'
   include _includes/tour-nav
-  .row
-    .column.medium-12
-      h1.text-center Enterprise
+  .section.background-cover(style="background-image: url('/images/star_background.jpg')")
+    .row
+      .column.large-10.large-offset-1.text-center.text-shadow
+        h1.white A Plan for getting where you want to go
+        h4.white.subheader.medium-8.medium-offset-2 Explore our feautures for enterprise users.
+        .row
+          .margin-top-less
+            .column.medium-4.medium-offset-2.text-center
+              a(href="/tour").white.btn.btn-blue-border.uppercase.bold.medium-float-right Explore
+            .column.medium-4.text-center.end
+              a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-left Contact Us
+  
+  .section.border-bottom-gray.bg-white
+      .row
+        h2.text-center.header__bottom-border Launch confidently
+        p Work with our account managers to make your integration a success. We'll provide the assistance needed to keep things running smoothly.
+  
+  .section.border-bottom-gray.bg-white
+      .row
+        h2.text-center.header__bottom-border Industry leading support
+        p Our industry-leading support team has you covered. Call us directly. 

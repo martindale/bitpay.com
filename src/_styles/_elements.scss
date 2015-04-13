@@ -1,26 +1,40 @@
+// Whenever possible, avoid adding to this file.
+// Styles should be abstracted from here into re-usable utilities.
+
+.background-element {
+  position: absolute;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  display: block;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.home-logo {
+  display: inline-block;
+  margin: 0.25rem 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+}
+
+.feature-diagram-container {
+  width: 20em;
+  margin: auto;
+}
+
 .section {
-  padding: 3em 0;
-  @media #{$medium-up} {
-    padding: 6em 0;
-  }
-  .navbar + & {
-    padding-top: 0;
-  }
-  &--less-padding {
-    padding: 2em 0;
-    @media #{$medium-up} {
-      padding: 3em 0;
-    }
-  }
-  &--gray {
-    background: $gray-xlight;
-    @extend .border-top-gray;
-    & + .section {
-      @extend .border-top-gray;
-    }
-  }
+  @extend .padding-vertical;
+  @extend .medium-padding-vertical-most;
 }
 
 ul {
   line-height: 1.8;
+}
+
+#instantclick-bar {
+  background: $blue-light;
 }

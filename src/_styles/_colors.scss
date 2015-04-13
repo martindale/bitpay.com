@@ -1,5 +1,17 @@
 // Font colors
 
+.blue-light {
+  color: $blue-light;
+}
+
+.blue-medium {
+  color: $blue-medium;
+}
+
+.blue-dark {
+  color: $blue-dark;
+}
+
 .white {
   color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
@@ -20,14 +32,4 @@
   &:hover {
     opacity: 1;
   }
-}
-
-// Background colors
-
-.bg-dark {
-  background: #0E1C40;
-}
-
-.bg-blue {
-  background: $blue-medium;
 }

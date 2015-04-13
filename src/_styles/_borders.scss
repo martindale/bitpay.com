@@ -1,0 +1,51 @@
+@mixin addBorder($name, $value) {
+  @each $side in 'top', 'right', 'bottom', 'left' {
+    .border-#{$side}-#{$name} {
+      border-#{$side}: #{$value};
+    }
+  }
+  .border-vertical-#{$name} {
+    border-top: #{$value};
+    border-bottom: #{$value};
+  }
+  .border-horizontal-#{$name} {
+    border-left: #{$value};
+    border-right: #{$value};
+  }
+  .border-#{$name} {
+    border: #{$value};
+  }
+}
+
+@include addBorder('gray', (1px solid $gray-light));
+@include addBorder('light', (1px solid rgba(255,255,255,0.1)));
+
+// for the bottom centered border
+.header__bottom-border {
+  position: relative;
+  margin-bottom: 4rem;
+  &:after {
+    content: "";
+    height: 3px;
+    width: 4rem;
+    background: $blue-medium;
+    position: absolute;
+    bottom: -1rem;
+    left: calc(50% - 2rem);
+  }
+}
+
+.body-text__bottom-border {
+  position: relative;
+  padding-bottom: 10px;
+    &:after {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #4683E8;
+    position: absolute;
+    top: 30px;
+    left: 0;
+  }
+
+}

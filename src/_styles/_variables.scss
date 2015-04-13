@@ -1,7 +1,8 @@
-// custom variables
+// colors
 
-$blue-dark: #0E1C40;
-$blue-medium: #18347B;
+$blue-darker: #0E1C40;
+$blue-dark: #18347B;
+$blue-medium: #3354A8;
 $blue-light: #4683E8;
 
 $gray-dark: #565966;
@@ -16,16 +17,16 @@ $primary-color: $blue-light;
 // Allows the use of rem-calc() or lower-bound()
 @import "../../components/foundation/scss/foundation/functions";
 
-$row-width: rem-calc(1100) !default;
-$small-range: (0, 42em) !default; // changed to fit nav menu better
-$medium-range: (42.063em, 66em) !default;
+$row-width: rem-calc(1100);
+$small-range: (0, 42em); // changed to fit nav menu better
+$medium-range: (42.063em, 66em);
 
-$body-font-color: $gray-medium !default;
-$font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
-$header-font-family: $font-family-sans-serif !default;
-$header-font-color: $gray-dark !default;
-$h1-font-size: rem-calc(36) !default;
-$h2-font-size: rem-calc(32) !default;
-$small-font-size: 80% !default;
-$subheader-top-margin: 2.5rem !default;
-$subheader-bottom-margin: 1rem !default;
+$body-font-color: $gray-medium;
+$font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: $font-family-sans-serif;
+$header-font-color: $gray-dark;
+$h1-font-size: rem-calc(36);
+$h2-font-size: rem-calc(32);
+$small-font-size: 80%;
+$subheader-top-margin: 2.5rem;
+$subheader-bottom-margin: 1rem;

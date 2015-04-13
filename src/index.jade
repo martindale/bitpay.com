@@ -3,34 +3,77 @@ extends _layouts/primary
 block title
   title Accept Bitcoin | BitPay
 
-block vars
-  -var bodyClass = 'landing bg-blue';
+append vars
+  -var bodyClass = 'landing bg-blue-gradient';
+
 block content
-  .row.hero
-    .column.medium-12
-      .map-box
-        img(src="/images/geometric_map.svg", alt="").home-map
-        - var n = 0
-        while n < 16
-          div(class="pulse pulse"+ ++n)
-            .pulse-center
-      .cta-content
-        .bitcoin-logo.background-contain.margin-top-bottom-small(style="background-image: url('/images/bitcoin.svg');")
-        h1.text-center.white.text-shadow Bitcoin payments, deposited to your bank account
-        p.h4.subheader.text-center.white Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
-        .row
-          .cta-btns
-            .column.medium-4.medium-offset-2.text-center
-              a(href="/tour").white.btn.btn-blue-border.uppercase.bold.right-medium-up Start Tour
-            .column.medium-4.text-center.end
-              a(href="#").white.btn.btn-blue-solid.uppercase.bold.left-medium-up Accept Bitcoin
+  .background-element.text-center.opacity-less
+    img(src="/images/geometric_map.svg" width="100%")
+    mixin pulse(left, top, msDelay)
+      #pulsAnim.pulse(style="left:#{left}%; top:#{top}%; -webkit-animation-delay: #{msDelay}ms; animation-delay: #{msDelay}ms;")
+        .pulse-center
+    +pulse(13, 42, 0)
+    +pulse(16, 33, 2000)
+    +pulse(30, 84, 1500)
+    +pulse(29, 81, 0)
+    +pulse(22, 32, 4500)
+    +pulse(23, 40, 1000)
+    +pulse(25, 38, 2300)
+    +pulse(12, 30, 10000)
+    +pulse(46, 31, 5300)
+    +pulse(56, 33, 800)
+    +pulse(50, 34, 1300)
+    +pulse(50, 36, 300)
+    +pulse(46, 28, 2700)
+    +pulse(45, 35, 1500)
+    +pulse(48, 30, 3000)
+    +pulse(51, 37, 4000)
+    +pulse(67, 53, 1750)
+    +pulse(56, 61, 4000)
+    +pulse(76, 62, 2000)
+    +pulse(88, 84, 300)
+    +pulse(89, 81, 470)
+    +pulse(79, 82, 1320)
+    +pulse(77, 48, 400)
       
   .section
-    .row.trusted-by
-      .column.medium-12
-        h5.uppercase.text-center.white.margin-bottom-medium trusted by over 60,000 merchants
-      .column.medium-6
-        .home-logos.background-contain(style="background-image: url('/images/logos1.png');")
-      .column.medium-6
-        .home-logos.background-contain(style="background-image: url('/images/logos2.png');")
+    .row
+      .column.large-10.large-offset-1.text-center.text-shadow
+          img.h1(src="/images/bitcoin.svg" style="width: 1.5em; height 1.5em").medium-margin-top
+          h1.white Bitcoin payments, deposited to your bank account.
+          h4.white.medium-margin-top-less.medium-8.medium-offset-2 Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
+          .row
+            .margin-top-less
+              .column.medium-4.medium-offset-2.text-center
+                a(href="/tour").white.btn.btn-blue-border.uppercase.bold.medium-float-right Start Tour
+              .column.medium-4.text-center.end
+                a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-left Accept Bitcoin
+      
+  .section
+    .row
+      .column.medium-12.text-center
+        h5.uppercase.white.margin-bottom Trusted by Over 60,000 Businesses and Organizations
+        mixin logos(name, width, height)
+          .home-logo.h2.opacity(style="background-image: url('/images/logos/#{name}.png'); width: #{width}em; height: #{height}em;")
+        +logos("microsoft", 3.5, 2.5)
+        +logos("espn", 2.5, 2.5)
+        +logos("paypal", 2.5, 2.5)
+        +logos("adyen", 2.5, 2.5)
+        +logos("childfund", 2.5, 2.5)
+        +logos("virgin", 2, 1.5)
+        +logos("shopify", 2.5, 2.5)
+        +logos("global-payments", 3.5, 2.5)
+        +logos("tigerdirect", 2.5, 2.5)
+        +logos("gyft", 2.5, 1)
+        +logos("save-the-children", 3, 2.5)
+        +logos("wordpress", 3.5, 2.5)
+        +logos("rakuten", 3, 2.5)
+        +logos("zynga", 2.5, 2.5)
+        +logos("newegg", 2, 1.5)
+        +logos("namecheap", 3.5, 2.5)
+
+      //- .column.medium-6
+      //-   .home-logos.background-contain(style="background-image: url('/images/logos1.png')")
+      //- .column.medium-6
+      //-   .home-logos.background-contain(style="background-image: url('/images/logos2.png')")
       

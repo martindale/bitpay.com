@@ -1,54 +1,20 @@
-h1,
-h2 {
-  line-height: 1.2;
+@include elementToClass('h1');
+@include elementToClass('h2');
+@include elementToClass('h3');
+@include elementToClass('h4');
+@include elementToClass('h5');
+@include elementToClass('h6');
+@include elementToClass('small');
+
+.bold {
+  font-weight: bold;
 }
 
-.h4 {
-  @extend h4;
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.h6 {
-  @extend h6;
-}
-
-p.h4,
-p.h5,
-p.h6 {
- font-family: $font-family-sans-serif;
-}
-
-p.lead {
-  @media #{$small-only} {
-    font-size: 1.11875rem;
-  }
-}
-
-// for the bottom centered border
-.header__bottom-border {
-  position: relative;
-  margin-bottom: 4rem;
-  &:after {
-    content: "";
-    height: 3px;
-    width: 4rem;
-    background: $blue-light;
-    position: absolute;
-    bottom: -1rem;
-    left: calc(50% - 2rem);
-  }
-}
-
-.body-text__bottom-border {
-  position: relative;
-  padding-bottom: 10px;
-    &:after {
-    content: "";
-    width: 25px;
-    height: 2px;
-    background: #4683E8;
-    position: absolute;
-    top: 30px;
-    left: 0;
-  }
-
+.text-shadow {
+  text-shadow: 1px 2px 0px rgba(0,0,0,0.50)
 }
