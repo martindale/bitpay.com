@@ -142,7 +142,8 @@
 
 .how-works-illustration {
   position: relative;
-  padding: 360px 0 50px;
+  /* padding: 360px 0 50px; */
+  height: 20rem;
 }
 
 .step1,
@@ -174,7 +175,7 @@
   width: 60px;
   height: 60px;
   background: $primary-color;
-  top: 33%;
+  top: 42%;
   border-radius: 3px;
   z-index: 2;
 }
@@ -215,7 +216,7 @@
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  top: 38%;
+  top: 48%;
   z-index: 1;
 }
 
