@@ -137,10 +137,15 @@
 }
 
 .how-works-illustration {
-  position: relative;
-  height: 20rem;
-  width: 43.75rem;
+  height: 40rem;
+  width: 20rem;
   margin: 0 auto;
+  position: relative;
+  margin-bottom: 3rem;;
+  @media #{$medium-up} {
+    height: 20rem;
+    width: 43.75rem;
+  }
 }
 
 .step1,
@@ -158,19 +163,26 @@
 }
 
 .timeline {
-  width: 96%;
-  height: 3px;
   background: darken($gray-light, 10%);
-  top: 164px;
-  left: 2%;
+  height: 95%;
+  width: 3px;
+  left: 9%;
+  @media #{$medium-up} {
+    width: 96%;
+    height: 3px;
+    top: 164px;
+    left: 2%;
+  }
 }
 
 .step1,
 .step2,
 .step3,
 .step4 {
-  top: 42%;
   z-index: 2;
+  @media #{$medium-up} {
+    top: 42%;
+  }
 }
 
 .step1-icon,
@@ -185,15 +197,28 @@
 }
 
 .step2 {
-  left: 30%;
+  @media #{$small-only} {
+    top: 30%;
+  }
+  @media #{$medium-up} {
+    left: 30%;
+  }
 }
 
 .step3 {
-  left: 60%;
+  @media #{$small-only} {
+    top: 60%;
+  }
+  @media #{$medium-up} {
+    left: 60%;
+  }
 }
 
 .step4 {
-  right: 0;
+  bottom: 0;
+  @media #{$medium-up} {
+    right: 0;
+  }
 }
 
 .step1-icon,
@@ -233,7 +258,7 @@
 .bitcoin {
   background: #F2A900;
   left: 3%;
-  animation: btc-move cubic-bezier(0.645, 0.045, 0.355, 1) 10s forwards;
+  /* animation: btc-move cubic-bezier(0.645, 0.045, 0.355, 1) 10s forwards; */
 }
 
 .fiat {
@@ -243,7 +268,7 @@
   right: 34.5%;
   text-align: center;
   font-size: 0.8em;
-  animation: fiat-move ease-in-out 5s forwards 10s;
+  /* animation: fiat-move ease-in-out 5s forwards 10s; */
 }
 
 .paid {
@@ -255,7 +280,7 @@
   top: 48%;
   left: 32.5%;
   opacity: 0;
-  animation: btc-paid 1s ease-in-out 7.5s;
+  /* animation: btc-paid 1s ease-in-out 7.5s; */
   &:before,
   &:after {
     content:"";
@@ -281,82 +306,119 @@
 .step2-text,
 .step3-text,
 .step4-text {
+  left: 170%;
+  top: 80%;
   width: 180px;
   color: lighten($gray-dark, 20%);
   z-index: 1;
+  animation: focus-text-down-right 3s ease backwards;
+  @media #{$small-only} {
+    &:before {
+      left: -42px;
+      top: -18px;
+    }
+    &:after {
+      left: 34px;
+      top: -20px;
+    }
+  }
   &:before {
     content: "";
-    width: 1px;
-    height: 80px;
     position: absolute;
     background: lighten($gray-dark, 40%);
     z-index: -1;
+    width: 80px;
+    height: 1px;
   }
   &:after {
     content:"";
-    width: 5px;
-    height: 5px;
+    position: absolute;
     background: lighten($gray-dark, 40%);
     border-radius: 2px;
-    position: absolute;
+    width: 5px;
+    height: 5px;
+  }
+  @media #{$medium-up} {
+    &:before {
+      width: 1px;
+      height: 80px;
+    }
   }
 }
 
 .step1-text,
 .step3-text {
-  &:before {
-    left: -20px;
-  }
-  &:after {
-    left: -22px;
+  @media #{$medium-up} {
+    &:before {
+      left: -20px;
+    }
+    &:after {
+      left: -22px;
+    }
   }
 }
 
 .step2-text,
 .step4-text {
-  &:before {
-    right: -20px;
+  @media #{$medium-up} {
+    &:before {
+      right: -20px;
+    }
+    &:after {
+      right: -22px;
+    }
   }
-  &:after {
-    right: -22px;
-  }
-
 }
 
 .step1-text,
 .step3-text {
-  top: -110px;
-  &:before,
-  &:after {
-    top: 30px;
+  @media #{$medium-up} {
+    top: -110px;
+    &:before,
+    &:after {
+      top: 30px;
+    }
   }
 }
 
 .step2-text,
 .step4-text {
-  top: 110px;
-  &:before,
-  &:after {
-    bottom: 47px;
+  @media #{$medium-up} {
+    top: 110px;
+    &:before,
+    &:after {
+      bottom: 47px;
+    }
   }
 }
 
 .step1-text {
-  left: 85%;
-  animation: focus-text-up-right 3s ease backwards;
+  @media #{$medium-up} {
+    left: 85%;
+    animation: focus-text-up-right 3s ease backwards;
+  }
 }
 
 .step2-text {
-  right: 84%;
-  animation: focus-text-down-right 3s ease backwards 0.75s;
+  animation-delay: 0.75s;
+  @media #{$medium-up} {
+    left: -277%;
+    animation: focus-text-down-right 3s ease backwards 0.75s;
+  }
 }
 
 .step3-text {
-  left: 83%;
-  animation: focus-text-up-right 3s ease backwards 1.5s;
+  animation-delay: 1.5s;
+  @media #{$medium-up} {
+    left: 83%;
+    animation: focus-text-up-right 3s ease backwards 1.5s;
+  }
 }
 
 .step4-text {
-  right: 86%;
-  animation: focus-text-down-right 3s ease backwards 2.25s;
+  animation-delay: 2.25s;
+  @media #{$medium-up} {
+    left: -277%;
+    animation: focus-text-down-right 3s ease backwards 2.25s;
+  }
 }
