@@ -2,11 +2,11 @@
 
 @keyframes btc-move {
   0% { transform: translateX(0); opacity: 0}
-  5% { transform: translateX(0); opacity: 1}
-  45% { transform: translateX(230px); opacity: 1}
-  88% { transform: translateX(230px)}
-  98% { transform: translateX(480px); opacity: 1}
-  99% { transform: translateX(480px); opacity: 0}
+  50% { transform: translateX(0); opacity: 1}
+  60% { transform: translateX(210px); opacity: 1}
+  88% { transform: translateX(210px)}
+  98% { transform: translateX(430px); opacity: 1}
+  99% { transform: translateX(430px); opacity: 0}
   100% { transform: translateX(0); opacity: 0}
 }
 
@@ -205,17 +205,18 @@
 
 .step2-icon {
   background-color: $blue-dark;
-  animation: twist-pop 1s linear forwards 6s;
+  animation: twist-pop 1s linear forwards 7s;
 }
 
 .step3-icon {
   background-color: #ffffff;
   border: 4px solid $blue-dark;
   border-radius: 60px;
+  animation: spin 0.75s ease 10s;
 }
 
 .step4-icon {
-  animation: get-paid 1s ease 2.75s;
+  animation: get-paid 0.75s ease 12s;
 }
 
 .bitcoin,
@@ -230,17 +231,17 @@
 .bitcoin {
   background: #F2A900;
   left: 3%;
-  /* animation: btc-move cubic-bezier(0.645, 0.045, 0.355, 1) 10s forwards 3.5s; */
+  animation: btc-move cubic-bezier(0.645, 0.045, 0.355, 1) 10s forwards;
 }
 
 .fiat {
   background: #12C312;
   color: #ffffff;
   line-height: 1.7;
-  right: 33%;
+  right: 34.5%;
   text-align: center;
   font-size: 0.8em;
-  /* animation: fiat-move ease-in-out 8s forwards 5s; */
+  animation: fiat-move ease-in-out 5s forwards 10s;
 }
 
 .paid {
@@ -249,10 +250,10 @@
   background: #12C312;
   border-radius: 30px;
   position: absolute;
-  top: 38%;
-  left: 32%;
+  top: 48%;
+  left: 32.5%;
   opacity: 0;
-  /* animation: btc-paid 3s cubic-bezier(0.645, 0.045, 0.355, 1) 6.5s; */
+  animation: btc-paid 1s ease-in-out 7.5s;
   &:before,
   &:after {
     content:"";
@@ -280,6 +281,7 @@
 .step4-text {
   width: 180px;
   color: lighten($gray-dark, 20%);
+  z-index: 1;
   &:before {
     content: "";
     width: 1px;
