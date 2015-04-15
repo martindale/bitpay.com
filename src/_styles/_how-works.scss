@@ -2,9 +2,9 @@
 
 @keyframes btc-move {
   0% { transform: translateX(0); opacity: 0}
-  50% { transform: translateX(0); opacity: 1}
+  40% { transform: translateX(0); opacity: 1}
   60% { transform: translateX(210px); opacity: 1}
-  88% { transform: translateX(210px)}
+  78% { transform: translateX(210px)}
   98% { transform: translateX(430px); opacity: 1}
   99% { transform: translateX(430px); opacity: 0}
   100% { transform: translateX(0); opacity: 0}
@@ -12,9 +12,9 @@
 
 @keyframes btc-move-mobile {
   0% { transform: translateY(0); opacity: 0}
-  50% { transform: translateY(0); opacity: 1}
+  40% { transform: translateY(0); opacity: 1}
   60% { transform: translateY(145px); opacity: 1}
-  88% { transform: translateY(145px)}
+  78% { transform: translateY(145px)}
   98% { transform: translateY(290px); opacity: 1}
   99% { transform: translateY(290px); opacity: 0}
   100% { transform: translateY(0); opacity: 0}
@@ -23,16 +23,16 @@
 @keyframes fiat-move {
   0% { transform: translateX(0); opacity: 0}
   20% { transform: translateX(0); opacity: 1}
-  35% { transform: translateX(230px); opacity: 1}
-  36% { transform: translateX(230px); opacity: 0}
+  45% { transform: translateX(230px); opacity: 1}
+  46% { transform: translateX(230px); opacity: 0}
   100% { transform: translateX(0); opacity: 0}
 }
 
 @keyframes fiat-move-mobile {
   0% { transform: translatey(0); opacity: 0}
   20% { transform: translatey(0); opacity: 1}
-  35% { transform: translatey(145px); opacity: 1}
-  36% { transform: translatey(145px); opacity: 0}
+  45% { transform: translatey(145px); opacity: 1}
+  46% { transform: translatey(145px); opacity: 0}
   100% { transform: translatey(0); opacity: 0}
 }
 
@@ -291,8 +291,14 @@
   }
 }
 
+.bitcoin,
+.fiat,
+.paid {
+  background-size: 70%;
+}
+
 .bitcoin {
-  background: #F2A900;
+  background-color: #F2A900;
   animation: btc-move-mobile cubic-bezier(0.645, 0.045, 0.355, 1) 10s forwards;
   @media #{$small-only} {
     top: 4%;
@@ -304,11 +310,7 @@
 }
 
 .fiat {
-  background: #12C312;
-  color: #ffffff;
-  line-height: 1.7;
-  text-align: center;
-  font-size: 0.8em;
+  background-color: #12C312;
   animation: fiat-move-mobile ease-in-out 7s forwards 10s;
   @media #{$small-only} {
     top: 64%;
@@ -322,30 +324,11 @@
 .paid {
   width: 25px;
   height: 25px;
-  background: #12C312;
+  background-color: #12C312;
   border-radius: 30px;
   position: absolute;
   opacity: 0;
   animation: btc-paid-mobile 1s ease-in-out 7.5s;
-  &:before,
-  &:after {
-    content:"";
-    width: 3px;
-    background: #ffffff;
-    position: absolute;
-  }
-  &:before {
-    height: 5px;
-    top: 11px;
-    left: 7px;
-    transform: rotate(-45deg);
-  }
-  &:after {
-    height: 10px;
-    top: 8px;
-    left: 12px;
-    transform: rotate(45deg);
-  }
   @media #{$small-only} {
     top: 34%;
     left: 4%;
