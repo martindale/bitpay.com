@@ -62,11 +62,7 @@ html(lang='en')
     
     block scripts
       +jademin('/scripts/main.min.js')
-        script(src='/instantclick/instantclick.js' data-instant-track)
-        script(src='/_scripts/one.js' data-instant-track)
-        script(src='/_scripts/two.js' data-instant-track)
-      script(data-no-instant).
-        InstantClick.on('change', function() {
-          window.analytics.page();
-        });
-        InstantClick.init();
+        script(src='/_scripts/one.js')
+        script(src='/_scripts/two.js')
+        script(src='/instantclick/instantclick.js')
+        script(src='/_scripts/init.js')

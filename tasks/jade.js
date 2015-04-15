@@ -11,24 +11,16 @@ var async = require('async');
 var uglifyJS = require('uglify-js');
 var jademinSrcs = {};
 
-gulp.task('jade:dev', function() {
-  return jade({
-    pretty: true,
-    locals: {
-      getObjectFromJson: getObjectFromJson,
-      jademin: jademinMixin,
-      DEV: true
-    }
-  }, 'jade:dev');
-});
 gulp.task('jade', function() {
-  return jade({
-    locals: {
-      getObjectFromJson: getObjectFromJson,
-      jademin: jademinMixin,
-      DEV: false
-    }
-  }, 'jade');
+  return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
+    .pipe($.cached('jade'))
+    .pipe($.jade({
+      locals: {
+        getObjectFromJson: getObjectFromJson,
+        jademin: jademinMixin
+      }
+    }))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('uncached-rebuild-jade', function(cb) {
@@ -36,25 +28,36 @@ gulp.task('uncached-rebuild-jade', function(cb) {
   runSequence('rebuild-jade', cb);
 });
 
-function jade(options, cache) {
-  return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
-    .pipe($.cached('jade'))
-    .pipe($.jade(options))
-    .pipe(gulp.dest('dist'));
-}
-
 gulp.task('jademin', function(cb) {
   var outputPaths = [];
+  var job = {};
   for (var outputPath in jademinSrcs) {
     outputPaths.push(outputPath);
+    job[outputPath] = [];
     for (var inputPath in jademinSrcs[outputPath]) {
-      jademinSrcs[outputPath][inputPath] = '{build,components,src}' + jademinSrcs[outputPath][inputPath];
+      job[outputPath][inputPath] = '{components,src}' + jademinSrcs[outputPath][inputPath];
     }
   }
-  async.each(outputPaths, function(name, cb) {
-    var scriptPaths = globby.sync(jademinSrcs[name]);
-    var contents = uglifyJS.minify(scriptPaths);
-    writeFile('dist' + name, contents.code, cb);
+  async.each(outputPaths, function(name, cb2) {
+    var scriptPaths = globby.sync(job[name]);
+    var srcMapName = name + '.map';
+    var contents = uglifyJS.minify(scriptPaths, {
+      outSourceMap: srcMapName,
+      sourceRoot: '../'
+    });
+    async.parallel([
+      function(cb3){
+        writeFile('dist' + name, contents.code, cb3);
+      },
+      function(cb3){
+        writeFile('dist' + srcMapName, contents.map, cb3);
+      }
+    ], function(err){
+      if (err) {
+        console.log('Jademin: File write failed - ' + err);
+      }
+      cb2();
+    });
   }, function(err) {
     if (err) {
       console.log('Jademin: Uglify failed - ' + err);
@@ -69,7 +72,7 @@ function getObjectFromJson(path) {
 
 function jademinMixin(block, path) {
   var functionString = block.toString();
-  var regex = /<script src=\\"(.*?)\\">/g;
+  var regex = /src=\\"(.*?)\\"/g;
   var matches = getMatches(functionString, regex);
   if (typeof jademinSrcs[path] === 'undefined') {
     jademinSrcs[path] = matches;

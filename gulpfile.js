@@ -26,11 +26,11 @@ gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
   if (env.uncss) {
     runSequence(
-      ['sass', 'jade:dev', 'images', 'copy'], ['styles', 'build-localizations'],
+      ['sass', 'jade', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
       cb);
   } else {
     runSequence(
-      ['sass', 'jade:dev', 'images', 'copy'], ['build-localizations'],
+      ['sass', 'jade', 'images', 'copy'], 'jademin', ['build-localizations'],
       cb);
   }
 });
@@ -50,8 +50,8 @@ gulp.task('serve', ['build:dev'], function() {
       }
     },
     server: {
-      //serve from build, fall back to src
-      baseDir: ['dist', 'components', 'src'],
+      //serve from dist, fall back to sources (for sourcemaps)
+      baseDir: ['dist', 'components', 'src', '.'],
       serveStaticOptions: {
         extensions: 'html'
       }
@@ -62,7 +62,8 @@ gulp.task('serve', ['build:dev'], function() {
   gulp.watch(['src/**/*.jade', '!src/_**/*.jade', 'src/**/*.html'], ['rebuild-jade', reload]);
   gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', reload]);
   gulp.watch(['*.js', 'tasks/*.js', 'src/**/*.js'], ['jshint']);
-  gulp.watch(['src/images/**/*'], ['images'], reload);
+  gulp.watch(['src/**/*.js'], ['rebuild-jade', reload]);
+  gulp.watch(['src/images/**/*'], ['images', reload]);
 });
 
 // Build and serve the output from the dist build
@@ -88,9 +89,9 @@ gulp.task('serve:uncss', function(cb) {
 
 gulp.task('rebuild-jade', function(cb) {
   if (env.uncss) {
-    runSequence(['sass', 'jade:dev'], ['styles', 'build-localizations'], cb);
+    runSequence(['sass', 'jade'], 'jademin', ['styles', 'build-localizations'], cb);
   } else {
-    runSequence(['jade:dev'], ['build-localizations'], cb);
+    runSequence(['jade'], 'jademin', ['build-localizations'], cb);
   }
 });
 

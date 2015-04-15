@@ -23,6 +23,7 @@
     "beforeEach": false,
     "afterEach": false,
     "module": false,
-    "inject": false
+    "inject": false,
+    "InstantClick": false
   }
 }
