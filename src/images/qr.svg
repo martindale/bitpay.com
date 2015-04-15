@@ -2,18 +2,38 @@
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-23 30 41 41"
-	 enable-background="new -23 30 41 41" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+	 enable-background="new 0 0 100 100" xml:space="preserve">
 <title>Fill 24</title>
 <desc>Created with Sketch.</desc>
-<g id="Page-1" sketch:type="MSPage">
-	<g id="Artboard-1" transform="translate(-308.000000, -29.000000)" sketch:type="MSArtboardGroup">
-		<path id="Fill-24" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M285,80.7V100h16.4v-8.9h3.8v8.7h4.6V96h3.6v3.8h4.6v-4.3h3.3
-			v4.3h4.6v-4.6h-4.3v-4.3H317v4.3h-3v-8.9h-4.2v-3.8h4.3v4.3h4.6v-2.9h2.6v6.5h4.6v-6.8h-2.9v-4.1h2.9V59h-16.4v0h-4.3v5h-3.8V59
-			H285v19.1h2.9v2.6H285L285,80.7z M287.9,86.4h10.6v10.7h-10.6V86.4z M305.5,86.8h3.9v4.1h-3.9V86.8z M305.5,78.1h3.7v4.1h-3.7
-			V78.1z M321.3,79.3h-2.5v-1.4h-9.1v-2.4h11.5V79.3L321.3,79.3z M312.4,61.9h10.6v10.7h-10.6V61.9z M305.5,64.5h4.1v9h-4.1V64.5z
-			 M301.4,73.8h3.8v4.1h-3.8V73.8z M287.9,61.9h10.6v10.7h-10.6V61.9z M296.8,75.4v2.7h4v4.3h4.3v4.1h-3.8v-3h-11.8v-1.1h7.2v-4.6
-			h-7.2v-2.4L296.8,75.4L296.8,75.4z"/>
-	</g>
-</g>
+<rect fill="#FFFFFF" width="5" height="30"/>
+<rect x="-0.1" fill="#FFFFFF" width="30" height="5"/>
+<rect x="70" fill="#FFFFFF" width="30" height="5"/>
+<rect x="95" fill="#FFFFFF" width="5" height="30"/>
+<rect x="95" y="70" fill="#FFFFFF" width="5" height="30"/>
+<rect x="70" y="95" fill="#FFFFFF" width="30" height="5"/>
+<rect x="-0.1" y="95" fill="#FFFFFF" width="30" height="5"/>
+<rect y="70" fill="#FFFFFF" width="5" height="30"/>
+<path fill="#FFFFFF" d="M14,14v36h36V14H14z M44,44H20V20h23.9L44,44L44,44z"/>
+<path fill="#FFFFFF" d="M49.9,50v36h36V50H49.9z M80,80H56V56h23.9L80,80L80,80z"/>
+<rect x="57.2" y="14" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="64.4" y="14" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="64.4" y="21.2" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="57.2" y="28.4" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="57.2" y="35.6" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="71.6" y="35.6" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="71.6" y="28.4" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="78.8" y="14" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="78.8" y="35.6" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="35.6" y="64.4" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="28.4" y="64.4" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="28.4" y="57.2" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="14" y="57.2" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="14" y="64.4" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="21.2" y="71.6" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="35.6" y="71.6" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="28.4" y="78.8" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="14" y="78.8" fill="#FFFFFF" width="7.2" height="7.2"/>
+<rect x="26" y="26" fill="#FFFFFF" width="12" height="12"/>
+<rect x="62" y="62" fill="#FFFFFF" width="12" height="12"/>
 </svg>
