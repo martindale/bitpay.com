@@ -26,6 +26,11 @@
   margin: auto;
 }
 
+html {
+  min-height: 100%;
+  height: inherit;
+}
+
 .section {
   @extend .padding-vertical;
   @extend .medium-padding-vertical-most;
