@@ -14,6 +14,7 @@ var jademinSrcs = {};
 gulp.task('jade', function() {
   return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
     .pipe($.cached('jade'))
+    .pipe($.plumber())
     .pipe($.jade({
       locals: {
         getObjectFromJson: getObjectFromJson,
