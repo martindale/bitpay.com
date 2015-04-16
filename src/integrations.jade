@@ -2,7 +2,10 @@ extends _layouts/primary
 
 block title
   title Integrations | BitPay
-
+//- 
+//- append vars
+//-   -var integrationSelected = 'Integrated'
+    
 block content
   mixin integration(src, href, name)
     .column.small-3.margin-bottom.end
@@ -17,6 +20,7 @@ block content
         form
           input.integration-search(placeholder="Search our integrations..." type="search" value="" name="search")
           span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
+  //- include _includes/integrations-nav
             
   .section.border-top-gray
     .row
