@@ -38,3 +38,47 @@ ul {
 #instantclick-bar {
   background: $blue-light;
 }
+
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 1rem 1.5rem 1rem 3.5rem;
+  width: 100%;
+  border: 1px solid $gray-medium;
+  border-radius: 100px;
+  background-color: rgba(255,255,255,0.5);
+  box-sizing: border-box;
+  transition: all 0.2s;
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $blue-light;
+    box-shadow: 0 0 6px lighten($blue-light, 20%);
+    background-color: rgba(255,255,255,1);
+  }
+}
+
+.search-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 30px;
+  top: 11px;
+}
+
+::-webkit-input-placeholder {
+   color: $gray-light;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $gray-light;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $gray-light;  
+}
+
+:-ms-input-placeholder {
+   color: $gray-light;  
+}

@@ -4,6 +4,12 @@ block title
   title Integrations | BitPay
 
 block content
-  .row
-    .column.medium-12
-      h1.text-center Integrations
+  .section.bg-gray.border-top-gray
+    .row
+      .column.medium-10.medium-offset-1
+        h2.text-center.margin-bottom-less Accept Bitcoin Wherever You Take Payments
+        p.lead.text-center.margin-bottom Over 40 integrations and counting. Find yours.
+      .column.medium-8.medium-offset-2.end
+        form
+          input.integration-search(placeholder="Search our integrations..." type="search" value="" name="search")
+          span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
