@@ -5,11 +5,13 @@
   width: 2em;
   display: block;
   margin: auto;
-  background-color: #F0F0F0;
-  background-size: 75%;
+  background-color: $gray-xlight;
+  border: 1px solid $gray-light;
+  background-size: 60%;
   border-radius: 100px;
   transition: all 0.2s ease;
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
   }
 }
