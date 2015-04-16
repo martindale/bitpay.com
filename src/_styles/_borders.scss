@@ -21,9 +21,10 @@
 @include addBorder('light', (1px solid rgba(255,255,255,0.1)));
 
 // for the bottom centered border
-.header__bottom-border {
+.header__bottom-border,
+.header__bottom-border-left {
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   &:after {
     content: "";
     height: 3px;
@@ -31,10 +32,16 @@
     background: $blue-medium;
     position: absolute;
     bottom: -1rem;
-    left: calc(50% - 2rem);
   }
 }
 
+.header__bottom-border:after {
+  left: calc(50% - 2rem);
+}
+
+.header__bottom-border-left:after {
+  left: 0;
+}
 .body-text__bottom-border {
   position: relative;
   padding-bottom: 10px;
