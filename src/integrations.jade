@@ -4,6 +4,10 @@ block title
   title Integrations | BitPay
 
 block content
+  mixin integration(src, href, name)
+    .column.small-3.margin-bottom.end
+      a.h1.background-contain.integration-logo(href="#{href}" style="background-image: url('images/#{src}');")
+      span.small.text-center.block.margin-top-less #{name}
   .section.bg-gray.border-top-gray
     .row
       .column.medium-10.medium-offset-1
@@ -16,30 +20,45 @@ block content
             
   .section.border-top-gray
     .row
-      .column.medium-4
+      .column.medium-4.margin-bottom
         h3.header__bottom-border-left Integrated Solutions
         p.lead These integrated solutions work out of the box, no development required. Simple connect your BitPay account and begin accepting bitcoin payments.
-
+      .column.medium-8.large-7.large-offset-1
+        +integration("search.svg", "#", "Demandware")
+        +integration("search.svg", "#", "Shopify")
+        +integration("search.svg", "#", "PayPal")
+        +integration("search.svg", "#", "3DCart")
+        +integration("search.svg", "#", "Blesta")
+        +integration("search.svg", "#", "NATs")
+        +integration("search.svg", "#", "Foxycart")
+        +integration("search.svg", "#", "ProsperCart")
+        +integration("search.svg", "#", "Lemonstand")
+        +integration("search.svg", "#", "Cydec")
+        +integration("search.svg", "#", "MPA3")
+        +integration("search.svg", "#", "E-GOV Link")
+        +integration("search.svg", "#", "Global Payments")
+        +integration("search.svg", "#", "Bitmonet")
+        
   .section.border-top-gray
     .row
-      .column.medium-4
+      .column.medium-4.margin-bottom
         h3.header__bottom-border-left Open Source Plugins
         p.lead BitPay develops and maintains plugins for many of the world’s most popular eCommerce solutions.
 
   .section.border-top-gray
     .row
-      .column.medium-4
+      .column.medium-4.margin-bottom
         h3.header__bottom-border-left Point of Sale
         p.lead BitPay integrates directly into the world’s most popular retail Point-of-Sale solutions.
 
   .section.border-top-gray
     .row
-      .column.medium-4
+      .column.medium-4.margin-bottom
         h3.header__bottom-border-left Billing &amp; Accounting
         p.lead Offer your customers bitcoin as a payment option in your billing &amp; accounting solutions.
 
   .section.border-top-gray
     .row
-      .column.medium-4
+      .column.medium-4.margin-bottom
         h3.header__bottom-border-left Donations
         p.lead Tap into the emerging bitcoin donor base by enabling bitcoin donations in one of these solutions.

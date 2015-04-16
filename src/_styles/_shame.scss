@@ -1,9 +1,15 @@
 // Tour- Overview
 
-.icon {
-  width: 100px;
-  height: 100px;
-  border: 1px solid $gray-light;
+.integration-logo {
+  height: 2em;
+  width: 2em;
+  display: block;
+  margin: auto;
+  background-color: #F0F0F0;
+  background-size: 75%;
   border-radius: 100px;
-  margin: 0 auto 2rem;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
