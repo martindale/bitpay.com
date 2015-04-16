@@ -5,7 +5,9 @@ $blue-dark: #18347B;
 $blue-medium: #3354A8;
 $blue-light: #4683E8;
 
-$gray-dark: #565966;
+$gray-darkest: #343849;
+$gray-darker: #565966;
+$gray-dark: #7A7D8C;
 $gray-medium: #929396;
 $gray-light: #DEDFE1;
 $gray-xlight: #FAFAFD;
@@ -21,10 +23,10 @@ $row-width: rem-calc(1100);
 $small-range: (0, 42em); // changed to fit nav menu better
 $medium-range: (42.063em, 66em);
 
-$body-font-color: $gray-medium;
+$body-font-color: $gray-dark;
 $font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $header-font-family: $font-family-sans-serif;
-$header-font-color: $gray-dark;
+$header-font-color: $gray-darkest;
 $h1-font-size: rem-calc(36);
 $h2-font-size: rem-calc(32);
 $small-font-size: 80%;

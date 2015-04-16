@@ -348,7 +348,7 @@
   left: 170%;
   top: 80%;
   width: 180px;
-  color: lighten($gray-dark, 20%);
+  color: lighten($gray-darker, 20%);
   z-index: 1;
   animation: focus-text-down-right 3s ease backwards;
   @media #{$small-only} {
@@ -365,14 +365,14 @@
     content: "";
     position: absolute;
     z-index: -1;
-    background: lighten($gray-dark, 40%);
+    background: lighten($gray-darker, 40%);
     width: 110px;
     height: 1px;
   }
   &:after {
     content:"";
     position: absolute;
-    background: lighten($gray-dark, 40%);
+    background: lighten($gray-darker, 40%);
     border-radius: 2px;
     width: 5px;
     height: 5px;
