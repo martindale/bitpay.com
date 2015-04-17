@@ -23,13 +23,18 @@
   top: 10px;
 }
 
-.flag {
+.small-icon {
   width: 2em;
   height: 1em;
-  margin-right: 0.5rem;
   display: inline-block;
   position: relative;
   top: 2px;
+}
+
+.symbol {
+  font-size: 35%;
+  position: relative;
+  top: -25px;
 }
 
 .rates,
