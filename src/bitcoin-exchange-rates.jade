@@ -4,7 +4,40 @@ block title
   title Bitcoin Exchange Rates | BitPay
 
 block content
-  .row
-    .column.medium-12
-      h1.text-center Rates
+  .section.bg-gray.border-vertical-gray
+    .row
+      .column.medium-6
+        h5.uppercase.header__bottom-border-left BBB Rate
+        p.margin-bottom-none 1 BTC =
+        .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;") $227.51
+        p.lead Currency: USD 
+          span.flag [flag]
+        p.lead.margin-top
+          a.arrow How we calculate this rate
+        
+      .column.medium-6
+        h5.uppercase.header__bottom-border-left Popular Currencies
+        
+  .section
+    .row
+      .column.medium-6
+        h3.uppercase.header__bottom-border-left All Exchange Rates
+      .column.medium-5.medium-offset-1.end
+        form
+          input.rates-search(placeholder="Filter by Name" type="search" value="" name="search")
+          span.search-icon.background-contain(style="background-image: url('/images/filter.svg');")
       
+  .section.bg-gray.border-top-gray
+    .row
+      .column.medium-6
+        h2.header__bottom-border-left Bitcoin Best Bid Rate
+        p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. Bitpay currently calculates BB based on Bitcoin/US Dollar rates because of maximum liquidity.
+        p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
+        p Exchange rates for non-USD currencies are provided by the 
+          a(href="http://openexchangerates.org/" target="_blank") Open Exchange Rates API 
+          | at the time the invoice is generated.
+        p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
+      .column.medium-4.medium-offset-1.end
+        p.lead The BBB is available via JSON API at 
+          a(href="https://bitpay.com/api/rates") https://bitpay.com/api/rates
+        p Rates are updated every 1 minute.
