@@ -1,7 +1,15 @@
-.icon {
-  width: 100px;
-  height: 100px;
+.integration-logo {
+  height: 2em;
+  width: 2em;
+  display: block;
+  margin: auto;
+  background-color: $gray-xlight;
   border: 1px solid $gray-light;
+  background-size: 60%;
   border-radius: 100px;
-  margin: 0 auto 2rem;
+  transition: all 0.2s ease;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 }

@@ -63,3 +63,7 @@ $suffixes: (
      @include breakpointedUtils($breakpoint + '-');
   }
 }
+
+.block {
+  display: block;
+}
