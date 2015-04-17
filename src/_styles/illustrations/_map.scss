@@ -1,15 +1,4 @@
-@keyframes pulsate {
-  0% { transform: scale(0.1,0.1); opacity: 0.0}
-  50% { opacity: 1.0}
-  100% { transform: scale(1.4,1.4); opacity: 0.0}
-}
-
-@keyframes pulsate-center {
-  0% { opacity: 0.0}
-  100% { opacity: 1.0}
-}
-
-.pulse {
+%pulse{
   border: 2px solid $blue-light;
   border: 2px solid #2F4AB5;
   border-radius: 30px;
@@ -17,7 +6,8 @@
   width: 10px;
   position: absolute;
   opacity: 0;
-  animation: pulsate 1.4s ease-in-out infinite;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
   @media #{$medium-up} {
     height: 18px;
     width: 18px;
@@ -33,7 +23,6 @@
   position: absolute;
   left: 2px;
   top: 2px;
-  animation: pulsate-center 0.5s ease;
   @media #{$medium-up} {
     height: 4px;
     width: 4px;
@@ -41,3 +30,24 @@
     top: 5px;
   }
 }
+
+@mixin pulse-every($every, $id) {
+  .pulse-#{$id} {
+    @extend %pulse;
+    animation-name: pulsate-#{$id};
+    animation-duration: $every+#{ms};
+  }
+
+  $ringAnimLength: 1400/$every;
+  @keyframes pulsate-#{$id} {
+    #{100% - ($ringAnimLength * 100)} { transform: scale(0.1,0.1); opacity: 0.0}
+    #{100% - ($ringAnimLength * 50)} { opacity: 1.0}
+    100% { transform: scale(1.4,1.4); opacity: 0.0}
+  }
+}
+
+
+@include pulse-every(2000, '1');
+@include pulse-every(3000, '2');
+@include pulse-every(5000, '3');
+@include pulse-every(7000, '4');
