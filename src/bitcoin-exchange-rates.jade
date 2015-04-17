@@ -4,19 +4,43 @@ block title
   title Bitcoin Exchange Rates | BitPay
 
 block content
+  mixin rate(name, rate, code, src)
+    tr
+      td.column.small-6.medium-5.padding-left-none.padding-bottom-less #{name}
+      td.column.small-4.medium-4.text-right #{rate}
+      td.column.small-2.text-center #{code}
+      td.column.medium-1.hide-for-small
+        span.flag.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}');")
+          
   .section.bg-gray.border-vertical-gray
     .row
-      .column.medium-6
+      .column.medium-6.margin-bottom
         h5.uppercase.header__bottom-border-left BBB Rate
         p.margin-bottom-none 1 BTC =
-        .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;") $227.51
-        p.lead Currency: USD 
-          span.flag [flag]
+        .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;") $223.57
+        p.lead
+          span.flag.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usa.png');")
+          | USD 
         p.lead.margin-top
           a.arrow How we calculate this rate
-        
-      .column.medium-6
+      
+          
+      .column.medium-5.medium-offset-1
         h5.uppercase.header__bottom-border-left Popular Currencies
+        p.lead.margin-bottom-less 1 BTC =
+        hr.margin-top-none
+        table(style="width: 100%;")
+          +rate("US Dollar", "223.57", "USD", "usa.png")
+          +rate("Eurozone Euro", "207.037859", "EUR", "eur.png")
+          +rate("Pound Sterling", "149.477643", "GBP", "gbp.png")
+          +rate("Canadian Dollar", "2174.582795", "CAD", "cad.png")
+          +rate("Chinese Yuan", "1374.7047110294", "CNY", "cny.png")
+          +rate("Australian Dollar", "287.518613", "AUD", "aud.png")
+          +rate("Japanese Yen", "26571.992876", "JPY", "jpy.png")
+          +rate("Swiss Franc", "214.209264", "CHF", "chf.png")
+          +rate("Swedish Krona", "1926.828966", "SEK", "sek.png")
+          +rate("New Zealand Dollar", "292.227504", "NZD", "nzd.png")
+          +rate("South Korean Won", "244209.05375", "KRW", "krw.png")
         
   .section
     .row
@@ -31,7 +55,7 @@ block content
     .row
       .column.medium-6
         h2.header__bottom-border-left Bitcoin Best Bid Rate
-        p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. Bitpay currently calculates BB based on Bitcoin/US Dollar rates because of maximum liquidity.
+        p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculategit  BB based on Bitcoin/US Dollar rates because of maximum liquidity.
         p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
         p Exchange rates for non-USD currencies are provided by the 
           a(href="http://openexchangerates.org/" target="_blank") Open Exchange Rates API 
