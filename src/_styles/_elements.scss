@@ -47,7 +47,7 @@ ul {
 input[type="search"] {
   -webkit-appearance: none;
   appearance: none;
-  padding: 1rem 1.5rem 1rem 3.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 3.5rem;
   width: 100%;
   border: 1px solid $gray-medium;
   border-radius: 100px;
@@ -69,7 +69,7 @@ input[type="search"] {
   height: 2rem;
   position: absolute;
   left: 30px;
-  top: 11px;
+  top: 10px;
 }
 
 ::-webkit-input-placeholder {
@@ -77,13 +77,13 @@ input[type="search"] {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: $gray-light;  
+   color: $gray-light;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: $gray-light;  
+   color: $gray-light;
 }
 
 :-ms-input-placeholder {
-   color: $gray-light;  
+   color: $gray-light;
 }

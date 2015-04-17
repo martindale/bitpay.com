@@ -1,4 +1,4 @@
-- var menu = { 'Integrated': '#integrated', 'Plugins': '#plugins', 'Point of Sale': '#pos', 'Billing': '#billing', 'Donations': '#donations' };
+- var menu = { 'Integrated Solutions': '#integrated', 'Plugins': '#plugins', 'Point of Sale': '#pos', 'Billing': '#billing', 'Donations': '#donations' };
 
 .border-bottom-gray
   .row
@@ -7,6 +7,6 @@
         each val, key in menu
           li
             if integrationSelected === key
-              a.subnav-link.uppercase.selected(href=val, title=key)= key
+              a.subnav-link.uppercase.selected(href=val, title=key, target=_blank)= key
             else
               a.subnav-link.uppercase(href=val, title=key)= key
