@@ -31,3 +31,9 @@
   position: relative;
   top: 2px;
 }
+
+.rates {
+  @media #{$small-only} {
+    font-size: 80%;
+  }
+}

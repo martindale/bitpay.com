@@ -6,17 +6,17 @@ block title
 block content
   mixin rate(name, rate, code, src)
     tr
-      td.column.small-6.medium-5.padding-left-none.padding-bottom-less #{name}
-      td.column.small-4.medium-4.text-right #{rate}
-      td.column.small-2.text-center #{code}
-      td.column.medium-1.hide-for-small
+      td.column.small-5.medium-5.padding-horizontal-none.padding-bottom-less #{name}
+      td.column.small-5.medium-4.text-right.padding-horizontal-none.mono #{rate}
+      td.column.small-2.text-center.mono #{code}
+      td.column.medium-1.hide-for-small.padding-left-none
         span.flag.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}');")
           
-  .section.bg-gray.border-vertical-gray
+  .padding-vertical.bg-gray.border-vertical-gray
     .row
-      .column.medium-6.margin-bottom
+      .column.medium-5.large-6.margin-bottom
         h5.uppercase.header__bottom-border-left BBB Rate
-        p.margin-bottom-none 1 BTC =
+        p.lead.margin-bottom-none 1 BTC =
         .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;") $223.57
         p.lead
           span.flag.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usa.png');")
@@ -25,11 +25,11 @@ block content
           a.arrow How we calculate this rate
       
           
-      .column.medium-5.medium-offset-1
+      .column.medium-7.large-6
         h5.uppercase.header__bottom-border-left Popular Currencies
-        p.lead.margin-bottom-less 1 BTC =
+        p.margin-bottom-less 1 BTC =
         hr.margin-top-none
-        table(style="width: 100%;")
+        table(style="width: 100%;").rates
           +rate("US Dollar", "223.57", "USD", "usa.png")
           +rate("Eurozone Euro", "207.037859", "EUR", "eur.png")
           +rate("Pound Sterling", "149.477643", "GBP", "gbp.png")
@@ -62,6 +62,7 @@ block content
           | at the time the invoice is generated.
         p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
       .column.medium-4.medium-offset-1.end
-        p.lead The BBB is available via JSON API at 
-          a(href="https://bitpay.com/api/rates") https://bitpay.com/api/rates
+        p.lead The BBB is available 
+          a(href="https://bitpay.com/api/rates") via JSON API
+          | .
         p Rates are updated every 1 minute.
