@@ -32,7 +32,8 @@
   top: 2px;
 }
 
-.rates {
+.rates,
+.rates-flag {
   @media #{$small-only} {
     font-size: 80%;
   }
