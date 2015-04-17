@@ -67,3 +67,13 @@ $suffixes: (
 .block {
   display: block;
 }
+
+.selectable {
+  user-select: all;
+}
+.unselectable {
+  user-select: none;
+}
+.only-text-selectable {
+  user-select: text;
+}

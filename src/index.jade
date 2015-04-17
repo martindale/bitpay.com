@@ -54,7 +54,7 @@ block content
       .column.medium-12.text-center
         h5.uppercase.white.margin-bottom Trusted by Over 60,000 Businesses and Organizations
         mixin logos(name, width, height)
-          .home-logo.h2.opacity(style="background-image: url('/images/logos/#{name}.png'); width: #{width}em; height: #{height}em;")
+          .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.png'); width: #{width}em; height: #{height}em;")
         +logos("microsoft", 3.5, 2.5)
         +logos("espn", 2.5, 2.5)
         +logos("paypal", 2.5, 2.5)
