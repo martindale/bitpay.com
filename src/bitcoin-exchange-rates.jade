@@ -18,9 +18,8 @@ block content
         h5.uppercase.header__bottom-border-left Current Rate (BBB)
         p.lead.margin-bottom-none 1 BTC =
         .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;") $223.57
-        p.lead
+        p.lead USD 
           span.flag.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usa.png');")
-          | USD 
         p.lead.margin-top
           a.arrow How we calculate this rate
       
@@ -45,8 +44,8 @@ block content
   .section
     .row
       .column.medium-6
-        h3.uppercase.header__bottom-border-left All Exchange Rates
-      .column.medium-5.medium-offset-1.end
+        h2.header__bottom-border-left All Exchange Rates
+      .column.medium-4.large-3
         form
           input.rates-search(placeholder="Filter by Name" type="search" value="" name="search")
           span.search-icon.background-contain(style="background-image: url('/images/filter.svg');")
@@ -55,14 +54,24 @@ block content
     .row
       .column.medium-6
         h2.header__bottom-border-left Bitcoin Best Bid Rate
-        p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculategit  BB based on Bitcoin/US Dollar rates because of maximum liquidity.
+        p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculate the BBB based on bitcoin/US Dollar rates because of maximum liquidity.
         p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
         p Exchange rates for non-USD currencies are provided by the 
           a(href="http://openexchangerates.org/" target="_blank") Open Exchange Rates API 
           | at the time the invoice is generated.
         p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
-      .column.medium-4.medium-offset-1.end
+      .column.medium-6.large-5.large-offset-1.end
         p.lead The BBB is available 
           a(href="https://bitpay.com/api/rates") via JSON API
           | .
         p Rates are updated every 1 minute.
+        
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.medium-8.medium-offset-2
+        h2.text-center.white Get Started
+        h4.text-center.white The free plan includes unlimited processing volume, forever.
+      .column.medium-4.medium-offset-2.text-center
+        a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-right Accept Bitcoin
+      .column.medium-4.text-center.end
+        a(href="/tour").white.btn.btn-blue-border.uppercase.bold.medium-float-left.arrow Start Tour
