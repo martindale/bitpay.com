@@ -4,7 +4,236 @@ block title
   title Bitcoin Exchange Rates | BitPay
 
 block content
-  .row
-    .column.medium-12
-      h1.text-center Rates
+  mixin rate-flag(name, rate, code, src)
+    tr
+      td.column.small-5.medium-5.padding-horizontal-none.padding-bottom-less #{name}
+      td.column.small-5.medium-4.text-right.padding-horizontal-none.mono #{rate}
+      td.column.small-2.text-center.mono #{code}
+      td.column.medium-1.hide-for-small.padding-left-none
+        span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}');")
+  
+  mixin rate(name, rate, code)
+    tr
+      td.column.small-5.medium-6.large-7.padding-horizontal-none.padding-bottom-less #{name}
+      td.column.small-5.medium-4.large-3.text-right.padding-horizontal-none.mono #{rate}
+      td.column.small-2.mono #{code}
+          
+  .padding-vertical.bg-gray.border-vertical-gray
+    .row
+      .column.medium-5.large-6.small-only-margin-bottom
+        h5.uppercase.header__bottom-border-left Current Rate (BBB)
+        p.lead.margin-bottom-none 1 BTC
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');")
+          | USD
+        .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;")
+          span.symbol $
+          | 223.57
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usd.png'); vertical-align: middle; position: relative; margin-left: 0.5rem; top: -2px;")
+        p.lead.margin-top
+          a.arrow How we calculate this rate
       
+          
+      .column.medium-7.large-6
+        h5.uppercase.header__bottom-border-left Popular Currencies
+        p.margin-bottom-less 1 BTC =
+        hr.margin-top-none
+        table(style="width: 100%;").rates-flag
+          +rate-flag("US Dollar", "223.57", "USD", "usd.png")
+          +rate-flag("Eurozone Euro", "207.037859", "EUR", "eur.png")
+          +rate-flag("Pound Sterling", "149.477643", "GBP", "gbp.png")
+          +rate-flag("Canadian Dollar", "2174.582795", "CAD", "cad.png")
+          +rate-flag("Chinese Yuan", "1374.7047110294", "CNY", "cny.png")
+          +rate-flag("Australian Dollar", "287.518613", "AUD", "aud.png")
+          +rate-flag("Japanese Yen", "26571.992876", "JPY", "jpy.png")
+          +rate-flag("Swiss Franc", "214.209264", "CHF", "chf.png")
+          +rate-flag("Swedish Krona", "1926.828966", "SEK", "sek.png")
+          +rate-flag("New Zealand Dollar", "292.227504", "NZD", "nzd.png")
+          +rate-flag("South Korean Won", "244209.05375", "KRW", "krw.png")
+        
+  .section
+    .row
+      .column.medium-6
+        h2.header__bottom-border-left All Exchange Rates
+      .column.medium-4.large-3
+        form
+          input.rates-search(placeholder="Filter by Name" type="search" value="" name="search")
+          span.search-icon.background-contain(style="background-image: url('/images/filter.svg');")
+            
+    .row
+      .column.medium-6
+        table(style="width:100%;").rates
+          +rate("UAE Dirham", "821.444756", "AED")
+          +rate("Afghan Afghani", "12945.666916", "AFN")
+          +rate("Albanian Lek", "29101.337776", "ALL")
+          +rate("Armenian Dram", "105826.706553", "AMD")
+          +rate("Netherlands Antillean Guilder", "400.221675", "ANG")
+          +rate("Angolan Kwanza", "24438.710756", "AOA")
+          +rate("Argentine Peso", "2795.625", "ARS")
+          +rate("Aruban Florin", "400.892625", "AWG")
+          +rate("Azerbaijani Manat", "235.257435", "AZN")
+          +rate("Bosnia-Herzegovina Convertible Mark", "406.441158", "BAM")
+          +rate("Barbadian Dollar", "447.3", "BBD")
+          +rate("Bangladeshi Taka", "17395.857077", "BDT")
+          +rate("Bulgarian Lev", "405.947562", "BGN")
+          +rate("Bahraini Dinar", "84.300171", "BHD")
+          +rate("Burundian Franc", "350046.542925", "BIF")
+          +rate("Bermudan Dollar", "223.65", "BMD")
+          +rate("Brunei Dollar", "301.285177", "BND")
+          +rate("Bolivian Boliviano", "1544.045605", "BOB")
+          +rate("Brasilian Real", "682.444492", "BRL")
+          +rate("Bahamian Dollar", "223.65", "BSD")
+          +rate("Bhutanese Ngultrum", "13944.689325", "BTN")
+          +rate("Botswanan Pula", "2206.824552", "BWP")
+          +rate("Belarusian Ruble", "3184805.819925", "BYR")
+          +rate("Belize Dollar", "446.455274", "BZD")
+          +rate("Congolese Franc", "207326.6811", "CDF")
+          +rate("Chilean Unit of Account +rate(UF)", "5.502237", "CLF")
+          +rate("Chilean Peso", "137026.529914", "CLP")
+          +rate("Colombian Peso", "559967.787675", "COP")
+          +rate("Costa Rican Colón", "118697.609063", "CRC")
+          +rate("Cape Verdean Escudo", "22977.045958", "CVE")
+          +rate("Czech Koruna", "5700.715493", "CZK")
+          +rate("Djiboutian Franc", "39680.430076", "DJF")
+          +rate("Danish Krone", "1548.775132", "DKK")
+          +rate("Dominican Peso", "10001.853887", "DOP")
+          +rate("Algerian Dinar", "21958.536254", "DZD")
+          +rate("Estonian Kroon", "3255.203385", "EEK")
+          +rate("Egyptian Pound", "1705.798231", "EGP")
+          +rate("Ethiopian Birr", "4575.216996", "ETB")
+          +rate("Fijian Dollar", "455.71416", "FJD")
+          +rate("Falkland Islands Pound", "149.562583", "FKP")
+          +rate("Georgian Lari", "503.623569", "GEL")
+          +rate("Ghanaian Cedi", "858.185083", "GHS")
+          +rate("Gibraltar Pound", "149.562583", "GIP")
+          +rate("Gambian Dalasi", "9589.517091", "GMD")
+          +rate("Guinean Franc", "1629580.622175", "GNF")
+          +rate("Guatemalan Quetzal", "1715.822001", "GTQ")
+          +rate("Guyanaese Dollar", "46056.356772", "GYD")
+          +rate("Hong Kong Dollar", "1733.674415", "HKD")
+          +rate("Honduran Lempira", "4777.633665", "HNL")
+          +rate("Croatian Kuna", "1571.391738", "HRK")
+          +rate("Haitian Gourde", "10609.19559", "HTG")
+          +rate("Hungarian Forint", "62479.109568", "HUF")
+          +rate("Indonesian Rupiah", "2873790.675", "IDR")
+          +rate("Israeli Shekel", "877.233801", "ILS")
+          +rate("Indian Rupee", "13963.809164", "INR")
+          +rate("Iraqi Dinar", "265486.54311", "IQD")
+          +rate("Jersey Pound", "149.562583", "JEP")
+          +rate("Jamaican Dollar", "25621.232399", "JMD")
+          +rate("Jordanian Dinar", "158.454683", "JOD")
+          +rate("Kenyan Shilling", "20887.995272", "KES")
+          +rate("Kyrgystani Som", "14243.045805", "KGS")
+          +rate("Cambodian Riel", "896845.442422", "KHR")
+          +rate("Comorian Franc", "102140.589556", "KMF")
+          +rate("Kuwaiti Dinar", "67.43629", "KWD")
+          +rate("Cayman Islands Dollar", "183.611282", "KYD")
+          +rate("Kazakhstani Tenge", "41549.65227", "KZT")
+          +rate("Laotian Kip", "1813245.371463", "LAK")
+          +rate("Lebanese Pound", "336792.2985", "LBP")
+          +rate("Sri Lankan Rupee", "29737.48806", "LKR")
+          +rate("Liberian Dollar", "18947.628224", "LRD")
+          +rate("Lesotho Loti", "2696.706842", "LSL")
+          +rate("Lithuanian Litas", "656.122005", "LTL")
+          +rate("Latvian Lats", "146.083483", "LVL")
+      
+      .column.medium-6
+        table(style="width:100%;").rates
+          +rate("Libyan Dinar", "308.885699", "LYD")
+          +rate("Moroccan Dirham", "2224.857452", "MAD")
+          +rate("Moldovan Leu", "4088.031255", "MDL")
+          +rate("Malagasy Ariary", "691904.513925", "MGA")
+          +rate("Macedonian Denar", "12812.322537", "MKD")
+          +rate("Myanma Kyat", "239803.396563", "MMK")
+          +rate("Mongolian Tugrik", "441820.575", "MNT")
+          +rate("Macanese Pataca", "1778.288787", "MOP")
+          +rate("Mauritanian Ouguiya", "70449.75", "MRO")
+          +rate("Mauritian Rupee", "8088.689165", "MUR")
+          +rate("Maldivian Rufiyaa", "3407.005823", "MVR")
+          +rate("Malawian Kwacha", "99994.898836", "MWK")
+          +rate("Mexican Peso", "3422.562917", "MXN")
+          +rate("Malaysian Ringgit", "813.390001", "MYR")
+          +rate("Mozambican Metical", "7924.665149", "MZN")
+          +rate("Namibian Dollar", "2696.706842", "NAD")
+          +rate("Nigerian Naira", "44454.28428", "NGN")
+          +rate("Nicaraguan Córdoba", "5997.176987", "NIO")
+          +rate("Norwegian Krone", "1750.752999", "NOK")
+          +rate("Nepalese Rupee", "22225.256771", "NPR")
+          +rate("Omani Rial", "86.104579", "OMR")
+          +rate("Panamanian Balboa", "223.65", "PAB")
+          +rate("Peruvian Nuevo Sol", "697.854648", "PEN")
+          +rate("Papua New Guinean Kina", "599.884989", "PGK")
+          +rate("Philippine Peso", "9905.706752", "PHP")
+          +rate("Pakistani Rupee", "22703.597154", "PKR")
+          +rate("Polish Zloty", "835.549914", "PLN")
+          +rate("Paraguayan Guarani", "1111004.488333", "PYG")
+          +rate("Qatari Rial", "814.18463", "QAR")
+          +rate("Romanian Leu", "918.253895", "RON")
+          +rate("Serbian Dinar", "24925.233375", "RSD")
+          +rate("Russian Ruble", "11594.416334", "RUB")
+          +rate("Rwandan Franc", "154095.688688", "RWF")
+          +rate("Saudi Riyal", "838.766225", "SAR")
+          +rate("Solomon Islands Dollar", "1727.492952", "SBD")
+          +rate("Seychellois Rupee", "3006.632066", "SCR")
+          +rate("Sudanese Pound", "1333.680863", "SDG")
+          +rate("Singapore Dollar", "301.490264", "SGD")
+          +rate("Saint Helena Pound", "149.562583", "SHP")
+          +rate("Sierra Leonean Leone", "978356.925", "SLL")
+          +rate("Somali Shilling", "156443.421462", "SOS")
+          +rate("Surinamese Dollar", "744.79923", "SRD")
+          +rate("São Tomé and Príncipe Dobra", "5070589.243965", "STD")
+          +rate("Salvadoran Colón", "1948.744306", "SVC")
+          +rate("Syrian Pound", "47631.85875", "SYP")
+          +rate("Swazi Lilangeni", "2696.706842", "SZL")
+          +rate("Thai Baht", "7236.674361", "THB")
+          +rate("Tajikistani Somoni", "1352.038725", "TJS")
+          +rate("Turkmenistani Manat", "782.745255", "TMT")
+          +rate("Tunisian Dinar", "438.252239", "TND")
+          +rate("Tongan Paʻanga", "453.135029", "TOP")
+          +rate("Turkish Lira", "601.711091", "TRY")
+          +rate("Trinidad and Tobago Dollar", "1420.930977", "TTD")
+          +rate("New Taiwan Dollar", "6943.337258", "TWD")
+          +rate("Tanzanian Shilling", "423002.294978", "TZS")
+          +rate("Ukrainian Hryvnia", "4688.925129", "UAH")
+          +rate("Ugandan Shilling", "669673.703925", "UGX")
+          +rate("Uruguayan Peso", "5960.393271", "UYU")
+          +rate("Uzbekistan Som", "558910.304722", "UZS")
+          +rate("Venezuelan Bolívar Fuerte", "1413.157574", "VEF")
+          +rate("Vietnamese Dong", "4823947.852425", "VND")
+          +rate("Vanuatu Vatu", "23599.175175", "VUV")
+          +rate("Samoan Tala", "553.168977", "WST")
+          +rate("CFA Franc BEAC", "136340.553318", "XAF")
+          +rate("Silver +rate(troy ounce)", "13.768556", "XAG")
+          +rate("Gold +rate(troy ounce)", "0.18586", "XAU")
+          +rate("East Caribbean Dollar", "604.083123", "XCD")
+          +rate("CFA Franc BCEAO", "136218.386742", "XOF")
+          +rate("CFP Franc", "24810.163437", "XPF")
+          +rate("Yemeni Rial", "48084.101415", "YER")
+          +rate("South African Rand", "2697.646172", "ZAR")
+          +rate("Zambian Kwacha", "1649.545783", "ZMW")
+          +rate("Zimbabwean Dollar", "72094.697092", "ZWL")
+  .section.bg-gray.border-top-gray
+    .row
+      .column.medium-6.small-only-margin-bottom
+        h2.header__bottom-border-left Bitcoin Best Bid Rate
+        p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculate the BBB based on bitcoin/US Dollar rates because of maximum liquidity.
+        p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
+        p Exchange rates for non-USD currencies are provided by the 
+          a(href="http://openexchangerates.org/" target="_blank") Open Exchange Rates API 
+          | at the time the invoice is generated.
+        p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
+      .column.medium-6.large-5.large-offset-1.end
+        .padding.border-gray.text-center.bg-white.radius
+          p.lead.margin-bottom-none The BBB is available 
+            a(href="https://bitpay.com/api/rates") via JSON API
+            | .
+          p.margin-bottom-none Rates are updated every 1 minute.
+        
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.medium-8.medium-offset-2
+        h2.text-center.white Get Started
+        h4.text-center.white The free plan includes unlimited processing volume, forever.
+      .column.medium-4.medium-offset-2.text-center
+        a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-right Accept Bitcoin
+      .column.medium-4.text-center.end
+        a(href="/tour").white.btn.btn-blue-border.uppercase.bold.medium-float-left.arrow Start Tour
