@@ -30,7 +30,7 @@ block content
           | 223.57
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usd.png'); vertical-align: middle; position: relative; margin-left: 0.5rem; top: -2px;")
         p.margin-top-more
-          a.arrow How we calculate this rate
+          a.arrow(href="#bbb") How we calculate this rate
       
           
       .column.medium-7.large-6
@@ -216,7 +216,7 @@ block content
   .section.bg-gray.border-top-gray
     .row
       .column.medium-6.small-only-margin-bottom
-        h2.header__bottom-border-left Bitcoin Best Bid Rate
+        h2#bbb.header__bottom-border-left Bitcoin Best Bid Rate
         p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculate the BBB based on bitcoin/US Dollar rates because of maximum liquidity.
         p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
         p Exchange rates for non-USD currencies are provided by the 
