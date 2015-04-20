@@ -19,7 +19,7 @@
   &:hover {
     color: $blue-darker;
     text-decoration: none;
-    opacity: 0.5;
+    /* opacity: 0.5; */
   }
   .landing & {
     @extend .white;
@@ -27,6 +27,9 @@
     &:hover {
       opacity: 0.7;
     }
+  }
+  &.selected {
+    font-weight: bold;
   }
 }
 
