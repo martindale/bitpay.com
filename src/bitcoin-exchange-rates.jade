@@ -10,7 +10,7 @@ block content
       td.column.small-5.medium-4.text-right.padding-horizontal-none.mono #{rate}
       td.column.small-2.text-center.mono #{code}
       td.column.medium-1.hide-for-small.padding-left-none
-        span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}');")
+        span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}'); width: 2em;")
   
   mixin rate(name, rate, code)
     tr
@@ -23,32 +23,34 @@ block content
       .column.medium-5.large-6.small-only-margin-bottom
         h5.uppercase.header__bottom-border-left Current Rate (BBB)
         p.lead.margin-bottom-none 1 BTC
-          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');")
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 2em;")
           | USD
-        .h1.margin-bottom-none(style="font-size: 4em; line-height: 1;")
+        .h1(style="font-size: 4em; line-height: 1;")
           span.symbol $
           | 223.57
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usd.png'); vertical-align: middle; position: relative; margin-left: 0.5rem; top: -2px;")
-        p.lead.margin-top
+        p.margin-top-more
           a.arrow How we calculate this rate
       
           
       .column.medium-7.large-6
         h5.uppercase.header__bottom-border-left Popular Currencies
-        p.margin-bottom-less 1 BTC =
-        hr.margin-top-none
+        p 1 BTC
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 1.5em; height: 0.75em; top: 0;")
+        //- p.margin-bottom-less 1 BTC =
+        //- hr.margin-top-none
         table(style="width: 100%;").rates-flag
           +rate-flag("US Dollar", "223.57", "USD", "usd.png")
           +rate-flag("Eurozone Euro", "207.037859", "EUR", "eur.png")
           +rate-flag("Pound Sterling", "149.477643", "GBP", "gbp.png")
           +rate-flag("Canadian Dollar", "2174.582795", "CAD", "cad.png")
           +rate-flag("Chinese Yuan", "1374.7047110294", "CNY", "cny.png")
-          +rate-flag("Australian Dollar", "287.518613", "AUD", "aud.png")
-          +rate-flag("Japanese Yen", "26571.992876", "JPY", "jpy.png")
-          +rate-flag("Swiss Franc", "214.209264", "CHF", "chf.png")
-          +rate-flag("Swedish Krona", "1926.828966", "SEK", "sek.png")
-          +rate-flag("New Zealand Dollar", "292.227504", "NZD", "nzd.png")
-          +rate-flag("South Korean Won", "244209.05375", "KRW", "krw.png")
+          //- +rate-flag("Australian Dollar", "287.518613", "AUD", "aud.png")
+          //- +rate-flag("Japanese Yen", "26571.992876", "JPY", "jpy.png")
+          //- +rate-flag("Swiss Franc", "214.209264", "CHF", "chf.png")
+          //- +rate-flag("Swedish Krona", "1926.828966", "SEK", "sek.png")
+          //- +rate-flag("New Zealand Dollar", "292.227504", "NZD", "nzd.png")
+          //- +rate-flag("South Korean Won", "244209.05375", "KRW", "krw.png")
         
   .section
     .row
@@ -222,6 +224,7 @@ block content
           | at the time the invoice is generated.
         p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
       .column.medium-6.large-5.large-offset-1.end
+        .h1.background-contain(style="background-image: url('images/bbb.svg'); height:10em;")
         .padding.border-gray.text-center.bg-white.radius
           p.lead.margin-bottom-none The BBB is available 
             a(href="https://bitpay.com/api/rates") via JSON API
