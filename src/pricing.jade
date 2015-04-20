@@ -2,80 +2,85 @@ extends _layouts/primary
 
 block title
   title Pricing | BitPay
+  
+append vars  
+  -var pageSelected = 'Pricing'
 
 block content
   .section.bg-gray.border-bottom-gray.border-top-gray
     .row
-      h2.text-center Free Processing, Forever.
-      p.lead.text-center.margin-bottom Explore our feautures for enterprise users.
+      .column.text-center
+        h2.text-center Free &amp; Unlimited Processing, Forever.
+        p.lead.text-center.margin-bottom Simple plans for access to the industry's leading client success team.
     .row
-      .column.small-8.small-offset-2.medium-4.medium-offset-0.bg-white.border-gray.text-center.margin-bottom
+      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.margin-bottom
         .icon.h2.background-contain.margin-less(style="background-image: url('/images/basic_icon.svg'); height: 2.5em;")
         h3.text-center.light Basic
         p.text-center $0
         .row
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Unlimited Processing Volume
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Free, instant conversion
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Daily Bank Desposit
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Retail POS Solutions
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold 22 eCommerce Solutions
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Email Support
-      .column.small-8.small-offset-2.medium-4.medium-offset-0.bg-white.border-gray.text-center.margin-bottom
+          p.border-top-gray.padding-vertical-less.margin-none.bold Unlimited Processing Volume
+          p.border-top-gray.padding-vertical-less.margin-none.bold Free, instant Conversion
+          p.border-top-gray.padding-vertical-less.margin-none.bold Daily Bank Deposit
+          p.border-top-gray.padding-vertical-less.margin-none.bold Retail POS Solutions
+          p.border-top-gray.padding-vertical-less.margin-none.bold 22 eCommerce Solutions
+          p.border-top-gray.padding-vertical-less.margin-none.bold Email Support
+      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.margin-bottom
         .icon.h2.background-contain.margin-less(style="background-image: url('/images/business_icon.svg'); height: 2.5em;")
         h3.light Business
         p.text-center $300
         .row
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Unlimited Processing Volume
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Free, instant conversion
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Daily Bank Desposit
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Retail POS Solutions
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold 22 eCommerce Solutions
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Email Support
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Phone & Email Support
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Quickbooks Sales Integration
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Dedicated Account Manager
-      .column.small-8.small-offset-2.medium-4.medium-offset-0.bg-white.border-gray.text-center.end
+          p.border-top-gray.padding-vertical-less.margin-none.bold Unlimited Processing Volume
+          p.border-top-gray.padding-vertical-less.margin-none.bold Free, Instant Conversion
+          p.border-top-gray.padding-vertical-less.margin-none.bold Daily Bank Deposit
+          p.border-top-gray.padding-vertical-less.margin-none.bold Retail POS Solutions
+          p.border-top-gray.padding-vertical-less.margin-none.bold 22 eCommerce Solutions
+          p.border-top-gray.padding-vertical-less.margin-none.bold Email Support
+          p.border-top-gray.padding-vertical-less.margin-none Phone &amp; Email Support
+          p.border-top-gray.padding-vertical-less.margin-none Quickbooks Sales Integration
+          p.border-top-gray.padding-vertical-less.margin-none Dedicated Account Manager
+      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.end
         .icon.h2.background-contain.margin-less(style="background-image: url('/images/enterprise_icon.svg'); height: 2.5em;")
         h3.light Enterprise
         p.text-center CONTACT US
         .row
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Unlimited Processing Volume
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Free, instant conversion
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Daily Bank Desposit
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Retail POS Solutions
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold 22 eCommerce Solutions
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none.bold Email Support
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Phone & Email Support
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Quickbooks Sales Integration
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Dedicated Account Manager
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none VPN Access
-          p.border-top-gray.padding-top-less.padding-bottom-less.less.margin-none Integration Services availible
-
+          p.border-top-gray.padding-vertical-less.margin-none.bold Unlimited Processing Volume
+          p.border-top-gray.padding-vertical-less.margin-none.bold Free, instant Conversion
+          p.border-top-gray.padding-vertical-less.margin-none.bold Daily Bank Deposit
+          p.border-top-gray.padding-vertical-less.margin-none.bold Retail POS Solutions
+          p.border-top-gray.padding-vertical-less.margin-none.bold 22 eCommerce Solutions
+          p.border-top-gray.padding-vertical-less.margin-none.bold Email Support
+          p.border-top-gray.padding-vertical-less.margin-none Phone &amp; Email Support
+          p.border-top-gray.padding-vertical-less.margin-none Quickbooks Sales Integration
+          p.border-top-gray.padding-vertical-less.margin-none Dedicated Account Manager
+          p.border-top-gray.padding-vertical-less.margin-none VPN Access
+          p.border-top-gray.padding-vertical-less.margin-none Integration Services Available
 
   .section
     .row
-      h2.text-center.header__bottom-border Frequently Asked Questions
-    .row
-      .column.large-4.large-offset-2.medium-5.medium-offset-1.small-12
+      .column
+        h2.text-center.header__bottom-border Frequently Asked Questions
+      .column.medium-10.medium-offset-1.large-5.large-offset-1
         h5 What exchange rate do my customers get?
-        p BitPay always offers the best exchange rate on the market. We pool the order books of all active bitcoin exchanges, and find the best bid worldwide. We call this the Bitcoin Best Bid (BBB) rate, and it is our only rate.
-      .column.large-4.medium-5.end
-        h5 Do you charge a conversion fee?
-        p All of our monthly plans include free and instant conversion to your settlement currency- no percentages. You will be paid the amount you charge.
-    .row
-      .column.large-4.large-offset-2.medium-5.medium-offset-1.small-12
+        p BitPay always offers the best exchange rate on the market. We pool the order books of all active bitcoin exchanges, and find the best bid worldwide. We call this the 
+          a(href="/bitcoin-exchange-rate") Bitcoin Best Bid (BBB) 
+          | rate, and it is our only rate.
         h5 Can I get part of my settlement in bitcoin?
-        p Many of our merchants choose to take a percentage- or even 100%- of their BitPay settlement in bitcoin. You can choose your settlement preferences from your account dashboard. We settle bitcoin to your bitcoin address daily.
-      .column.large-4.medium-5.end
+        p Many of our merchants choose to take a percentage&mdash; or even 100%&mdash; of their BitPay settlement in bitcoin. You can choose your settlement preferences from your account dashboard. We settle bitcoin to your bitcoin address daily.
+      .column.medium-10.medium-offset-1.large-5.large-offset-0.end
+        h5 Do you charge a conversion fee?
+        p All of our monthly plans include free and instant conversion to your settlement currency&mdash; with zero fees.
         h5 Can you process payments for regulated businesses?
-        p We are able to process for most businesses, but legal and regulatory issues prevent us from servicingsome industries. We'd like to provide all legitimate businesses the opportunity to accept bitcoin, and we are constantly working to make that a possibility.
+        p We are able to process payments for most businesses, but legal and regulatory issues prevent us from servicing some industries. We'd like to provide all legitimate businesses the opportunity to accept bitcoin, and we are constantly working to make that a possibility.
+      .column.medium-10.medium-offset-1.large-5.large-offset-1
+      .column.medium-10.medium-offset-1.large-5.large-offset-0.end
 
 
   .section.border-top-gray
     .row
-      h3.text-center Sign up for a BitPay account. It's free and always will be.
+      .column
+        h3.text-center Sign up for a BitPay account. It's free and always will be.
       .margin-top-less
         .column.medium-4.medium-offset-2.text-center
           a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-right Accept Bitcoin
         .column.medium-4.text-center.end
-          a(href="/enterprise").btn.btn-blue-border.uppercase.bold.medium-float-left Continue Tour
+          a(href="/tour").btn.btn-blue-border.uppercase.bold.medium-float-left Start Tour
