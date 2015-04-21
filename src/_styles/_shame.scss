@@ -65,27 +65,27 @@
   position: absolute;
   &.feature-1 {
     top: -26%;
-    right: 39.5%;
+    right: 39%;
   }
   &.feature-2 {
-    top:20%;
+    top:15%;
     right:-20%;
   }
   &.feature-3 {
-    top:76%;
-    right:-6%;
+    top:75%;
+    right:-7%;
   }
   &.feature-4 {
     bottom: -27%;
-    right: 43%;
+    right: 43.5%;
   }
   &.feature-5 {
-    top:76%;
-    left:-13%;
+    top:75%;
+    left:-15%;
   }
   &.feature-6 {
-    top:20%;
-    left:-8%;
+    top:15%;
+    left:-10%;
   }
 
   @media #{$small-only} {
@@ -94,27 +94,27 @@
     }
     &.feature-1 {
       top: -18%;
-      right: 43.5%;
+      right: 44.5%;
     }
     &.feature-2 {
       top:14%;
       right:17%;
     }
     &.feature-3 {
-      top:75%;
-      right:17%;
+      top:71%;
+      right:16%;
     }
     &.feature-4 {
       bottom: -20%;
-      right: 44%;
+      right: 44.5%;
     }
     &.feature-5 {
-      top:75%;
-      left:19%;
+      top:71%;
+      left:16%;
     }
     &.feature-6 {
-      top:15%;
-      left:18%;
+      top:14%;
+      left:17%;
     }
   }
   @media #{$large-up} {
@@ -130,8 +130,8 @@
       right:2%;
     }
     &.feature-3 {
-      top:76%;
-      right:10%;
+      top:74%;
+      right:9%;
     }
     &.feature-4 {
       bottom: -17%;
@@ -139,7 +139,7 @@
     }
     &.feature-5 {
       top:75%;
-      left:5%;
+      left:4%;
     }
     &.feature-6 {
       top:20%;
