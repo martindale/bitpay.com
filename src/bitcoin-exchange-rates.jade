@@ -21,19 +21,19 @@ block content
   .padding-vertical.bg-gray.border-vertical-gray
     .row
       .column.medium-5.large-6.small-only-margin-bottom
-        h5.uppercase.header__bottom-border-left.fade-in Current Rate (BBB)
-        p.lead.margin-bottom-none.fade-in-right.delay-1 1 BTC
+        h5.uppercase.header__bottom-border-left Current Rate (BBB)
+        p.lead.margin-bottom-none 1 BTC
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 2em;")
           | USD
-        .h1.fade-in-right.delay-1(style="font-size: 4em; line-height: 1;")
+        .h1(style="font-size: 4em; line-height: 1;")
           span.symbol $
           | 223.57
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usd.png'); vertical-align: middle; position: relative; margin-left: 0.5rem; top: -2px;")
-        p.margin-top-more.fade-in-up.delay-4
+        p.margin-top-more
           a.arrow(href="#bbb") How we calculate this rate
       
           
-      .column.medium-7.large-6.fade-in-right.delay-2
+      .column.medium-7.large-6
         h5.uppercase.header__bottom-border-left Popular Currencies
         p 1 BTC
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 1.5em; height: 0.75em; top: 0;")
@@ -46,7 +46,7 @@ block content
           +rate-flag("Canadian Dollar", "2174.582795", "CAD", "cad.png")
           +rate-flag("Chinese Yuan", "1374.7047110294", "CNY", "cny.png")
         
-  .section.fade-in-up.delay-5
+  .section
     .row
       .column.medium-6
         h2.header__bottom-border-left All Exchange Rates
