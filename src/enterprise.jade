@@ -18,7 +18,21 @@ block content
           .column.medium-8.medium-offset-2.text-center
             a(href="mailto:sales@bitpay.com").white.btn.btn-blue-solid.uppercase.bold Request Demo
             a(href="").white.btn.btn-blue-border.uppercase.bold.arrow Start Trial
-  
+
+
+  .padding-none.bg-gray.border-bottom-gray          
+    .row.padding-less.text-center
+      mixin logos(name, width, height)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/color_logos/#{name}.png'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
+      +logos("amagi_metals", 2.5, 2.5)
+      +logos("gyft", 2, 2.5)
+      +logos("microsoft", 3.5, 2.5)
+      +logos("newegg", 2.5, 2.5)
+      +logos("tigerdirect", 3.5, 2.5)
+      +logos("virgin", 1.5, 2.5)
+
+
+
   .section.border-bottom-gray.bg-white
       .row
         h2.text-center.header__bottom-border Bank settlement to 33 countries
