@@ -8,12 +8,12 @@ append vars
 
 block content
   .section.bg-gray.border-bottom-gray.border-top-gray
-    .row
-      .column.text-center
+    .row.fade-in
+      .column.text-center.margin-bottom
         h2.text-center Free &amp; Unlimited Processing, Forever.
-        p.lead.text-center.margin-bottom Simple plans for business and enterprise features.
-    .row
-      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.margin-bottom
+        p.lead.text-center Simple plans for business and enterprise features.
+    .row.margin-top-less
+      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.margin-bottom.fade-in-right.delay-2
         .icon.h2.background-contain.margin-less(style="background-image: url('/images/basic_icon.svg'); height: 2.5em;")
         h3.text-center.light Basic
         p.text-center $0
@@ -24,7 +24,7 @@ block content
           p.border-top-gray.padding-vertical-less.margin-none.bold Retail POS Solutions
           p.border-top-gray.padding-vertical-less.margin-none.bold 22 eCommerce Solutions
           p.border-top-gray.padding-vertical-less.margin-none.bold Email Support
-      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.margin-bottom
+      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.margin-bottom.fade-in-right.delay-4
         .icon.h2.background-contain.margin-less(style="background-image: url('/images/business_icon.svg'); height: 2.5em;")
         h3.light Business
         p.text-center $300
@@ -38,11 +38,11 @@ block content
           p.border-top-gray.padding-vertical-less.margin-none Phone &amp; Email Support
           p.border-top-gray.padding-vertical-less.margin-none Quickbooks Sales Integration
           p.border-top-gray.padding-vertical-less.margin-none Dedicated Account Manager
-      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.end
+      .column.medium-8.medium-offset-2.large-4.large-offset-0.bg-white.border-gray.text-center.end.fade-in-right.delay-6
         .icon.h2.background-contain.margin-less(style="background-image: url('/images/enterprise_icon.svg'); height: 2.5em;")
         h3.light Enterprise
         p.text-center 
-          a Request Demo
+          a(href="mailto:sales@bitpay.com") Request Demo
         .row
           p.border-top-gray.padding-vertical-less.margin-none.bold Unlimited Processing Volume
           p.border-top-gray.padding-vertical-less.margin-none.bold Free, instant Conversion
@@ -77,13 +77,9 @@ block content
       .column.medium-10.medium-offset-1.large-5.large-offset-1
       .column.medium-10.medium-offset-1.large-5.large-offset-0.end
 
-
-  .section.border-top-gray
+  .section.bg-lightblue-gradient.border-top-gray
     .row
-      .column
-        h3.text-center Sign up for a BitPay account. It's free and always will be.
-      .margin-top-less
-        .column.medium-4.medium-offset-2.text-center
-          a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-right Accept Bitcoin
-        .column.medium-4.text-center.end
-          a(href="/tour").btn.btn-blue-border.uppercase.bold.medium-float-left Start Tour
+      .column.large-10.large-offset-1.text-center
+          h3.white Sign up for a BitPay account. It's free and always will be.
+          .margin-top-less
+            a(href="#").white.btn.btn-blue-solid.uppercase.bold.margin Accept Bitcoin

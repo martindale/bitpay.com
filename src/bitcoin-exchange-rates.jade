@@ -45,12 +45,6 @@ block content
           +rate-flag("Pound Sterling", "149.477643", "GBP", "gbp.png")
           +rate-flag("Canadian Dollar", "2174.582795", "CAD", "cad.png")
           +rate-flag("Chinese Yuan", "1374.7047110294", "CNY", "cny.png")
-          //- +rate-flag("Australian Dollar", "287.518613", "AUD", "aud.png")
-          //- +rate-flag("Japanese Yen", "26571.992876", "JPY", "jpy.png")
-          //- +rate-flag("Swiss Franc", "214.209264", "CHF", "chf.png")
-          //- +rate-flag("Swedish Krona", "1926.828966", "SEK", "sek.png")
-          //- +rate-flag("New Zealand Dollar", "292.227504", "NZD", "nzd.png")
-          //- +rate-flag("South Korean Won", "244209.05375", "KRW", "krw.png")
         
   .section
     .row
@@ -219,16 +213,12 @@ block content
         h2#bbb.header__bottom-border-left Bitcoin Best Bid Rate
         p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculate the BBB based on bitcoin/US Dollar rates because of maximum liquidity.
         p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
-        p Exchange rates for non-USD currencies are provided by the 
-          a(href="http://openexchangerates.org/" target="_blank") Open Exchange Rates API 
-          | at the time the invoice is generated.
+        p Exchange rates for non-USD currencies are provided by the <a href="http://openexchangerates.org" target="_blank"> Open Exchange Rates API</a> at the time the invoice is generated.
         p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
       .column.medium-6.large-5.large-offset-1.end
         .h1.background-contain(style="background-image: url('images/bbb.svg'); height:10em;")
         .padding.border-gray.text-center.bg-white.radius
-          p.lead.margin-bottom-none The BBB is available 
-            a(href="https://bitpay.com/api/rates") via JSON API
-            | .
+          p.lead.margin-bottom-none The BBB is available <a href="https://bitpay.com/api/rates">via JSON API</a>.
           p.margin-bottom-none Rates are updated every 1 minute.
         
   .section.bg-lightblue-gradient.border-top-gray
@@ -236,7 +226,7 @@ block content
       .column.medium-8.medium-offset-2
         h2.text-center.white Get Started
         h4.text-center.white The free plan includes unlimited processing volume, forever.
-      .column.medium-4.medium-offset-2.text-center
-        a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-right Accept Bitcoin
-      .column.medium-4.text-center.end
-        a(href="/tour").white.btn.btn-blue-border.uppercase.bold.medium-float-left.arrow Start Tour
+    .row
+      .column.medium-8.medium-offset-2.text-center
+        a(href="#").white.btn.btn-blue-solid.uppercase.bold Accept Bitcoin
+        a(href="/tour").white.btn.btn-blue-border.uppercase.bold.arrow Start Tour
