@@ -8,14 +8,35 @@ append vars
   
 block content
   include _includes/tour-nav
-  .section.bg-gray.border-bottom-gray
-    .feature-diagram-container
-      img(src="/images/features_diagram.svg" width="100%")
-  
+  .section.bg-gray-gradient.border-bottom-gray
+    .row
+      .feature-container
+        .h1.background-contain.feature-image(style="background-image: url('/images/features_diagram.svg');")
+        .feature-icon.feature-1
+          span.small-icon.background-contain.h5.margin-vertical-none.text-center(style="background-image: url('/images/icons/platform.svg'); margin-left: 14px;")
+          <br />
+          span.feature-label.blue-light <a href="#platform">Platform</a>
+        .feature-icon.feature-2
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/e-commerce.svg');")
+          span.feature-label.blue-light <a href="#ecommerce">E-Commerce</a>
+        .feature-icon.feature-3
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/billing.svg');")
+          span.feature-label.blue-light <a href="#billing">Billing</a>
+        .feature-icon.feature-4
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/retail.svg'); margin-left: 3px;")
+          <br />
+          span.feature-label.blue-light <a href="#retail">Retail</a>
+        .feature-icon.feature-5
+          span.feature-label.blue-light <a href="#donations">Donations</a>
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/donations.svg');")
+        .feature-icon.feature-6
+          span.feature-label.blue-light <a href="#support">Support</a>
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/support.svg');")
+
   .section.border-bottom-gray
     .row
-      h2.text-center.header__bottom-border Platform
-
+      h2.text-center.header__bottom-border#platform Platform
+      
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Direct Bank Deposit
@@ -70,11 +91,11 @@ block content
         p Stay up-to-date with your transactions via email, text, and server IPNs. 
       .column.medium-12.large-4
         h4 Ledger Payment Tracking
-          p Track and export transaction data for all bitcoin payments received.
+        p Track and export transaction data for all bitcoin payments received.
 
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border E-Commerce
+      h2.text-center.header__bottom-border#ecommerce E-Commerce
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Payment Buttons and Hosted Checkout
@@ -96,7 +117,7 @@ block content
 
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border Billing
+      h2.text-center.header__bottom-border#billing Billing
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Email Invoicing
@@ -110,11 +131,11 @@ block content
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Billing Plugins
-          p Add a bitcoin payment option to the bills you send to customers and clients.
+        p Add a bitcoin payment option to the bills you send to customers and clients.
 
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border Retail
+      h2.text-center.header__bottom-border#retail Retail
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Mobile Point of Sale App
@@ -131,11 +152,11 @@ block content
           p Let customers select from set tip percentages or choose their own custom tip amounts. 
         .column.medium-12.large-4.end
           h4 Direct POS Integrations
-            p Accept bitcoin natively in your point of sale software. 
+          p Accept bitcoin natively in your point of sale software. 
             
   .section.border-bottom-gray
       .row.margin-bottom-more
-        h2.text-center.header__bottom-border Donations
+        h2.text-center.header__bottom-border#donations Donations
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Web-Based Donation Buttons
@@ -153,7 +174,7 @@ block content
           
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border Support
+      h2.text-center.header__bottom-border#support Support
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Email and Phone Availability
