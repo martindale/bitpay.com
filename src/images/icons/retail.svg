@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-73 149.3 502.7 502.7" enable-background="new -73 149.3 502.7 502.7" xml:space="preserve">
-<g>
-	<path fill="#4683E8" d="M377,635.2l-32.4-328c-0.7-6.9-6.5-12.2-13.5-12.2h-60.5v-53.5c0-50.9-41.4-92.3-92.3-92.3
-		c-50.9,0-92.3,41.4-92.3,92.3v53.5H25.5c-7,0-12.8,5.3-13.5,12.2l-32.6,329.9c-0.4,3.8,0.9,7.6,3.4,10.4c2.6,2.8,6.2,4.5,10,4.5
-		h370.8c0,0,0.1,0,0.1,0c7.5,0,13.5-6.1,13.5-13.5C377.3,637.3,377.2,636.3,377,635.2z M113.1,241.6c0-36,29.3-65.2,65.2-65.2
-		s65.2,29.3,65.2,65.2v53.5H113.1V241.6z M37.7,322.1H86v27.4c0,7.5,6.1,13.5,13.5,13.5c7.5,0,13.5-6.1,13.5-13.5v-27.4h130.4v27.4
-		c0,7.5,6.1,13.5,13.5,13.5c7.5,0,13.5-6.1,13.5-13.5v-27.4h48.3l24.6,249.4H13.1L37.7,322.1z M7.8,624.9l2.6-26.4h335.7l2.6,26.4
-		H7.8z"/>
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<polygon fill="none" stroke="#4683E8" stroke-width="7" stroke-linejoin="round" stroke-miterlimit="10" points="79.6,32.4 
+	20.4,32.4 10.4,94.8 89.6,94.8 "/>
+<path fill="none" stroke="#4683E8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M64.1,40.2V17.9C64.1,10,57.8,3.7,50,3.7S35.9,10,35.9,17.9v22.4"/>
+<line fill="none" stroke="#4683E8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="12.9" y1="79.2" x2="86.6" y2="79.2"/>
 </svg>

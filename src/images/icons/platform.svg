@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 650 800" enable-background="new 0 0 650 800" xml:space="preserve">
-<g>
-	<path fill="#4683E8" d="M198.9,538.2L0,429.7v-60.1l198.9-107.9v70.6L60.3,399L198.9,468C198.9,468,198.9,538.2,198.9,538.2z"/>
-	<path fill="#4683E8" d="M232.9,576.2l131.9-352.4h41.7L274.2,576.2H232.9z"/>
-	<path fill="#4683E8" d="M451.1,538.2V468l138.6-68.5l-138.6-68v-69.7l198.9,108v59.7L451.1,538.2z"/>
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<polyline fill="none" stroke="#4683E8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	25.8,50 46.7,37.9 25.8,25.8 "/>
+<rect x="3.2" y="4.5" fill="none" stroke="#4683E8" stroke-width="7" stroke-linejoin="round" stroke-miterlimit="10" width="93" height="91"/>
+<line fill="none" stroke="#4683E8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="42.9" y1="66.5" x2="74.2" y2="66.5"/>
 </svg>
