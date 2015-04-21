@@ -1,20 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="284px" height="324px" viewBox="0 0 284 324" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
-    <title>diagram</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="FINAL" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="tour/features-copy-2" sketch:type="MSArtboardGroup" transform="translate(-614.000000, -296.000000)">
-            <g id="diagram" sketch:type="MSLayerGroup" transform="translate(615.000000, 297.000000)">
-                <ellipse id="Oval-1-Copy-2" stroke="#DCDCDC" stroke-width="2" stroke-dasharray="2" sketch:type="MSShapeGroup" cx="143.635278" cy="162.723814" rx="107.212858" ry="107.212858"></ellipse>
-                <path d="M143.135278,324.987461 L143.135278,216.873111" id="Line-3-Copy-5" stroke="#5A7CD9" stroke-width="2" stroke-linecap="square" stroke-dasharray="1,4" sketch:type="MSShapeGroup" transform="translate(143.635278, 270.491307) scale(1, -1) translate(-143.635278, -270.491307) "></path>
-                <path d="M3.00000002,243.999999 L283.999993,82" id="Line-3-Copy-7" stroke="#6484DC" stroke-width="2" stroke-linecap="square" stroke-dasharray="1,4" sketch:type="MSShapeGroup"></path>
-                <path d="M1.00000001,246.022923 L282.999999,85.0229263" id="Line-3-Copy-8" stroke="#6484DC" stroke-width="2" stroke-linecap="square" stroke-dasharray="1,4" sketch:type="MSShapeGroup" transform="translate(141.771025, 166.011463) scale(1, -1) translate(-141.771025, -166.011463) "></path>
-                <ellipse id="Oval-7" stroke="#496FD6" stroke-width="1.5" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="143.635278" cy="165.745653" rx="50.1904843" ry="50.6206533"></ellipse>
-                <path d="M143.635278,115.008171 L143.635278,0.99289158" id="Line-3-Copy-4" stroke="#496FD6" stroke-width="2" stroke-linecap="square" stroke-dasharray="1,4" sketch:type="MSShapeGroup" transform="translate(144.135278, 58.000000) scale(1, -1) translate(-144.135278, -58.000000) "></path>
-                <path d="M158.6426,162.673127 C160.089794,161.12777 160.990484,159.137155 160.990484,156.932517 C160.990484,149.992707 156.468946,145.828821 148.933048,145.828821 L148.937871,145.828821 L148.933048,137.50105 C148.933048,137.19431 148.920086,137.299795 148.920086,136.936149 L144.712945,136.945865 C144.387997,136.945865 144.129365,136.936149 144.129365,136.936149 L144.114896,145.828821 L139.291922,145.828821 L139.287099,137.50105 C139.287099,137.19431 139.285893,137.265096 139.285893,136.936149 L134.468947,136.936149 C134.468947,137.430819 134.481909,137.183484 134.468947,137.479398 L134.468947,145.828821 L123.591934,145.821604 C123.591934,145.821604 123.610623,146.078377 123.609116,146.383451 L123.591934,150.269744 L124.816367,150.269744 C127.479854,150.269744 129.639341,152.258416 129.639341,154.711222 L129.645973,172.477135 C129.645973,174.79864 129.618542,176.805356 126.453465,176.805356 C126.196642,176.805356 124.414553,176.814516 123.591934,176.814516 L123.591934,180.628636 C123.587111,180.852653 123.591934,181.373971 123.591934,181.373971 C123.591934,181.373971 124.199629,181.360091 124.385313,181.360091 L134.468947,181.360091 L134.464124,190.243048 L139.287099,190.243048 L139.287099,189.687863 L139.291922,181.360091 L144.114896,181.360091 L144.129365,190.299954 L148.301238,190.299954 L148.920086,190.299954 L148.937871,181.360091 L151.344535,181.360091 C158.880433,181.360091 163.401972,177.196206 163.401972,170.256396 C163.401972,167.005512 161.477002,164.210712 158.6426,162.673127 L158.6426,162.673127 Z M139.287099,152.490761 L146.521561,152.490761 C149.185048,152.490761 151.344535,154.479433 151.344535,156.932239 C151.344535,159.385045 149.185048,161.373717 146.521561,161.373717 L139.287099,161.373717 L139.287099,152.490761 L139.287099,152.490761 Z M148.933048,174.697874 L139.287099,174.697874 L139.287099,165.814918 L148.933048,165.814918 C151.596536,165.814918 153.756022,167.80359 153.756022,170.256396 C153.756022,172.709202 151.596536,174.697874 148.933048,174.697874 L148.933048,174.697874 Z" id="Imported-Layers-3" fill="#496FD6" sketch:type="MSShapeGroup"></path>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="92 39 284 324"
+	 enable-background="new 92 39 284 324" xml:space="preserve">
+<title>diagram</title>
+<desc>Created with Sketch.</desc>
+<ellipse id="Oval-1-Copy-2" sketch:type="MSShapeGroup" fill="none" stroke="#DCDCDC" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" cx="235.1" cy="202.7" rx="107.2" ry="107.2">
+</ellipse>
+<path id="Line-3-Copy-5" sketch:type="MSShapeGroup" fill="none" stroke="#5A7CD9" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M234,254.4v108.1"/>
+<path id="Line-3-Copy-7" sketch:type="MSShapeGroup" fill="none" stroke="#6484DC" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M93,282.3l282-162.6"/>
+<path id="Line-3-Copy-8" sketch:type="MSShapeGroup" fill="none" stroke="#6484DC" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M92.5,120.2l283,161.6"/>
+<ellipse id="Oval-7" sketch:type="MSShapeGroup" fill="#FFFFFF" stroke="#496FD6" stroke-width="1.5" cx="235.1" cy="202.7" rx="50.2" ry="50.6">
+</ellipse>
+<path id="Line-3-Copy-4" sketch:type="MSShapeGroup" fill="none" stroke="#496FD6" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M234,39.4v114"/>
+<path id="Imported-Layers-3" sketch:type="MSShapeGroup" fill="#496FD6" d="M251.1,203.1c1.4-1.5,2.3-3.5,2.3-5.7
+	c0-6.9-4.5-11.1-12.1-11.1h0l0-8.3c0-0.3,0-0.2,0-0.6l-4.2,0c-0.3,0-0.6,0-0.6,0l0,8.9h-4.8l0-8.3c0-0.3,0-0.2,0-0.6H227
+	c0,0.5,0,0.2,0,0.5v8.3l-10.9,0c0,0,0,0.3,0,0.6l0,3.9h1.2c2.7,0,4.8,2,4.8,4.4l0,17.8c0,2.3,0,4.3-3.2,4.3c-0.3,0-2,0-2.9,0v3.8
+	c0,0.2,0,0.7,0,0.7s0.6,0,0.8,0H227l0,8.9h4.8v-0.6l0-8.3h4.8l0,8.9h4.2h0.6l0-8.9h2.4c7.5,0,12.1-4.2,12.1-11.1
+	C255.9,207.5,254,204.7,251.1,203.1L251.1,203.1z M231.8,192.9h7.2c2.7,0,4.8,2,4.8,4.4s-2.2,4.4-4.8,4.4h-7.2V192.9L231.8,192.9z
+	 M241.4,215.1h-9.6v-8.9h9.6c2.7,0,4.8,2,4.8,4.4S244.1,215.1,241.4,215.1L241.4,215.1z"/>
 </svg>
