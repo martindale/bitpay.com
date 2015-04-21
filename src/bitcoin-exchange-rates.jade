@@ -213,16 +213,12 @@ block content
         h2#bbb.header__bottom-border-left Bitcoin Best Bid Rate
         p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculate the BBB based on bitcoin/US Dollar rates because of maximum liquidity.
         p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
-        p Exchange rates for non-USD currencies are provided by the 
-          a(href="http://openexchangerates.org/" target="_blank") Open Exchange Rates API 
-          | at the time the invoice is generated.
+        p Exchange rates for non-USD currencies are provided by the <a href="http://openexchangerates.org" target="_blank"> Open Exchange Rates API</a> at the time the invoice is generated.
         p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
       .column.medium-6.large-5.large-offset-1.end
         .h1.background-contain(style="background-image: url('images/bbb.svg'); height:10em;")
         .padding.border-gray.text-center.bg-white.radius
-          p.lead.margin-bottom-none The BBB is available 
-            a(href="https://bitpay.com/api/rates") via JSON API
-            | .
+          p.lead.margin-bottom-none The BBB is available <a href="https://bitpay.com/api/rates">via JSON API</a>.
           p.margin-bottom-none Rates are updated every 1 minute.
         
   .section.bg-lightblue-gradient.border-top-gray
