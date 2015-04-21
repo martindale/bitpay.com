@@ -22,6 +22,7 @@ block content
 
   .padding-none.bg-gray.border-bottom-gray          
     .row.padding-less.text-center
+      h5.uppercase.gray-dark Trusted By
       mixin logos(name, width, height)
         .home-logo.h2.opacity.unselectable(style="background-image: url('/images/color_logos/#{name}.png'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
       +logos("amagi_metals", 2.5, 2.5)
@@ -43,7 +44,18 @@ block content
         h2.text-center.header__bottom-border Industry-leading engineering services
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
-  .section.border-bottom-gray.bg-white
+  .section.bg-white
       .row
         h2.text-center.header__bottom-border #1 Bitcoin client success team
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        
+        
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.medium-8.medium-offset-2
+        h2.text-center.white Enterprise Ready
+        h4.text-center.white Get access to the most powerful Bitcoin infrastructure on the planet.
+    .row
+      .column.medium-8.medium-offset-2.text-center
+        a(href="#").white.btn.btn-blue-solid.uppercase.bold Request Demo
+        a(href="/features").white.btn.btn-blue-border.uppercase.bold.arrow Start Trial
