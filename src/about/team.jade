@@ -1,10 +1,37 @@
 extends ../_layouts/primary
 
 block title
-  title Careers | BitPay
-
+  title Team | BitPay
+  
 block content
-  .row
-    .column.medium-12
-      h1.text-center Careers
-      
+  .section.bg-gray-gradient.border-bottom-gray
+    .row.fade-in
+      .column.medium-8-medium-offset-2
+        h2.text-center.header__bottom-border Work With Bitcoin's Most Exciting Company
+        
+  .section.border-bottom-gray
+    .row
+      .column.large-7
+        h3.header__bottom-border-left Current Openings
+        p.lead We're always looking for driven individuals who are excited about bitcoin to add to our team.
+        ul.no-bullet.accordion(data-accordion)
+          li.accordion-navigation
+            p.lead
+              a(href="#uiux").block UI/UX Designer
+              span.text-right.small Atlanta, GA
+              //- #uiux.content.active
+              //-   p.lead We are seeking a frontend designer with solid experience and a clean, modern portfolio of web and interface design. UX Designers have the opportunity to lead product direction and own projects from concept through implementation and user testing.
+              //- 
+              //-   h5 Responsibilities
+              //-   ol.circle
+              //-     li Develop and refine user experiences across products
+              //-     li Craft clean, modern, and responsive web and interface designs
+              //-     li Implement design work in well-structured HTML/CSS/Javascript
+              //-   h5 Requirements
+              //-   ul
+              //-     li A clean, modern portfolio showing deep knowledge of design principles
+              //-     li Deep understanding of modern SaaS and web application design
+              //-     li Experience with HTML/CSS/Javascript, familiarity with AngularJS is preferred
+      .column.large-4
+        h3.header__bottom-border-left Benefits
+        p We offer competitive compensation, full benefits, stock options, and of course, the chance to take your pay in bitcoin.
