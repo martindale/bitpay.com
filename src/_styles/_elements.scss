@@ -40,6 +40,19 @@ ul {
   line-height: 1.8;
 }
 
+.side-nav a {
+  display: inline-block !important;
+  border-radius: 1em;
+  transition: all 0.2s;
+  position: relative;
+  left: 0;
+  &.active {
+    color: white !important;
+    background: $blue-light !important;
+    left: .5em;
+  }
+}
+
 #instantclick-bar {
   background: $blue-light;
 }

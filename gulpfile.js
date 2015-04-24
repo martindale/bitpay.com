@@ -26,11 +26,11 @@ gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
   if (env.uncss) {
     runSequence(
-      ['sass', 'jade', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
+      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
       cb);
   } else {
     runSequence(
-      ['sass', 'jade', 'images', 'copy'], 'jademin', ['build-localizations'],
+      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['build-localizations'],
       cb);
   }
 });
@@ -89,9 +89,9 @@ gulp.task('serve:uncss', function(cb) {
 
 gulp.task('rebuild-jade', function(cb) {
   if (env.uncss) {
-    runSequence(['sass', 'jade'], 'jademin', ['styles', 'build-localizations'], cb);
+    runSequence(['sass', 'jade:dev'], 'jademin', ['styles', 'build-localizations'], cb);
   } else {
-    runSequence(['jade'], 'jademin', ['build-localizations'], cb);
+    runSequence(['jade:dev'], 'jademin', ['build-localizations'], cb);
   }
 });
 

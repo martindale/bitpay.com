@@ -33,7 +33,7 @@ html(lang='en')
 
     // Add to homescreen for Chrome on Android
     meta(name='mobile-web-app-capable', content='yes')
-    link(rel='icon', sizes='192x192', href='images/touch/chrome-touch-icon-192x192.png')
+    link(rel='icon', sizes='192x192', href='/images/touch/chrome-touch-icon-192x192.png')
 
     // Add to homescreen for Safari on iOS
     meta(name='apple-mobile-web-app-capable', content='yes')
@@ -42,12 +42,11 @@ html(lang='en')
     link(rel='apple-touch-icon-precomposed', href='apple-touch-icon-precomposed.png')
 
     // Tile icon for Win8 (144x144 + tile color)
-    meta(name='msapplication-TileImage', content='images/touch/ms-touch-icon-144x144-precomposed.png')
+    meta(name='msapplication-TileImage', content='/images/touch/ms-touch-icon-144x144-precomposed.png')
     meta(name='msapplication-TileColor', content='#F5AB35')
 
     link(rel='stylesheet', href='/styles/main.css' data-instant-track)
     link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,700')
-    base(href='/')
     include ../_includes/head.html
 
   body
@@ -62,7 +61,8 @@ html(lang='en')
     
     block scripts
       +jademin('/scripts/main.min.js')
-        script(src='/_scripts/one.js')
-        script(src='/_scripts/two.js')
+        script(src='/jquery/dist/jquery.js')
+        script(src='/foundation/js/foundation/foundation.js')
+        script(src='/foundation/js/foundation/foundation.magellan.js')
         script(src='/instantclick/instantclick.js')
         script(src='/_scripts/init.js')
