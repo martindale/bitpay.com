@@ -25,6 +25,6 @@
     "module": false,
     "inject": false,
     "InstantClick": false,
-    "$": false
+    "jQuery": false
   }
 }
