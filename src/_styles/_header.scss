@@ -4,7 +4,7 @@
   display: inline-block;
   background-image: url('../images/bitpay-logo-dark.svg');
   background-repeat: no-repeat;
-  .landing & {
+  .white-header & {
     background-image: url('../images/bitpay-logo-primary.svg');
   }
 }
@@ -21,7 +21,7 @@
     text-decoration: none;
     /* opacity: 0.5; */
   }
-  .landing & {
+  .white-header & {
     @extend .white;
     text-shadow: 0 0 3px rgba(0,0,0,0.5);
     &:hover {
