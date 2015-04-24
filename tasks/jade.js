@@ -12,17 +12,26 @@ var uglifyJS = require('uglify-js');
 var jademinSrcs = {};
 
 gulp.task('jade', function() {
+  return jade();
+});
+
+gulp.task('jade:dev', function() {
+  return jade(true);
+});
+
+function jade(dev){
   return gulp.src(['src/**/*.jade', '!src/_**/*.jade'])
     .pipe($.cached('jade'))
     .pipe($.plumber())
     .pipe($.jade({
+      pretty: dev,
       locals: {
         getObjectFromJson: getObjectFromJson,
         jademin: jademinMixin
       }
     }))
     .pipe(gulp.dest('dist'));
-});
+}
 
 gulp.task('uncached-rebuild-jade', function(cb) {
   delete $.cached.caches.jade;
