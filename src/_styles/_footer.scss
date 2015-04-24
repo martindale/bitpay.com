@@ -1,6 +1,8 @@
 .medium-white-fade-top {
   @media #{$medium-up} {
     box-shadow: 0 0 300px 300px #fff;
+    position: relative;
+    z-index: 0
   }
 }
 
