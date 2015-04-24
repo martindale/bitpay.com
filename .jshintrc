@@ -24,6 +24,7 @@
     "afterEach": false,
     "module": false,
     "inject": false,
-    "InstantClick": false
+    "InstantClick": false,
+    "$": false
   }
 }

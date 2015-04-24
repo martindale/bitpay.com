@@ -1,3 +1,9 @@
+.medium-white-fade-top {
+  @media #{$medium-up} {
+    box-shadow: 0 0 300px 300px #fff;
+  }
+}
+
 .footer-label {
   @extend .white;
   font-size: 0.6em;
