@@ -1,0 +1,33 @@
+extends ../_layouts/primary
+
+block title
+  title Getting Started | BitPay
+
+append vars
+  - var pageSelected = 'Developers'
+  
+block content
+  .section.bg-lightblue-gradient
+    .row.fade-in-up
+      .column.medium-8-medium-offset-2.text-center
+        h2.white.text-shadow.margin-bottom-less.fade-in.delay-1 Bitcoin integration done right.
+        p.lead.text-shadow.white.fade-in-up.delay-2 We're the leaders of open-source in Bitcoin.  We know how to do it right.
+        a(href="/docs").white.btn.btn-blue-border.uppercase.bold.btn-margin Build It &raquo;
+
+  .section
+    .row
+      .column.small-4
+        h3 Copay
+        h4 The wallet for everyone.
+        p Secure, decentralized, multi-factor spending.  Designed for real people.
+        a(href="https://copay.io").btn.btn-blue-border.uppercase.bold.btn-margin Spend Safely &raquo;
+      .column.small-4
+        h3 Bitcore
+        h4 Full-suite blockchain stack.
+        p Build the next great decentralized app with Bitcore, our open-source Javascript library.
+        a(href="https://bitcore.io").btn.btn-blue-border.uppercase.bold.btn-margin Build Faster &raquo;
+      .column.small-4
+        h3 ChainDB
+        h4 The blockchain database.
+        p Build a decentralized database with custom rules, secured by the Bitcoin blockchain.
+        a(href="https://chaindb.io").btn.btn-blue-border.uppercase.bold.btn-margin Decentralize Everything &raquo;
