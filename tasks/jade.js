@@ -88,7 +88,7 @@ function jademinMixin(block, path) {
     jademinSrcs[path] = matches;
   } else {
     if(!arraysEqual(jademinSrcs[path], matches)){
-      throw new Error('Jademin: path "' + path + '" is already taken.');
+      throw new Error('Jademin: path "' + path + '" is already taken. Did you add a new script? Try restarting the node process.');
     }
   }
 }

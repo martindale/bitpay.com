@@ -4,6 +4,9 @@
     jQuery(document).foundation();
     initSmoothScroll();
     window.analytics.page();
+    if(typeof window.bootstrapRatesApp === 'function'){
+      window.bootstrapRatesApp();
+    }
   });
   initSmoothScroll();
   InstantClick.init();
