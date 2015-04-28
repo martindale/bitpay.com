@@ -4,7 +4,61 @@ block title
   title Press | BitPay
 
 block content
-  .row
-    .column.medium-12
-      h1.text-center Press
+  .row.margin-bottom-less
+    .column.medium-6
+      h1 Press
+    .column.medium-6
+      a(href="#").white.btn.btn-blue-solid.uppercase.bold.right.margin-vertical Download Press Kit
       
+      
+  .bg-gray-gradient.border-vertical-gray.padding-vertical-more
+    .row
+      .column
+        h3.header__bottom-border-left Recent Coverage
+    .row
+      .column.large-9
+        mixin featured-article(title, date, publication, url)
+          p.lead.margin-bottom-none <a href="#{url}" target="_blank">#{title}</a>
+          p.margin-bottom-less #{date} - #{publication}
+        +featured-article("Charities Seek Donations in Bitcoin", "04.12.15", "The Wall Street Journal", "http://www.wsj.com/articles/charities-seek-donations-in-bitcoin-1428894121")
+        +featured-article("BitPay Reveals the (Good) Reason Why Bitcoin Price is Down", "04.17.15", "The Cointelegraph", "http://cointelegraph.com/news/113987/bitpay-reveals-the-good-reason-why-bitcoin-price-is-down")
+        +featured-article("How to Trace a Political Donation Made with Bitcoin", "04.8.15", "Motherboard", "http://motherboard.vice.com/read/how-to-trace-a-political-donation-made-with-bitcoin")
+        +featured-article("This Week On The TechCrunch Bitcoin Podcast: Poker, BitPay And Growth", "03.26.15", "TechCrunch", "http://techcrunch.com/2015/03/26/this-week-on-the-techcrunch-bitcoin-podcast-poker-bitpay-and-growth")
+      .column.large-3
+        p Bitpay Blog
+        p Bitpay on Twitter
+        p Bitpay on facebook
+        p Bitpay Linked in
+    .row.text-center
+      p.lead.uppercase.text-center.margin-top FEATURED IN
+      mixin logos(name, width, height)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/publication_logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
+      +logos("new_york_times", 4.5, 2)
+      +logos("wired", 4, 2.5)
+      +logos("wall_street_journal", 4.5, 2.5)
+      +logos("techcrunch", 4.5, 2.5)
+      +logos("forbes", 4.5, 2.5)
+      
+      
+      
+  .section
+    .row
+      .column
+        h3.header__bottom-border-left Brand Guidelines
+    .row
+      .column.large-6
+        .div.border-gray(style="width: 100%; height: 10em;")
+      .column.large-6
+        .div.border-gray(style="width: 100%; height: 10em;")
+    
+    
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.medium-8.medium-offset-2
+        h2.text-center.white Need more? We're happy to help.
+        
+    .row
+      .column.medium-8.medium-offset-2.text-center
+        a(href="#").white.btn.btn-blue-solid.uppercase.bold Download Press Kit
+        a(href="mailto:media@bitpay.com").white.btn.btn-blue-border.uppercase.bold Email Us
+        h4.text-center.white.margin-top-less Media Contact +1 (415) 650-7450
