@@ -4,7 +4,6 @@
   border: 1px solid $blue-light;
   transition: background 0.2s;
   display: inline-block;
-  margin: 0.5rem 1rem 0.5rem 0;
   line-height: 22px;
   &-blue-solid {
     background: $blue-light;
@@ -21,4 +20,8 @@
   @media #{$small-only} {
     padding: 0.75rem 1.125rem;
   }
+}
+
+.btn-margin {
+  margin: 0.5rem 1rem 0.5rem 0;
 }
