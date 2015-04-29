@@ -5,10 +5,10 @@ block title
 
 block content
   .row.margin-bottom-less
-    .column.medium-6
+    .column.medium-3.small-3
       h1 Press
-    .column.medium-6
-      a(href="#").white.btn.btn-blue-solid.uppercase.bold.right.margin-vertical Download Press Kit
+    .column.medium-9.small-9
+      a(href="#").white.btn.btn-blue-solid.uppercase.bold.right Download Press Kit
       
       
   .bg-gray-gradient.border-vertical-gray.padding-vertical-more
@@ -24,13 +24,13 @@ block content
         +featured-article("BitPay Reveals the (Good) Reason Why Bitcoin Price is Down", "04.17.15", "The Cointelegraph", "http://cointelegraph.com/news/113987/bitpay-reveals-the-good-reason-why-bitcoin-price-is-down")
         +featured-article("How to Trace a Political Donation Made with Bitcoin", "04.8.15", "Motherboard", "http://motherboard.vice.com/read/how-to-trace-a-political-donation-made-with-bitcoin")
         +featured-article("This Week On The TechCrunch Bitcoin Podcast: Poker, BitPay And Growth", "03.26.15", "TechCrunch", "http://techcrunch.com/2015/03/26/this-week-on-the-techcrunch-bitcoin-podcast-poker-bitpay-and-growth")
-      .column.large-3
-        p Bitpay Blog
-        p Bitpay on Twitter
-        p Bitpay on facebook
-        p Bitpay Linked in
+      .column.large-3.uppercase
+          p BitPay Blog
+          p BitPay on Twitter
+          p BitPay on LinkedIn
+          p BitPay on Facebook
     .row.text-center
-      p.lead.uppercase.text-center.margin-top FEATURED IN
+      <hr>
       mixin logos(name, width, height)
         .home-logo.h2.opacity.unselectable(style="background-image: url('/images/publication_logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
       +logos("new_york_times", 4.5, 2)
@@ -47,9 +47,36 @@ block content
         h3.header__bottom-border-left Brand Guidelines
     .row
       .column.large-6
-        .div.border-gray(style="width: 100%; height: 10em;")
+        .div
+          <img src="/images/bitpay-brand-logo-white.jpg" alt="BitPay" width="100%">
+        ul.inline-list
+          li <a href="#">PNG</a>
+          li <a href="#">EPS</a>
+          li <a href="#">JPG</a>
       .column.large-6
-        .div.border-gray(style="width: 100%; height: 10em;")
+        <img src="/images/bitpay-brand-logo-blue.jpg" alt="BitPay" width="100%">
+        ul.inline-list
+          li <a href="#">PNG</a>
+          li <a href="#">EPS</a>
+          li <a href="#">JPG</a>
+    .row.margin-top
+      .column.large-6
+        p This is the primary logo that we use. Make sure to give it adequate spacing on the sides. Preferably use the white logo on a dark background.
+        p BitPay is written with the B and P capitalized to distinguish BitPay (our company) from bitcoin (the currency).
+      .column.large-6
+        .row
+          .column.large-6.medium-6
+            p.uppercase Correct
+          .column.large-6.medium-6
+            p.checkmark BitPay
+        .row
+          .column.large-6.medium-6
+            p.uppercase Incorrect
+          .column.large-6.medium-6
+            p.incorrect.margin-bottom-less Bitpay
+            p.incorrect.margin-bottom-less bitPay
+            p.incorrect.margin-bottom-less bit-pay
+            p.incorrect.margin-bottom-less bit pay
     
     
   .section.bg-lightblue-gradient.border-top-gray

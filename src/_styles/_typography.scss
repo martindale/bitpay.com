@@ -52,6 +52,31 @@
   background: url('/images/arrow-blue.svg');
 }
 
+.checkmark:before,
+.incorrect:before {
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-right: 6px;
+  position: relative;
+  top: -1px;
+}
+
+.checkmark:before {
+  background: url('/images/icons/checkmark.svg');
+  width: 22px;
+  height: 21px;
+}
+
+.incorrect:before {
+  background: url('/images/icons/incorrect.svg');
+  margin-right: 9px;
+}
+
+
 p.lead {
   @media #{$small-only} {
     font-size: 1.11875rem;
