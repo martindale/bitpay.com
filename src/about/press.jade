@@ -16,7 +16,7 @@ block content
       .column
         h3.header__bottom-border-left Recent Coverage
     .row
-      .column.large-9
+      .column.large-8
         mixin featured-article(title, date, publication, url)
           p.lead.margin-bottom-none <a href="#{url}" target="_blank">#{title}</a>
           p.margin-bottom-less #{date} - #{publication}
@@ -24,11 +24,11 @@ block content
         +featured-article("BitPay Reveals the (Good) Reason Why Bitcoin Price is Down", "04.17.15", "The Cointelegraph", "http://cointelegraph.com/news/113987/bitpay-reveals-the-good-reason-why-bitcoin-price-is-down")
         +featured-article("How to Trace a Political Donation Made with Bitcoin", "04.8.15", "Motherboard", "http://motherboard.vice.com/read/how-to-trace-a-political-donation-made-with-bitcoin")
         +featured-article("This Week On The TechCrunch Bitcoin Podcast: Poker, BitPay And Growth", "03.26.15", "TechCrunch", "http://techcrunch.com/2015/03/26/this-week-on-the-techcrunch-bitcoin-podcast-poker-bitpay-and-growth")
-      .column.large-3.uppercase
-          p BitPay Blog
-          p BitPay on Twitter
-          p BitPay on LinkedIn
-          p BitPay on Facebook
+      .column.large-4.uppercase
+          p.blog <a href="http://blog.bitpay.com">BitPay Blog</a>
+          p.twitter <a href="http://www.twitter.com/bitpay" target="_blank">BitPay on Twitter</a>
+          p.linkedin <a href="http://www.linkedin.com/company/bitpay-inc-" target="_blank">BitPay on LinkedIn</a>
+          p.facebook <a href="https://www.facebook.com/BitPayOfficial" target="_blank">BitPay on Facebook</a>
     .row.text-center
       <hr>
       mixin logos(name, width, height)

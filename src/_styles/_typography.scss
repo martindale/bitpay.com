@@ -76,6 +76,53 @@
   margin-right: 9px;
 }
 
+.blog:before {
+  // inline-icon mixin?
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  height:22px;
+  width:22px;
+  background: url('/images/icons/blog-dark.svg');
+  margin-right: .6rem;
+}
+
+.twitter:before {
+  // inline-icon mixin?
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  height:22px;
+  width:26px;
+  background: url('/images/icons/twitter-dark.svg');
+  margin-right: .4rem;
+}
+
+.linkedin:before {
+  // inline-icon mixin?
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  height:20px;
+  width:20px;
+  background: url('/images/icons/linkedin-dark.svg');
+  margin-right: .8rem;
+}
+
+.facebook:before {
+  // inline-icon mixin?
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  height:20px;
+  width:20px;
+  background: url('/images/icons/facebook-dark.svg');
+  margin-right: 0.8rem;
+}
 
 p.lead {
   @media #{$small-only} {
