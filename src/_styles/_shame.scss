@@ -31,19 +31,6 @@
   width: 2em;
 }
 
-.symbol {
-  font-size: 35%;
-  position: relative;
-  top: -25px;
-}
-
-.rates,
-.rates-flag {
-  @media #{$small-only} {
-    font-size: 80%;
-  }
-}
-
 .feature-container {
   position: relative;
   margin: 4rem auto;
