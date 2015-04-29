@@ -63,9 +63,25 @@ p.lead {
   font-size: 90%;
 }
 
+.line-hieght-more {
+  line-height: 2em;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .superscript-first-letter:first-letter {
   font-size: 35%;
   vertical-align: super;
+}
+
+.large-flow-2-columns {
+  @media #{$large-up} {
+    columns: auto 2;
+  }
 }
 
 .small-smaller-text {

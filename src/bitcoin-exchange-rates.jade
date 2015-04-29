@@ -12,19 +12,12 @@ block content
   #ratesAppContainer(ng-controller="viewController")
     mixin rate-flag(name, code, src)
       tr
-        td.column.small-5.medium-5.padding-horizontal-none.padding-bottom-less #{name}
-        td.column.small-5.medium-4.text-right.padding-horizontal-none.mono
+        td.column.small-5 #{name}
+        td.column.small-7.text-right.mono
           price(currency="BTC" valued-in="#{code}")
-          span  #{code}
-        td.column.medium-1.hide-for-small.padding-left-none
-          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}'); width: 2em;")
-    
-    mixin rate(name, code)
-      tr
-        td.column.small-5.medium-6.large-7.padding-horizontal-none.padding-bottom-less #{name}
-        td.column.small-5.medium-4.large-3.text-right.padding-horizontal-none.mono
-          price(currency="BTC" valued-in="#{code}") 
-          span  #{code}
+          span  #{code}&nbsp;
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}'); height: 1em;")
+          
 
     .padding-vertical.bg-gray.border-vertical-gray
       .row
@@ -44,7 +37,7 @@ block content
           h5.uppercase.header__bottom-border-left Popular Currencies
           p 1 BTC
             span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 1.5em; height: 0.75em; top: 0;")
-          table(style="width: 100%;").small-smaller-text
+          table(style="width: 100%;").small-smaller-text.line-hieght-more
             +rate-flag("US Dollar", "USD", "usd.png")
             +rate-flag("Eurozone Euro", "EUR", "eur.png")
             +rate-flag("Pound Sterling", "GBP", "gbp.png")
@@ -61,23 +54,14 @@ block content
             span.search-icon.background-contain(style="background-image: url('/images/filter.svg');")
 
       .row
-        .column.small-smaller-text
-          li(ng-repeat="currency in currencies | filter:currenciesFilter")
-            .column.small-5.medium-6.large-7.padding-horizontal-none(ng-bind="currency.name")
-            .column.small-5.medium-4.large-3.text-right.padding-horizontal-none.mono
-              price(currency="BTC" valued-in="{{currency.code}}")
-              | &nbsp;
-              span(ng-bind="currency.code")
-          
-        //- .column.large-6.small-smaller-text
-        //-   ul
-        //-     li(ng-repeat="num in currenciesSpaces1")
-        //-       span(ng-bind="num")
-        //- 
-        //- .column.medium-6.small-smaller-text
-        //-   ul
-        //-     li(ng-repeat="num in currenciesSpaces2")
-        //-       span(ng-bind="num")
+        .column
+          ul.no-bullet.large-flow-2-columns.small-smaller-text.line-hieght-more
+            li.row(ng-repeat="currency in currencies | filter:currenciesFilter track by currency.code")
+              .column.small-6.padding-horizontal.overflow-ellipsis.text-left(ng-bind="currency.name")
+              .column.small-6.padding-horizontal.overflow-ellipsis.text-right.mono
+                price(currency="BTC" valued-in="{{currency.code}}")
+                | &nbsp;
+                span(ng-bind="currency.code")
 
     .section.bg-gray.border-top-gray#bbb
       .row
