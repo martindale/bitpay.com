@@ -211,5 +211,17 @@ block content
                 a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
                   
       .column.large-4#benefits
+        mixin benefit(src,  name)
+          .column.small-6.margin-bottom.end
+            .h1.background-contain(style="background-image: url('/images/#{src}'); height: 2.5em;")
+            span.small.text-center.block.margin-top-less #{name}
+            
         h3.header__bottom-border-left Benefits
-        p When you join BitPay, we make sure you get all the support you need so that you feel your best at and away from work.
+        p.margin-bottom-more When you join BitPay, we make sure you get all the support you need so that you feel your best at and away from work.
+        .row
+          +benefit("equipment.svg", "The best equipment to get the job done")
+          +benefit("health.svg", "Health, dental and vision benefits")
+          +benefit("lunch.svg", "Complimentary catered lunch daily")
+          +benefit("flexible.svg", "Flexible work hours with some telecommute")
+          +benefit("bitcoin-pay.svg", "Option to take pay in bitcoin")
+          +benefit("snacks.svg", "Unlimited supply of healthy snacks")
