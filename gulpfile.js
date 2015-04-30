@@ -43,7 +43,7 @@ gulp.task('serve', ['build:dev'], function() {
     minify: false,
     snippetOptions: {
       rule: {
-        fn: function (snippet, match){
+        fn: function(snippet, match) {
           snippet = snippet.replace('async', 'async data-no-instant');
           return snippet + match;
         }
@@ -167,18 +167,16 @@ gulp.task('copy', function() {
 
 //add hashes to filenames to bust caches, write rev-manifest.json
 gulp.task('hash', function() {
+  $.revAllInstance = new $.revAll({
+    dontRenameFile: [/^\/favicon.ico$/g, '.html'],
+    fileNameVersion: 'version.json'
+  });
   return gulp.src(['dist/**/*.html', 'dist/**/*.css', 'dist/**/*.js', 'dist/images/**/*'], {
       base: path.join(process.cwd(), 'dist')
     })
-    .pipe($.revAll({
-      ignore: ['.html'],
-      quiet: true
-    }))
+    .pipe($.revAllInstance.revision())
     .pipe(gulp.dest('dist'))
-    .pipe($.revNapkin({
-      verbose: false
-    }))
-    .pipe($.revAll.manifest())
+    .pipe($.revAllInstance.versionFile())
     .pipe(gulp.dest('dist'));
 });
 
