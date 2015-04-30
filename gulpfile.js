@@ -5,10 +5,9 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var path = require('path');
 var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var globby = require('globby');
 var env = {};
+var devDeps = {};
 
 gulp.task('default', function(cb) {
   runSequence('build', cb);
@@ -24,6 +23,9 @@ gulp.task('build', ['delete'], function(cb) {
 
 gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
+  devDeps.browserSync = require('browser-sync');
+  devDeps.reload = devDeps.browserSync.reload;
+
   if (env.uncss) {
     runSequence(
       ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
@@ -37,7 +39,7 @@ gulp.task('build:dev', ['delete'], function(cb) {
 
 // Watch for changes & reload
 gulp.task('serve', ['build:dev'], function() {
-  browserSync({
+  devDeps.browserSync({
     notify: false,
     logPrefix: 'serve',
     minify: false,
@@ -58,17 +60,17 @@ gulp.task('serve', ['build:dev'], function() {
     }
   });
 
-  gulp.watch(['src/_**/*.jade'], ['uncached-rebuild-jade', reload]);
-  gulp.watch(['src/**/*.jade', '!src/_**/*.jade', 'src/**/*.html'], ['rebuild-jade', reload]);
-  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', reload]);
+  gulp.watch(['src/_**/*.jade'], ['uncached-rebuild-jade', devDeps.reload]);
+  gulp.watch(['src/**/*.jade', '!src/_**/*.jade', 'src/**/*.html'], ['rebuild-jade', devDeps.reload]);
+  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', devDeps.reload]);
   gulp.watch(['*.js', 'tasks/*.js', 'src/**/*.js'], ['jshint']);
-  gulp.watch(['src/**/*.js'], ['rebuild-jade', reload]);
-  gulp.watch(['src/images/**/*'], ['images', reload]);
+  gulp.watch(['src/**/*.js'], ['rebuild-jade', devDeps.reload]);
+  gulp.watch(['src/images/**/*'], ['images', devDeps.reload]);
 });
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function() {
-  browserSync({
+  devDeps.browserSync({
     notify: false,
     logPrefix: 'serve:dist',
     https: true,
@@ -183,13 +185,13 @@ gulp.task('hash', function() {
 gulp.task('jshint', function() {
   return gulp.src(['*.js', 'tasks/*.js', 'src/**/*.js'])
     .pipe($.cached('jshint'))
-    .pipe(reload({
+    .pipe(devDeps.reload({
       stream: true,
       once: true
     }))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.if(!(devDeps.browserSync && devDeps.browserSync.active), $.jshint.reporter('fail')));
 });
 
 // Load custom tasks from the `tasks` directory
