@@ -38,6 +38,6 @@
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-load-plugins": "^0.10.0",
-    "run-sequence": "^1.0.2"
+    "run-sequence": "^1.1.0"
   }
 }
