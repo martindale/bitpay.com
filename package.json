@@ -4,9 +4,7 @@
   "devDependencies": {
     "async": "^0.9.0",
     "browser-sync": "^2.5.0",
-    "del": "^1.1.1",
     "globby": "^2.0.0",
-    "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-cached": "^1.0.2",
     "gulp-changed": "^1.0.0",
@@ -17,7 +15,6 @@
     "gulp-jade": "^1.0.0",
     "gulp-jshint": "^1.6.3",
     "gulp-l10n": "^0.0.2",
-    "gulp-load-plugins": "^0.10.0",
     "gulp-minify-html": "^1.0.1",
     "gulp-plumber": "^1.0.0",
     "gulp-rev-all": "^0.8.18",
@@ -31,11 +28,16 @@
     "jshint-stylish": "^1.0.1",
     "mkdirp": "^0.5.0",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.0.2",
     "uglify-js": "^2.4.19"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-load-plugins": "^0.10.0",
+    "run-sequence": "^1.0.2"
+  }
 }
