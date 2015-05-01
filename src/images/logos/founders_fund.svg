@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="194px" height="40px" viewBox="0 0 194 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>FOUNDERS FUND + Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="developers-copy" sketch:type="MSArtboardGroup" transform="translate(-254.000000, -1321.000000)">
+            <g id="FOUNDERS-FUND-+-Group" sketch:type="MSLayerGroup" transform="translate(254.000000, 1321.000000)">
+                <text id="FOUNDERS-FUND" sketch:type="MSTextLayer" font-family="Karla" font-size="16" font-weight="normal" letter-spacing="1.70000005">
+                    <tspan x="51" y="39" fill="#EF5131">FOUNDERS</tspan>
+                    <tspan x="143.8" y="39" fill="#676767"> </tspan>
+                    <tspan x="149.308" y="39" fill="#232023">FUN</tspan>
+                    <tspan x="184.216001" y="39" fill="#232023">D</tspan>
+                </text>
+                <g id="Group" transform="translate(0.250000, 0.859029)" sketch:type="MSShapeGroup">
+                    <circle id="Oval-22" fill="#1C1A1C" cx="2" cy="2" r="2"></circle>
+                    <circle id="Oval-22-Copy-5" fill="#1C1A1C" cx="11" cy="2" r="2"></circle>
+                    <circle id="Oval-22-Copy-10" fill="#1C1A1C" cx="19.75" cy="1.5" r="1.5"></circle>
+                    <path d="M29.5,3 C30.0522847,3 30.5,2.55228475 30.5,2 C30.5,1.44771525 30.0522847,1 29.5,1 C28.9477153,1 28.5,1.44771525 28.5,2 C28.5,2.55228475 28.9477153,3 29.5,3 Z" id="Oval-22-Copy-15" fill="#E05E31"></path>
+                    <circle id="Oval-22-Copy-20" fill="#1C1A1C" cx="38.25" cy="2" r="2"></circle>
+                    <circle id="Oval-22-Copy" fill="#1C1A1C" cx="2" cy="10" r="2"></circle>
+                    <circle id="Oval-22-Copy-6" fill="#E05E31" cx="11" cy="10" r="1"></circle>
+                    <circle id="Oval-22-Copy-11" fill="#E05E31" cx="19.75" cy="10" r="1"></circle>
+                    <circle id="Oval-22-Copy-16" fill="#E05E31" cx="29.5" cy="10" r="1"></circle>
+                    <circle id="Oval-22-Copy-21" fill="#1C1A1C" cx="38.5" cy="10" r="2"></circle>
+                    <circle id="Oval-22-Copy-2" fill="#1C1A1C" cx="2" cy="19" r="2"></circle>
+                    <circle id="Oval-22-Copy-7" fill="#1C1A1C" cx="11" cy="19" r="2"></circle>
+                    <circle id="Oval-22-Copy-12" fill="#E05E31" cx="19.75" cy="19" r="1"></circle>
+                    <circle id="Oval-22-Copy-17" fill="#1C1A1C" cx="29.5" cy="19" r="2"></circle>
+                    <circle id="Oval-22-Copy-22" fill="#1C1A1C" cx="38.5" cy="19" r="2"></circle>
+                    <circle id="Oval-22-Copy-3" fill="#1C1A1C" cx="2" cy="28" r="2"></circle>
+                    <circle id="Oval-22-Copy-8" fill="#E05E31" cx="11" cy="27" r="1"></circle>
+                    <circle id="Oval-22-Copy-13" fill="#E05E31" cx="19.75" cy="28" r="1"></circle>
+                    <circle id="Oval-22-Copy-18" fill="#E05E31" cx="29.5" cy="28" r="1"></circle>
+                    <circle id="Oval-22-Copy-23" fill="#1C1A1C" cx="38.5" cy="28" r="2"></circle>
+                    <circle id="Oval-22-Copy-4" fill="#1C1A1C" cx="2" cy="36.5" r="1.5"></circle>
+                    <circle id="Oval-22-Copy-19" fill="#1C1A1C" cx="29.5" cy="36.5" r="1.5"></circle>
+                    <circle id="Oval-22-Copy-9" fill="#E05E31" cx="11" cy="36" r="1"></circle>
+                    <circle id="Oval-22-Copy-14" fill="#1C1A1C" cx="19.75" cy="36" r="1"></circle>
+                    <circle id="Oval-22-Copy-24" fill="#1C1A1C" cx="38.5" cy="36" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
