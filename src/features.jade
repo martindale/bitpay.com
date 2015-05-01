@@ -4,19 +4,39 @@ block title
 
 append vars
   -var tourSelected = 'Features'
-
+  -var pageSelected = 'Tour'
+  
 block content
   include _includes/tour-nav
-  .section.bg-gray.border-bottom-gray
+  .section.bg-gray-gradient.border-bottom-gray
     .row
-      h2.text-center.header__bottom-border Our Features
-    .feature-diagram-container
-      img(src="/images/features_diagram.svg" width="100%")
-  
+      .feature-container
+        .h1.background-contain.feature-image(style="background-image: url('/images/features_diagram.svg');")
+        .feature-icon.feature-1.fade-in
+          span.small-icon.background-contain.h5.margin-vertical-none.text-center(style="background-image: url('/images/icons/platform.svg'); margin-left: 11px;")
+          <br />
+          span.feature-label.blue-light <a href="#platform">Platform</a>
+        .feature-icon.feature-2.fade-in.delay-1
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/e-commerce.svg');")
+          span.feature-label.blue-light <a href="#ecommerce">E-Commerce</a>
+        .feature-icon.feature-3.fade-in.delay-2
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/billing.svg'); top: 4px;")
+          span.feature-label.blue-light <a href="#billing">Billing</a>
+        .feature-icon.feature-4.fade-in.delay-3
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/retail.svg'); margin-left: 3px;")
+          <br />
+          span.feature-label.blue-light <a href="#retail">Retail</a>
+        .feature-icon.feature-5.fade-in.delay-4
+          span.feature-label.blue-light <a href="#donations">Donations</a>
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/donations.svg');")
+        .feature-icon.feature-6.fade-in.delay-5
+          span.feature-label.blue-light <a href="#support">Support</a>
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/icons/support.svg'); top: 4px;")
+
   .section.border-bottom-gray
     .row
-      h2.text-center.header__bottom-border Platform
-
+      h2.text-center.header__bottom-border#platform Platform
+      
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Direct Bank Deposit
@@ -38,7 +58,7 @@ block content
       .column.medium-12.large-4
         h4 11 Open Source Libraries and SDKs for Custom Integration
         p Use publicly auditable and versatile code for your custom integrations with the BitPay API.
-        a(href-"#") See our full list of libraries and SDKs >
+        a(href="/integrations").arrow-blue See our full list of libraries and SDKs
 
     .row.margin-bottom-more
       .column.medium-12.large-4
@@ -71,11 +91,11 @@ block content
         p Stay up-to-date with your transactions via email, text, and server IPNs. 
       .column.medium-12.large-4
         h4 Ledger Payment Tracking
-          p Track and export transaction data for all bitcoin payments received.
+        p Track and export transaction data for all bitcoin payments received.
 
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border E-Commerce
+      h2.text-center.header__bottom-border#ecommerce E-Commerce
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Payment Buttons and Hosted Checkout
@@ -97,7 +117,7 @@ block content
 
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border Billing
+      h2.text-center.header__bottom-border#billing Billing
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Email Invoicing
@@ -111,11 +131,11 @@ block content
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Billing Plugins
-          p Add a bitcoin payment option to the bills you send to customers and clients.
+        p Add a bitcoin payment option to the bills you send to customers and clients.
 
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border Retail
+      h2.text-center.header__bottom-border#retail Retail
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Mobile Point of Sale App
@@ -132,11 +152,11 @@ block content
           p Let customers select from set tip percentages or choose their own custom tip amounts. 
         .column.medium-12.large-4.end
           h4 Direct POS Integrations
-            p Accept bitcoin natively in your point of sale software. 
+          p Accept bitcoin natively in your point of sale software. 
             
   .section.border-bottom-gray
       .row.margin-bottom-more
-        h2.text-center.header__bottom-border Donations
+        h2.text-center.header__bottom-border#donations Donations
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Web-Based Donation Buttons
@@ -150,11 +170,11 @@ block content
       .row.margin-bottom-more
         .column.medium-12.large-4
           h4 Donation Platform
-          p Accept bitcoin donations through our integrations with external fundraising platforms
+          p Accept bitcoin donations through our integrations with external fundraising platforms.
           
   .section.border-bottom-gray
     .row.margin-bottom-more
-      h2.text-center.header__bottom-border Support
+      h2.text-center.header__bottom-border#support Support
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Email and Phone Availability
@@ -168,16 +188,15 @@ block content
     .row.margin-bottom-more
       .column.medium-12.large-4
         h4 Dedicated Account Management
-        p Keep things running smoothly with a team member dedicated to supporting and support of a team membe
+        p Keep things running smoothly with a team member dedicated to supporting and support of a team member.
       .column.medium-12.large-4.end
         h4 Forums for Product Feedback
         p Propose improvements, give product feedback, and ask questions about our platform on our BitPay Labs forum.
 
-  .section.border-top-gray
+  .section.bg-lightblue-gradient
     .row
-      h3.text-center Sign up for a BitPay account. It's free and always will be.
-      .margin-top-less
-        .column.medium-4.medium-offset-2.text-center
-          a(href="#").white.btn.btn-blue-solid.uppercase.bold.medium-float-right Accept Bitcoin
-        .column.medium-4.text-center.end
-          a(href="/enterprise").btn.btn-blue-border.uppercase.bold.medium-float-left Continue Tour
+      .column.large-10.large-offset-1.text-center
+        h3.white.text-center Get access to the BitPay platform.
+        .margin-top-less
+          a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
+          a(href="/enterprise").white.arrow.btn.btn-blue-border.uppercase.bold.btn-margin Enterprise Features

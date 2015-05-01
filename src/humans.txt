@@ -1,12 +1,1 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
-
-# TEAM
-
-  [TODO: generate this]
-  Jason Dreyzehner -- Design Lead -- https://twitter.com/bitjson
-
-
-# TECHNOLOGY COLOPHON
-
-  HTTP, Electricity, Synergy, Magic Internet Money
+BitPay is designed, built, and operated by a large team from around the world. We're constantly reimagining and developing our platform with the latest and greatest in technology and Bitcoin. If you're interested in joining the team, please visit bitpay.com/team.

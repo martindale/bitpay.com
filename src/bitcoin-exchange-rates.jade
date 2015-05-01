@@ -1,10 +1,88 @@
 extends _layouts/primary
 
+append scripts
+  +jademin('/scripts/rates.min.js', true)
+    script(src='/_scripts/currencies.js')
+    script(src='/_scripts/rates.js')
+
 block title
   title Bitcoin Exchange Rates | BitPay
 
 block content
-  .row
-    .column.medium-12
-      h1.text-center Rates
-      
+  #ratesAppContainer(ng-controller="viewController")
+    mixin rate-flag(name, code, src)
+      tr
+        td.column.small-5 #{name}
+        td.column.small-7.text-right.mono
+          price(currency="BTC" valued-in="#{code}")
+          span  #{code}&nbsp;
+          span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}'); height: 1em;")
+          
+
+    .padding-vertical.bg-gray.border-vertical-gray
+      .row
+        .column.large-5.xlarge-6.small-only-margin-bottom
+          h5.uppercase.header__bottom-border-left Current Rate (BBB)
+          p.lead.margin-bottom-none 1 BTC
+            span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 2em;")
+            | USD
+          .h1.superscript-first-letter(style="font-size: 4em; line-height: 1;")
+            price(currency="BTC" valued-in="USD")
+            span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/usd.png'); vertical-align: middle; position: relative; margin-left: 0.5rem; top: -2px;")
+          p.margin-top-more
+            a.arrow-blue(href="#bbb") How we calculate this rate
+        
+            
+        .column.large-7.xlarge-6
+          h5.uppercase.header__bottom-border-left Popular Currencies
+          p 1 BTC
+            span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 1.5em; height: 0.75em; top: 0;")
+          table(style="width: 100%;").small-smaller-text.line-hieght-more
+            +rate-flag("US Dollar", "USD", "usd.png")
+            +rate-flag("Eurozone Euro", "EUR", "eur.png")
+            +rate-flag("Pound Sterling", "GBP", "gbp.png")
+            +rate-flag("Canadian Dollar", "CAD", "cad.png")
+            +rate-flag("Chinese Yuan", "CNY", "cny.png")
+          
+    .section
+      .row
+        .column.large-6
+          h2.header__bottom-border-left All Exchange Rates
+        .column.large-6
+          form
+            input.rates-search(placeholder="Filter currencies..." type="search" name="search" ng-model="currenciesFilter")
+            span.search-icon.background-contain(style="background-image: url('/images/filter.svg');")
+
+      .row
+        .column
+          ul.no-bullet.large-flow-2-columns.small-smaller-text.line-hieght-more
+            li.row(ng-repeat="currency in currencies | filter:currenciesFilter track by currency.code")
+              .column.small-6.padding-horizontal.overflow-ellipsis.text-left(ng-bind="currency.name")
+              .column.small-6.padding-horizontal.overflow-ellipsis.text-right.mono
+                price(currency="BTC" valued-in="{{currency.code}}")
+                | &nbsp;
+                span(ng-bind="currency.code")
+
+    .section.bg-gray.border-top-gray#bbb
+      .row
+        .column.medium-6.small-only-margin-bottom
+          h2.header__bottom-border-left Bitcoin Best Bid Rate
+          p.lead BitPay consolidates market depth from multiple exchanges to provide buyers with a Bitcoin Best Bid (BBB) exchange rate. We currently calculate the BBB based on bitcoin/US Dollar rates because of maximum liquidity.
+          p To calculate the exchange rate for US Dollars, we pull the market depth from exchanges with adequate liquidity and withdrawal capability in USA and the Eurozone. The exchange order books are merged into a Consolidated Level II table.
+          p Exchange rates for non-USD currencies are provided by the <a href="http://openexchangerates.org" target="_blank"> Open Exchange Rates API</a> at the time the invoice is generated.
+          p The BBB is calculated by simulating an auto-routing market sell order, across all exchanges, with zero commission fees. Buyers will always get a better value by spending their bitcoins at a BitPay merchant than by selling them on an exchange. 
+        .column.medium-6.large-5.large-offset-1.end
+          .h1.background-contain(style="background-image: url('/images/bbb.svg'); height:10em;")
+          .padding.border-gray.text-center.bg-white.radius
+            p.lead.margin-bottom-none The BBB is available <a href="https://bitpay.com/api/rates">via JSON API</a>.
+            p.margin-bottom-none Rates are updated every 1 minute.
+          
+    .section.bg-lightblue-gradient.border-top-gray
+      .row
+        .column.medium-8.medium-offset-2
+          h2.text-center.white Get Started
+          h4.text-center.white The free plan includes unlimited processing volume, forever.
+      .row
+        .column.medium-8.medium-offset-2.text-center
+          a(href="#").white.btn.btn-blue-solid.uppercase.bold Accept Bitcoin
+          a(href="/tour").white.btn.btn-blue-border.uppercase.bold.arrow Start Tour

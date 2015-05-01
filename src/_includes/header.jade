@@ -1,19 +1,16 @@
+- var menu = { 'Tour': '/tour', 'Integrations': '/integrations', 'Pricing': '/pricing', 'Docs': '/docs', 'Log In': '#' };
+
 .row(role="navigation")
   .column.medium-1
-    a(href="/").logo.margin-top-less.medium-margin-top
+    a(href="/" title="Home").logo.margin-top-less.medium-margin-top
 
-  .column.medium-11.show-for-medium-up
+  .column.medium-11.show-for-large-up
     ul.inline-list.right.padding-top-less.medium-padding-top
-      li
-        a(href="/tour").menu-item Tour
-      li
-        a(href="/integrations").menu-item Integrations
-      li
-        a(href="/pricing").menu-item Pricing
-      li
-        a(href="/docs").menu-item Documentation
-
-      li
-        a(href="/docs/api").menu-item API
-      li
-        a(href="#").menu-item.login-btn Log In
+      each val, key in menu
+        li
+          if pageSelected === key
+            a.menu-item.selected(href=val, title=key)= key
+          else if key === 'Log In'
+            a.menu-item.login-btn(href=val, title=key)= key
+          else
+            a.menu-item(href=val, title=key)= key

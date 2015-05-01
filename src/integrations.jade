@@ -3,7 +3,107 @@ extends _layouts/primary
 block title
   title Integrations | BitPay
 
+append vars
+  -var integrationSelected = 'Integrated Solutions'
+  -var pageSelected = 'Integrations'
+      
 block content
-  .row
-    .column.medium-12
-      h1.text-center Integrations
+  mixin integration(src, href, name)
+    .column.small-3.margin-bottom.end
+      a.h1.background-contain.integration-logo(href="#{href}" title="#{name}" style="background-image: url('/images/integrations/#{src}');")
+      span.small.text-center.block.margin-top-less #{name}
+
+  .section.bg-gray.border-vertical-gray.margin-bottom-less
+    .row
+      .column.medium-10.medium-offset-1
+        h2.text-center.header__bottom-border.fade-in-up Accept bitcoin anywhere you take payments.
+        p.lead.text-center.margin-bottom.fade-in-up.delay-1 Over 40 integrations and counting.
+      .column.medium-8.medium-offset-2.end.fade-in-up.delay-2
+        form
+          input.integration-search(placeholder="Search our integrations..." type="search" value="" name="search")
+          span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
+  include _includes/integrations-nav
+            
+  .section
+    .row
+      .column.medium-4.large-5.margin-bottom
+        h3.header__bottom-border-left Integrated Solutions
+        p.lead These integrated solutions work out of the box, no development required. Simply connect your BitPay account and begin accepting bitcoin payments.
+      .column.medium-8.large-6.large-offset-1
+        +integration("demandware.png", "http://demandware.com", "Demandware")
+        +integration("shopify.png", "http://shopify.com", "Shopify")
+        +integration("paypal.png", "http://paypal.com", "PayPal")
+        +integration("3dcart.png", "http://3dcart.com", "3DCart")
+        +integration("blesta.png", "http://blesta.com", "Blesta")
+        +integration("nats.png", "http://www.toomuchmedia.com/pp_nats.htm", "NATs")
+        +integration("foxycart.png", "http://foxycart.com", "Foxycart")
+        +integration("prospercart.png", "http://prospercart.fi", "ProsperCart")
+        +integration("lemonstand.png", "http://lemonstand.com", "Lemonstand")
+        +integration("cydec.png", "http://cydec.com", "Cydec")
+        +integration("mpa3.png", "http://mpa3.com", "MPA3")
+        +integration("egovlink.png", "http://egovlink.com", "E-GOV Link")
+        +integration("globalpayments.png", "http://globalpaymentsinc.com", "Global Payments")
+        +integration("bitmonet.png", "http://bitmonet.com", "Bitmonet")
+        
+  .section.border-top-gray
+    .row
+      .column.medium-4.large-5.margin-bottom
+        h3.header__bottom-border-left Open Source Plugins
+        p.lead BitPay develops and maintains plugins for many of the world’s most popular open-source eCommerce solutions.
+      .column.medium-8.large-6.large-offset-1
+        +integration("magento.png", "http://magento.com", "Magento")
+        +integration("ecwid.png", "http://ecwid.com", "Ecwid")
+        +integration("gravityforms.png", "http://gravityforms.com", "Gravity Forms")
+        +integration("membershippro.png", "http://.com", "Membership Pro")
+        +integration("opencart.png", "http://opencart.com", "OpenCart")
+        +integration("oscommerce.png", "http://oscommerce.com", "OScommerce")
+        +integration("prestashop.png", "http://prestashop.com", "PrestaShop")
+        +integration("spreecommerce.png", "http://spreecommerce.com", "Spree Commerce")
+        +integration("ubercart.png", "http://ubercart.com", "Ubercart")
+        +integration("virtuemart.png", "http://virtuemart.net", "Virtue Mart")
+        +integration("woocommerce.png", "http://woocommerce.com", "WooCommerce")
+        +integration("wpecommerce.png", "http://wpecommerce.org", "WP eCommerce")
+        +integration("xcart.png", "http://xcart.com", "Xcart")
+        +integration("zencart.png", "http://zencart.com", "Zen Cart")
+        +integration("commerceseo.png", "http://commerce-seo.de", "commerce:SEO")
+
+  .section.border-top-gray
+    .row
+      .column.medium-4.large-5.margin-bottom
+        h3.header__bottom-border-left Point of Sale
+        p.lead BitPay integrates directly into the world’s most popular retail Point-of-Sale solutions.
+      .column.medium-8.large-6.large-offset-1
+        +integration("softtouch.png", "http://softtouchpos.com", "Soft Touch")
+        +integration("visualtouch.png", "http://visualtouchpos.com", "VisualTouch")
+        +integration("dcpos.png", "http://dcpos.com", "DC POS")
+        +integration("ncrsilver.png", "http://ncrsilver.com", "NCR Silver")
+
+  .section.border-top-gray
+    .row
+      .column.medium-4.large-5.margin-bottom
+        h3.header__bottom-border-left Billing &amp; Accounting
+        p.lead Offer your customers bitcoin as a payment option in your billing &amp; accounting solutions.
+      .column.medium-8.large-6.large-offset-1
+        +integration("netsuite.png", "http://netsuite.com", "NetSuite")
+        +integration("paydici.png", "http://paydici.com", "Paydici")
+        +integration("whmcs.png", "http://whmcs.com", "WHMCS")
+        +integration("hostbill.png", "http://hostbillapp.com", "Host Bill")
+
+  .section.border-top-gray
+    .row
+      .column.medium-4.large-5.margin-bottom
+        h3.header__bottom-border-left Donations
+        p.lead Tap into the emerging bitcoin donor base by enabling bitcoin donations through one of these solutions.
+      .column.medium-8.large-6.large-offset-1
+        +integration("nationbuilder.png", "http://nationbuilder.com", "NationBuilder")
+        +integration("ngpvan.png", "http://ngpvan.com", "NGPVan")
+        +integration("coinvox.png", "http://coinvox.org", "Coin Vox")
+        +integration("targetedvictory.png", "http://targetedvictory.com", "Targeted Victory")
+        
+        
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.large-10.large-offset-1.text-center
+          h3.white Sign up for a BitPay account. It's free and always will be.
+          .margin-top-less
+            a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin

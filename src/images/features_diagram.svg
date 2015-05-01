@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="315px" height="364px" viewBox="0 0 315 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch Beta 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 2</title>
-    <desc>Created with Sketch Beta.</desc>
-    <defs>
-        <linearGradient x1="45.838924%" y1="26.4666552%" x2="100%" y2="100%" id="linearGradient-1">
-            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
-            <stop stop-color="#2A70B3" offset="100%"></stop>
-        </linearGradient>
-        <linearGradient x1="45.838924%" y1="26.4666552%" x2="100%" y2="100%" id="linearGradient-2">
-            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
-            <stop stop-color="#3358C7" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="FINAL" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="tour/features" sketch:type="MSArtboardGroup" transform="translate(-560.000000, -430.000000)">
-            <g id="Group-2" sketch:type="MSLayerGroup" transform="translate(560.000000, 430.000000)">
-                <path d="M0.215388927,92.0065104 L156.152889,181.665365 L157.426326,0.555989583 L0.215388927,92.0065104 Z" id="Path-15" opacity="0.302705224" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
-                <path d="M155.919693,92.6804297 L313.006331,183 L314.289153,0.555989583 L155.919693,92.6804297 Z" id="Path-16" opacity="0.302705224" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" transform="translate(235.104423, 91.777995) scale(-1, 1) translate(-235.104423, -91.777995) "></path>
-                <path d="M2.33689793,275.216427 L156.170074,363.665365 L157.426326,185 L2.33689793,275.216427 Z" id="Path-18" opacity="0.302705224" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" transform="translate(79.881612, 274.332682) scale(1, -1) translate(-79.881612, -274.332682) "></path>
-                <path d="M155.919693,274.00651 L311.857193,363.665365 L313.130631,182.55599 L155.919693,274.00651 Z" id="Path-17" opacity="0.302705224" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" transform="translate(234.525162, 273.110677) scale(-1, -1) translate(-234.525162, -273.110677) "></path>
-                <ellipse id="Oval-1" stroke="#DCDCDC" stroke-width="3" stroke-dasharray="3" sketch:type="MSShapeGroup" cx="156.813045" cy="181.5" rx="110.5" ry="110.5"></ellipse>
-                <path d="M156.813045,1.5 L156.813045,362.5" id="Line" stroke="#8D8D8D" stroke-linecap="square" stroke-dasharray="1,6" sketch:type="MSShapeGroup"></path>
-                <path d="M0.495459794,91.75 L313.130631,272.25" id="Line-2" stroke="#8D8D8D" stroke-linecap="square" stroke-dasharray="1,6" sketch:type="MSShapeGroup"></path>
-                <path d="M314.813053,92.5 L2.78461107,273.007586" id="Line" stroke="#8D8D8D" stroke-linecap="square" stroke-dasharray="1,6" sketch:type="MSShapeGroup"></path>
-                <circle id="Oval-3" stroke="#2A70B3" stroke-width="4" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="156.813045" cy="182.5" r="59.5"></circle>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="92 39 284 324"
+	 enable-background="new 92 39 284 324" xml:space="preserve">
+<title>diagram</title>
+<desc>Created with Sketch.</desc>
+<ellipse id="Oval-1-Copy-2" sketch:type="MSShapeGroup" fill="none" stroke="#DCDCDC" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" cx="235.1" cy="202.7" rx="107.2" ry="107.2">
+</ellipse>
+<path id="Line-3-Copy-5" sketch:type="MSShapeGroup" fill="none" stroke="#5A7CD9" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M234,254.4v108.1"/>
+<path id="Line-3-Copy-7" sketch:type="MSShapeGroup" fill="none" stroke="#6484DC" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M93,282.3l282-162.6"/>
+<path id="Line-3-Copy-8" sketch:type="MSShapeGroup" fill="none" stroke="#6484DC" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M92.5,120.2l283,161.6"/>
+<ellipse id="Oval-7" sketch:type="MSShapeGroup" fill="#FFFFFF" stroke="#496FD6" stroke-width="1.5" cx="235.1" cy="202.7" rx="50.2" ry="50.6">
+</ellipse>
+<path id="Line-3-Copy-4" sketch:type="MSShapeGroup" fill="none" stroke="#496FD6" stroke-width="2" stroke-linecap="round" stroke-dasharray="1,4" d="
+	M234,39.4v114"/>
+<path id="Imported-Layers-3" sketch:type="MSShapeGroup" fill="#496FD6" d="M251.1,203.1c1.4-1.5,2.3-3.5,2.3-5.7
+	c0-6.9-4.5-11.1-12.1-11.1h0l0-8.3c0-0.3,0-0.2,0-0.6l-4.2,0c-0.3,0-0.6,0-0.6,0l0,8.9h-4.8l0-8.3c0-0.3,0-0.2,0-0.6H227
+	c0,0.5,0,0.2,0,0.5v8.3l-10.9,0c0,0,0,0.3,0,0.6l0,3.9h1.2c2.7,0,4.8,2,4.8,4.4l0,17.8c0,2.3,0,4.3-3.2,4.3c-0.3,0-2,0-2.9,0v3.8
+	c0,0.2,0,0.7,0,0.7s0.6,0,0.8,0H227l0,8.9h4.8v-0.6l0-8.3h4.8l0,8.9h4.2h0.6l0-8.9h2.4c7.5,0,12.1-4.2,12.1-11.1
+	C255.9,207.5,254,204.7,251.1,203.1L251.1,203.1z M231.8,192.9h7.2c2.7,0,4.8,2,4.8,4.4s-2.2,4.4-4.8,4.4h-7.2V192.9L231.8,192.9z
+	 M241.4,215.1h-9.6v-8.9h9.6c2.7,0,4.8,2,4.8,4.4S244.1,215.1,241.4,215.1L241.4,215.1z"/>
 </svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>ios7-checkmark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="press-copy-2" sketch:type="MSArtboardGroup" transform="translate(-950.000000, -1500.000000)" fill="#3BE06B">
+            <g id="ios7-checkmark" sketch:type="MSLayerGroup" transform="translate(950.618250, 1500.763500)">
+                <path d="M10.5,0 C4.69975962,0 0,4.47596154 0,10 C0,15.5240385 4.69975962,20 10.5,20 C16.3002404,20 21,15.5240385 21,10 C21,4.47596154 16.3002404,0 10.5,0 L10.5,0 Z M8.87956731,13.5432692 C8.75841346,13.6586538 8.58677885,13.7548077 8.43533654,13.7548077 C8.28389423,13.7548077 8.11225962,13.6538462 7.98605769,13.5384615 L5.15913462,10.8461538 L6.05769231,9.99038462 L8.44038462,12.2596154 L14.7403846,6.21634615 L15.6237981,7.08653846 L8.87956731,13.5432692 L8.87956731,13.5432692 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

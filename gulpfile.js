@@ -5,10 +5,9 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var path = require('path');
 var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var globby = require('globby');
 var env = {};
+var devDeps = {};
 
 gulp.task('default', function(cb) {
   runSequence('build', cb);
@@ -24,26 +23,29 @@ gulp.task('build', ['delete'], function(cb) {
 
 gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
+  devDeps.browserSync = require('browser-sync');
+  devDeps.reload = devDeps.browserSync.reload;
+
   if (env.uncss) {
     runSequence(
-      ['sass', 'jade', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
+      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
       cb);
   } else {
     runSequence(
-      ['sass', 'jade', 'images', 'copy'], 'jademin', ['build-localizations'],
+      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['build-localizations'],
       cb);
   }
 });
 
 // Watch for changes & reload
 gulp.task('serve', ['build:dev'], function() {
-  browserSync({
+  devDeps.browserSync({
     notify: false,
     logPrefix: 'serve',
     minify: false,
     snippetOptions: {
       rule: {
-        fn: function (snippet, match){
+        fn: function(snippet, match) {
           snippet = snippet.replace('async', 'async data-no-instant');
           return snippet + match;
         }
@@ -58,17 +60,17 @@ gulp.task('serve', ['build:dev'], function() {
     }
   });
 
-  gulp.watch(['src/_**/*.jade'], ['uncached-rebuild-jade', reload]);
-  gulp.watch(['src/**/*.jade', '!src/_**/*.jade', 'src/**/*.html'], ['rebuild-jade', reload]);
-  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', reload]);
+  gulp.watch(['src/_**/*.jade'], ['uncached-rebuild-jade', devDeps.reload]);
+  gulp.watch(['src/**/*.jade', '!src/_**/*.jade', 'src/**/*.html'], ['rebuild-jade', devDeps.reload]);
+  gulp.watch(['src/{_styles,styles}/**/*.{scss,css}'], ['rebuild-styles', devDeps.reload]);
   gulp.watch(['*.js', 'tasks/*.js', 'src/**/*.js'], ['jshint']);
-  gulp.watch(['src/**/*.js'], ['rebuild-jade', reload]);
-  gulp.watch(['src/images/**/*'], ['images', reload]);
+  gulp.watch(['src/**/*.js'], ['rebuild-jade', devDeps.reload]);
+  gulp.watch(['src/images/**/*'], ['images', devDeps.reload]);
 });
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function() {
-  browserSync({
+  devDeps.browserSync({
     notify: false,
     logPrefix: 'serve:dist',
     https: true,
@@ -89,9 +91,9 @@ gulp.task('serve:uncss', function(cb) {
 
 gulp.task('rebuild-jade', function(cb) {
   if (env.uncss) {
-    runSequence(['sass', 'jade'], 'jademin', ['styles', 'build-localizations'], cb);
+    runSequence(['sass', 'jade:dev'], 'jademin', ['styles', 'build-localizations'], cb);
   } else {
-    runSequence(['jade'], 'jademin', ['build-localizations'], cb);
+    runSequence(['jade:dev'], 'jademin', ['build-localizations'], cb);
   }
 });
 
@@ -167,31 +169,29 @@ gulp.task('copy', function() {
 
 //add hashes to filenames to bust caches, write rev-manifest.json
 gulp.task('hash', function() {
+  $.revAllInstance = new $.revAll({
+    dontRenameFile: [/^\/favicon.ico$/g, '.html'],
+    fileNameVersion: 'version.json'
+  });
   return gulp.src(['dist/**/*.html', 'dist/**/*.css', 'dist/**/*.js', 'dist/images/**/*'], {
       base: path.join(process.cwd(), 'dist')
     })
-    .pipe($.revAll({
-      ignore: ['.html'],
-      quiet: true
-    }))
+    .pipe($.revAllInstance.revision())
     .pipe(gulp.dest('dist'))
-    .pipe($.revNapkin({
-      verbose: false
-    }))
-    .pipe($.revAll.manifest())
+    .pipe($.revAllInstance.versionFile())
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('jshint', function() {
   return gulp.src(['*.js', 'tasks/*.js', 'src/**/*.js'])
     .pipe($.cached('jshint'))
-    .pipe(reload({
+    .pipe(devDeps.reload({
       stream: true,
       once: true
     }))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.if(!(devDeps.browserSync && devDeps.browserSync.active), $.jshint.reporter('fail')));
 });
 
 // Load custom tasks from the `tasks` directory

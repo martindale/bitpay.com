@@ -5,33 +5,56 @@ block title
 
 append vars
   -var tourSelected = 'Enterprise'
+  -var pageSelected = 'Tour'
 
 block content
   include _includes/tour-nav
   .section.background-cover(style="background-image: url('/images/star_background.jpg')")
-    .row
-      .column.large-10.large-offset-1.text-center.text-shadow
-        h1.white Set a New Standard for Payments
-        h4.white.subheader.medium-8.medium-offset-2 Expand your enterprise globally. Take the world's first truly secure transnational payment method with you.
+    .row.fade-in
+      .column.large-10.large-offset-1.text-center
+        h1.white.text-shadow Bitcoin, enterprise-ready.
+        h4.white.subheader.medium-8.medium-offset-2.text-shadow Get access to the most powerful Bitcoin infrastructure on the planet.
         .row
-          .margin-top-less
-            .column.medium-4.medium-offset-4.text-center.end
-              a(href="mailto:sales@bitpay.com").white.btn.btn-blue-solid.uppercase.bold Contact Sales
-  
-  .section.border-bottom-gray.bg-gray
-      .row
-        .column.medium-8.medium-offset-2.text-center
-          h2.text-center.header__bottom-border Build With the Best
-          p.lead Leverage our merchant engineering team to create the tools you need to integrate bitcoin seamlessly. 
+          .column.medium-8.medium-offset-2.text-center
+            a(href="mailto:sales@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.btn-margin Request Demo
+            a(href="").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial
 
-  .section.border-bottom-gray
+
+  .padding-none.bg-gray.border-bottom-gray          
+    .row.padding-less.text-center
+      h5.uppercase.gray-dark Trusted By
+      mixin logos(name, width, height)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/color_logos/#{name}.png'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
+      +logos("amagi_metals", 2.5, 2.5)
+      +logos("gyft", 2, 2.5)
+      +logos("microsoft", 3.5, 2.5)
+      +logos("newegg", 2.5, 2.5)
+      +logos("tigerdirect", 3.5, 2.5)
+      +logos("virgin", 1.5, 2.5)
+
+
+
+  .section.border-bottom-gray.bg-white
       .row
-        .column.medium-8.medium-offset-2.text-center
-          h2.text-center.header__bottom-border Launch Confidently
-          p.lead Work with account managers dedicated to making your bitcoin integration a success. Our support team will provide the monitoring and direct assistance needed to keep things running smoothly.
+        h2.text-center.header__bottom-border Bank settlement to 33 countries
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
   
-  .section.border-bottom-gray.bg-gray
+  .section.border-bottom-gray.bg-white
       .row
-        .column.medium-8.medium-offset-2.text-center
-          h2.header__bottom-border Scale Globally
-          p.lead Take full advantage of the first truly borderless payment network in history with priority access to the most powerful bitcoin infrastructure on earth.  
+        h2.text-center.header__bottom-border Industry-leading engineering services
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+  .section.bg-white
+      .row
+        h2.text-center.header__bottom-border #1 Bitcoin client success team
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.         
+        
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.medium-8.medium-offset-2
+        h2.text-center.white Enterprise Ready
+        h4.text-center.white Get access to the most powerful Bitcoin infrastructure on the planet.
+    .row
+      .column.medium-8.medium-offset-2.text-center
+        a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Request Demo
+        a(href="/features").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial

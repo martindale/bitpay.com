@@ -3,8 +3,90 @@ extends ../_layouts/primary
 block title
   title Privacy Policy | BitPay
 
+prepend footer
+  .medium-white-fade-top
+  
 block content
-  .row
-    .column.medium-12
-      h1.text-center Privacy Policy
+  .section
+    .row
+      .column
+        h1.margin-bottom-less#top(data-magellan-destination="top") Privacy Policy
+        //- p.bold TODO: link to file history on GitHub
+
+    .row
+      .column.medium-3.medium-push-9.hide-for-small-only(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -220; toffset_by_height: false;")
+          li
+            a(href="#top" data-magellan-arrival="top") Privacy Policy
+          li
+            a(href="#info-collection" data-magellan-arrival="info-collection") Information Collection
+          li
+            a(href="#cookies" data-magellan-arrival="cookies") Cookies
+          li
+            a(href="#protect-and-store" data-magellan-arrival="protect-and-store") Information Protection
+          li
+            a(href="#info-use" data-magellan-arrival="info-use") Information Usage
+          li
+            a(href="#marketing" data-magellan-arrival="marketing") Marketing
+          li
+            a(href="#info-sharing" data-magellan-arrival="info-sharing") Information Sharing
+            
+      .column.medium-9.medium-pull-3(style="position: relative; z-index: 1")
+        p This policy describes the ways we collect, store, use and protect your personal information. You accept this policy when you sign up for or use our products, services or any other features, technologies or functionalities offered by us on our website or through any other means. We may amend this policy at any time by posting a revised version on our website. The revised version will be effective at the time we post it. In addition, if the revised version includes a substantial change, we will provide you with 30 days prior notice by posting notice of the change on the "Privace Policy" area of our website.
+
+        h2#info-collection(data-magellan-destination="info-collection") How we collect information about you
+        
+        p When you visit the BitPay website or use the BitPay Services, we collect your IP address and standard web log information, such as your browser type and the pages you accessed on our website.
+        
+        p If you open an account or use the BitPay Services, we may collect the following types of information:
+        ul
+          li Contact information: your name, address, phone, email, Skype ID and other similar information.
+          li Financial information: the full bank account numbers that you link to your BitPay account or give us when you use the BitPay Services.
+
+        p Before permitting you to use the BitPay Services, we may require you to provide additional information we can use to verify your identity or address or manage risk, such as your date of birth, social security number or other information. We may also obtain information about you from third parties such as credit bureaus and identity verification services.
+        
+        p When you are using the BitPay Services, we collect information about your transactions and your other activities on our website or using the BitPay Services and we may collect information about your computer or other access device for fraud prevention purposes.
+
+        h2#cookies(data-magellan-destination="cookies") How we use cookies
+        
+        p When you access our website, we, or companies we hire to track how our website is used, may place small data files called "cookies" on your computer. We and our service providers also use cookies to customize the BitPay Services, content and advertising; measure promotional effectiveness, and promote trust and safety.
+        
+        p We send a "session cookie" to your computer when you log in to your account or otherwise use the BitPay Services. This type of cookie helps us to recognize you if you visit multiple pages on our site during the same session, so that we do not need to ask you for your password on each page. Once you log out or close your browser, this cookie expires and no longer has any effect.
+        
+        p We also use longer-lasting cookies for other purposes such as to display your e-mail address on our sign-in form, so that you don't need to retype the e-mail address each time you log in to your account.
+        
+        p We encode our cookies so that only we can interpret the information stored in them. You are free to decline our cookies if your browser permits, but doing so may interfere with your use of our website. We may also collect information about your computer or other access device to mitigate risk and for fraud prevention purposes.
+        
+        p You may encounter cookies from third parties when using the BitPay Services on websites that we do not control (for example, if you view a web page created by a third party or use an application developed by a third party, there may be a cookie placed by that web page or application.)
+
+        h2#protect-and-store(data-magellan-destination="protect-and-store") How we protect and store personal information
+        
+        p Throughout this policy, we use the term "personal information" to describe information that can be associated with a specific person and can be used to identify that person. We do not consider personal information to include information that has been anonymized so that it does not identify a specific user.
+        
+        p We store and process your personal information on our computers in the US and elsewhere in the world where BitPay facilities are located, and we protect it by maintaining physical, electronic and procedural safeguards in compliance with applicable US federal and state regulations. We use computer safeguards such as firewalls and data encryption, we enforce physical access controls to our buildings and files, and we authorize access to personal information only for those employees who require it to fulfill their job responsibilities.
+
+        h2#info-use(data-magellan-destination="info-use") How we use the personal information we collect
+        
+        p Our primary purpose in collecting personal information is to provide you with a secure, smooth, efficient, and customized experience. We may use your personal information to:
+        ul
+          li provide the BitPay Services and customer support you request;
+          li process transactions and send notices about your transactions;
+          li resolve disputes, collect fees, and troubleshoot problems;
+          li prevent potentially prohibited or illegal activities, and enforce our User Agreement;
+          li customize, measure, and improve the BitPay Services and the content and layout of our website and applications;
+          li deliver targeted marketing, service update notices, and promotional offers based on your communication preferences;
+          li compare information for accuracy and verify it with third parties.
+
+        h2#marketing(data-magellan-destination="marketing") Marketing
+        
+        p We do not sell or rent your personal information to third parties for their marketing purposes without your explicit consent. We may combine your information with information we collect from other companies and use it to improve and personalize the BitPay Services, content and advertising. If you do not wish to receive marketing communications from us or participate in our ad-customization programs, simply indicate your preference by logging into your account and going to the Profile subtab under the My Account tab and adjusting your preferences under Account Information, or by following the directions provided with the communication or advertisement.
+
+        h2#info-sharing(data-magellan-destination="info-sharing") How we share personal information with other BitPay users
+        
+        p To process your payments, we may share some of your personal information with the person or company that you are paying or that is paying you. Your contact information, date of sign-up, the number of payments you have received from verified BitPay users, and whether you have verified control of a bank account are provided to other BitPay users who you transact with through BitPay. In addition, this and other information may also be shared with third parties when you use these third parties to access the BitPay Services. Unless you have agreed to it, these third parties are not allowed to use this information for any purpose other than to enable the BitPay Services.
+        
+        p If you are buying goods or services and pay through BitPay, we may also provide the seller with your confirmed credit card billing address to help complete your transaction with the seller. The seller is not allowed to use this information to market their services to you unless you have agreed to it. If an attempt to pay your seller fails, or is later invalidated, we may also provide your seller with details of the unsuccessful payment. To facilitate dispute resolutions, we may provide a buyer with the sellers address so that goods can be returned to the seller.
+        
+        p We work with third parties, including merchants, to enable them to accept or facilitate payments from or to you using BitPay. In doing so, a third party may share information about you with us, such as your email address or mobile phone number to inform you that a payment is sent to you or when you attempt to pay that merchant or through that third party. We use this information to confirm to that you are a BitPay customer and that BitPay as a form of payment can be enabled, or where a payment is sent to you to send you notification that you have received a payment. Also, if you request that we validate your status as a BitPay customer with a third party, we will do so. Please note that merchants you buy from and contract with have their own privacy policies, and BitPay may not be held responsible for their operations, including, but not limited to, their information practices.
+
       

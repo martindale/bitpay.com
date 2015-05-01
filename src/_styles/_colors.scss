@@ -12,6 +12,10 @@
   color: $blue-dark;
 }
 
+.gray-dark {
+  color: $gray-dark;
+}
+
 .white {
   color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
@@ -32,4 +36,11 @@
   &:hover {
     opacity: 1;
   }
+}
+
+::selection {
+  background: #EBEBFF;
+}
+::-moz-selection {
+  background: #EBEBFF;
 }

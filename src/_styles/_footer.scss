@@ -1,3 +1,11 @@
+.medium-white-fade-top {
+  @media #{$medium-up} {
+    box-shadow: 0 0 300px 300px #fff;
+    position: relative;
+    z-index: 0
+  }
+}
+
 .footer-label {
   @extend .white;
   font-size: 0.6em;
@@ -22,11 +30,8 @@
   border: 1px solid rgba(255,255,255,0.7);
   border-radius: 3px;
   width: 100%;
-  height: 2.3125rem;
   cursor: pointer;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xNDcgMzEgMjQgMyI+PHBvbHlnb24gZmlsbD0iI0ZGRkZGRiIgcG9pbnRzPSItMTMyLDMxIC0xMzUsMzQgLTEzOCwzMSIvPjwvc3ZnPg==);
-  background-position: 100% center;
-  background-repeat: no-repeat;
   background-size: 35px;
   background-color: transparent;
   &:hover {

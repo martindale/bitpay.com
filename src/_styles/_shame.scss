@@ -1,9 +1,144 @@
-// Tour- Overview
-
-.icon {
-  width: 100px;
-  height: 100px;
+.integration-logo {
+  height: 2em;
+  width: 2em;
+  display: block;
+  margin: auto;
+  background-color: $gray-xlight;
   border: 1px solid $gray-light;
+  background-size: 60%;
   border-radius: 100px;
-  margin: 0 auto 2rem;
+  transition: all 0.2s ease;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+.search-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+
+.small-icon {
+  height: 0.95em;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  width: 2em;
+}
+
+.feature-container {
+  position: relative;
+  margin: 4rem auto;
+  width: 20rem;
+  @media #{$large-up} {
+    width: 37.5rem;
+    margin: auto;
+  }
+}
+
+.feature-image {
+  height: 6em;
+  @media #{$large-up} {
+    height: 10em;
+  }
+}
+
+.feature-icon {
+  position: absolute;
+  &.feature-1 {
+    top: -26%;
+    right: 39%;
+  }
+  &.feature-2 {
+    top:15%;
+    right:-20%;
+  }
+  &.feature-3 {
+    top:75%;
+    right:-7%;
+  }
+  &.feature-4 {
+    bottom: -27%;
+    right: 43.5%;
+  }
+  &.feature-5 {
+    top:75%;
+    left:-15%;
+  }
+  &.feature-6 {
+    top:15%;
+    left:-10%;
+  }
+
+  @media #{$small-only} {
+    & > .feature-label {
+      display: none;
+    }
+    &.feature-1 {
+      top: -18%;
+      right: 44.5%;
+    }
+    &.feature-2 {
+      top:14%;
+      right:17%;
+    }
+    &.feature-3 {
+      top:71%;
+      right:16%;
+    }
+    &.feature-4 {
+      bottom: -20%;
+      right: 44.5%;
+    }
+    &.feature-5 {
+      top:71%;
+      left:16%;
+    }
+    &.feature-6 {
+      top:14%;
+      left:17%;
+    }
+  }
+  @media #{$large-up} {
+    & > .feature-label {
+      display: inline-block;
+    }
+    &.feature-1 {
+      top: -15%;
+      right: 44%;
+    }
+    &.feature-2 {
+      top:20%;
+      right:2%;
+    }
+    &.feature-3 {
+      top:74%;
+      right:9%;
+    }
+    &.feature-4 {
+      bottom: -17%;
+      right: 46.1%;
+    }
+    &.feature-5 {
+      top:75%;
+      left:4%;
+    }
+    &.feature-6 {
+      top:20%;
+      left:7%;
+    }
+  }
+}
+
+.grow {
+  transition: all 0.4s;
+  &.larger-text {
+    font-size: 160%;
+    line-height: 1.2;
+  }
 }
