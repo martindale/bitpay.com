@@ -5,6 +5,9 @@
     "browser-sync": "^2.5.0",
     "gulp-debug": "^2.0.0"
   },
+  "scripts": {
+    "test": "gulp"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
