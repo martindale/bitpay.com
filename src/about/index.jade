@@ -2,9 +2,82 @@ extends ../_layouts/primary
 
 block title
   title About | BitPay
+  
+append vars
+  -var bodyClass = 'white-header bg-blue-gradient';
 
 block content
-  .row
-    .column.medium-12
-      h1.text-center About
+  .section
+    .row.fade-in-up
+      .column.medium-8-medium-offset-2.text-center
+        h2.white.text-shadow.margin-bottom-less.fade-in.delay-1 We see a different future for payments
+        p.lead.text-shadow.white.fade-in-up.delay-2 We power bitcoin infastructure around the world, access the most trusted name in bitcoin. 
+        a(href="#").white.btn.btn-blue-border.uppercase.bold.btn-margin Join the team
+
+
+  .section.bg-white.border-bottom-gray
+    .row.fade-in-up.delay-4
+      .column.medium-10.medium-offset-1.large-8.large-offset-2.xlarge-5.xlarge-offset-0
+        h3.header__bottom-border-left About
+        p.lead At the time of our founding in 2011, Bitcoin was still in its infancy. Even while much of its promise was still hypothetical, we saw that it could enable secure, global commerce for the first time in history. BitPay was our way of making that vision a reality.  
+        p We were the first to give Bitcoin's early adopters access to this innovation in payments, and we have grown in step with Bitcoin itself. BitPay now provides payment processing to more than 50,000 businesses on six continents. We have introduced bitcoin to many of the world's leading ecommerce platforms, and we have used this technology to solve some of the fundamental problems of the merchant experience.
+        p Even with our success, we are far from finished with the vision that brought us here. From eliminating processing fees to prioritizing open source software, we are continuing to find new ways to pioneer the future of payments. 
+    .row.text-center
+      h5.uppercase.gray-dark.margin-top Our Investors
+      mixin logos(name, width, height)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
+      +logos("founders_fund", 7, 2)
+      +logos("RRE", 3, 2)
+      +logos("index_ventures", 4, 2.5)
+      +logos("felicis_ventures", 5, 3)
+
+
+
+      mixin executive-team(firstName, lastName, title, description)
+        h1.background-contain.circle.left.margin-right-less.margin-bottom.small-only-margin-bottom-most(style="background-image: url('/images/team/#{firstName}.jpg'); height:3.5em; width:3.5em;")
+        h4 #{firstName} #{lastName}
+        p.margin-bottom-less #{title}
+        p #{description}
       
+
+
+  .section.bg-gray-gradient.border-bottom-gray
+    .row.margin-bottom
+      .column.medium-8-medium-offset-2
+        h3.header__bottom-border-left Executive Team
+    .row.margin-bottom
+      .column.large-6.medium-12.small-12
+        +executive-team("Stephen", "Pair", "Co-Founder, CEO", "Stephen has over 20 years of experience building software systems in the financial and telecommunications industries.")
+      .column.large-6.medium-12.small-12
+        +executive-team("Tony", "Gallippi", "Co-Founder, Chairman of the Board", "Tony has 20 years of experience in Sales and Marketing in the Robotics and Financial industries. He entered the bitcoin space")
+    .row.margin-bottom
+      .column.large-6.medium-12.small-12
+        +executive-team("Bryan", "Krohn", "Chief Finnancial Officer", "Bryan has 20 years of experience as CFO for several technology companies including CTS, OmniVue, and American Data Corporation.")
+      .column.large-6.medium-12.small-12
+        +executive-team("Tim", "Byun", "Chief Compliance Officer", "Tim has over 20 years of experience in ensuring compliance, including five years as Visa's AML Officer and 16 years as a bank examiner for the Federal Reserve and the FDIC.")
+    .row.margin-bottom
+      .column.large-6.medium-12.small-12
+        +executive-team("Sonny", "Singh", "Chief Commercial Officer", "Sonny was the first VP of Sales at Jumio and previously was at InMage Systems (acquired by Microsoft) and Niku (acquired by Computer Associates).")
+      .column.large-6.medium-12.small-12
+        +executive-team("Marcel", "Roland", "Chief Product Manager", "Marcel brings [X] years of experience with card processors and mobile payments companies. ")
+
+  .section.bg-gray-gradient.border-bottom-gray
+    .row.margin-bottom
+      .column
+        h3.header__bottom-border-left Offices
+        p.lead We have offices all over the world in North America, Europe, and South America.
+    .row
+      .column.medium-10.large-12
+        .row
+          .column.large-4
+            .h3 Atlanta
+            p.margin-bottom-none 3405 Piedmont Rd NE
+            p Atlanta GA, 30305
+          .column.large-4
+            .h3 Amsterdam
+            p.margin-bottom-none Herengracht 458
+            p 1017 CA Amsterdamn
+          .column.large-4
+            .h3 Argentina Bitcoin Center
+            p.margin-bottom-none Marcelo T. de Alvear 405
+            p Ciudad de Beunos Aires
