@@ -16,25 +16,50 @@ block content
 
 
   .section.bg-white.border-bottom-gray
-    .row.fade-in-up.delay-4
-      .column.medium-10.medium-offset-1.large-8.large-offset-2.xlarge-5.xlarge-offset-0
+    .row
+      .column
         h3.header__bottom-border-left About
-        p.lead At the time of our founding in 2011, Bitcoin was still in its infancy. Even while much of its promise was still hypothetical, we saw that it could enable secure, global commerce for the first time in history. BitPay was our way of making that vision a reality.  
-        p We were the first to give Bitcoin's early adopters access to this innovation in payments, and we have grown in step with Bitcoin itself. BitPay now provides payment processing to more than 50,000 businesses on six continents. We have introduced bitcoin to many of the world's leading ecommerce platforms, and we have used this technology to solve some of the fundamental problems of the merchant experience.
-        p Even with our success, we are far from finished with the vision that brought us here. From eliminating processing fees to prioritizing open source software, we are continuing to find new ways to pioneer the future of payments. 
-    .row.text-center
-      h5.uppercase.gray-dark.margin-top Our Investors
+    .row.fade-in-up.delay-4
+      .column.large-5.medium-12.margin-bottom
+        p.lead BitPay was founded in 2011, while Bitcoin was still in its infancy. We saw the potential for bitcoin to revolutionize the financial industry, making payments faster, more secure, and less expensive on a global scale. 
+        p We founded BitPay with the intention of making it easy for businesses to accept bitcoin payments, and we are currently the largest bitcoin payment processor in the world, serving more than 60,000 merchants on six continents.
+        p Payment processing was our first contribution to the Bitcoin ecosystem, but it is not our last. We're building open source software to power the next applications of Bitcoin, including one of the best bitcoin wallets on the market - Copay. Bitcoin's future looks very bright, and we plan on remaining on the forefront of this technology, creating more tools and services for everyone to use in innovative new ways.
+      .column.large-7.medium-12
+        .row
+          .column.small-5
+            .timeline-item
+              p.text-right.uppercase.small.margin-bottom-none BitPay Founded
+              p.text-right.small.opacity-less May 2009
+            .timeline-item
+              p.text-right.uppercase.small.margin-bottom-none(style="margin-top: 10.5em;") Virgin Galactic<br />Accepts Bitcoin
+              p.text-right.small.opacity-less May 2011
+            .timeline-item
+              p.text-right.uppercase.small.margin-bottom-none(style="margin-top: 12em;") Event Number Five
+              p.text-right.small.opacity-less May 2011
+          .column.small-2
+            .h1.background-contain.text-center.margin-top-none(style="background-image: url('/images/timeline.svg'); width:2em; height:15em;")
+          .column.small-5
+            .timeline-item
+              p.uppercase.small.margin-bottom-none(style="margin-top: 6.8em;") Atlanta Office <br />Established
+              p.small.opacity-less May 2011
+            .timeline-item
+              p.uppercase.small.margin-bottom-none(style="margin-top: 10.7em;") VC Round Investment
+              p.small.opacity-less May 2011
+            .timeline-item
+              p.uppercase.small.margin-bottom-none(style="margin-top: 11.5em;") Microsoft Accepts<br /> Bitcoin
+              p.small.opacity-less May 2011          
+    .row.text-.margin-top.text-center
       mixin logos(name, width, height)
-        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
-      +logos("founders_fund", 7, 2)
-      +logos("RRE", 3, 2)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 3em")
+      +logos("founders_fund", 7, 2.5)
+      +logos("RRE", 2.5, 2.5)
       +logos("index_ventures", 4, 2.5)
       +logos("felicis_ventures", 5, 3)
 
 
 
       mixin executive-team(firstName, lastName, title, description)
-        h1.background-contain.circle.left.margin-right-less.margin-bottom.small-only-margin-bottom-most(style="background-image: url('/images/team/#{firstName}.jpg'); height:3.5em; width:3.5em;")
+        h1.background-contain.circle.left.margin-right-less.margin-bottom.small-only-margin-bottom-most(style="background-image: url('/images/team/#{firstName}.jpg'); height:3.25em; width:3.25em;")
         h4 #{firstName} #{lastName}
         p.margin-bottom-less #{title}
         p #{description}
@@ -81,3 +106,10 @@ block content
             .h3 Argentina Bitcoin Center
             p.margin-bottom-none Marcelo T. de Alvear 405
             p Ciudad de Beunos Aires
+
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.large-10.large-offset-1.text-center
+          h3.white Sign up for a BitPay account. It's free and always will be.
+          .margin-top-less
+            a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
