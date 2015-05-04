@@ -20,7 +20,7 @@
 
 .uppercase {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .text-shadow {
@@ -166,6 +166,7 @@ p.lead {
   opacity: 0.5;
   animation: pop 0.5s;
   display: inline-block;
+  /* float: right; */
   &:before {
     content: "";
     display: inline-block;
