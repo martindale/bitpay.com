@@ -163,10 +163,7 @@ p.lead {
 }
 
 .quote-anim {
-  opacity: 0.5;
   animation: pop 0.5s;
-  display: inline-block;
-  /* float: right; */
   &:before {
     content: "";
     display: inline-block;
