@@ -161,3 +161,21 @@ p.lead {
     font-size: 80%;
   }
 }
+
+.quote-anim {
+  opacity: 0.5;
+  animation: pop 0.5s;
+  display: inline-block;
+  &:before {
+    content: "";
+    display: inline-block;
+    background-image: url('../images/quote.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.quote {
+  font-style: italic;
+}
