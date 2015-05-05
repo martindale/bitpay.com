@@ -6,14 +6,15 @@
     content: "";
     position: absolute;
     background: #bfc1c9;
-    width: 40px;
+    width: 50px;
     height: 1px;
-    right: -12%;
+    right: -23%;
   }
   @media #{$small-only} {
     &:after {
       width: 31px;
       right: -19%;
+      // display: none;
     }
   }
 }
@@ -31,6 +32,7 @@
     &:before {
       width: 20px;
       left: -8%;
+      // display: none;
     }
   }
 }
@@ -42,12 +44,12 @@
 
 .event-title-three {
   margin-top:10.5em;
-  @media #{$small-only} {margin-top: 6.5em;}
+  @media #{$small-only} {margin-top: 1.5em;}
 }
 
 .event-title-four {
   margin-top:10.7em;
-  @media #{$small-only} {margin-top: 6.5em;}
+  @media #{$small-only} {margin-top: 5.5em;}
 }
 
 .event-title-five {
