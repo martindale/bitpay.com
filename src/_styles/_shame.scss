@@ -238,3 +238,11 @@
     height: 40px;
   }
 }
+
+.ghost {
+  animation: ghost-move 16s both cubic-bezier(0.420, 0.000, 0.580, 1.000) 2s alternate infinite;
+}
+
+.ghost-shadow {
+  animation: shadow-move 16s both cubic-bezier(0.420, 0.000, 0.580, 1.000) 2s alternate infinite;
+}
