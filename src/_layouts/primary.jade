@@ -53,10 +53,10 @@ html(lang='en')
     include ../_includes/head.html
 
   body
-    block header
-      include ../_includes/header
+    .container(class='#{bodyClass}')
+      block header
+        include ../_includes/header
 
-    body(class='#{bodyClass}')
       block content
 
     block footer

@@ -1,0 +1,34 @@
+extends primary
+
+block header
+  include ../_includes/docs-header
+
+block content
+  .row.padding-vertical.medium-padding-bottom-most
+    .column.medium-3
+      ul.side-nav.border-right-gray
+        li.uppercase.h3 Documentation
+        li
+          a(href="/docs/") Getting Started
+        li
+          a(href="/docs/ecommerce") Selling Online
+        li
+          a(href="/docs/retail") Selling in Person
+        li
+          a(href="/docs/retail") Banking &amp; Settlements
+        li.divider
+        li.uppercase.h3 Use Cases
+        li
+          a(href="/docs/email-billing") Email Billing
+        li
+          a(href="/docs/donations") Donations
+        li.divider
+        li.uppercase.h3 Resources
+        li
+          a(href="/rates") BBB Exchange Rate
+        li
+          a(href="/bitcoin-compatible-wallets") Bitcoin Wallet Guide
+        li
+          a(href="https://support.bitpay.com") Help &amp; Support
+    .column.medium-9
+      block information
