@@ -1,4 +1,7 @@
+// Timeline
+
 .timeline-item-left {
+    z-index: 1;
   &:after {
     content: "";
     position: absolute;
@@ -6,6 +9,12 @@
     width: 40px;
     height: 1px;
     right: -12%;
+  }
+  @media #{$small-only} {
+    &:after {
+      width: 31px;
+      right: -19%;
+    }
   }
 }
 
@@ -18,15 +27,58 @@
     height: 1px;
     left: -12%;
   }
+  @media #{$small-only} {
+    &:before {
+      width: 20px;
+      left: -8%;
+    }
+  }
+}
+
+.event-title-two {
+  margin-top:6.8em;
+  @media #{$small-only} {margin-top: 4em;}
+}
+
+.event-title-three {
+  margin-top:10.5em;
+  @media #{$small-only} {margin-top: 6.5em;}
+}
+
+.event-title-four {
+  margin-top:10.7em;
+  @media #{$small-only} {margin-top: 6.5em;}
+}
+
+.event-title-five {
+  margin-top:10em;
+  @media #{$small-only} {margin-top: 6.5em;}
+}
+
+.event-title-six {
+  margin-top:13em;
+  @media #{$small-only} {margin-top: 7.5em;}
 }
 
 .first-item {&:after {top: 4%;}}
 .second-item {&:before {top: 20%;}}
 .third-item {&:after {top: 46%;}}
-.fourth-item {&:before {top: 56%;}}
-.fifth-item {&:after {top: 93.5%;}}
-.sixth-item {&:before {top: 94.5%;}}
+.fourth-item {&:before {top: 54%;}}
+.fifth-item {&:after {top: 92.5%;}}
+.sixth-item {&:before {top: 91.5%;}}
 
+
+@media #{$small-only} {
+  .first-item {&:after {top: 2.7%;}}
+  .second-item {&:before {top: 18%;}}
+  .third-item {&:after {top: 41.5%;}}
+  .fourth-item {&:before {top: 50%;}}
+  .fifth-item {&:after {top: 82.5%;}}
+  .sixth-item {&:before {top: 83.75%;}}
+}
+
+
+// End Timeline
 
 .integration-logo {
   height: 2em;
