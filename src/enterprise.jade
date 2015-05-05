@@ -10,17 +10,17 @@ append vars
 block content
   include _includes/tour-nav
   .section.background-cover(style="background-image: url('/images/star_background.jpg')")
-    .row.fade-in
-      .column.large-10.large-offset-1.text-center.text-shadow
-        h1.white Bitcoin, enterprise-ready.
-        h4.white.subheader.medium-8.medium-offset-2 Get access to the most powerful Bitcoin infrastructure on the planet.
-        .row
+    .row
+      .column.large-10.large-offset-1.text-center
+        h1.white.text-shadow.fade-in-up Bitcoin, enterprise-ready.
+        h4.white.subheader.medium-8.medium-offset-2.text-shadow.fade-in-up.delay-1 Get access to the most powerful Bitcoin infrastructure on the planet.
+        .row.fade-in-up.delay-1
           .column.medium-8.medium-offset-2.text-center
             a(href="mailto:sales@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.btn-margin Request Demo
-            a(href="").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial
+            a(href="#").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial
 
 
-  .padding-none.bg-gray.border-bottom-gray          
+  .padding-vertical.bg-gray.border-bottom-gray          
     .row.padding-less.text-center
       h5.uppercase.gray-dark Trusted By
       mixin logos(name, width, height)
@@ -32,30 +32,63 @@ block content
       +logos("tigerdirect", 3.5, 2.5)
       +logos("virgin", 1.5, 2.5)
 
-
+  .section.border-bottom-gray.bg-white
+      .row
+        .column.large-5.margin-bottom-less
+          h3.header__bottom-border-left Launch confidently
+          p.lead Work with account managers dedicated to making your bitcoin integration a success.
+          p We'll provide the monitoring and direct assistance needed to keep things running smoothly.         
+        .column.large-7
+          .row
+            .column.medium-2
+              .quote-anim.medium-float-right.margin-bottom-less
+            .column.medium-10
+              p.lead.quote.fade-in-up.delay-1 BitPay has consistently impressed us with its service and engineering. We are excited to see where bitcoin is headed, and we are confident that we are working with the best company to carry this technology forward at Microsoft.
+              .row.fade-in-up.delay-2
+                .column.xlarge-7
+                  p.margin-bottom-none.bold Sam Anson
+                  p.uppercase.small.margin-bottom-none Senior Business Ops Project Manager,
+                  p.uppercase.small.margin-bottom-none Universal Store Business Operations
+                .column.xlarge-5
+                  .h2.background-contain.unselectable(style="background-image: url('/images/color_logos/microsoft.png'); width: 4.5em; height: 2.5em;)")
 
   .section.border-bottom-gray.bg-white
       .row
-        h2.text-center.header__bottom-border Bank settlement to 33 countries
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  
-  .section.border-bottom-gray.bg-white
-      .row
-        h2.text-center.header__bottom-border Industry-leading engineering services
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        .column.large-7.margin-vertical-more.large-margin-vertical-none
+          .h1.background-contain.unselectable(style="background-image: url('/images/countries.png'); width: 100%; height: 8em;)")
+        .column.large-5
+          h3.header__bottom-border-left Expand globally
+          p.lead Receive direct bank deposits in 38 countries with 9 supported settlement currencies.
+          p We're constantly growing our financial network to support global reach for global enterprises.
+          p
+            a(href="/docs/settlement").arrow-blue Settlement details
 
   .section.bg-white
       .row
-        h2.text-center.header__bottom-border #1 Bitcoin client success team
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        
+        .column.large-5.margin-bottom-less
+          h3.header__bottom-border-left Build with the best
+          p.lead Leverage our merchant engineering team to create the tools you need to seamlessly  integrate bitcoin payments.
+          p We'll continue to prioritize the platform features you need after launch. 
+        .column.large-7
+          .row
+            .column.medium-2
+              .quote-anim.medium-float-right.margin-bottom-less
+            .column.medium-10
+              p.lead.quote.fade-in-up.delay-1 BitPay has been an instrumental partner, helping NETELLER to tap into the Bitcoin market in a secure and convenient way. They have been extremely responsive from day 1, accommodating our business needs every step of the way.
+              .row.fade-in-up.delay-2
+                .column.xlarge-5
+                  p.margin-bottom-none.bold Clovis Cuqui
+                  p.uppercase.small.margin-bottom-less Vice-President, Product
+                .column.xlarge-7
+                  .h2.background-contain.unselectable(style="background-image: url('/images/color_logos/neteller.svg'); width: 4.5em; height: 1.25em;)")
+
         
   .section.bg-lightblue-gradient.border-top-gray
     .row
       .column.medium-8.medium-offset-2
         h2.text-center.white Enterprise Ready
-        h4.text-center.white Get access to the most powerful Bitcoin infrastructure on the planet.
+        h4.text-center.white Get access to the world's most powerful Bitcoin infrastructure.
     .row
       .column.medium-8.medium-offset-2.text-center
-        a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Request Demo
-        a(href="/features").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial
+        a(href="mailto:sales@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.btn-margin Request Demo
+        a(href="#").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial

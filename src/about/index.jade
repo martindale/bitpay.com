@@ -16,29 +16,53 @@ block content
 
 
   .section.bg-white.border-bottom-gray
-    .row.fade-in-up.delay-4
-      .column.medium-10.medium-offset-1.large-8.large-offset-2.xlarge-5.xlarge-offset-0
+    .row
+      .column
         h3.header__bottom-border-left About
-        p.lead At the time of our founding in 2011, Bitcoin was still in its infancy. Even while much of its promise was still hypothetical, we saw that it could enable secure, global commerce for the first time in history. BitPay was our way of making that vision a reality.  
-        p We were the first to give Bitcoin's early adopters access to this innovation in payments, and we have grown in step with Bitcoin itself. BitPay now provides payment processing to more than 50,000 businesses on six continents. We have introduced bitcoin to many of the world's leading ecommerce platforms, and we have used this technology to solve some of the fundamental problems of the merchant experience.
-        p Even with our success, we are far from finished with the vision that brought us here. From eliminating processing fees to prioritizing open source software, we are continuing to find new ways to pioneer the future of payments. 
-    .row.text-center
-      h5.uppercase.gray-dark.margin-top Our Investors
+    .row
+      .column.large-5.medium-12.margin-bottom
+        p.lead BitPay was founded in 2011, while Bitcoin was still in its infancy. We saw the potential for bitcoin to revolutionize the financial industry, making payments faster, more secure, and less expensive on a global scale. 
+        p We founded BitPay with the intention of making it easy for businesses to accept bitcoin payments, and we are currently the largest bitcoin payment processor in the world, serving more than 60,000 merchants on six continents.
+        p Payment processing was our first contribution to the Bitcoin ecosystem, but it is not our last. We're building open source software to power the next applications of Bitcoin, including one of the best bitcoin wallets on the market - Copay. Bitcoin's future looks very bright, and we plan on remaining on the forefront of this technology, creating more tools and services for everyone to use in innovative new ways.
+      .column.large-7.medium-12
+        .row
+          .column.small-5
+            .timeline-item-left.first-item.fade-in.delay-1
+              p.text-right.uppercase.small.margin-bottom-none BitPay Founded
+              p.text-right.small.opacity-less May 2009
+            .timeline-item-left.third-item.fade-in.delay-3
+              p.text-right.uppercase.small.margin-bottom-none.event-title-three Virgin Galactic<br />Accepts Bitcoin
+              p.text-right.small.opacity-less May 2011
+            .timeline-item-left.fifth-item.fade-in.delay-5.event-title-five
+              p.text-right.uppercase.small.margin-bottom-none Event Number Five
+              p.text-right.small.opacity-less May 2011
+          .column.small-2
+            .h1.background-contain.text-center.margin-top-none(style="background-image: url('/images/timeline.svg'); width:2em; height:15em; position: absolute; z-index: 1;")
+          .column.small-5
+            .timeline-item-right.second-item.fade-in.delay-2
+              p.uppercase.small.margin-bottom-none.event-title-two Atlanta Office <br />Established
+              p.small.opacity-less May 2011
+            .timeline-item-right.fourth-item.fade-in.delay-4
+              p.uppercase.small.margin-bottom-none.event-title-four VC Round Investment
+              p.small.opacity-less May 2011
+            .timeline-item-right.sixth-item.fade-in.delay-6
+              p.uppercase.small.margin-bottom-none.event-title-six Microsoft Accepts<br /> Bitcoin
+              p.small.opacity-less May 2011          
+    .row.text-.margin-top.text-center
       mixin logos(name, width, height)
-        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
-      +logos("founders_fund", 7, 2)
-      +logos("RRE", 3, 2)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 3em")
+      +logos("founders_fund", 7, 2.5)
+      +logos("RRE", 2.5, 2.5)
       +logos("index_ventures", 4, 2.5)
       +logos("felicis_ventures", 5, 3)
 
 
 
-      mixin executive-team(firstName, lastName, title, description)
-        h1.background-contain.circle.left.margin-right-less.margin-bottom.small-only-margin-bottom-most(style="background-image: url('/images/team/#{firstName}.jpg'); height:3.5em; width:3.5em;")
-        h4 #{firstName} #{lastName}
+      mixin executive-team(name, img, title, description)
+        h1.background-contain.circle.left.margin-right-less.margin-bottom.small-only-margin-bottom-most(style="background-image: url('/images/team/#{img}.jpg'); height:3.25em; width:3.25em;")
+        h4 #{name}
         p.margin-bottom-less #{title}
-        p #{description}
-      
+        block
 
 
   .section.bg-gray-gradient.border-bottom-gray
@@ -47,19 +71,25 @@ block content
         h3.header__bottom-border-left Executive Team
     .row.margin-bottom
       .column.large-6.medium-12.small-12
-        +executive-team("Stephen", "Pair", "Co-Founder, CEO", "Stephen has over 20 years of experience building software systems in the financial and telecommunications industries.")
+        +executive-team("Stephen Pair", "stephen", "Co-Founder, CEO")
+          p Stephen has over 20 years of experience building software systems in the financial and telecommunications industries.
       .column.large-6.medium-12.small-12
-        +executive-team("Tony", "Gallippi", "Co-Founder, Chairman of the Board", "Tony has 20 years of experience in Sales and Marketing in the Robotics and Financial industries. He entered the bitcoin space")
+        +executive-team("Tony Gallippi", "tony", "Co-Founder, Chairman of the Board")
+          p Tony has 20 years of experience in Sales and Marketing in the Robotics and Financial industries.
     .row.margin-bottom
       .column.large-6.medium-12.small-12
-        +executive-team("Bryan", "Krohn", "Chief Finnancial Officer", "Bryan has 20 years of experience as CFO for several technology companies including CTS, OmniVue, and American Data Corporation.")
+        +executive-team("Bryan Krohn", "bryan", "Chief Finnancial Officer")
+          p Bryan has 20 years of experience as CFO for several technology companies including CTS, OmniVue, and American Data Corporation.
       .column.large-6.medium-12.small-12
-        +executive-team("Tim", "Byun", "Chief Compliance Officer", "Tim has over 20 years of experience in ensuring compliance, including five years as Visa's AML Officer and 16 years as a bank examiner for the Federal Reserve and the FDIC.")
+        +executive-team("Tim Byun", "tim", "Chief Compliance Officer")
+          p Tim has over 20 years of experience in ensuring compliance, including five years as Visa's AML Officer and 16 years as a bank examiner for the Federal Reserve and the FDIC.
     .row.margin-bottom
       .column.large-6.medium-12.small-12
-        +executive-team("Sonny", "Singh", "Chief Commercial Officer", "Sonny was the first VP of Sales at Jumio and previously was at InMage Systems (acquired by Microsoft) and Niku (acquired by Computer Associates).")
-      .column.large-6.medium-12.small-12
-        +executive-team("Marcel", "Roland", "Chief Product Manager", "Marcel brings [X] years of experience with card processors and mobile payments companies. ")
+        +executive-team("Sonny Singh", "sonny", "Chief Commercial Officer")
+          p Sonny was the first VP of Sales at Jumio and previously was at InMage Systems (acquired by Microsoft) and Niku (acquired by Computer Associates).
+      //- .column.large-6.medium-12.small-12
+      //-   +executive-team("Marcel Roland", "marcel", "General Manager, EMEA Region")
+      //-     p Marcel has 27 years of experience in the financial services industry, including nineteen years with GE Capital and five years as the General Manager of MasterCard in the Netherlands.
 
   .section.bg-gray-gradient.border-bottom-gray
     .row.margin-bottom
@@ -81,3 +111,10 @@ block content
             .h3 Argentina Bitcoin Center
             p.margin-bottom-none Marcelo T. de Alvear 405
             p Ciudad de Beunos Aires
+
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.large-10.large-offset-1.text-center
+          h3.white Get access to the BitPay platform.
+          .margin-top-less
+            a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
