@@ -1,3 +1,33 @@
+.timeline-item-left {
+  &:after {
+    content: "";
+    position: absolute;
+    background: #bfc1c9;
+    width: 40px;
+    height: 1px;
+    right: -12%;
+  }
+}
+
+.timeline-item-right {
+  &:before {
+    content: "";
+    position: absolute;
+    background: #bfc1c9;
+    width: 35px;
+    height: 1px;
+    left: -12%;
+  }
+}
+
+.first-item {&:after {top: 4%;}}
+.second-item {&:before {top: 20%;}}
+.third-item {&:after {top: 46%;}}
+.fourth-item {&:before {top: 56%;}}
+.fifth-item {&:after {top: 93.5%;}}
+.sixth-item {&:before {top: 94.5%;}}
+
+
 .integration-logo {
   height: 2em;
   width: 2em;
