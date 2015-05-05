@@ -1,0 +1,17 @@
+@keyframes ghost-move {
+  0% { transform: translateY(0);}
+  13% { transform: translateY(-10px);}
+  31% { transform: translateY(0);}
+  60% { transform: translateY(-7px)}
+  85% { transform: translateY(8px);}
+  100% { transform: translateY(0);}
+}
+
+@keyframes shadow-move {
+  0% { transform: scale(1);}
+  13% { transform: scale(0.8);}
+  31% { transform: scale(1);}
+  60% { transform: scale(0.9)}
+  85% { transform: scale(1.4);}
+  100% { transform: scale(1);}
+}
