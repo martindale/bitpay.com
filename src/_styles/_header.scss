@@ -1,6 +1,7 @@
 .logo {
   width: 72px;
   height: 25px;
+  margin-bottom: 0.4em;
   display: inline-block;
   background-image: url('../images/bitpay-logo-dark.svg');
   background-repeat: no-repeat;
@@ -19,9 +20,9 @@
   &:hover {
     color: $blue-darker;
     text-decoration: none;
-    /* opacity: 0.5; */
   }
-  .white-header & {
+  .white-header &,
+  .right-off-canvas-menu & {
     @extend .white;
     text-shadow: 0 0 3px rgba(0,0,0,0.5);
     &:hover {
@@ -34,13 +35,37 @@
   }
 }
 
-.login-btn {
+// vertical spacing for mobile menu items
+.right-off-canvas-menu li {
+  margin-bottom: 1rem;
+}
+
+// login button is styled only on non-mobile menu
+.show-for-large-up .login-btn {
   padding: 5px 15px 4px;
   border-radius: 1000px;
   border: 1px solid;
   display: inline-block;
   position: relative;
   top: -6px;
+}
+
+.menu-icon {
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-top: 1.2rem;
+    left: 2.5rem;
+    box-shadow: 0 0 0 1px $blue-dark, 0 7px 0 1px $blue-dark, 0 14px 0 1px $blue-dark;
+    width: 1.3rem;
+    .white-header & {
+      box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+    }
+  }
 }
 
 // subnav

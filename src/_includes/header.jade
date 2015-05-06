@@ -7,8 +7,9 @@
       include main-menu.jade
 
   .column.small-3.hide-for-large-up
-    a(href="#").right-off-canvas-toggle menu
+    a(href="#").right-off-canvas-toggle.menu-icon 
+      span
       
-    aside.right-off-canvas-menu
-      ul.no-bullet.padding-left-more.padding-top
-        include main-menu.jade
+aside.right-off-canvas-menu
+  ul.no-bullet.padding-left.padding-top-less
+    include main-menu.jade
