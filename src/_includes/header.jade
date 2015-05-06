@@ -1,16 +1,14 @@
-- var menu = { 'Tour': '/tour', 'Integrations': '/integrations', 'Pricing': '/pricing', 'Docs': '/docs', 'Log In': '#' };
-
 .row(role="navigation")
-  .column.medium-1
+  .column.small-1
     a(href="/" title="Home").logo.margin-top-less.medium-margin-top
 
-  .column.medium-11.show-for-large-up
+  .column.small-11.show-for-large-up
     ul.inline-list.right.padding-top-less.medium-padding-top
-      each val, key in menu
-        li
-          if pageSelected === key
-            a.menu-item.selected(href=val, title=key)= key
-          else if key === 'Log In'
-            a.menu-item.login-btn(href=val, title=key)= key
-          else
-            a.menu-item(href=val, title=key)= key
+      include main-menu.jade
+
+  .column.small-3.hide-for-large-up
+    a(href="#").right-off-canvas-toggle menu
+      
+    aside.right-off-canvas-menu
+      ul.no-bullet.padding-left-more.padding-top
+        include main-menu.jade
