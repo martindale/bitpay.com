@@ -4,30 +4,36 @@ block header
   include ../_includes/docs-header
 
 block content
+  - var docsMenu = { 'Getting Started': '/docs', 'Selling Online': '/docs/ecommerce', 'Selling in Person': '/docs/retail', 'Banking & Settlements': '/docs/settlement' };
+  - var usecaseMenu = { 'Email Billing': '/docs/billing', 'Donations': '/docs/donations'}
+  - var resourceMenu = { 'Bitcoin Wallet Comparison': '/docs/wallets', 'BBB Exchange Rate': '/bitcoin-exchange-rates' }
+  
   .row.padding-vertical.medium-padding-bottom-most
     .column.medium-3
       ul.side-nav.border-right-gray
         li.uppercase.h3 Documentation
-        li
-          a(href="/docs/") Getting Started
-        li
-          a(href="/docs/ecommerce") Selling Online
-        li
-          a(href="/docs/retail") Selling in Person
-        li
-          a(href="/docs/settlement") Banking &amp; Settlements
+        each val, key in docsMenu
+          li
+            if subpageSelected === key
+              a.active(href=val, title=key, target=_blank)= key
+            else
+              a(href=val, title=key)= key
         li.divider
         li.uppercase.h3 Use Cases
-        li
-          a(href="/docs/billing") Email Billing
-        li
-          a(href="/docs/donations") Donations
+        each val, key in usecaseMenu
+          li
+            if subpageSelected === key
+              a.active(href=val, title=key, target=_blank)= key
+            else
+              a(href=val, title=key)= key
         li.divider
         li.uppercase.h3 Resources
-        li
-          a(href="/bitcoin-exchange-rates") BBB Exchange Rate
-        li
-          a(href="/docs/wallets") Bitcoin Wallet Comparison
+        each val, key in resourceMenu
+          li
+            if subpageSelected === key
+              a.active(href=val, title=key, target=_blank)= key
+            else
+              a(href=val, title=key)= key
         li
           a(href="https://support.bitpay.com") Help &amp; Support
     .column.medium-9
