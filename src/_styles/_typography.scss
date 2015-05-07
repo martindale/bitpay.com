@@ -52,78 +52,6 @@
   background: url('/images/arrow-blue.svg');
 }
 
-.checkmark:before,
-.incorrect:before {
-  content: '';
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
-  margin-left: 15px;
-  margin-right: 6px;
-  position: relative;
-  top: -1px;
-}
-
-.checkmark:before {
-  background: url('/images/icons/checkmark.svg');
-  width: 22px;
-  height: 21px;
-}
-
-.incorrect:before {
-  background: url('/images/icons/incorrect.svg');
-  margin-right: 9px;
-}
-
-.blog:before {
-  // inline-icon mixin?
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  height:22px;
-  width:22px;
-  background: url('/images/icons/blog-dark.svg');
-  margin-right: .6rem;
-}
-
-.twitter:before {
-  // inline-icon mixin?
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  height:22px;
-  width:26px;
-  background: url('/images/icons/twitter-dark.svg');
-  margin-right: .4rem;
-}
-
-.linkedin:before {
-  // inline-icon mixin?
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  height:20px;
-  width:20px;
-  background: url('/images/icons/linkedin-dark.svg');
-  margin-right: .8rem;
-}
-
-.facebook:before {
-  // inline-icon mixin?
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  height:20px;
-  width:20px;
-  background: url('/images/icons/facebook-dark.svg');
-  margin-right: 0.8rem;
-}
-
 p.lead {
   @media #{$small-only} {
     font-size: 1.11875rem;
@@ -135,7 +63,7 @@ p.lead {
   font-size: 90%;
 }
 
-.line-hieght-more {
+.line-height-more {
   line-height: 2em;
 }
 
