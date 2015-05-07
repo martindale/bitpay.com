@@ -30,9 +30,7 @@ $xxlarge-range: (90.063em, 99999999em);
 $column-gutter: rem-calc(60);
 $block-grid-default-spacing: rem-calc(30);
 $side-nav-link-padding: rem-calc(2 10);
-
-// $small-range: (0, 42em); // changed to fit nav menu better
-// $medium-range: (42.063em, 66em);
+$off-canvas-bg: #172852;
 
 $body-font-color: $gray-dark;
 $font-family-sans-serif: 'Karla', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;

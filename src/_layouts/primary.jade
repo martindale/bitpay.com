@@ -53,20 +53,24 @@ html(lang='en')
     include ../_includes/head.html
 
   body
-    .container(class='#{bodyClass}')
-      block header
-        include ../_includes/header
+    .off-canvas-wrap.container(class='#{bodyClass}' data-offcanvas)
+      .inner-wrap
+        block header
+          include ../_includes/header
 
-      block content
+        block content
 
-    block footer
-      include ../_includes/footer
+        block footer
+          include ../_includes/footer
+      
+        a.exit-off-canvas
     
     block scripts
       +jademin('/scripts/main.min.js')
         script(src='/jquery/dist/jquery.js')
         script(src='/foundation/js/foundation/foundation.js')
         script(src='/foundation/js/foundation/foundation.magellan.js')
+        script(src='/foundation/js/foundation/foundation.offcanvas.js')
         script(src='/foundation/js/foundation/foundation.accordion.js')
         script(src='/instantclick/instantclick.js')
         script(src='/_scripts/init.js')
