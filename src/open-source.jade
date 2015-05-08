@@ -1,0 +1,109 @@
+extends _layouts/primary
+
+block title
+  title Open Source | BitPay
+      
+block content
+
+  .bg-subtle-white-gradient.padding-vertical-less
+    .row
+      .column.large-10.large-offset-1.text-center
+        img.h1(src="/images/github-dark.svg" style="width: 1.5em; height 1.5em").fade-in-up
+        h2.text-center.fade-in-up We love open source software
+        p.lead.text-center.margin-bottom.fade-in-up Even this website is forkable
+
+  .padding-vertical-none.bg-gray-dark-gradient.border-bottom-gray        
+    .row.padding-less.text-center.white
+      .column.large-3.small-6
+        p.h1.white 14,131
+        p.uppercase.opacity-less Number of Commits
+      .column.large-3.small-6
+        p.h1.white 32
+        p.uppercase.opacity-less Number of Projects
+      .column.large-3.small-6
+        p.h1.white 12
+        p.uppercase.opacity-less Active Contributors
+      .column.large-3.small-6
+        p.h1.white 131
+        p.uppercase.opacity-less Open Pull Requests
+
+  .section.border-bottom-gray          
+    .row
+      .column.large-6
+        .project-box.padding-less.margin-bottom-more
+          img.h1(src="/images/logos/copay.svg" style="width: 100%;")
+          p.h4 <a href="https://github.com/bitpay/copay">Copay</a>
+          p.h5.inline-icon.fork.inline-block.margin-bottom-less 116 
+          p.h5.inline-icon.star.inline-block.margin-left-les.margin-bottom-lesss 1234 
+          p Copay is an easy-to-use, open-source, multiplatform, multisignature, secure bitcoin wallet platform for both individuals and companies.
+      .column.large-6
+        .project-box.padding-less.margin-bottom-more
+          img.h1(src="/images/logos/bitcore.svg" style="width: 100%;")
+          p.h4 <a href="https://github.com/bitpay/bitcore">Bitcore</a>
+          p.inline-icon.fork.inline-block.margin-bottom-less 116 
+          p.inline-icon.star.inline-block.margin-left-less.margin-bottom-less 1234 
+          p Bitcore is a powerful javascript library that allows you access the bitcoin network
+    .row
+      .column.large-6
+        .project-box.padding-less.margin-bottom-more
+          p.h4 <a href="https://github.com/bitpay/toro">Toro</a>
+          p.inline-icon.fork.inline-block.margin-bottom-less 116 
+          p.inline-icon.star.inline-block.margin-left-less.margin-bottom-less 1234 
+          p Toro is a bitcoin trading library that allows you to tap into the API of popular bitcoin exchanges.
+      .column.large-6
+        .project-box.padding-less.margin-bottom-more
+          p.h4 <a href="https://github.com/bitpay/bitauth">BitAuth</a>
+          p.inline-icon.fork.inline-block.margin-bottom-less 116 
+          p.inline-icon.star.inline-block.margin-left-less.margin-bottom-less 1234 
+          p BitAuth is a way to do secure, passwordless authentication using the cryptography in Bitcoin.
+    .row
+      .column.large-6
+        .project-box.padding-less.margin-bottom-more
+          p.h4 <a href="https://github.com/bitpay/insight">Insight</a>
+          p.inline-icon.fork.inline-block.margin-bottom-less 116 
+          p.inline-icon.star.inline-block.margin-left-less.margin-bottom-less 1234 
+          p Insight is an open-source bitcoin blockchain explorer with complete REST and websocket APIs. 
+      .column.large-6
+        .project-box.padding-less.margin-bottom-more
+          p.h4 <a href="https://github.com/bitpay/foxtrot">Foxtrot</a>
+          p.inline-icon.fork.inline-block.margin-bottom-less 116 
+          p.inline-icon.star.inline-block.margin-left-less.margin-bottom-less 1234 
+          p A simple and secure routing network based on bitcoin cryptography. Foxtrot enables easy p2p communications.
+
+
+  .section.border-bottom-gray          
+    .row
+      .column.large-8.large-centered
+        h2.text-center.header__bottom-border We are committed to bitcoin's success
+        p.text-center.margin-bottom-more We are invested in bitcoins success. We support <a href="#">payment protocol</a> ensure secure <a href="#">bitcoin payments</a>, and advocate <a href="#">community driven software development</a> to ensure things are secure.
+    .row
+      .column
+        .h1.background-contain(style="background-image: url('/images/p2p.svg'); height:10em;")
+
+  .section
+    .row
+      .column.large-10.large-centered
+        h2.text-center.header__bottom-border Improving the bitcoin protocol, bit by bit.
+        p.text-center.margin-bottom-more BIPs are proposals to improve the bitcoin protocol itself - we foster and encourage contributions to the bitcoin protocol. Here are a few we have written.
+    .row
+      .column.large-4
+        h5 <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">Deterministic Multisignature Wallets</a>
+        p.small.uppercase BIP 0045
+        p This BIP defines a structure for hierarchical deterministic P2SH multi-party multi-signature wallets 
+      .column.large-4
+        h5 <a href="https://github.com/bitcoin/bips/blob/master/bip-0035.mediawiki">Add Mempool Message Proposal</a>
+        p.small.uppercase BIP 0035
+        p Make a network node's transaction memory pool accessible via a new "mempool" message. 
+      .column.large-4
+        h5 <a href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki">HTTP Payment Request Proposal</a>
+        p.small.uppercase BIP 0073
+        p A standard spec for requesting and recurring signal payent request from an HTTP server.
+
+  .section.bg-lightblue-gradient.border-top-gray
+    .row
+      .column.medium-8.medium-offset-2
+        h2.text-center.white Start building with bitcoin 
+    .row
+      .column.medium-8.medium-offset-2.text-center
+        a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
+        a(href="/tour").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Tour
