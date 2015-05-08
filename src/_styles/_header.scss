@@ -93,11 +93,11 @@
   color: $gray-medium;
   padding: 0.4rem 0;
   font-size: 0.8rem;
-  @media #{small-only} {
-    width: 33%;
-  }
   @media #{$medium-up} {
     font-size: 0.9rem;
+    padding: 0 0 0.6rem;
+  }
+  @media #{$xlarge-up} {
     padding: 0 0.75rem 0.6rem;
   }
   &.selected {
