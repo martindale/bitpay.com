@@ -5,82 +5,92 @@ block title
 
 block content
   .row.margin-bottom-less
-    .column.medium-3.small-3
-      h1 Press
-    .column.medium-9.small-9
-      a(href="#").white.btn.btn-blue-solid.uppercase.bold.right Download Press Kit
+    .column.medium-3
+      h1.small-only-text-center Press
+    .column.medium-9.text-center
+      a(href="/bitpay-press-kit05072015.zip" download).white.btn.btn-blue-solid.uppercase.bold.large-float-right Download Press Kit
       
       
   .bg-gray-gradient.border-vertical-gray.padding-vertical-more
     .row
-      .column
-        h3.header__bottom-border-left Recent Coverage
-    .row
       .column.large-8
+        h3.header__bottom-border-left Recent Coverage
         mixin featured-article(title, date, publication, url)
-          p.lead.margin-bottom-none <a href="#{url}" target="_blank">#{title}</a>
+          p.lead.margin-bottom-none
+            a(href="#{url}" target="_blank") #{title}
           p.margin-bottom-less #{date} - #{publication}
         +featured-article("Charities Seek Donations in Bitcoin", "04.12.15", "The Wall Street Journal", "http://www.wsj.com/articles/charities-seek-donations-in-bitcoin-1428894121")
         +featured-article("BitPay Reveals the (Good) Reason Why Bitcoin Price is Down", "04.17.15", "The Cointelegraph", "http://cointelegraph.com/news/113987/bitpay-reveals-the-good-reason-why-bitcoin-price-is-down")
         +featured-article("How to Trace a Political Donation Made with Bitcoin", "04.8.15", "Motherboard", "http://motherboard.vice.com/read/how-to-trace-a-political-donation-made-with-bitcoin")
         +featured-article("This Week On The TechCrunch Bitcoin Podcast: Poker, BitPay And Growth", "03.26.15", "TechCrunch", "http://techcrunch.com/2015/03/26/this-week-on-the-techcrunch-bitcoin-podcast-poker-bitpay-and-growth")
-      .column.large-4.uppercase
-          p.blog <a href="http://blog.bitpay.com">BitPay Blog</a>
-          p.twitter <a href="http://www.twitter.com/bitpay" target="_blank">BitPay on Twitter</a>
-          p.linkedin <a href="http://www.linkedin.com/company/bitpay-inc-" target="_blank">BitPay on LinkedIn</a>
-          p.facebook <a href="https://www.facebook.com/BitPayOfficial" target="_blank">BitPay on Facebook</a>
-    .row.text-center
-      <hr>
+      .column.large-4.margin-top-less
+        mixin press-social(title, url, icon)
+          li.margin-bottom-less
+            a(href="#{url}" target="_blank" class="inline-icon #{icon}") #{title}
+        ul.no-bullet
+          +press-social("BitPay Blog", "http://blog.bitpay.com", "blog")
+          +press-social("BitPay on Twitter", "http://www.twitter.com/bitpay", "twitter")
+          +press-social("BitPay on LinkedIn", "http://www.linkedin.com/company/bitpay-inc-", "linkedin")
+          +press-social("BitPay on Facebook", "http://www.facebook.com/BitPayOfficial", "facebook")
+    .row.text-center.padding-top-less
+      hr
+      h5.uppercase.gray-dark.text-center.margin-top Featured On
       mixin logos(name, width, height)
-        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/publication_logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
-      +logos("new_york_times", 4.5, 2)
-      +logos("wired", 4, 2.5)
-      +logos("wall_street_journal", 4.5, 2.5)
-      +logos("techcrunch", 4.5, 2.5)
-      +logos("forbes", 4, 2.5)
+        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/publication_logos/#{name}.svg'); width: #{width}em; height: #{height}em;")
+      +logos("new_york_times", 6, 2)
+      +logos("wired", 5, 2)
+      +logos("wall_street_journal", 7, 2)
+      +logos("techcrunch", 6, 2)
+      +logos("forbes", 4, 2)
       
   .section
-    .row
-      .column
+    .row.margin-bottom
+      .column.large-6
         h3.header__bottom-border-left Brand Guidelines
-    .row
-      .column.large-6
-        .div
-          <img src="/images/bitpay-brand-logo-blue.jpg" alt="BitPay" width="100%">
-        ul.inline-list
-          li <a href="#">PNG</a>
-          li <a href="#">EPS</a>
-          li <a href="#">JPG</a>
-      .column.large-6
-        <img src="/images/bitpay-brand-logo-white.jpg" alt="BitPay" width="100%">
-        ul.inline-list
-          li <a href="#">PNG</a>
-          li <a href="#">EPS</a>
-          li <a href="#">JPG</a>
-    .row.margin-top
-      .column.large-6
-        p Our logo consists of a single word mark derived from the Ubuntu font, one of the the first typeface associated with bitcoin. We prefer you use the white on blue version whenever possible but the blue on white version is acceptable when the logo is being applied over a white background.
-        p When working with our brand assets, please be sure to include adequate spacing around the logo and resist the temptation to embelish the logo with any additional effects, treatments, or colors.
-        
+        .row
+          .column.medium-6
+            .bg-blue.radius.text-center.padding-vertical-less
+              img(src="/images/bitpay-logo-primary.png", alt="BitPay Primary Logo" style="width: 80%;")
+            ul.inline-list
+              li <a href="/images/bitpay-logo-primary.png" download>PNG</a>
+              li <a href="/images/bitpay-logo-primary.eps" download>EPS</a>
+              li <a href="/images/bitpay-logo-primary.jpg" download>JPG</a>
+          .column.medium-6
+            .bg-white.radius.text-center.padding-vertical-less.border-gray
+              img(src="/images/bitpay-logo-inverse.png", alt="BitPay Secondary Logo" style="width: 80%;")
+            ul.inline-list
+              li <a href="/images/bitpay-logo-inverse.png" download>PNG</a>
+              li <a href="/images/bitpay-logo-inverse.eps" download>EPS</a>
+              li <a href="/images/bitpay-logo-inverse.jpg" download>JPG</a>
 
+        hr
+        p.lead Our logo is a word mark derived from the Ubuntu font&mdash; the the first typeface associated with bitcoin.
+        p We prefer you use the white logo on a blue (or dark) background whenever possible, followed by the blue logo on a white (or light) background. Please be sure to include adequate spacing around the logo and resist the temptation to embellish the logo with any additional effects, treatments, or colors.
+        
       .column.large-6
+        h3.header__bottom-border-left Capitalization
         .row
-          .column
-            p BitPay is written with the “B” and the “P” capitalized to distinguish BitPay (our company) from bitcoin (the currency).
-        .row
-          .column.large-6.medium-6
-            p.uppercase Correct
-          .column.large-6.medium-6
+          .column.medium-4
+            p.uppercase.bold Correct
+          .column.medium-8
             p.checkmark BitPay
         .row
-          .column.large-6.medium-6
-            p.uppercase Incorrect
-          .column.large-6.medium-6
-            p.incorrect.margin-bottom-less Bitpay
-            p.incorrect.margin-bottom-less bitPay
-            p.incorrect.margin-bottom-less bit-pay
-            p.incorrect.margin-bottom-less bit pay
+          .column.medium-4
+            p.uppercase.bold Incorrect
+          .column.medium-8
+            .row
+              .column.xlarge-6
+                p.incorrect.margin-bottom-less Bitpay
+                p.incorrect.margin-bottom-less bitPay
+                
+              .column.xlarge-6
+                p.incorrect.margin-bottom-less bit-pay
+                p.incorrect.margin-bottom-less bit pay
     
+        .row
+          .column
+            hr
+            p.lead BitPay is written with the “B” and “P” capitalized to distinguish BitPay (our company) from bitcoin (the currency).
     
   .section.bg-lightblue-gradient.border-top-gray
     .row
@@ -89,7 +99,6 @@ block content
         
     .row
       .column.medium-8.medium-offset-2.text-center
-        a(href="#").white.btn.btn-margin.btn-blue-solid.uppercase.bold Download Press Kit
+        a(href="/bitpay-press-kit05072015.zip" download).white.btn.btn-margin.btn-blue-solid.uppercase.bold Download Press Kit
         a(href="mailto:media@bitpay.com").white.btn.btn-blue-border.btn-margin.uppercase.bold Email Us
-        h6.text-center.white.uppercase.margin-top-less.margin-bottom-none Media Requests
-        h5.text-center.white +1 (415) 570-7450
+        h6.text-center.white.uppercase.margin-top-less.margin-bottom-none Media Requests: +1 (415) 570-7450
