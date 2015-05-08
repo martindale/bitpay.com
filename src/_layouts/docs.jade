@@ -3,14 +3,17 @@ extends primary
 block header
   include ../_includes/docs-header
 
+append vars
+  -var bodyClass = 'white-header';
+  
 block content
   - var docsMenu = { 'Getting Started': '/docs', 'Selling Online': '/docs/ecommerce', 'Selling in Person': '/docs/retail', 'Banking & Settlements': '/docs/settlement' };
   - var usecaseMenu = { 'Email Billing': '/docs/billing', 'Donations': '/docs/donations'}
   - var resourceMenu = { 'Bitcoin Wallet Comparison': '/docs/wallets', 'BBB Exchange Rate': '/bitcoin-exchange-rates' }
   
   .row.padding-vertical.medium-padding-bottom-most
-    .column.large-3
-      ul.side-nav.large-border-right-gray.padding-right
+    .column.large-5.xlarge-3
+      ul.side-nav.large-border-right-gray.padding-right-less
         li.uppercase.h3 Documentation
         each val, key in docsMenu
           li
@@ -36,5 +39,6 @@ block content
               a(href=val, title=key)= key
         li
           a(href="https://support.bitpay.com") Help &amp; Support
-    .column.large-9
+
+    .column.large-7.xlarge-9
       block information
