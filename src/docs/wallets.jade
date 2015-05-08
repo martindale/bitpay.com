@@ -8,10 +8,57 @@ append vars
   -var subpageSelected = 'Bitcoin Wallet Comparison'
   
 block information
-  h2.header__bottom-border-left Bitcoin Wallet Comparison
-  p.lead BitPay Merchants can accept bitcoin payments from any bitcoin wallet or account service, and BitPay supports all Bitcoin protocol standards.
-  p While it's possible to use any bitcoin wallet or account service with BitPay, users should consider choosing a wallet that supports enhanced bitcoin security and protocol standards.
-
-
+  h1.header__bottom-border-left Bitcoin Wallet Comparison
+  p.lead We work with developers and wallet vendors to design and promote technical standards which improve the security and ease of using bitcoin.
   
+  p We maintain this page as a resource for identifying wallet support of these standards.
+  
+  h5.bold.margin-bottom-none Bitcoin URI Support
+  small <a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki">BIP 21</a>
+  p This is the standard for the &ldquo;2-tap&rdquo; payment experience. Users can follow a link or scan a QR code, and supporting wallets automatically prepare a payment of the proper amount to the correct address.
+  
+  h5.bold.margin-bottom-none Payment Protocol Support
+  small <a href="https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki">BIP 70</a>, <a href="https://github.com/bitcoin/bips/blob/master/bip-0071.mediawiki">BIP 71</a>, and <a href="https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki">BIP 72</a>
+  p The Payment Protocol standard enables secure payment requests, secure payment destinations, and payment experience improvements. These include payment recieved notifications, pre-determined refund addresses, and secure proof of payment.
+  
+  h5.bold.margin-bottom-none Accept-Header Support
+  small <a href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki">BIP 73</a>
+  p This standardizes wallet treatment of web addresses as &ldquo;payment request endpoints&rdquo;, allowing less information to be included on QR codes for bitcoin payments. Less-dense QR codes are easier to scan, particularly in low-light situations or on low-resolution prints and displays.
+  
+  h2 True Wallets
+  p To send bitcoin, wallet software uses a <em>secret key</em>, much like a password, to move the bitcoin. The new owner's wallet software then stores its new secret key. <em>True Wallets</em> are bitcoin wallets with which users control the keys to their own bitcoin.
+  
+  table
+    tr
+      th Wallet
+      th Platform(s)
+      th Bitcoin URIs
+      th Payment Protocol
+      th Accept-Headers
+    tr
+      td 
+      td
+      td
+      td
+      td
+      
+  
+  h2 Bitcoin Account Services
+  p Account services manage a bitcoin wallet on behalf of users, much like a bank manages a customer's funds.
+  p Account services can be used as bitcoin wallets, though users should keep in mind many of these institutions do not insure consumers from the loss of deposits via theft, fraud, or bankruptcy. It is also not uncommon for account services to delay sending bitcoin, which can slow down purchase experiences and cause unnecessary hassle for users.
+  p If you are trying to make a payment from one of these services to a BitPay invoice, and the payment hasn't been sent, we recommend contacting the institution's support services. If you are unsure about the status of your payment, please feel free to contact our <a href="mailto:support@bitpay.com?Subject=Payment%20Delayed">support team</a>.
+  
+  table
+    tr
+      th Wallet
+      th Platform(s)
+      th Bitcoin URIs
+      th Payment Protocol
+      th Accept-Headers
+    tr
+      td 
+      td
+      td
+      td
+      td
   
