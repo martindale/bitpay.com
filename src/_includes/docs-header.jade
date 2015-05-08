@@ -1,20 +1,16 @@
-- var menu = { 'Integrations': '/integrations', 'API & SDKs': '/api', 'Docs': '/docs', 'Log In': '#' };
-
-append vars
-  -var bodyClass = 'white-header';
-
 .bg-dark
   .row(role="navigation")
-    .column.medium-1
+    .column.small-1
       a(href="/" title="Home").logo.margin-top-less.medium-margin-top
 
-    .column.medium-11.show-for-large-up
+    .column.small-11.show-for-large-up
       ul.inline-list.right.padding-top-less.medium-padding-top
-        each val, key in menu
-          li
-            if pageSelected === key
-              a.menu-item.selected(href=val, title=key)= key
-            else if key === 'Log In'
-              a.menu-item.login-btn(href=val, title=key)= key
-            else
-              a.menu-item(href=val, title=key)= key
+        include docs-menu.jade
+        
+    .column.small-3.hide-for-large-up
+      a(href="#").right-off-canvas-toggle.menu-icon 
+        span
+        
+  aside.right-off-canvas-menu
+    ul.no-bullet.padding-left.padding-top-less
+      include docs-menu.jade

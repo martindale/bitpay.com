@@ -3,6 +3,9 @@ extends primary
 block header
   include ../_includes/docs-header
 
+append vars
+  -var bodyClass = 'white-header';
+  
 block content
   - var docsMenu = { 'Getting Started': '/docs', 'Selling Online': '/docs/ecommerce', 'Selling in Person': '/docs/retail', 'Banking & Settlements': '/docs/settlement' };
   - var usecaseMenu = { 'Email Billing': '/docs/billing', 'Donations': '/docs/donations'}
