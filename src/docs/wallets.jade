@@ -25,40 +25,47 @@ block information
   small <a href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki">BIP 73</a>
   p This standardizes wallet treatment of web addresses as &ldquo;payment request endpoints&rdquo;, allowing less information to be included on QR codes for bitcoin payments. Less-dense QR codes are easier to scan, particularly in low-light situations or on low-resolution prints and displays.
   
-  h2 True Wallets
-  p To send bitcoin, wallet software uses a <em>secret key</em>, much like a password, to move the bitcoin. The new owner's wallet software then stores its new secret key. <em>True Wallets</em> are bitcoin wallets with which users control the keys to their own bitcoin.
+  h3.header__bottom-border-left.margin-top 1. True Wallets
+  p.lead True Wallets are bitcoin wallets with which users control the keys to their own bitcoin.
+  p To send bitcoin, wallet software uses a <em>secret key</em>, much like a password, to move the bitcoin. The new owner's wallet software then stores its new secret key.
   
-  table
-    tr
-      th Wallet
-      th Platform(s)
-      th Bitcoin URIs
-      th Payment Protocol
-      th Accept-Headers
-    tr
-      td 
-      td
-      td
-      td
-      td
-      
+  mixin wallet(name, platform, uri, pp, url)
+   tr.text-center
+     td.padding-top-less.text-left
+       a(href="#{url}") #{name}
+     td.padding-top-less #{platform}
+     td(class="padding-top-less #{uri}")
+     td(class="padding-top-less #{pp}")
   
-  h2 Bitcoin Account Services
-  p Account services manage a bitcoin wallet on behalf of users, much like a bank manages a customer's funds.
+  table(style="width: 100%;").small-smaller-text.line-height-more
+    tr.text-center.border-bottom-gray
+      th.text-left.padding-bottom-less Wallet
+      th.padding-bottom-less Platform(s)
+      th.padding-bottom-less Bitcoin URIs
+      th.padding-bottom-less Payment Protocol
+    +wallet("Blockchain", "Mac OS", "checkmark", "", "https://itunes.apple.com/us/app/blockchain/id688882038?mt=12")
+    +wallet("Hive", "Mac OS", "checkmark", "checkmark", "https://www.hivewallet.com/")  
+  
+  h3.header__bottom-border-left.margin-top 2. Bitcoin Account Services
+  p.lead Account services manage a bitcoin wallet on behalf of users, much like a bank manages a customer's funds.
   p Account services can be used as bitcoin wallets, though users should keep in mind many of these institutions do not insure consumers from the loss of deposits via theft, fraud, or bankruptcy. It is also not uncommon for account services to delay sending bitcoin, which can slow down purchase experiences and cause unnecessary hassle for users.
   p If you are trying to make a payment from one of these services to a BitPay invoice, and the payment hasn't been sent, we recommend contacting the institution's support services. If you are unsure about the status of your payment, please feel free to contact our <a href="mailto:support@bitpay.com?Subject=Payment%20Delayed">support team</a>.
   
-  table
-    tr
-      th Wallet
-      th Platform(s)
-      th Bitcoin URIs
-      th Payment Protocol
-      th Accept-Headers
-    tr
-      td 
-      td
-      td
-      td
-      td
-  
+  table(style="width: 100%;").small-smaller-text.line-height-more
+    tr.text-center.border-bottom-gray
+      th.text-left.padding-bottom-less Wallet
+      th.padding-bottom-less Platform(s)
+      th.padding-bottom-less Bitcoin URIs
+      th.padding-bottom-less Payment Protocol
+    tr.text-center
+      td.padding-top-less.text-left
+        a(href="https://coinbase.com") Coinbase
+      td.padding-top-less iOS, Android, Web
+      td.padding-top-less.checkmark
+      td.padding-top-less
+    tr.text-center
+      td.padding-top-less.text-left
+        a(href="https://www.circle.com/") Circle
+      td.padding-top-less iOS, Android, Web
+      td.padding-top-less.checkmark
+      td.padding-top-less.checkmark
