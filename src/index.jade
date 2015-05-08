@@ -7,7 +7,7 @@ append vars
   -var bodyClass = 'white-header bg-blue-gradient';
 
 block content
-  .background-element.text-center.opacity-less
+  .background-element.text-center.opacity
     img(src="/images/geometric_map.svg" width="100%")
     mixin pulse(left, top, id, msDelay)
       div(class="pulse-#{id}" style="left:#{left}%; top:#{top}%; -webkit-animation-delay: #{msDelay}ms; animation-delay: #{msDelay}ms;")
