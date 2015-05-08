@@ -13,7 +13,7 @@ block content
   
   .row.padding-vertical.medium-padding-bottom-most
     .column.large-4.xlarge-3
-      ul.side-nav.border-right-gray
+      ul.side-nav.large-border-right-gray.padding-right
         li.uppercase.h3 Documentation
         each val, key in docsMenu
           li
@@ -39,5 +39,6 @@ block content
               a(href=val, title=key)= key
         li
           a(href="https://support.bitpay.com") Help &amp; Support
+
     .column.large-8.xlarge-9
       block information

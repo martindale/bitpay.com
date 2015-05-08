@@ -37,6 +37,14 @@
   margin-right: 1rem;
 }
 
+.fork:before {
+  background-image: url('/images/icons/fork.svg');
+}
+
+.star:before {
+  background-image: url('/images/icons/star.svg');
+}
+
 .blog:before {
   background-image: url('/images/icons/blog-dark.svg');
 }

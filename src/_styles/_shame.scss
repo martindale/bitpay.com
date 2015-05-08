@@ -246,3 +246,12 @@
 .ghost-shadow {
   animation: shadow-move 16s both cubic-bezier(0.420, 0.000, 0.580, 1.000) 2s alternate infinite;
 }
+
+.project-box {
+  border: solid 1px #EDEDED;
+  border-radius: 9px;
+  transition: border 0.3s;
+  &:hover {
+    border: solid 1px #ADAFC3;
+  }
+}
