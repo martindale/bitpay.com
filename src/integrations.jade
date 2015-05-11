@@ -10,7 +10,7 @@ append vars
 block content
   mixin integration(src, href, name)
     .column.small-4.large-3.margin-bottom.end
-      a.h1.background-contain.integration-logo(href="#{href}" title="#{name}" style="background-image: url('/images/integrations/#{src}');")
+      a.h1.background-contain.integration-logo(href="#{href}" title="#{name}" style="background-image: url('/images/integrations/#{src}');" target="_blank")
       span.small.text-center.block.margin-top-less #{name}
 
   .section.bg-gray.border-vertical-gray.margin-bottom-less
@@ -31,6 +31,7 @@ block content
         p.lead These integrated solutions work out of the box, no development required. Simply connect your BitPay account and begin accepting bitcoin payments.
       .column.large-7.xlarge-6
         .row.small-collapse
+          +integration("adyen.png", "http://adyen.com", "Adyen")
           +integration("demandware.png", "http://demandware.com", "Demandware")
           +integration("shopify.png", "http://shopify.com", "Shopify")
           +integration("paypal.png", "http://paypal.com", "PayPal")
@@ -56,7 +57,7 @@ block content
           +integration("magento.png", "http://magento.com", "Magento")
           +integration("ecwid.png", "http://ecwid.com", "Ecwid")
           +integration("gravityforms.png", "http://gravityforms.com", "Gravity Forms")
-          +integration("membershippro.png", "http://.com", "Membership Pro")
+          +integration("membershippro.png", "http://premium.wpmudev.org/project/membership/", "Membership Pro")
           +integration("opencart.png", "http://opencart.com", "OpenCart")
           +integration("oscommerce.png", "http://oscommerce.com", "OScommerce")
           +integration("prestashop.png", "http://prestashop.com", "PrestaShop")
@@ -89,6 +90,7 @@ block content
       .column.large-7.xlarge-6
         .row.small-collapse
           +integration("netsuite.png", "http://netsuite.com", "NetSuite")
+          +integration("paybycoin.png", "http://paybycoin.intuit.com", "Intuit PayByCoin")
           +integration("paydici.png", "http://paydici.com", "Paydici")
           +integration("whmcs.png", "http://whmcs.com", "WHMCS")
           +integration("hostbill.png", "http://hostbillapp.com", "Host Bill")
