@@ -6,7 +6,7 @@ block title
 append vars
   -var integrationSelected = 'Integrated Solutions'
   -var pageSelected = 'Integrations'
-      
+
 block content
   mixin integration(src, href, name)
     .column.small-4.large-3.margin-bottom.end
@@ -23,7 +23,7 @@ block content
       //-     input.integration-search(placeholder="Search our integrations..." type="search" value="" name="search")
       //-     span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
   include _includes/integrations-nav
-            
+
   .section#integrated
     .row
       .column.large-5.margin-bottom
@@ -46,7 +46,7 @@ block content
           +integration("egovlink.png", "http://egovlink.com", "E-GOV Link")
           +integration("globalpayments.png", "http://globalpaymentsinc.com", "Global Payments")
           +integration("bitmonet.png", "http://bitmonet.com", "Bitmonet")
-        
+
   .section.border-top-gray#plugins
     .row
       .column.large-5.margin-bottom
@@ -74,7 +74,7 @@ block content
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Point of Sale
-        p.lead BitPay integrates directly into the world’s most popular retail Point-of-Sale solutions.
+        p.lead BitPay merchants can directly activate bitcoin payments on these traditional and tablet-based point-of-sale systems.
       .column.large-7.xlarge-6
         .row.small-collapse
           +integration("softtouch.png", "http://softtouchpos.com", "Soft Touch")
@@ -106,8 +106,8 @@ block content
           +integration("ngpvan.png", "http://ngpvan.com", "NGPVan")
           +integration("coinvox.png", "http://coinvox.org", "Coin Vox")
           +integration("targetedvictory.png", "http://targetedvictory.com", "Targeted Victory")
-        
-        
+
+
   .section.bg-lightblue-gradient.border-top-gray
     .row
       .column.large-10.large-offset-1.text-center
