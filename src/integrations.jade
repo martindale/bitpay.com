@@ -24,7 +24,7 @@ block content
           span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
   include _includes/integrations-nav
             
-  .section
+  .section#integrated
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Integrated Solutions
@@ -47,7 +47,7 @@ block content
           +integration("globalpayments.png", "http://globalpaymentsinc.com", "Global Payments")
           +integration("bitmonet.png", "http://bitmonet.com", "Bitmonet")
         
-  .section.border-top-gray
+  .section.border-top-gray#plugins
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Open Source Plugins
@@ -70,7 +70,7 @@ block content
           +integration("zencart.png", "http://zencart.com", "Zen Cart")
           +integration("commerceseo.png", "http://commerce-seo.de", "commerce:SEO")
 
-  .section.border-top-gray
+  .section.border-top-gray#pos
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Point of Sale
@@ -82,7 +82,7 @@ block content
           +integration("dcpos.png", "http://dcpos.com", "DC POS")
           +integration("ncrsilver.png", "http://ncrsilver.com", "NCR Silver")
 
-  .section.border-top-gray
+  .section.border-top-gray#billing
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Billing &amp; Accounting
@@ -95,7 +95,7 @@ block content
           +integration("whmcs.png", "http://whmcs.com", "WHMCS")
           +integration("hostbill.png", "http://hostbillapp.com", "Host Bill")
 
-  .section.border-top-gray
+  .section.border-top-gray#donations
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Donations
