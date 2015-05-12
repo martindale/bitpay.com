@@ -58,16 +58,16 @@
 }
 
 .event-title-six {
-  margin-top:13em;
+  margin-top:12em;
   @media #{$small-only} {margin-top: 7.5em;}
 }
 
 .first-item {&:after {top: 4%;}}
-.second-item {&:before {top: 20%;}}
-.third-item {&:after {top: 46%;}}
-.fourth-item {&:before {top: 54%;}}
-.fifth-item {&:after {top: 92.5%;}}
-.sixth-item {&:before {top: 91.5%;}}
+.second-item {&:before {top: 19%;}}
+.third-item {&:after {top: 44%;}}
+.fourth-item {&:before {top: 53.5%;}}
+.fifth-item {&:after {top: 88.5%;}}
+.sixth-item {&:before {top: 90%;}}
 
 
 @media #{$small-only} {
