@@ -17,27 +17,28 @@ block content
 
   .section.bg-white.border-bottom-gray
     .row
-      .column.small-centered.large-8
-        h3.header__bottom-border-left Working at BitPay
-        p.lead We ask and answer Bitcoin's hardest questions, every day. Our culture values openness, debate, and action.
+      .column.small-centered.large-10.xlarge-9
+        h3.header__bottom-border.text-center Working at BitPay
+        p.lead.text-center We ask and answer Bitcoin's hardest questions, every day. Our culture values openness, debate, and action.
+        
+        .row
+          .column.large-6            
+            h4 We're independent.
+            p We're a very flat organization — everyone has ownership, and everyone has the responsibility and resources they need to get the job done.
 
-        h4 We're independent.
-        p We're a very flat organization — everyone has ownership, and everyone has the responsibility and resources they need to get the job done.
+            h4 We're agile.
+            p We're constantly refining and improving our understanding of our customers and our product. We build and ship code quickly, deploying multiple times per day.
 
-        h4 We're agile.
-        p We're constantly refining and improving our understanding of our customers and our product. We build and ship code quickly, deploying multiple times per day.
+            h4 We're flexible.
+            p Time with the team in a BitPay office is crucial, but we work effectively out of office, too. Our only mandate? Make a great bitcoin payment experience for our merchants.
+          .column.large-6            
+            h4 We love open source.
+            p Our team is dedicated to producing world-class open source software. We engage with the open source community and welcome feedback and pull requests.
 
-        h4 We're flexible.
-        p Time with the team in a BitPay office is crucial, but we work effectively out of office, too. Our only mandate? Make a great bitcoin payment experience for our merchants.
-
-        h4 We love open source.
-        p Our team is dedicated to producing world-class open source software. We engage with the open source community and welcome feedback and pull requests.
-
-        h4 We love bitcoin.
-        p We love the technology that's driving our work. Even out of the office, we find ourselves talking about Bitcoin and its potential.
-
-        .column.margin-vertical-less.text-center
-          a(href="https://github.com/bitpay").arrow-blue See what we're building.
+            h4 We love bitcoin.
+            p We love the technology that's driving our work. Even out of the office, we find ourselves talking about Bitcoin and its potential.
+            p.lead.margin-top-more.padding-top-less
+              a(href="https://github.com/bitpay").arrow-blue See what we're building
 
 
   .section.bg-white.border-bottom-gray
@@ -186,15 +187,15 @@ block content
               p.margin-top-less
                 a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
 
-      .column.large-4#benefits
+      .column.large-5#benefits
         mixin benefit(src,  name)
-          .column.small-6.margin-bottom.end
+          li
             .h1.background-contain(style="background-image: url('/images/#{src}'); height: 2.5em;")
             span.small.text-center.block.margin-top-less #{name}
 
         h3.header__bottom-border-left Benefits
         p.margin-bottom-more When you join BitPay, we make sure you get all the support you need so that you feel your best at and away from work.
-        .row
+        ul.small-block-grid-2.no-bullet
           +benefit("equipment.svg", "The best equipment to get the job done")
           +benefit("health.svg", "Health, dental and vision benefits")
           +benefit("lunch.svg", "Complimentary catered lunch daily")
