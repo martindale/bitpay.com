@@ -37,37 +37,28 @@ block content
 
 
       mixin executive-team(name, img, title, description)
-        h1.background-contain.circle.left.margin-right-less.margin-bottom.small-only-margin-bottom-most(style="background-image: url('/images/team/#{img}.jpg'); height:3.25em; width:3.25em;")
-        h4 #{name}
-        p.margin-bottom-less #{title}
-        block
-
+        .column.large-6
+          .row
+            .column.xlarge-3.margin-vertical-less
+              .h3.background-contain.circle(style="background-image: url('/images/team/#{img}.jpg'); height:3.75em; width:3.75em;")
+            .column.xlarge-9
+              p.h4 #{name}
+              p.h6.bold.margin-bottom-less #{title}
+              p.margin-bottom #{description}
 
   .section.bg-gray-gradient.border-bottom-gray
     .row.margin-bottom
-      .column.medium-8-medium-offset-2
+      .column
         h3.header__bottom-border-left Executive Team
-    .row.margin-bottom
-      .column.large-6.medium-12.small-12
-        +executive-team("Stephen Pair", "stephen", "Co-Founder, CEO")
-          p Stephen has over 20 years of experience building software systems in the financial and telecommunications industries.
-      .column.large-6.medium-12.small-12
-        +executive-team("Tony Gallippi", "tony", "Co-Founder, Chairman of the Board")
-          p Tony has 20 years of experience in Sales and Marketing in the Robotics and Financial industries.
-    .row.margin-bottom
-      .column.large-6.medium-12.small-12
-        +executive-team("Bryan Krohn", "bryan", "Chief Finnancial Officer")
-          p Bryan has 20 years of experience as CFO for several technology companies including CTS, OmniVue, and American Data Corporation.
-      .column.large-6.medium-12.small-12
-        +executive-team("Tim Byun", "tim", "Chief Compliance Officer")
-          p Tim has over 20 years of experience in ensuring compliance, including five years as Visa's AML Officer and 16 years as a bank examiner for the Federal Reserve and the FDIC.
-    .row.margin-bottom
-      .column.large-6.medium-12.small-12
-        +executive-team("Sonny Singh", "sonny", "Chief Commercial Officer")
-          p Sonny was the first VP of Sales at Jumio and previously was at InMage Systems (acquired by Microsoft) and Niku (acquired by Computer Associates).
-      //- .column.large-6.medium-12.small-12
-      //-   +executive-team("Marcel Roland", "marcel", "General Manager, EMEA Region")
-      //-     p Marcel has 27 years of experience in the financial services industry, including nineteen years with GE Capital and five years as the General Manager of MasterCard in the Netherlands.
+    .row
+      +executive-team("Stephen Pair", "stephen", "Co-Founder, CEO", "Stephen has over 20 years of experience building software systems in the financial and telecommunications industries.")
+      +executive-team("Tony Gallippi", "tony", "Co-Founder, Chairman of the Board", "Tony has 20 years of experience in Sales and Marketing in the Robotics and Financial industries.")
+    .row
+      +executive-team("Bryan Krohn", "bryan", "Chief Finnancial Officer", "Bryan has 20 years of experience as CFO for several technology companies including CTS, OmniVue, and American Data Corporation.")
+      +executive-team("Tim Byun", "tim", "Chief Compliance Officer", "Tim has over 20 years of experience in ensuring compliance, including five years as Visa's AML Officer and 16 years as a bank examiner for the Federal Reserve and the FDIC.")
+    //- .row
+    //-   +executive-team("Sonny Singh", "sonny", "Chief Commercial Officer", "Sonny was the first VP of Sales at Jumio and previously was at InMage Systems (acquired by Microsoft) and Niku (acquired by Computer Associates).")
+    //-   +executive-team("Marcel Roland", "marcel", "General Manager, EMEA Region", "Marcel has 27 years of experience in the financial services industry, including nineteen years with GE Capital and five years as the General Manager of MasterCard in the Netherlands.")
 
   //- .section.bg-gray-gradient.border-bottom-gray
   //-   .row.margin-bottom
