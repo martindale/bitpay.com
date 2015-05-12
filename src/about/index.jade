@@ -24,32 +24,10 @@ block content
         p We started BitPay with the intention of making it easy for businesses to accept bitcoin payments, and we are currently the largest bitcoin payment processor in the world, serving more than 60,000 merchants on six continents.
         p Payment processing was our first contribution to the Bitcoin ecosystem, but it is not our last. We're building open source software to power the next applications of Bitcoin. Bitcoin's future looks very bright, and we plan on remaining on the forefront of this technology, creating more tools and services for everyone to use in innovative new ways.
       .column.large-7.medium-12
-        .row
-          .column.small-5
-            .timeline-item-left.first-item.fade-in.delay-1
-              p.text-right.uppercase.small.margin-bottom-none BitPay Founded
-              p.text-right.small.opacity May 2011
-            .timeline-item-left.third-item.fade-in.delay-3
-              p.text-right.uppercase.small.margin-bottom-none.event-title-three 10,000 Merchants<br />Accepting Bitcoin
-              p.text-right.small.opacity September 2013
-            .timeline-item-left.fifth-item.fade-in.delay-5.event-title-five
-              p.text-right.uppercase.small.margin-bottom-none Record-Breaking<br />$30M Series A Round
-              p.text-right.small.opacity May 2014
-          .column.small-2
-            .h1.background-contain.text-center.margin-top-none(style="background-image: url('/images/timeline.svg'); width:2em; height:15em; position: absolute; z-index: 1;")
-          .column.small-5
-            .timeline-item-right.second-item.fade-in.delay-2
-              p.uppercase.small.margin-bottom-none.event-title-two Atlanta Office <br />Established
-              p.small.opacity April 2012
-            .timeline-item-right.fourth-item.fade-in.delay-4
-              p.uppercase.small.margin-bottom-none.event-title-four San Francisco and Amsterdam Offices Opened
-              p.small.opacity March-April 2014
-            .timeline-item-right.sixth-item.fade-in.delay-6
-              p.uppercase.small.margin-bottom-none.event-title-six 60,000 Merchants<br />Accepting Bitcoin
-              p.small.opacity February 2015
-    .row.text-.margin-top.text-center
+        .h1.background-contain(style="background-image: url('/images/timeline.svg'); height:18em;")
+    .row.margin-top.text-center
       mixin logos(name, width, height)
-        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 3em")
+        .home-logo.h2.unselectable.(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 3em")
       +logos("index_ventures", 4, 2.5)
       +logos("founders_fund", 7, 2.5)
       +logos("felicis_ventures", 5, 3)

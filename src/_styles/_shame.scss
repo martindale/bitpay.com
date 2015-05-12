@@ -1,41 +1,41 @@
 // Timeline
 
-.timeline-item-left {
-    z-index: 1;
-  &:after {
-    content: "";
-    position: absolute;
-    background: #bfc1c9;
-    width: 50px;
-    height: 1px;
-    right: -23%;
-  }
-  @media #{$small-only} {
-    &:after {
-      width: 31px;
-      right: -19%;
-      // display: none;
-    }
-  }
-}
-
-.timeline-item-right {
-  &:before {
-    content: "";
-    position: absolute;
-    background: #bfc1c9;
-    width: 35px;
-    height: 1px;
-    left: -12%;
-  }
-  @media #{$small-only} {
-    &:before {
-      width: 20px;
-      left: -8%;
-      // display: none;
-    }
-  }
-}
+// .timeline-item-left {
+//     z-index: 1;
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     background: #bfc1c9;
+//     width: 50px;
+//     height: 1px;
+//     right: -23%;
+//   }
+//   @media #{$small-only} {
+//     &:after {
+//       width: 31px;
+//       right: -19%;
+//       // display: none;
+//     }
+//   }
+// }
+//
+// .timeline-item-right {
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     background: #bfc1c9;
+//     width: 35px;
+//     height: 1px;
+//     left: -12%;
+//   }
+//   @media #{$small-only} {
+//     &:before {
+//       width: 20px;
+//       left: -8%;
+//       // display: none;
+//     }
+//   }
+// }
 
 .event-title-two {
   margin-top:6.8em;
