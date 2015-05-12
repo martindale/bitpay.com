@@ -27,7 +27,7 @@ block content
         .h1.background-contain(style="background-image: url('/images/timeline.svg'); height:18em;")
     .row.margin-top.text-center
       mixin logos(name, width, height)
-        .home-logo.h2.unselectable.(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 3em")
+        .home-logo.h2.unselectable(style="background-image: url('/images/logos/#{name}.svg'); width: #{width}em; height: #{height}em; margin-right: 3em")
       +logos("index_ventures", 4, 2.5)
       +logos("founders_fund", 7, 2.5)
       +logos("felicis_ventures", 5, 3)
