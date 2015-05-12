@@ -20,11 +20,11 @@ block content
             a(href="/dashboard/signup").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Trial
 
 
-  .padding-vertical.bg-gray.border-bottom-gray
+  .padding-vertical-less.bg-gray.border-bottom-gray
     .row.padding-less.text-center
       h5.uppercase.gray-dark Trusted By
       mixin logos(name, width, height)
-        .home-logo.h2.opacity.unselectable(style="background-image: url('/images/color_logos/#{name}.png'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
+        .home-logo.h2.unselectable(style="background-image: url('/images/color_logos/#{name}.png'); width: #{width}em; height: #{height}em; margin-right: 1.5em")
       +logos("gyft", 2, 2.5)
       +logos("microsoft", 3.5, 2.5)
       +logos("newegg", 2.5, 2.5)
