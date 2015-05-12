@@ -9,6 +9,11 @@ var globby = require('globby');
 var env = {};
 var devDeps = {};
 
+function loadBrowserSync(){
+  devDeps.browserSync = require('browser-sync');
+  devDeps.reload = devDeps.browserSync.reload;
+}
+
 gulp.task('default', function(cb) {
   runSequence('build', cb);
 });
@@ -23,8 +28,7 @@ gulp.task('build', ['delete'], function(cb) {
 
 gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
-  devDeps.browserSync = require('browser-sync');
-  devDeps.reload = devDeps.browserSync.reload;
+  loadBrowserSync();
 
   if (env.uncss) {
     runSequence(
@@ -70,6 +74,7 @@ gulp.task('serve', ['build:dev'], function() {
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function() {
+  loadBrowserSync();
   devDeps.browserSync({
     notify: false,
     logPrefix: 'serve:dist',
