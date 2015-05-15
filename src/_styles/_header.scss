@@ -5,6 +5,8 @@
   display: inline-block;
   background-image: url('../images/bitpay-logo-dark.svg');
   background-repeat: no-repeat;
+  z-index: 2;
+  position: relative;
   @media #{$medium-up} {
     margin-bottom: 1.4rem;
   }
