@@ -5,7 +5,6 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var path = require('path');
 var runSequence = require('run-sequence');
-var globby = require('globby');
 var env = {};
 var devDeps = {};
 
@@ -29,16 +28,9 @@ gulp.task('build', ['delete'], function(cb) {
 gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
   loadBrowserSync();
-
-  if (env.uncss) {
-    runSequence(
-      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
-      cb);
-  } else {
-    runSequence(
-      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['build-localizations'],
-      cb);
-  }
+  runSequence(
+    ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
+    cb);
 });
 
 // Watch for changes & reload
@@ -88,26 +80,12 @@ gulp.task('serve:dist', ['default'], function() {
   });
 });
 
-gulp.task('serve:uncss', function(cb) {
-  env.uncss = true;
-  runSequence('serve', cb);
-});
-
-
 gulp.task('rebuild-jade', function(cb) {
-  if (env.uncss) {
-    runSequence(['sass', 'jade:dev'], 'jademin', ['styles', 'build-localizations'], cb);
-  } else {
-    runSequence(['jade:dev'], 'jademin', ['build-localizations'], cb);
-  }
+  runSequence(['sass', 'jade:dev'], 'jademin', ['styles', 'build-localizations'], cb);
 });
 
 gulp.task('rebuild-styles', function(cb) {
-  if (env.uncss) {
-    runSequence('sass', 'styles', cb);
-  } else {
-    runSequence('sass', cb);
-  }
+  runSequence('sass', 'styles', cb);
 });
 
 // delete dist
@@ -143,10 +121,7 @@ gulp.task('sass', function() {
 
 gulp.task('styles', function() {
   return gulp.src(['dist/**/*.css'])
-    .pipe($.uncss({
-      html: globby.sync(tasks.localization.htmlExcludingLocales)
-    }))
-    .pipe($.if(!env.development, $.csso()))
+    .pipe($.csso())
     .pipe(gulp.dest('dist'));
 });
 
