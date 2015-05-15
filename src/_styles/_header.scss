@@ -61,12 +61,10 @@
     content: "";
     display: block;
     position: absolute;
-    margin-top: 1.2rem;
     right: 2rem;
     box-shadow: 0 0 0 1px $blue-dark, 0 7px 0 1px $blue-dark, 0 14px 0 1px $blue-dark;
     width: 1.3rem;
     @media #{$medium-only} {
-      margin-top: 2.3rem;
       right: 2.5rem;
     }
     .white-header & {
