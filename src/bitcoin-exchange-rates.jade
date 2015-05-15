@@ -12,8 +12,8 @@ block content
   #ratesAppContainer(ng-controller="viewController")
     mixin rate-flag(name, code, src)
       tr
-        td.column.small-5 #{name}
-        td.column.small-7.text-right.mono
+        td.column.small-5(style="padding:0;") #{name}
+        td.column.small-7.text-right.mono(style="padding:0;")
           price(currency="BTC" valued-in="#{code}")
           span  #{code}&nbsp;
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}'); height: 1em;")
