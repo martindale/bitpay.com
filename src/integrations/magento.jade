@@ -1,0 +1,34 @@
+extends ../_layouts/primary
+
+block title
+  title Magento Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #c14800;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left Magento Plugin
+        p.lead BitPay's open source Magento Plugin helps you accept bitcoin on your Magento based e-commerce site.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/magento-white.png'); width: 6em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Plugin
+        a(href="#").arrow.white.btn.btn-white-border.uppercase.bold Integrate with BitPay
+    
+  .section
+    .row
+      .column.large-4.large-push-8.margin-bottom
+        .padding-horizontal.padding-top-less.radius.border-gray
+          h4 Prerequisites
+          p You must have a BitPay merchant account to use this plugin. It's free to <a href="/dashboard/signup">sign-up for a BitPay account</a>.
+      .column.large-8.large-pull-4
+        h3.header__bottom-border-left Server Requirements
+        ul
+          li <a href="http://magento.com/resources/system-requirements">Magento CE</a> 1.9.0.1 or higher. Older versions might work, however this plugin has been validated to work against the 1.9.0.1 Community Edition release.
+          li <a href="http://us2.php.net/gmp">GMP</a> or <a href="http://us2.php.net/manual/en/book.bc.php">BC Math</a> PHP extensions. GMP is preferred for performance reasons but you may have to install this as most servers do not come with it installed by default. BC Math is commonly installed however and the plugin will fall back to this method if GMP is not found.
+          li <a href="http://us2.php.net/openssl">OpenSSL</a> Must be compiled with PHP and is used for certain cryptographic operations.
+          li <a href="http://us2.php.net/downloads.php">PHP</a> 5.4 or higher. This plugin will not work on PHP 5.3 and below.

@@ -1,4 +1,4 @@
-extends _layouts/primary
+extends ../_layouts/primary
 
 block title
   title Integrations | BitPay
@@ -22,7 +22,7 @@ block content
       //-   form
       //-     input.integration-search(placeholder="Search our integrations..." type="search" value="" name="search")
       //-     span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
-  include _includes/integrations-nav
+  include ../_includes/integrations-nav
 
   .section#integrated
     .row
