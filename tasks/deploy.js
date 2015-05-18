@@ -13,8 +13,8 @@ gulp.task('deploy', ['replace'], function() {
 
 gulp.task('replace', ['default'], function() {
   return gulp.src('./dist/**/*.{html,css,js}')
-    .pipe($.replace('src="/', 'src="/static/'))
-    .pipe($.replace('href="/', 'href="/static/'))
-    .pipe($.replace('url(\'/', 'url(\'/static/'))
+    .pipe($.replace('src="/', 'src="/website/'))
+    .pipe($.replace('href="/', 'href="/website/'))
+    .pipe($.replace('url(\'/', 'url(\'/website/'))
     .pipe(gulp.dest('dist'));
 });

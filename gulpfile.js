@@ -100,7 +100,7 @@ gulp.task('sass', function() {
     'opera >= 23',
     'ios >= 7',
     'android >= 4',
-    '> 0.25%' //global market share
+    '> 0.25%' //of global market share
   ];
 
   // For best performance, don't add partials to `gulp.src`
