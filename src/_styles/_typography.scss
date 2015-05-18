@@ -103,3 +103,12 @@ p.lead {
 .quote {
   font-style: italic;
 }
+
+pre {
+  font-family: 'Menlo', 'Consolas', 'Courier', monospace;
+  font-size: 90%;
+  background: $gray-xlight;
+  border-radius: 3px;
+  border: 1px solid $gray-light;
+  padding: 0.5rem 1rem;
+}
