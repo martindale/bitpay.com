@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bitpay/website.svg)](https://travis-ci.org/bitpay/website) [![devDependency Status](https://david-dm.org/bitpay/website/dev-status.svg)](https://david-dm.org/bitpay/website#info=devDependencies) [![Stories in Ready](https://badge.waffle.io/bitpay/website.png?label=ready&title=Ready)](https://waffle.io/bitpay/website)
+[![Build Status](https://travis-ci.org/bitpay/bitpay-website.svg)](https://travis-ci.org/bitpay/bitpay-website) [![devDependency Status](https://david-dm.org/bitpay/bitpay-website/dev-status.svg)](https://david-dm.org/bitpay/bitpay-website#info=devDependencies) [![Stories in Ready](https://badge.waffle.io/bitpay/bitpay-website.png?label=ready&title=Ready)](https://waffle.io/bitpay/bitpay-website)
 
 Developing
 ----------
