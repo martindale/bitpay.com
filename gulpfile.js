@@ -21,7 +21,6 @@ gulp.task('build', ['delete'], function(cb) {
   runSequence(
     ['sass', 'jade', 'images', 'copy'], ['styles', 'jademin'],
     'hash',
-    'build-localizations',
     cb);
 });
 
@@ -29,7 +28,7 @@ gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
   loadBrowserSync();
   runSequence(
-    ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
+    ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles'],
     cb);
 });
 
@@ -81,7 +80,7 @@ gulp.task('serve:dist', ['default'], function() {
 });
 
 gulp.task('rebuild-jade', function(cb) {
-  runSequence(['sass', 'jade:dev'], 'jademin', ['styles', 'build-localizations'], cb);
+  runSequence(['sass', 'jade:dev'], 'jademin', ['styles'], cb);
 });
 
 gulp.task('rebuild-styles', function(cb) {
@@ -101,7 +100,7 @@ gulp.task('sass', function() {
     'opera >= 23',
     'ios >= 7',
     'android >= 4',
-    '> 0.25%' //global market share
+    '> 0.25%' //of global market share
   ];
 
   // For best performance, don't add partials to `gulp.src`
