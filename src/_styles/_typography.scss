@@ -123,7 +123,7 @@ pre {
 }
 
 code {
-  background: darken($gray-xlight, 3%);
+  background: darken($gray-xlight, 2%);
   padding: .125rem .3125rem;
-  border: none;
+  border: 1px solid darken($gray-xlight, 4%);
 }
