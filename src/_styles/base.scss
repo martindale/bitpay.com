@@ -38,21 +38,23 @@
   // "../../components/foundation/scss/foundation/components/tooltips",
   // "../../components/foundation/scss/foundation/components/top-bar",
   "../../components/foundation/scss/foundation/components/type",
-  // "../../components/foundation/scss/foundation/components/offcanvas",
+  "../../components/foundation/scss/foundation/components/offcanvas",
   "../../components/foundation/scss/foundation/components/visibility";
 
 @import
   'mixins',
-  "utils",
   "colors",
-  "backgrounds",
   "borders",
   "elements",
+  "backgrounds",
   "typography",
+  "icons",
   "header",
   "footer",
   "buttons",
+  "utils",
   "animations/map",
   "animations/how-works",
   "animations/general",
+  "animations/404",
   "shame";

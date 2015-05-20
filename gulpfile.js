@@ -5,9 +5,13 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var path = require('path');
 var runSequence = require('run-sequence');
-var globby = require('globby');
 var env = {};
 var devDeps = {};
+
+function loadBrowserSync(){
+  devDeps.browserSync = require('browser-sync');
+  devDeps.reload = devDeps.browserSync.reload;
+}
 
 gulp.task('default', function(cb) {
   runSequence('build', cb);
@@ -17,24 +21,15 @@ gulp.task('build', ['delete'], function(cb) {
   runSequence(
     ['sass', 'jade', 'images', 'copy'], ['styles', 'jademin'],
     'hash',
-    'build-localizations',
     cb);
 });
 
 gulp.task('build:dev', ['delete'], function(cb) {
   env.development = true;
-  devDeps.browserSync = require('browser-sync');
-  devDeps.reload = devDeps.browserSync.reload;
-
-  if (env.uncss) {
-    runSequence(
-      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles', 'build-localizations'],
-      cb);
-  } else {
-    runSequence(
-      ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['build-localizations'],
-      cb);
-  }
+  loadBrowserSync();
+  runSequence(
+    ['sass', 'jade:dev', 'images', 'copy'], 'jademin', ['styles'],
+    cb);
 });
 
 // Watch for changes & reload
@@ -70,6 +65,7 @@ gulp.task('serve', ['build:dev'], function() {
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function() {
+  loadBrowserSync();
   devDeps.browserSync({
     notify: false,
     logPrefix: 'serve:dist',
@@ -83,26 +79,12 @@ gulp.task('serve:dist', ['default'], function() {
   });
 });
 
-gulp.task('serve:uncss', function(cb) {
-  env.uncss = true;
-  runSequence('serve', cb);
-});
-
-
 gulp.task('rebuild-jade', function(cb) {
-  if (env.uncss) {
-    runSequence(['sass', 'jade:dev'], 'jademin', ['styles', 'build-localizations'], cb);
-  } else {
-    runSequence(['jade:dev'], 'jademin', ['build-localizations'], cb);
-  }
+  runSequence(['sass', 'jade:dev'], 'jademin', ['styles'], cb);
 });
 
 gulp.task('rebuild-styles', function(cb) {
-  if (env.uncss) {
-    runSequence('sass', 'styles', cb);
-  } else {
-    runSequence('sass', cb);
-  }
+  runSequence('sass', 'styles', cb);
 });
 
 // delete dist
@@ -118,7 +100,7 @@ gulp.task('sass', function() {
     'opera >= 23',
     'ios >= 7',
     'android >= 4',
-    '> 0.25%' //global market share
+    '> 0.25%' //of global market share
   ];
 
   // For best performance, don't add partials to `gulp.src`
@@ -138,10 +120,7 @@ gulp.task('sass', function() {
 
 gulp.task('styles', function() {
   return gulp.src(['dist/**/*.css'])
-    .pipe($.uncss({
-      html: globby.sync(tasks.localization.htmlExcludingLocales)
-    }))
-    .pipe($.if(!env.development, $.csso()))
+    .pipe($.csso())
     .pipe(gulp.dest('dist'));
 });
 

@@ -1,10 +1,18 @@
-extends ../_layouts/primary
+extends ../_layouts/docs
 
 block title
-  title Email Billing | BitPay
+  title Billing | BitPay
 
-block content
-  .row
-    .column.medium-12
-      h1.text-center Email Billing
-      
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Email Billing'
+
+block information
+  h2.header__bottom-border-left Billing
+  p.lead BitPay merchants can use our bitcoin billing tools to invoice and receive payment with all of the ease of sending an email. <a href="/dashboard/signup">Sign up></a> for a BitPay account to get started.
+
+  h3#email Email Invoices
+  p Send <a href="/dashboard/merchant/client-billing">bitcoin invoices</a> to your clients via email on a one-time or recurring basis. Just enter your preferences and billing information in the simple form on your merchant dashboard and click once to generate and send a bill.
+
+  h3#integrations Plug-Ins and Integrations
+  p We've built bitcoin <a href="/integrations">invoicing integrations</a>  for several popular billing services and plug-ins. 

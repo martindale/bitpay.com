@@ -1,12 +1,76 @@
-extends ../_layouts/primary
+extends ../_layouts/docs
 
 block title
   title Getting Started | BitPay
 
 append vars
   -var pageSelected = 'Docs'
-  
-block content
-  .row
-    .column.medium-12
-      h1.text-center Get Started
+
+  -var subpageSelected = 'Getting Started'
+
+block information
+  h2.header__bottom-border-left Getting Started
+  p.lead BitPay’s <a href="/integrations">40+ bitcoin integrations</a> make accepting bitcoin payments fast and reliable. To get started, <a href="/dashboard/signup">sign up for a BitPay account</a>.
+
+  h3 Accepting a Bitcoin Payment
+  p With bitcoin, there's no sensitive customer information to collect and store, and there are no cards to charge. Customers simply send bitcoin from their computer or mobile device directly to a bitcoin payment address.
+
+  p Once received, BitPay converts the bitcoin to your preferred currency and adds the full amount of the payment – without fees – to your next BitPay account <a href="/docs/settlement">settlement</a>. Funds are then deposited to your bank account or bitcoin address.
+
+  p You can accept bitcoin in a variety of ways. Choose a method below to get started.
+
+  h4 Online Payments
+  p Bitcoin makes the online payment experience simple and convenient for customers on any device – customers can pay with just two taps, no sensitive personal information needed.
+
+  .padding-left
+    h5
+      a.arrow-blue(href="/docs/ecommerce#integrations") E-Commerce Platform Integrations
+    p Accepting bitcoin with our partner platforms can be as easy as flipping a switch. View our <a href="/integrations">full list of integrations</a> for details.
+    h5
+      a.arrow-blue(href="/docs/ecommerce#plugins") Shopping Cart Plug-Ins
+    p If you're using one of the leading open source shopping cart software solutions, we probably have an integration for it. Use our <a href="/integrations">plug-ins</a> to add bitcoin payments to your online checkout.
+
+    h5
+      a.arrow-blue(href="/docs/ecommerce#buttons") Website Payment Buttons
+    p Generate <a href="/dashboard/merchant/create-checkout?params=">payment buttons</a> for your website directly through your merchant dashboard. No code-wrangling required – just copy and embed into your page.
+
+
+  h4 In-Store Payments
+  p Merchants can use BitPay's retail payment tools alongside traditional point of sale systems to create a faster, hassle-free checkout experience for customers and staff.
+
+  .padding-left
+    h5
+      a.arrow-blue(href="/docs/retail#integrations") Point-of-Sale Integrations
+    p Merchants using our <a href="/integrations#pos">partner point of sale providers</a> can activate bitcoin payments with just a few clicks.
+
+    h5
+      a.arrow-blue(href="/docs/retail#checkout") Bitcoin Checkout App
+    p Bitcoin Checkout can be used to accept bitcoin payments on any <a href="https://itunes.apple.com/us/app/bitcoin-checkout/id929652207?mt=8">iOS</a> or <a href="https://play.google.com/store/apps/details?id=com.bitpay.checkout&hl=en">Android</a> smartphone or tablet.
+
+  h4 Donations
+  p Nonprofits can get a running start with bitcoin contributions with our donation buttons and hosted donation pages.
+
+  .padding-left
+    h5
+      a.arrow-blue(href="/docs/donations#buttons") Donation Buttons
+    p BitPay's <a href="/dashboard/merchant/create-donate">donation buttons</a> make it simple to accept contributions on your organization's website.
+
+    h5
+      a.arrow-blue(href="/docs/donations#pages") Hosted Donation Pages
+    p BitPay can create and host a customizable <a href="/dashboard/merchant/edit-donation-page?params=donation">donation webpage</a> for your organization.
+
+  h4 Billing
+  p Our bitcoin billing tools allow merchants to invoice and receive payment for services and goods in no time flat.
+
+  .padding-left
+    h5
+      a.arrow-blue(href="/docs/billing#email") Email Billing
+    p You can use our <a href="/dashboard/merchant/client-billing">dashboard billing tool</a> to create and email bitcoin invoices to your clients in a snap. Bills can be scheduled for one-time or recurring payments.
+
+    h5
+      a.arrow-blue(href="/docs/billing#integrations") Billing Service Integrations
+    p Want to add bitcoin invoicing to your current billing platform or plug-in? We've built <a href="/integrations#billing">integrations</a> for some of the top business billing and accounting services.
+
+
+  h4 Mobile App Payments
+  p <a href="/mobile">BitPay's mobile SDKs</a> can be used to build in-app payment functionality on all major platforms.

@@ -7,7 +7,7 @@ append vars
   -var bodyClass = 'white-header bg-blue-gradient';
 
 block content
-  .background-element.text-center.opacity-less
+  .background-element.text-center.opacity
     img(src="/images/geometric_map.svg" width="100%")
     mixin pulse(left, top, id, msDelay)
       div(class="pulse-#{id}" style="left:#{left}%; top:#{top}%; -webkit-animation-delay: #{msDelay}ms; animation-delay: #{msDelay}ms;")
@@ -39,12 +39,12 @@ block content
   .section
     .row
       .column.large-10.large-offset-1.text-center
-          img.h1(src="/images/bitcoin.svg" style="width: 1.5em; height 1.5em").medium-margin-top.fade-in.
+          img.h1(src="/images/bitcoin.svg" style="width: 1.5em; height: 2.75em;").medium-margin-top.fade-in.
           h1.white.fade-in.text-shadow Bitcoin payments, deposited to your bank account.
-          h4.white.text-shadow.medium-margin-top-less.medium-8.medium-offset-2.fade-in.delay-2 Offer your customers the world’s fastest and safest payment option, we'll handle the bitcoin.
+          h4.white.text-shadow.medium-margin-top-less.medium-8.medium-offset-2.fade-in.delay-2 Offer your customers the world’s fastest and safest payment option. We'll handle the bitcoin.
           .margin-top-less.fade-in.delay-4
-            a(href="/tour").arrow.white.btn.btn-blue-border.uppercase.bold.btn-margin Start Tour
-            a(href="#").white.btn.btn-blue-solid.uppercase.bold.margin.btn-margin Accept Bitcoin
+            a(href="/tour").arrow.white.btn.btn-blue-border.uppercase.bold.margin-left-less.btn-margin Start Tour
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.margin-left-less.btn-margin Accept Bitcoin
       
   .section
     .row
@@ -56,13 +56,13 @@ block content
         +logos("airbaltic", 2.5, 2.5)
         +logos("paypal", 2.5, 2.5)
         +logos("adyen", 2.5, 2.5)
-        +logos("childfund", 2.5, 2.5)
+        +logos("neteller", 2.5, 2.5)
         +logos("virgin", 2, 1.5)
         +logos("shopify", 2.5, 2.5)
         +logos("global-payments", 3.5, 2.5)
         +logos("tigerdirect", 2.5, 2.5)
         +logos("gyft", 2.5, 1)
-        +logos("save-the-children", 3, 2.5)
+        +logos("save-the-children", 4, 2.5)
         +logos("takeaway", 2, 1.5)
         +logos("rakuten", 3, 2.5)
         +logos("zynga", 2.5, 2.5)

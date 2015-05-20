@@ -2,7 +2,7 @@ extends ../_layouts/primary
 
 block title
   title Team | BitPay
-  
+
 append vars
   -var bodyClass = 'white-header bg-blue-gradient';
 
@@ -10,116 +10,103 @@ block content
   .section
     .row.fade-in-up
       .column.medium-8-medium-offset-2.text-center
-        h2.white.text-shadow.margin-bottom-less.fade-in.delay-1 Work With Bitcoin's Most Exciting Company
+        h2.white.text-shadow.margin-bottom-less.fade-in.delay-1 Build the future of payments.
         p.lead.text-shadow.white.fade-in-up.delay-2 BitPay is building infrastructure, developing Bitcoin's open-source ecosystem, and bringing Bitcoin to the world.
         a(href="#openings").white.btn.btn-blue-solid.uppercase.bold.fade-in-up.delay-2 Join the Team
-        
-        
-  .section.bg-white.border-bottom-gray
-    .row.fade-in-up.delay-4
-      .column.medium-10.medium-offset-1.large-8.large-offset-2.xlarge-5.xlarge-offset-0
-        h3.header__bottom-border-left Working at BitPay
-        p.lead We ask and answer Bitcoin's hardest questions, every day. Our culture values openness, debate and taking action.  
-        p We're a very flat organization — everyone has ownership. Time with the team in a BitPay office is crucial, but we work effectively out of office, too.
-        p We're constantly learning and refining. We build and ship better code quickly, deploying multiple times per day. We're constantly developing and releasing open-source software; <a href="http://github.com/bitpay">take a look</a> at what BitPay's been building.
-        p We offer competitive compensation, <a href="#benefits">full benefits</a>, stock options, and of course, the chance to take your pay in bitcoin!
 
-      .column.medium-10.medium-offset-1.large-8.large-offset-2.xlarge-6.xlarge-offset-0.end
-        //- .background-contain.h2.large-margin-top-more(style="background-image: url('/images/test.png'); height: 11em;")
-        
+
+  .section.bg-white.border-bottom-gray
+    .row
+      .column.small-centered.large-10.xlarge-9
+        h3.header__bottom-border.text-center Working at BitPay
+        p.lead.text-center We ask and answer Bitcoin's hardest questions, every day. Our culture values openness, debate, and action.
+
+        .row
+          .column.large-6
+            h4 We're independent.
+            p We're a very flat organization — everyone has ownership, and everyone has the responsibility and resources they need to get the job done.
+
+            h4 We're agile.
+            p We're constantly refining and improving our understanding of our customers and our product. We build and ship code quickly, deploying multiple times per day.
+
+            h4 We're flexible.
+            p Time with the team in a BitPay office is crucial, but we work effectively out of office, too. Our only mandate? Make a great bitcoin payment experience for our merchants.
+          .column.large-6
+            h4 We love open source.
+            p Our team is dedicated to producing world-class open source software. We engage with the open source community and welcome feedback and pull requests.
+
+            h4 We love bitcoin.
+            p We love the technology that's driving our work. Even out of the office, we find ourselves talking about Bitcoin and its potential.
+            p.lead.margin-top-more.padding-top-less
+              a(href="https://github.com/bitpay").arrow-blue See what we're building
+
+
   .section.bg-white.border-bottom-gray
     .row
       .column.large-7#openings
         h3.header__bottom-border-left Current Openings
         p.lead We're always looking for driven individuals who are excited about bitcoin to add to our team.
-        h4.margin-bottom-less.margin-top
-          a(href="#design", name="design")
-          | Design
-        ul.accordion(data-accordion)
-          li.accordion-navigation
-            p
-              a(href="#UI-UX_Designer").block.grow UI/UX Designer                
-              span.small Atlanta, GA
-            #UI-UX_Designer.content.padding-bottom              
-              p.lead We are seeking a frontend designer with solid experience and a clean, modern portfolio of web and interface design. UX Designers have the opportunity to lead product direction and own projects from concept through implementation and user testing.
-            
+
+        p We offer competitive compensation, full benefits, stock options, and of course, the chance to take your pay in bitcoin.
+
+        h4.margin-bottom-less.margin-top Design
+        ul.accordion(data-accordion="jobs")
+          li.accordion-navigation.padding-bottom
+            a(href="#UI-UX_Designer").block.grow UI/UX Designer
+            span.small Atlanta, GA
+            #UI-UX_Designer.content
+              p We are seeking a frontend designer with solid experience and a clean, modern portfolio of web and interface design. UX Designers have the opportunity to lead product direction and own projects from concept through implementation and user testing.
+
               h5 Responsibilities
               ul
                 li Develop and refine user experiences across products
                 li Craft clean, modern, and responsive web and interface designs
                 li Implement design work in well-structured HTML/CSS/Javascript
-              
+
               h5.margin-top-less Requirements
               ul
                 li A clean, modern portfolio showing deep knowledge of design principles
                 li Deep understanding of modern SaaS and web application design
                 li Experience with HTML/CSS/Javascript, familiarity with AngularJS is preferred
               p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-          
-          li.accordion-navigation
-            p
-              a(href="#UI-UX_Developer").block UI/UX Developer
-              span.small Atlanta, GA
-            #UI-UX_Developer.content.padding-bottom
-              p.lead We are seeking a frontend developer with solid experience creating well-structured JavaScript, HTML5, and CSS applications. AngularJS experience is ideal.
-            
+                a(href="mailto:careers@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
+
+          li.accordion-navigation.padding-bottom
+            a(href="#UI-UX_Developer").block UI/UX Developer
+            span.small Atlanta, GA
+            #UI-UX_Developer.content
+              p We are seeking a frontend developer with solid experience creating well-structured JavaScript, HTML5, and CSS applications. AngularJS experience is ideal.
+
               h5 Responsibilities
               ul
                 li Developing production-ready AngularJS applications and components
                 li Effectively illustrating design proposals through mockups
                 li Factoring in responsive design for both mobile and desktop platforms
-              
+
               h5.margin-top-less Requirements
               ul
                 li 3+ years writing production-ready frontend applications
                 li Knowledge of AngularJS
                 li Ability to code with cross-platform performance in mind
               p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-          
-        h4.margin-bottom-less.margin-top
-          a(href="#engineering", name="engineering")
-          | Engineering
-        
-        ul.accordion(data-accordion)
-          li.accordion-navigation
-            p
-              a(href="#Sr_iOS_Developer").block Sr. iOS Developer
-              span.small Atlanta, GA
-            #Sr_iOS_Developer.content.padding-bottom
-              p.lead We are looking for an iOS Developer to join our team and help build out our new mobile initiative.
-            
-              h5 Responsibilities
-              ul
-                li 3+ years of experience in iPhone/iPad development
-                li iOS SDK, Objective-C, XCode, Cocoa Touch &amp; MAC OS X
-                li Experience building enterprise mobile applications from the ground up
-                li Experience in Open Source development – preferably Node.js, AngularJS and MongoDB
-              
-              h5.margin-top-less Requirements
-              ul
-                li Knowledge of mobile payment processing applications
-                li Experience with Cordova/Phonegap
-                li Deep understanding of Bitcoin
-                li Startup experience
-              p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-                  
-          li.accordion-navigation
-            p
-              a(href="#Sr_Network_Security_Engineer").block Sr. Network Security Engineer
-              span.small Atlanta, GA
-            #Sr_Network_Security_Engineer.content.padding-bottom
-              p.lead We are seeking a backend engineer to implement security measures on our production environment.
-            
+                a(href="mailto:careers@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
+
+        h4.margin-bottom-less.margin-top Engineering
+
+        ul.accordion(data-accordion="jobs")
+          li.accordion-navigation.padding-bottom
+            a(href="#Sr_Network_Security_Engineer").block Sr. Network Security Engineer
+            span.small Atlanta, GA
+            #Sr_Network_Security_Engineer.content
+              p We are seeking a backend engineer to implement security measures on our production environment.
+
               h5 Responsibilities
               ul
                 li Develop and maintain the security procedures and best practices
                 li Administering security audits and penetration testing
                 li Troubleshooting network and integration issues
                 li Develop, test and operate firewalls, intrusion detection systems, enterprise anti-virus systems and software deployment tools
-              
+
               h5.margin-top-less Experience
               ul
                 li 5+ years of IT Security experience
@@ -136,26 +123,25 @@ block content
                     li Sandboxing other dynamic malware analysis tools
                     li Static malware reverse engineering analysis
                     li Computer, forensic analysis, Ubuntu Linux and file systems
-              
+
               h5.margin-top-less Ideal Certifications
               ul
                 li EnCase Certified Examiner (EnCE), Certified Fraud Examiner (CFE), Certified Ethical Hacker (CEH), Global Certified Incident Handler (GCIH), Certified Information Systems Security Professional (CISSP)
               p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-                  
-          li.accordion-navigation
-            p
-              a(href="#Sr_Node_Developer").block Sr. Node Developer
-              span.small Atlanta, GA & Buenos Aires, Argentina
-            #Sr_Node_Developer.content.padding-bottom
-              p.lead We are seeking a backend developer with production-level experience with Node.js and other JS frameworks, ideally some with AngularJS.
-            
+                a(href="mailto:careers@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
+
+          li.accordion-navigation.padding-bottom
+            a(href="#Sr_Node_Developer").block Sr. Node Developer
+            span.small Atlanta, GA &amp; Buenos Aires, Argentina
+            #Sr_Node_Developer.content
+              p We are seeking a backend developer with production-level experience with Node.js and other JS frameworks, ideally some with AngularJS.
+
               h5 Responsibilities
               ul
                 li Connecting frontend to backend systems through REST-ful HTTP APIs
                 li Developing production environment to withstand High Security Threats
                 li Factoring in concerns of scalability, reliability, logging, security into development
-              
+
               h5.margin-top-less Requirements
               ul
                 li Server-side development experience with Node.js and MongoDB
@@ -163,22 +149,21 @@ block content
                 li Bachelor's in CS or you've built something spectacular
                 li For Buenos Aires Applicants:  Fluency in English and Spanish
               p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-                  
-          li.accordion-navigation
-            p
-              a(href="#Sr_Application_Security_Engineer").block Sr. Application Security Engineer
-              span.small Atlanta, GA
-            #Sr_Application_Security_Engineer.content.padding-bottom
-              p.lead BitPay is looking for a Sr. Application Security Engineer to perform security assessments, code reviews, and overall application security.
-            
+                a(href="mailto:careers@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
+
+          li.accordion-navigation.padding-bottom
+            a(href="#Sr_Application_Security_Engineer").block Sr. Application Security Engineer
+            span.small Atlanta, GA
+            #Sr_Application_Security_Engineer.content
+              p BitPay is looking for a Sr. Application Security Engineer to perform security assessments, code reviews, and overall application security.
+
               h5 Responsibilities
               ul
                 li Integrating security tools, standards, and processes into the full software development life cycle.
                 li Improving deployments, development standards, and support test-driven development.
                 li Ensure that developers and operations teams are trained with the appropriate level of security knowledge to perform their jobs within best practices.
                 li Perform code reviews to ensure all code is being held to proper security standards
-              
+
               h5.margin-top-less Requirements
               ul
                 li 5+ years of IT security experience
@@ -190,41 +175,27 @@ block content
                 li Familiarity with a cloud or hosting environment
                 li Knowledge of standard SDLC practices
               p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-        
-        h4.margin-bottom-less.margin-top
-          a(href="#internships", name="internships")
-          | Internships
-        ul.accordion(data-accordion)
-          li.accordion-navigation
-            p
-              a(href="#Developer_Intern").block Developer Intern
-              span.small Atlanta, GA
-            #Developer_Intern.content.padding-bottom
-              p.lead BitPay is looking for a Developer Intern. You will assist with various development initiatives and gain valuable experience in the crypto-finance industry.
-              
-              p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
+                a(href="mailto:careers@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
 
-          li.accordion-navigation
-            p
-              a(href="#Marketing_Intern").block Marketing Intern
-              span.small Atlanta, GA
-            #Marketing_Intern.content.padding-bottom
-              p.lead BitPay is looking for a Marketing Intern. You will assist with various marketing initiatives and gain valuable experience in the crypto-finance industry.
-              
+        h4.margin-bottom-less.margin-top Internships
+        ul.accordion(data-accordion="jobs")
+          li.accordion-navigation.padding-bottom
+            a(href="#Developer_Intern").block Developer Intern
+            span.small Atlanta, GA
+            #Developer_Intern.content
+              p BitPay is looking for Development Interns. You will assist with various development initiatives and gain valuable experience in the crypto-finance industry.
               p.margin-top-less
-                a(href="mailto:jobs@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
-                  
-      .column.large-4#benefits
+                a(href="mailto:careers@bitpay.com").white.btn.btn-blue-solid.uppercase.bold.arrow Apply Now
+
+      .column.large-5#benefits
         mixin benefit(src,  name)
-          .column.small-6.margin-bottom.end
+          li
             .h1.background-contain(style="background-image: url('/images/#{src}'); height: 2.5em;")
             span.small.text-center.block.margin-top-less #{name}
-            
+
         h3.header__bottom-border-left Benefits
         p.margin-bottom-more When you join BitPay, we make sure you get all the support you need so that you feel your best at and away from work.
-        .row
+        ul.small-block-grid-2.no-bullet
           +benefit("equipment.svg", "The best equipment to get the job done")
           +benefit("health.svg", "Health, dental and vision benefits")
           +benefit("lunch.svg", "Complimentary catered lunch daily")

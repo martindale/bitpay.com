@@ -1,10 +1,18 @@
-extends ../_layouts/primary
+extends ../_layouts/docs
 
 block title
   title Donations | BitPay
 
-block content
-  .row
-    .column.medium-12
-      h1.text-center Donations
-      
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Donations'
+
+block information
+  h2.header__bottom-border-left Donations
+  p.lead We've taken the complication out of working with a new donation method. Our nonprofit tools enable organizations to accept 100% of bitcoin contributions from supporters around the globe. <a href="/dashboard/signup">Sign up</a> to get started.
+
+  h3#buttons Donation Buttons
+  p BitPay's <a href="/dashboard/merchant/create-donate">donation buttons</a> make it simple to accept contributions on your organization's website. We'll take care of the code. Just customize, copy, and embed directly on your fundraising page.
+
+  h3#pages Hosted Donation Pages
+  p BitPay can also host a <a href="/dashboard/merchant/edit-donation-page?params=donation">donation page</a> for your organization. Pages can be generated and edited in minutes through your merchant dashboard.

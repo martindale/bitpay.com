@@ -12,8 +12,8 @@ block content
   #ratesAppContainer(ng-controller="viewController")
     mixin rate-flag(name, code, src)
       tr
-        td.column.small-5 #{name}
-        td.column.small-7.text-right.mono
+        td.column.small-5(style="padding:0;") #{name}
+        td.column.small-7.text-right.mono(style="padding:0;")
           price(currency="BTC" valued-in="#{code}")
           span  #{code}&nbsp;
           span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/flags/#{src}'); height: 1em;")
@@ -37,7 +37,7 @@ block content
           h5.uppercase.header__bottom-border-left Popular Currencies
           p 1 BTC
             span.small-icon.background-contain.h5.margin-vertical-none(style="background-image: url('/images/rate.svg');  width: 1.5em; height: 0.75em; top: 0;")
-          table(style="width: 100%;").small-smaller-text.line-hieght-more
+          table(style="width: 100%;").small-smaller-text.line-height-more
             +rate-flag("US Dollar", "USD", "usd.png")
             +rate-flag("Eurozone Euro", "EUR", "eur.png")
             +rate-flag("Pound Sterling", "GBP", "gbp.png")
@@ -74,7 +74,8 @@ block content
         .column.medium-6.large-5.large-offset-1.end
           .h1.background-contain(style="background-image: url('/images/bbb.svg'); height:10em;")
           .padding.border-gray.text-center.bg-white.radius
-            p.lead.margin-bottom-none The BBB is available <a href="https://bitpay.com/api/rates">via JSON API</a>.
+            p.lead.margin-bottom-none The BBB is available via JSON API.
+            p.margin-bottom-none <a href="https://bitpay.com/api/rates">all rates</a> | <a href="https://bitpay.com/api/rates/usd">single rate</a>
             p.margin-bottom-none Rates are updated every 1 minute.
           
     .section.bg-lightblue-gradient.border-top-gray
@@ -84,5 +85,5 @@ block content
           h4.text-center.white The free plan includes unlimited processing volume, forever.
       .row
         .column.medium-8.medium-offset-2.text-center
-          a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
+          a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
           a(href="/tour").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin Start Tour

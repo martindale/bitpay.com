@@ -1,9 +1,21 @@
-extends ../_layouts/primary
+extends ../_layouts/docs
 
 block title
   title Selling Online | BitPay
 
-block content
-  .row
-    .column.medium-12
-      h1.text-center Selling Online
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Selling Online'
+
+block information
+  h2.header__bottom-border-left Selling Online
+  p.lead Bitcoin was made for online transactions. BitPay provides a simple, reliable way to accept bitcoin on your website. Get started by <a href="/dashboard/signup">signing up</a> for a BitPay account.
+
+  h3#buttons Payment Buttons
+  p <a href="/dashboard/merchant/create-checkout?params=">Payment buttons</a> can be generated on the merchant dashboard and embedded anywhere on your website, with no additional setup required.
+
+  h3#plugins Shopping Cart Plug-ins
+  p Our platform integrates with 15 of the e-commerce world's favorite shopping cart software solutions. View all of our <a href="/integrations">plug-in options</a> and click on the icon of your shopping cart software to get started.
+
+  h3#integrations Integrated Solutions
+  p We've built <a href="/integrations">bitcoin payment integrations</a> for 14 leading e-commerce platforms and payment service providers. All you need to get started is a BitPay account and a pairing code to link it with your current platform or PSP account. 

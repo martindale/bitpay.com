@@ -1,24 +1,21 @@
-@mixin addBorder($name, $value) {
+@mixin addBorder($name, $value, $breakpoint) {
   @each $side in 'top', 'right', 'bottom', 'left' {
-    .border-#{$side}-#{$name} {
+    .#{$breakpoint}border-#{$side}-#{$name} {
       border-#{$side}: #{$value};
     }
   }
-  .border-vertical-#{$name} {
+  .#{$breakpoint}border-vertical-#{$name} {
     border-top: #{$value};
     border-bottom: #{$value};
   }
-  .border-horizontal-#{$name} {
+  .#{$breakpoint}border-horizontal-#{$name} {
     border-left: #{$value};
     border-right: #{$value};
   }
-  .border-#{$name} {
+  .#{$breakpoint}border-#{$name} {
     border: #{$value};
   }
 }
-
-@include addBorder('gray', (1px solid $gray-light));
-@include addBorder('light', (1px solid rgba(255,255,255,0.1)));
 
 // for the bottom centered border
 .header__bottom-border,

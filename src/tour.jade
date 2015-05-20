@@ -2,7 +2,7 @@ extends _layouts/primary
 
 block title
   title Tour | BitPay
-  
+
 append vars
   -var tourSelected = 'Overview'
   -var pageSelected = 'Tour'
@@ -13,12 +13,12 @@ block content
     .row.fade-in
       h2.text-center.header__bottom-border Why Bitcoin?
       .column.medium-10.medium-offset-1.margin-top
-  
+
         .margin-bottom-more
           .row.fade-in-right.delay-1
             .column.medium-3
               .icon.h2.background-contain(style="background-image: url('/images/no-fees.svg'); height: 2.5em;")
-            .column.medium-9
+            .column.medium-9.small-only-text-center
               h4 Keep more of your money.
               p Receive 100% of what you charge for every transaction &mdash; BitPay doesn't charge processing fees. All <a href="/pricing">pricing plans</a> include unlimited processing volume, conversion, and settlement to your bank account.
 
@@ -26,23 +26,23 @@ block content
           .row.fade-in-right.delay-2
             .column.medium-3
               .icon.h2.background-contain(style="background-image: url('/images/global.svg'); height: 2.5em;")
-            .column.medium-9
-              h4.small-only-text-center Sell to Anyone, Anywhere
-              p Connect to the world’s first borderless payment network - Bitcoin. Accept payment in any amount, from anywhere in the world, from anyone with computer or mobile device.
-        
+            .column.medium-9.small-only-text-center
+              h4.small-only-text-center Sell to anyone, anywhere.
+              p Connect to the world’s first borderless payment network - Bitcoin. Accept payment in any amount, from anywhere in the world, from any computer or mobile device.
+
         .margin-bottom-more
           .row.fade-in-right.delay-3
             .column.medium-3
               .icon.h2.background-contain(style="background-image: url('/images/security.svg'); height: 2.5em;")
             .column.medium-9.small-only-text-center
               h4 End chargeback fraud and identity theft.
-              p Other payment methods force customers and businesses to shoulder the risks and costs of payment fraud. With bitcoin, customers can pay without handing over sensitive personal information, and refunds are made through the merchant &mdash; no chargebacks. 
-          
+              p Other payment methods force customers and businesses to shoulder the risks and costs of payment fraud. With bitcoin, customers can pay without handing over sensitive personal information, and refunds are made through the merchant &mdash; no chargebacks.
+
   .section.fade-in
     .row
       h2.text-center.header__bottom-border Daily Bank Deposits
       .column.large-8.large-offset-2
-        p.lead.text-center.margin-bottom-more BitPay allows you to accept payments in bitcoin and receive exactly what you charge, directly to your bank account, without fees. Bank deposits in 33 countries, settled in US Dollars, Euros, CAD, <a href="/docs/settlement">and more</a>.
+        p.lead.text-center.margin-bottom-more BitPay allows you to accept payments in bitcoin and receive exactly what you charge, directly to your bank account, without fees. Bank deposits in 38 countries, settled in US Dollars, Euros, CAD, <a href="/docs/settlement">and more</a>.
       .column
         .how-works-illustration
           .timeline
@@ -67,19 +67,18 @@ block content
           .paid.background-contain(style="background-image: url('/images/check-icon.svg');")
 
   .row.border-top-gray.padding-top.medium-padding-top-most.padding-bottom-most.fade-in(style="background: url('/images/integration-logos.png') bottom no-repeat; background-size: contain;")
-    h2.text-center.header__bottom-border Over 50 Integrations
+    h2.text-center.header__bottom-border Over 40 Integrations
     .column.large-8.large-offset-2
-      p.lead.text-center We've partnered with the biggest names in commerce to integrate bitcoin into dozens of popular e-commerce platforms and point-of-sale systems. Get started quickly with reliable, ready-to-deploy integrations.
-    
+      p.lead.text-center Want to get up and running with bitcoin? We've partnered with some of the most popular e-commerce platforms and point-of-sale systems to make reliable, ready-to deploy integrations.
     .column.margin-vertical-less.medium-margin-bottom-most.text-center
       a(href="/integrations").arrow-blue Browse Integrations
-  
+
   .section.bg-lightblue-gradient.border-top-gray
     .row
       .column.medium-8.medium-offset-2
         h2.text-center.white Get Started
-        h4.text-center.white The free plan includes unlimited processing volume, forever.
+        h4.text-center.white All plans include free, unlimited payment processing.
     .row
       .column.medium-8.medium-offset-2.text-center
-        a(href="#").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
+        a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.btn-margin Accept Bitcoin
         a(href="/features").white.btn.btn-blue-border.uppercase.bold.arrow.btn-margin All Features

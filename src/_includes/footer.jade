@@ -1,4 +1,4 @@
-.padding.bg-dark(style="position: relative; z-index: 1")
+.padding-vertical.bg-dark(style="position: relative; z-index: 1")
   .row
     .column.small-12
       ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3.xlarge-block-grid-6
@@ -6,16 +6,14 @@
           h6.bold.uppercase.white-opacity.body-text__bottom-border Platform
           ul.no-bullet
             li
-              a(href="/Tour").white-link--opacity Tour
+              a(href="/tour").white-link--opacity Tour
             li
               a(href="/features").white-link--opacity Features
-            li
-              a(href="/use-cases").white-link--opacity Use Cases
             li
               a(href="/integrations").white-link--opacity Integrations
             li
               a(href="/pricing").white-link--opacity Pricing
-        li  
+        li
           h6.bold.uppercase.white-opacity.body-text__bottom-border Docs
           ul.no-bullet
             li
@@ -25,7 +23,7 @@
             li
               a(href="/docs/retail").white-link--opacity Selling in Store
             li
-              a(href="#").white-link--opacity API & SDKs
+              a(href="/api").white-link--opacity API &amp; SDKs
             li
               a(href="/docs/settlement").white-link--opacity Settlement
 
@@ -33,12 +31,14 @@
           h6.bold.uppercase.white-opacity.body-text__bottom-border Resources
           ul.no-bullet
             li
-              a(href="#").white-link--opacity Help & Support
+              a(href="https://support.bitpay.com").white-link--opacity Help &amp; Support
             li
               a(href="/bitcoin-exchange-rates").white-link--opacity Exchange Rates
         li
           h6.bold.uppercase.white-opacity.body-text__bottom-border Open Source
           ul.no-bullet
+            //- li
+            //-   a(href="/open-source").white-link--opacity Open Source
             li
               a(href="http://bitcore.io/").white-link--opacity Bitcore
             li
@@ -65,27 +65,26 @@
           .left
             include ../_includes/languages
           div(style="clear:both;")
-          ul.inline-list
-            li
+          ul.inline-list(style="margin-top:3px;")
+            li(style="margin-left:0;")
               a(href="http://www.twitter.com/bitpay" target="blank" style="background-image: url('/images/twitter.svg')").social-icon.white-link--opacity
             li
               a(href="http://www.github.com/bitpay" target="blank" style="background-image: url('/images/github.svg')").social-icon.white-link--opacity
             li
               a(href="http://www.linkedin.com/company/bitpay-inc-" target="blank"  style="background-image: url('/images/linkedin.svg')").social-icon.white-link--opacity
-      
+
   .row.padding-top-less.margin-top-less.border-top-light
-    .column.small-12.medium-6
+    .column.medium-6
       ul.inline-list
-        li
-          small 
+        li(style="margin-left:0;")
+          small
             a(href="/about/terms").white-link--opacity Terms of Services
         li
           small
             a(href="/about/privacy").white-link--opacity Privacy Policy
-    .column.small-12.medium-6
+    .column.medium-6
       ul.inline-list.medium-float-right
-        li.white-opacity
+        li.white-opacity(style="margin-left:0;")
           small &copy;2015 BitPay, Inc.
         li
           a(href="/").logo.footer-logo.white-link--opacity
-        

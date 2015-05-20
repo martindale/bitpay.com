@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
-    <title>Imported Layers Copy</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="press-copy-2" sketch:type="MSArtboardGroup" transform="translate(-970.000000, -546.000000)" fill="#6072A3">
-            <path d="M987.727711,546.550086 L971.624066,546.550086 C970.865211,546.550086 970.25,547.161613 970.25,547.915924 L970.25,564.080601 C970.25,564.835026 970.865211,565.446553 971.624066,565.446553 L987.727711,565.446553 C988.486566,565.446553 989.101892,564.835026 989.101892,564.080601 L989.101892,547.915924 C989.101892,547.161613 988.486566,546.550086 987.727711,546.550086 L987.727711,546.550086 Z M974.188151,553.526954 L976.835102,553.526954 L976.835102,561.278157 L974.188151,561.278157 L974.188151,553.526954 Z M975.46241,552.359307 C974.663952,552.359307 974.016578,551.71581 974.016578,550.92202 C974.016578,550.128343 974.663952,549.484846 975.46241,549.484846 C976.260982,549.484846 976.908355,550.128343 976.908355,550.92202 C976.908355,551.71581 976.260982,552.359307 975.46241,552.359307 L975.46241,552.359307 Z M985.906343,561.278044 L983.259506,561.278044 L983.259506,556.556259 C983.259506,555.901954 983.18797,555.176768 982.343729,555.176768 C981.485295,555.176768 981.270687,555.973175 981.270687,556.684253 L981.270687,561.278044 L978.62362,561.278044 C978.62362,561.278044 978.629,554.004115 978.629,553.490547 L981.095795,553.488157 L981.099,554.707457 C981.542524,553.811385 982.472494,553.384738 983.445386,553.384738 C985.105139,553.384738 985.906343,554.309139 985.906343,555.930511 L985.906343,561.278044 L985.906343,561.278044 Z" id="Imported-Layers-Copy" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 51 20 20"
+	 enable-background="new -49 51 20 20" xml:space="preserve">
+<title>Imported Layers Copy</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1" sketch:type="MSPage">
+	<g id="press-copy-2" transform="translate(-970.000000, -546.000000)" sketch:type="MSArtboardGroup">
+		<path id="Imported-Layers-Copy" sketch:type="MSShapeGroup" fill="#18347B" d="M937.8,599h-13.7c-0.6,0-1.2,0.5-1.2,1.2v13.7
+			c0,0.6,0.5,1.2,1.2,1.2h13.7c0.6,0,1.2-0.5,1.2-1.2v-13.7C939,599.5,938.5,599,937.8,599L937.8,599z M926.3,604.9h2.2v6.6h-2.2
+			V604.9z M927.4,603.9c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2C928.7,603.4,928.1,603.9,927.4,603.9
+			L927.4,603.9z M936.3,611.5H934v-4c0-0.6-0.1-1.2-0.8-1.2c-0.7,0-0.9,0.7-0.9,1.3v3.9h-2.2c0,0,0-6.2,0-6.6l2.1,0l0,1
+			c0.4-0.8,1.2-1.1,2-1.1c1.4,0,2.1,0.8,2.1,2.2V611.5L936.3,611.5z"/>
+	</g>
+</g>
 </svg>

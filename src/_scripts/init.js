@@ -8,7 +8,6 @@
       window.bootstrapRatesApp();
     }
   });
-  initSmoothScroll();
   InstantClick.init();
 
   function initSmoothScroll(){
@@ -17,9 +16,12 @@
       if (this.href.indexOf('#') === 0) {
         e.preventDefault();
       }
-      jQuery('body').animate({
-        scrollTop: parseInt(jQuery('' + this.href.substring(this.href.indexOf('#'))).offset().top)
-      }, 500);
+      //don't scroll on accordion toggle
+      if(this.parentNode.className.split('accordion-navigation').length < 2){
+        jQuery('body').animate({
+          scrollTop: parseInt(jQuery('' + this.href.substring(this.href.indexOf('#'))).offset().top)
+        }, 500);
+      }
     });
 
     //smooth scrolling on pageloads
