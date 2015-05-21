@@ -96,14 +96,18 @@ block content
           .column
             .section.border-bottom-gray#configuration(data-magellan-destination="configuration") 
               h3.header__bottom-border-left Configuration
-              p Configuration can be done using the Administrator section of your Megento store. Once Logged in, you will find the configuration settings under #[strong System > Configuration > Sales > Payment Methods].
-              .h2.background-contain(style="background-image: url('/images/integrations/details/MagentoSettings.png'); height:14em;")
+              p Configuration can be done using the Administrator section of your Magento store. Once Logged in, you will find the configuration settings under #[strong System > Configuration > Sales > Payment Methods].
+              img(src="/images/integrations/details/MagentoSettings.png", alt="Magento Settings").margin-vertical
+              p.small.padding-bottom-less.border-bottom-gray You can get to this settings page by logging in and going to #[strong System > Configuration > Sales > Payment Methods]
               p Here your will need to create a #[a(href="https://bitpay.com/api-tokens") pairing code] using your BitPay merchant account. Once you have a Pairing Code, put the code in the Pairing Code field. This will take care of the rest for you.
               .note 
                 p Pairing Codes are only valid for a short period of time. If it expires before you get to use it, you can always create a new one an use the new one.
                 p You will only need to do this once since each time you do this, the extension will generate public and private keys that are used to identify you when using the API.
+
               p You are also able to configure how BitPay's IPN (Instant Payment Notifications) changes the order in your Magento store.
-              .h2.background-contain(style="background-image: url('/images/integrations/details/MagentoInvoiceSettings.png'); height:8em;")
+              img(src="/images/integrations/details/MagentoInvoiceSettings.png", alt="Magento Invoice Settings").margin-vertical
+              p.small Configure how BitPay's IPN (Instant Payment Notifications) changes the order in your Magento store.
+              //- .h2.background-contain(style="background-image: url(''); height:8em;")
          
                 
         .row
