@@ -99,3 +99,45 @@ input[type="search"] {
 :-ms-input-placeholder {
    color: $gray-light;
 }
+
+.note,
+.warning {
+  padding: 0.5rem 1rem;
+  margin: 3rem 0 1rem;
+  border: 1px solid;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: relative;
+  font-weight: 600;
+  & > p:last-of-type {
+    margin-bottom: 0;
+  }
+  &:before {
+    position: absolute;
+    top: -26px;
+    left: -1px;
+    right: -1px;
+    padding: 0 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+}
+
+.note {
+  border-color: $gray-light;
+  &:before {
+    content: "NOTE";
+    background: $gray-xlight;
+    border: 1px solid $gray-light;
+  }
+}
+
+.warning {
+  border-color: #F2BA71;
+  color: #E78300;
+  &:before {
+    content: "WARNING";
+    background: #FFEFDF;
+    border: 1px solid #F2BA71;
+  }
+}

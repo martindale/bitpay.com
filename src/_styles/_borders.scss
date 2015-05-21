@@ -30,6 +30,11 @@
     position: absolute;
     bottom: -1rem;
   }
+  .white & {
+    &:after {
+      background: #FFFFFF;
+    }
+  }
 }
 
 .header__bottom-border:after {
