@@ -7,6 +7,6 @@
         each val, key in menu
           li
             if tourSelected === key
-              a.subnav-link.uppercase.selected(href=val, title=key)= key
+              a.subnav-link.uppercase.selected(href=val title=key)= key
             else
-              a.subnav-link.uppercase(href=val, title=key)= key
+              a.subnav-link.uppercase(href=val title=key)= key
