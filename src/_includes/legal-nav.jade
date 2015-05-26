@@ -1,0 +1,12 @@
+- var menu = { 'Terms of Use': '/about/terms', 'Privacy Policy': '/about/privacy' };
+
+.border-bottom-gray
+  .row
+    .column.medium-12
+      ul.inline-list.subnav
+        each val, key in menu
+          li
+            if legalSelected === key
+              a.subnav-link.uppercase.selected(href=val title=key)= key
+            else
+              a.subnav-link.uppercase(href=val title=key)= key
