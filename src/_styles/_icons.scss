@@ -60,3 +60,17 @@
 .facebook:before {
   background-image: url('/images/icons/facebook-dark.svg');
 }
+
+
+.external-link:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  padding: 12px;
+  background-repeat: no-repeat;
+  margin-right: 1rem;
+  margin-left: .5rem;
+  background-image: url('/images/icons/external-link.svg');
+}
