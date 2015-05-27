@@ -3,8 +3,8 @@
 each val, key in menu
   li
     if pageSelected === key
-      a.menu-item.selected(href=val, title=key)= key
+      a.menu-item.active(href=val title=key)= key
     else if key === 'Log In'
-      a.menu-item.login-btn(href=val, title=key)= key
+      a.menu-item.login-btn(href=val title=key)= key
     else
-      a.menu-item(href=val, title=key)= key
+      a.menu-item(href=val title=key)= key

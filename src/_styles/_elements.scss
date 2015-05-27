@@ -105,8 +105,8 @@ input[type="search"] {
   padding: 0.5rem 1rem;
   margin: 3rem 0 1rem;
   border: 1px solid;
-  border-radius: 3px;
-  border-top-left-radius: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   position: relative;
   font-weight: 600;
   & > p:last-of-type {
@@ -114,9 +114,10 @@ input[type="search"] {
   }
   &:before {
     position: absolute;
-    top: -29px;
+    top: -26px;
     left: -1px;
-    padding: 0.1rem 0.75rem;
+    right: -1px;
+    padding: 0 10px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }

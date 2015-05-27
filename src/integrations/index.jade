@@ -13,7 +13,7 @@ block content
       a.h1.background-contain.integration-logo(href="#{href}" title="#{name}" style="background-image: url('/images/integrations/#{src}');" target="_blank")
       span.small.text-center.block.margin-top-less #{name}
 
-  .section.bg-gray.border-vertical-gray.margin-bottom-less
+  .section.bg-gray.border-vertical-gray
     .row
       .column.medium-10.medium-offset-1
         h2.text-center.header__bottom-border.fade-in-up Accept bitcoin anywhere you take payments.
@@ -22,9 +22,18 @@ block content
       //-   form
       //-     input.integration-search(placeholder="Search our integrations..." type="search" value="" name="search")
       //-     span.search-icon.background-contain(style="background-image: url('/images/search.svg');")
-  include ../_includes/integrations-nav
 
-  .section#integrated
+  - var menu = { 'Integrated Solutions': 'integrated', 'Plugins': 'plugins', 'Point of Sale': 'pos', 'Billing': 'billing', 'Donations': 'donations', 'Code Libraries': 'code-libraries' };
+  .border-bottom-gray.show-for-large-up.padding-bottom-none.padding-top-less(data-magellan-expedition="fixed")
+    .row
+      .column.medium-12
+        ul.inline-list.subnav
+          each slug, name in menu
+            li
+              - var hrefVal = '#' + slug;
+              a.subnav-link.uppercase(href=hrefVal data-magellan-arrival=slug title=name)= name
+
+  .section#integrated(data-magellan-destination="integrated")
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Integrated Solutions
@@ -47,7 +56,7 @@ block content
           +integration("globalpayments.png", "http://globalpaymentsinc.com", "Global Payments")
           +integration("bitmonet.png", "http://bitmonet.com", "Bitmonet")
 
-  .section.border-top-gray#plugins
+  .section.border-top-gray#plugins(data-magellan-destination="plugins")
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Open Source Plugins
@@ -71,7 +80,7 @@ block content
           +integration("zencart.png", "https://github.com/bitpay/zencart-plugin", "Zen Cart")
           +integration("commerceseo.png", "https://github.com/bitpay/commerce-seo-plugin", "commerce:SEO")
 
-  .section.border-top-gray#pos
+  .section.border-top-gray#pos(data-magellan-destination="pos")
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Point of Sale
@@ -83,7 +92,7 @@ block content
           +integration("visualtouch.png", "http://visualtouchpos.com", "VisualTouch")
           +integration("dcpos.png", "http://dcpos.com", "DC POS")
 
-  .section.border-top-gray#billing
+  .section.border-top-gray#billing(data-magellan-destination="billing")
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Billing &amp; Accounting
@@ -96,7 +105,7 @@ block content
           +integration("whmcs.png", "https://github.com/bitpay/whmcs-plugin", "WHMCS")
           +integration("hostbill.png", "http://hostbillapp.com/features/apps/bitpay.html", "Host Bill")
 
-  .section.border-top-gray#donations
+  .section.border-top-gray#donations(data-magellan-destination="donations")
     .row
       .column.large-5.margin-bottom
         h3.header__bottom-border-left Donations
@@ -107,6 +116,28 @@ block content
           +integration("ngpvan.png", "https://www.ngpvan.com/blog/announcing-bitcoin-contribution-integration", "NGPVan")
           +integration("coinvox.png", "http://coinvox.org", "Coin Vox")
           +integration("targetedvictory.png", "http://targetedvictory.com", "Targeted Victory")
+  
+  .section.border-top-gray#code-libraries(data-magellan-destination="code-libraries")
+    .row
+      .column.large-5.margin-bottom
+        h3.header__bottom-border-left Code Libraries
+        p.lead BitPay writes and maintains code libraries for today's most popular programming languages.
+      .column.large-7.xlarge-6
+        .row.small-collapse
+          +integration("nodejs.png", "https://github.com/bitpay/node-bitpay-client", "NodeJS")
+          +integration("ruby.png", "https://github.com/bitpay/ruby-client", "Ruby")
+          +integration("android.png", "https://github.com/bitpay/android-sdk", "Android SDK")
+          +integration("cordova.png", "https://github.com/bitpay/cordova-sdk", "Cordova SDK")
+          +integration("ios.png", "https://github.com/bitpay/ios-sdk", "iOS SDK")
+          +integration("python.png", "https://github.com/bitpay/bitpay-python-py2", "Python 2")
+          +integration("python.png", "https://github.com/bitpay/bitpay-python", "Python 3")
+          +integration("c.png", "https://github.com/bitpay/bitpay-c-keyutils", "C")
+          +integration("csharp.png", "https://github.com/bitpay/csharp-bitpay-client", "C Sharp")
+          +integration("java.png", "https://github.com/bitpay/java-bitpay-client", "Java")
+          +integration("perl.png", "https://github.com/bitpay/perl-client", "Perl")
+          +integration("php.png", "https://github.com/bitpay/java-bitpay-client", "PHP")
+          +integration("elixir.png", "https://github.com/bitpay/elixir-client", "Elixir")
+          +integration("go.png", "https://github.com/bitpay/bitpay-go", "Go")
 
 
   .section.bg-lightblue-gradient.border-top-gray

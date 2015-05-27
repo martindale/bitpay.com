@@ -18,25 +18,25 @@ block content
         each val, key in docsMenu
           li
             if subpageSelected === key
-              a.active(href=val, title=key, target=_blank)= key
+              a.active(href=val title=key target=_blank)= key
             else
-              a(href=val, title=key)= key
+              a(href=val title=key)= key
         li.divider
         li.uppercase.h3 Use Cases
         each val, key in usecaseMenu
           li
             if subpageSelected === key
-              a.active(href=val, title=key, target=_blank)= key
+              a.active(href=val title=key target=_blank)= key
             else
-              a(href=val, title=key)= key
+              a(href=val title=key)= key
         li.divider
         li.uppercase.h3 Resources
         each val, key in resourceMenu
           li
             if subpageSelected === key
-              a.active(href=val, title=key, target=_blank)= key
+              a.active(href=val title=key target=_blank)= key
             else
-              a(href=val, title=key)= key
+              a(href=val title=key)= key
         li
           a(href="https://support.bitpay.com") Help &amp; Support
 

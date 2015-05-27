@@ -1,4 +1,4 @@
-- var menu = { 'Overview': '/tour', 'Features': '/features', 'Enterprise': '/enterprise' };
+- var menu = { 'Terms of Use': '/about/terms', 'Privacy Policy': '/about/privacy' };
 
 .border-bottom-gray
   .row
@@ -6,7 +6,7 @@
       ul.inline-list.subnav
         each val, key in menu
           li
-            if tourSelected === key
+            if legalSelected === key
               a.subnav-link.uppercase.active(href=val title=key)= key
             else
               a.subnav-link.uppercase(href=val title=key)= key

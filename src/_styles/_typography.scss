@@ -61,6 +61,12 @@ h6 {
   .white & {
     color: #FFFFFF;
   }
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 
 p {
