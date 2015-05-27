@@ -14,81 +14,79 @@ block content
         h2.header__bottom-border-left Xero Integration 
         p.lead Send invoices and receive bitcoin payments through BitPay's integration with Xero's cloud-based billing and accounting services.
       .column.large-4
-        .h2.background-contain(style="background-image: url('/images/integrations/XeroAddOnLogo.png'); width: 6em; height: 2.5em;")
+        .h2.background-contain(style="background-image: url('/images/integrations/details/XeroAddOnLogo.png'); width: 6em; height: 2.5em;")
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom Billing Integration 
         a(href="#").arrow.white.btn.btn-white-border.uppercase.bold Integrate with BitPay
-    
-  .section.border-bottom-gray
-    .row
-      .column.large-3.margin-bottom
-        .padding-horizontal.padding-top-less.radius.border-gray
-          h4 Prerequisites
-          p You must have a BitPay merchant account to use this integration. It's free to #[a(href="/dashboard/signup") sign up for a BitPay account].
-      .column.large-8.large-pull-4
-        h4 Guide Contents
-        ul.no-bullet
-          li
-            a(href="#bitpay-and-xero") BitPay and Xero
-          li
-            a(href="#connecting") Connecting BitPay to Xero
-          li
-            a(href="#using") Using BitPay with Xero 
         
   
-  .section.border-bottom-gray#bitpay-and-xero
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and Xero
     .row
-      .column.large-4.large-push-8.margin-bottom
-        .padding-horizontal.padding-top-less.radius.border-gray
-          h4 What Is Xero?
-          p.lead Xero is easy to use online accounting software that’s designed specifically for small businesses.
-          ul 
-            li It's all online, so you can work when and where you want to. Just login with your PC, Mac or mobile.
-            li Your bank statements are automatically imported and categorized, letting you see your cashflow in real-time
-            li Invite your team and work together on financials. You can collaborate over your up-to-date numbers.
-            li Xero has all you need to run your business – including invoicing, paying bills, sales tax returns, reporting and much more.
-          ul 
-          p Find out more or try <a href="http://www.xero.com/">Xero Accounting Software</a> for free.            
-      
-      .column.large-8.large-pull-4
-        h3 BitPay and Xero
-        p. lead Accept bitcoin bill payments and receive bank settlements in your own currency using BitPay's Xero integration.
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
         h5 Invoice your clients in a snap.
+        br
         p BitPay's scan-to-pay invoices integrate seamlessly into Xero's one-click payment flow, giving your customers a faster way to pay their bills online. 
-        h5 Receive payments from anywhere on earth. 
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Receive payments from anywhere. 
+        br
         p Like the Internet, the Bitcoin network is global and universally accessible. Anyone with an internet connection can pay BitPay's Xero-hosted invoices using bitcoin. 
-        h5 Eliminate the risk of payment fraud or data theft.
-        p Senders and recipients on the Bitcoin network don't need to hand over sensitive personal or financial information. Adding a bitcoin billing option through Xero and BitPay requires no additional security or PCI compliance costs, and your clients can rest at ease knowing thh funds are secure.  
-            
-  .section.border-bottom-gray#connecting
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/security.svg'); width:3.5em; height: 3.5em;")
+        h5 Eliminate fraud and data theft risk.
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. You can send bitcoin invoices with no additional security or PCI compliance costs, and your clients can trust that their funds are secure. 
+                    
+  .section
     .row
-      .column.large-8     
-        h3.header__bottom-border-left Connecting BitPay and Xero 
-        p.lead BitPay's bitcoin billing functionality can be added to your Xero account in a few simple steps. 
-        
-        ol(type="1")
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
           li
-            p In your BitPay merchant dashboard, select #["Payment Tools" > "Connect to Xero"] 
+            a(href="#connecting-bitpay-and-xero" data-magellan-arrival="connecting-bitpay-and-xero") Connecting BitPay and Xero
           li
-            p Login to your Xero account and select #["Settings" > "General Settings" > "Payment Settings" > "Add Payment Service."] 
-            .h2.background-contain(style="background-image: url('/images/integrations/details/XeroSetupImage1.png'); height:14em;") 
-          li 
-            p Choose your business account and select #["Authorize"] to complete the connection. 
-            .h2.background-contain(style="background-image: url('/images/integrations/details/XeroSetupImage2.png'); height:8em;") 
+            a(href="#using-bitpay-with-xero" data-magellan-arrival="using-bitpay-with-xero") Using BitPay with Xero
             
+      .column.large-9
+        .row
+          .column
+            h4 Prerequisites
+            p You must have a BitPay merchant account to use this integration. It's free to #[a(href="/dashboard/signup") sign up for a BitPay account].
         
-  .section#using
-    .row
-      .column.large-8     
-        h3.header__bottom-border-left Using BitPay with Xero
-        p.lead With your accounts connected, you can now send bitcoin invoices through your Xero account.  
-        
-        ol(type="1") 
-          li
-            p To generate a bill, select #["Settings" > "Create Invoice."]
-          li
-            p Enter an email address for the intended recipient of your bill and an amount in bitcoin or your local currency. 
-          li
-            p Using any computer or mobile device, the bill recipient will select #["Pay Now"] on the Xero invoice and scan the QR code or copy the bitcoin address of the BitPay invoice presented. 
-          li 
-            p Bill recipients will send bitcoin payments to the invoice address with their bitcoin wallets of choice. Xero will you when an invoice has been paid in full. 
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#connecting-bitpay-and-xero(data-magellan-destination="connecting-bitpay-and-xero") Connecting BitPay and Xero 
+              p.lead BitPay's bitcoin billing functionality can be added to your Xero account in a few simple steps. 
+              
+              ol(type="1")
+                li
+                  p In your BitPay merchant dashboard, select #[strong "Payment Tools" > "Connect to Xero."] 
+                li
+                  p Log in to your Xero account and select #[strong "Settings" > "General Settings" > "Invoice Settings" > "Add Payment Service."] 
+                li
+                  p Select #[strong "Add Payment Service"] and enter a preferred name for the new bitcoin payment option.
+                li 
+                  p Select #[strong "Custom Payment URL"]. Copy the URL  displayed on your BitPay merchant dashboard and paste it in the supplied Xero field to pair the accounts. 
+                  .h2.background-contain(style="background-image: url('/images/integrations/details/XeroSetupImage1.png'); height:10em;") 
+                li 
+                  p In your Xero account, choose the name of your business organization and select #[strong "Authorize"] to complete the account connection.
+                  .h2.background-contain(style="background-image: url('/images/integrations/details/XeroSetupImage2.png'); height:10em;") 
+        .row
+          .column
+            .section         
+              h3.header__bottom-border-left#using-bitpay-with-xero(data-magellan-destination="using-bitpay-with-xero")  Using BitPay with Xero 
+            
+              ol(type="1") 
+                li
+                  p To generate an invoice, select #["Settings" > "Create Invoice."]
+                li
+                  p Enter an email address for the intended recipient of your bill and an amount in bitcoin or your local currency. Send the invoice to your recipient. 
+                li
+                  p Using any computer or mobile device, the Xero invoice recipient will select #["Pay Now"] and scan the QR code or copy the bitcoin address of the BitPay payment invoice presented. 
+                li 
+                  p Bill recipients will send bitcoin payments to the invoice address with their bitcoin wallets of  choice. Xero will notify you when your customer's invoice has been paid in full, and completed bill payments will be displayed on your BitPay merchant dashboard ledger. 
