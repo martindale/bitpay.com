@@ -1,0 +1,54 @@
+extends ../_layouts/docs
+
+block title
+  title Invoice States | BitPay Documentation
+
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Invoice States'
+
+block information
+  h2.header__bottom-border-left Invoice States
+  p.lead A BitPay invoice can be in one of a number of states. Payments sent to the bitcoin address associated with an invoice will only be credited to the invoice when its base state is new.
+
+  p There are two sets of invoice states that may be consulted; base states and exception states. Base states provide a simple and straight-forward understanding of the overall status of an invoice. Exception states provide additional details about the status of the invoice if a payment exception has occurred. 
+  
+  p Exception states are used for detecting payment exceptions and subsequent execution of automated rules to perform certain customer support operations. For example, using exception states it is possible to detect an under paid invoice, apply decision logic, and either refund the payment or accept the under payment (thereby updating the invoice to match the amount paid) - all without customer support desk intervention.
+
+  h3 Base States
+  
+  h4
+    code new
+  p An invoice starts in this state. When in this state and only in this state, payments to the associated bitcoin address are credited to the invoice. If an invoice has received a partial payment, it will still reflect a status of new to the merchant (from a merchant system perspective, an invoice is either paid or not paid, partial payments and over payments are handled by bitpay.com by either refunding the customer or applying the funds to a new invoice.
+  h4
+    code paid
+  p As soon as payment is received it is evaluated against the invoice requested amount. If the amount paid is equal to or greater than the amount expected then the invoice is marked as being paid. To detect whether the invoice has been overpaid consult the invoice exception status (exStatus).
+  h4
+    code confirmed
+  p The transaction speed preference of an invoice determines when an invoice is confirmed. For the high speed setting, it will be confirmed as soon as full payment is received on the bitcoin network (note, the invoice will go from a status of new to confirmed, bypassing the paid status). For the medium speed setting, the invoice is confirmed after the payment transaction(s) have been confirmed by 1 block on the bitcoin network. For the low speed setting, 6 blocks on the bitcoin network are required. Invoices are considered complete after 6 blocks on the bitcoin network, therefore an invoice will go from a paid status directly to a complete status if the transaction speed is set to low.
+  h4
+    code complete
+  p When an invoice is complete, it means that BitPay.com has credited the merchant’s account for the invoice. Currently, 6 confirmation blocks on the bitcoin network are required for an invoice to be complete. Note, in the future (for qualified payers), invoices may move to a complete status immediately upon payment, in which case the invoice will move directly from a new status to a complete status.
+  h4
+    code expired
+  p An expired invoice is one where payment was not received and the 15 minute payment window has elapsed.
+  h4
+    code invalid
+  p An invoice is considered invalid when it was paid, but payment was not confirmed within 1 hour after receipt. It is possible that some transactions on the bitcoin network can take longer than 1 hour to be included in a block. In such circumstances, once payment is confirmed, BitPay will make arrangements with the merchant regarding the funds (which can either be credited to the merchant account on another invoice, or returned to the buyer).
+  
+  h3 Exception States
+
+  h4
+    code false
+  p The invoice is not in an exception state.
+  h4
+    code paidPartial
+  p If the amount paid is less than the amount expected then the invoice is marked as being partially paid.
+  h4
+    code paidOver
+  p If the amount paid is greater than the amount expected then the invoice is marked as being overpaid.
+  h4
+    code paidLate
+  p The invoice was paid outside the 15-minute payment window.
+  
+  

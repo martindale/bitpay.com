@@ -1,0 +1,202 @@
+extends ../_layouts/docs
+
+block title
+  title Create Invoices | BitPay Documentation
+
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Create Invoices'
+
+block information
+  h2.header__bottom-border-left Creating Invoices
+  p.lead An invoice is created by sending an HTTP POST message to #[a(href='/api#resource-Invoices') bitpay.com/invoices] with the details of the invoice passed in the body of the request.
+  
+  p The body of the message must be JSON encoded and the content-type should be set to #[code application/json]. On successful creation, the invoice details will be provided in a JSON encoded response.
+
+  p If there is an error, you will receive a JSON encoded error response. All error responses will have an error field that is an object with two fields called type and message. A merchant is restricted to creating no more than 100 invoices per hour (there are also per second and per minute limits). The fields in the request are described below.
+
+  h3 Required POST Fields
+
+  h4
+    code price
+  p This is the amount that is required to be collected from the buyer. Note, if this is specified in a currency other than BTC, the price will be converted into BTC at market exchange rates to determine the amount collected from the buyer.
+
+  h4 
+    code currency
+  p This is the currency code set for the price setting. Supported pricing currencies include #[code USD], #[code EUR], #[code BTC], and all currencies listed on our #[a(href="/bitcoin-exchange-rates") Bitcoin Exchange Rates] page.
+
+  h3 Optional Payment Notification (IPN) Fields
+  
+  p The BitPay invoice service can be configured to send JSON-encoded POST callbacks to a merchant-provided URL endpoint. Settings for this capability are described below.
+
+  h4 
+    code posData
+  p A passthru variable provided by the merchant and designed to be used by the merchant to correlate the invoice with an order or other object in their system. Maximum string length is 100 characters. This passthru variable can be a JSON-encoded string, e.g.:
+  code.inline-block.margin-bottom posData: '{ "ref" : 711454, "affiliate" : "spring112" }'
+
+  h4 
+    code notificationURL
+  p A URL to send status update messages to your server (this must be an https URL, unencrypted http URLs or any other type of URL is not supported).
+  p BitPay will send an IPN callback to this URL when the invoice status changes.
+
+  h4
+    code transactionSpeed
+  
+  h5
+    code high
+  p An invoice is considered to be #[code confirmed] immediately upon receipt of payment.
+  
+  h5
+    code medium
+  p An invoice is considered to be #[code confirmed] after 1 block confirmation (~10 minutes).
+  
+  h5
+    code low
+  p An invoice is considered to be #[code confirmed] after 6 block confirmations (~1 hour).
+  
+  p If not set on the invoice, transactionSpeed will default to your account-level Order Settings. Note: orders are always posted to your BitPay Account Summary for settlement after 6 block confirmations (regardless of this setting).
+  
+  h4
+    code fullNotifications
+  
+  h5 
+    code true
+  p Notifications will be sent on every status change.
+  
+  h5 
+    code false
+  p Notifications are only sent when an invoice is #[code confirmed] (according to the #[code transactionSpeed] setting).
+  
+  h4
+    code notificationEmail
+  p BitPay will send an email to this email address when the invoice status changes.
+
+  h3 Optional Order Handling Fields
+
+  h4
+    code redirectURL
+  p This is the URL for a return link that is displayed on the receipt, to return the shopper back to your website after a successful purchase. This could be a page specific to the order, or to their account.
+
+  h3 Optional Display Information
+
+  h4
+    code orderID
+  p Used to display your public order number to the buyer on the BitPay invoice. In the merchant Account Summary page, this value is used to identify the ledger entry. Maximum string length is 100 characters.
+  h4
+    code itemDesc
+  p Used to display an item description to the buyer. Maximum string length is 100 characters.
+  h4
+    code itemCode
+  p Used to display an item SKU code or part number to the buyer. Maximum string length is 100 characters.
+  
+  h4
+    code physical
+  p Defaults to #[code false].
+  
+  h5 
+    code true
+  p Indicates a physical item will be shipped (or picked up).
+  
+  h5 
+    code false
+  p Indicates that nothing is to be shipped for this order.
+  
+  h4 Buyer Fields
+  
+  p These fields are used for display purposes only and will be shown on the invoice if provided. Maximum string length of each field is 100 characters.
+  
+  ul
+    li
+      code buyerName
+    li
+      code buyerAddress1
+    li
+      code buyerAddress2
+    li
+      code buyerCity
+    li
+      code buyerState
+    li
+      code buyerZip
+    li
+      code buyerCountry
+    li
+      code buyerEmail
+    li
+      code buyerPhone
+  
+  h3 BitPay Server Response
+
+  pre.block.padding.
+    {
+      "url": "https://test.bitpay.com/invoice?id=7MxRGVuBC1XvV138b3AqAR",
+      "posData": "{ \"ref\" : 711454, \"affiliate\" : \"spring112\" }",
+      "status": "new",
+      "btcPrice": "0.069032",
+      "btcDue": "0.069032",
+      "price": 20,
+      "currency": "USD",
+      "exRates": {
+        "USD": 289.71999999999997
+      },
+      "itemDesc": "Lawncare, March",
+      "invoiceTime": 1426574968897,
+      "expirationTime": 1426575868897,
+      "currentTime": 1426574968952,
+      "guid": "177005a3-2867-4c65-add8-7ab088e3c414",
+      "id": "7MxRGVuBC1XvV138b3AqAR",
+      "btcPaid": "0.000000",
+      "rate": 289.72,
+      "exceptionStatus": false,
+      "paymentUrls": {
+        "BIP21": "bitcoin:mjBQNNE16a6gWKkkMxc2QiLzrZVViyruUe?amount=0.069032",
+        "BIP72": "bitcoin:mjBQNNE16a6gWKkkMxc2QiLzrZVViyruUe?amount=0.069032&r=https://test.bitpay.com/i/7MxRGVuBC1XvV138b3AqAR",
+        "BIP72b": "bitcoin:?r=https://test.bitpay.com/i/7MxRGVuBC1XvV138b3AqAR",
+        "BIP73": "https://test.bitpay.com/i/7MxRGVuBC1XvV138b3AqAR"
+      },
+      "token": "Hncf45uBVPNoiXbycHDh2cC37auMxhrxm5ijNCsTKGKfX4Y1vbjWCZvoSdciMNw5G"
+    }
+
+  p The response to a create invoice request, the response to a get invoice request, and the content of a status update notification are all identical JSON representations of the invoice object. The fields are described below.
+
+  h4
+    code id
+  p The unique id of the invoice.
+  h4
+    code url
+  p An https URL where the invoice can be viewed.
+  h4
+    code posData
+  p The passthrough variable provided by the merchant on the original invoice creation.
+  h4
+    code status
+  p The current invoice base status. See #[a(href="/invoice-states") Invoice States] for more info. Possible states: #[code new], #[code paid], #[code confirmed], #[code complete], #[code expired], #[code invalid].
+  h4
+    code exceptionStatus
+  p The current invoice extended status. See #[a(href="/invoice-states") Invoice States] for more info. Possible states: #[code false], #[code paidPartial], #[code paidOver], #[code paidLate].
+  h4
+    code btcPaid
+  p The amount of bitcoin paid to the invoice.
+  h4
+    code rate
+  p The numeric exchange rate (based on invoice currency) associated with the invoice at the time of the original purchase.
+  h4
+    code price
+  p The price set by the merchant (in terms of the provided currency).
+  h4
+    code currency
+  p The 3 letter currency code in which the invoice was priced.
+  h4
+    code btcPrice
+  p The amount of bitcoins being requested for payment of this invoice (same as the price if the merchant set the price in BTC).
+  h4
+    code invoiceTime
+  p The time the invoice was created in milliseconds since midnight January 1, 1970. Time format is #[time 2009-01-03T18:15:05.123Z].
+  h4
+    code expirationTime
+  p The time at which the invoice expires and no further payment will be accepted (in milliseconds since midnight January 1, 1970). Currently, all invoices are valid for 15 minutes. Time format is #[time 2009-01-03T18:15:05.123Z].
+  h4
+    code currentTime
+  p The current time on the BitPay.com system (by subtracting the current time from the expiration time, the amount of time remaining for payment can be determined). Time format is #[time 2009-01-03T18:15:05.123Z].
+
+  a(href="/docs/display-invoice").btn.btn-blue-border.uppercase.bold.arrow-blue.margin-top Displaying Invoices

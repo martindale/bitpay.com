@@ -1,0 +1,109 @@
+extends ../_layouts/docs
+
+block title
+  title Displaying Invoices | BitPay Documentation
+
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Displaying Invoices'
+
+block information
+  h2.header__bottom-border-left Displaying Invoices
+  p.lead Because Bitcoin works as a push transaction, rather than using the traditional authorize and capture process (pull) as does a credit card, you must accomodate this in your checkout flow.
+  
+  p While a traditional checkout flow would collect credit card info and then present a “finalize order” page and subsequently charge the card, with Bitcoin, no details need to be collected prior to confirmation. A click on “confirm order” should present a modal or blocking payment screen which will provide a bitcoin invoice for payment, then proceed to confirmation once the payment is received.
+  
+  h3 Redirect to BitPay
+  
+  p The simplest integration is to simply redirect your customer to the BitPay site to complete payment, then return them to your site for order confirmation. In this case, you need only redirect your customer to the #[code url] returned in the JSON response from the #[code /invoices] endpoint.
+
+  p You can do this most easily by using one of #[a(href="/integrations/#plugins") our supported integrations] or directly with one of #[a(href="/integrations/#code-libraries") our supported libraries].
+  
+  p The BitPay invoice uses responsive design to ensure that the user gets optimal presentation regardless of device form factor.
+  
+  p Be sure that you have also set the #[code redirectURL] when generating the invoice, which will ensure that the user gets redirected to the appropriate confirmation page following payment.
+
+  p You should always validate that the invoice was paid by re-querying the BitPay API, or by manually validating that it appears in your account ledger, before completing the transaction.
+
+  h3 Embedded Invoice (iFrame)
+  
+  p BitPay allows you to embed the invoice on your website, so the shopper never has to leave your site during the checkout process.
+  
+  ol
+    li When you create an invoice with a POST request to BitPay, BitPay returns the #[code url] field, which is the URL at which this invoice can be viewed.
+    li To display the embedded invoice on your page, append the code #[code &view=iframe] to the invoice URL and specify this value as the #[code src] in an iframe.
+    li The embedded invoice will automatically update when payments have been received. In addition to the server IPN sent to your #[code notificationURL], the iframe will send a POST message to the parent window that the status has changed.
+  
+  p If your website has a dark background theme, append the code #[code &theme=dark] to the invoice URL. Note that the iframe background color is transparent.
+  
+  pre.margin-bottom.
+    &lt;iframe id="bitpay_invoice_iframe"
+      scrolling="no"
+      allowtransparency="true"
+      frameborder="0"  src='https://test.bitpay.com/invoice?id=LxuN1nQwB3UKTVuamJeLSi&view=iframe'
+      style='width:500px; overflow: hidden; padding:20px; max-width:100%'&gt;
+    &lt;/iframe&gt;
+
+  h4 Post to Parent Window
+  
+  p When an invoice is presented in an iframe you have an option to receive invoice status updates in the parent window. This option is useful for updating the parent window presentation or redirecting the parent window to another URL after the invoice has been paid.
+
+  p When the invoice iframe receives a status update from the BitPay server the new status is posted from the invoice iframe to the parent window via the Window.postMessage method and passing #[code {status: string}] where #[code status] can be any of the #[a(href="/invoice-states") Invoice States] according to the descriptions provided.
+
+  p Your implementation should take into consideration the browser support for this method. See #[a(href="http://caniuse.com/#feat=x-doc-messaging") CanIUse] for a list of browsers supporting #[code Window.postMessage].
+  
+  p Following is an HTML code example illustrating a simple interaction between an invoice iframe and its parent document.
+
+  pre.margin-bottom.
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;Parent&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;p&gt;Invoice status: &lt;span id="s1"&gt;&lt;/span&gt;
+        &lt;iframe src="https://bitpay.com/invoice?id=UbAd3j1E7ivCe5i9t88obd" style="width: 800px; height: 800px;"&gt;&lt;/iframe&gt;
+        &lt;script language="javascript"&gt;
+      window.addEventListener("message", function(event) {
+          document.getElementById("s1").innerHTML=event.data.status;
+      }, false);
+        &lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+
+  h3 Custom Invoices
+  
+  p There are instances when it is not possible to directly display the presentation of a BitPay server generated HTML invoice (either the full page or the iframe). This occurs when the system requesting an invoice is interacting with the customer via a device that does not directly present or render HTML content. Example use cases include:
+  
+  ul
+    li Proprietary gaming platforms
+    li Custom embedded display devices (gas pump, kiosk device)  
+
+  p Constructing an invoice typically requires that the implementation generate it’s own QR (Quick Response) code, enabling custom interaction with a Bitcoin wallet, and/or making the bitcoin address visible to receive payment. Additional considerations include:
+
+  ul
+    li Time limit - the client must ensure that presentation of the invoice does not exceed the maximum time allowed by BitPay to present payment. Currently the time limit is 15 minutes.
+    li Prices - the invoice should display both the bitcoin price as well as the local currency price. It is not recommended to display the bitcoin/local currency exchange rate as this could be confusing to the buyer.
+    li Bitcoin address - in some settings it may be convenient to display (or otherwise present) the bitcoin address for copy and paste. This is useful if the buyer must transfer the bitcoin address to their bitcoin wallet manually.
+    li Other information - details about the product or service being purchased, an order identifier, the merchant name, address, etc.
+    
+  h4 Invoice Status Updates
+  
+  p Use of the BitPay server provided invoice URL for presentation of the invoice includes the benefit of the client presented invoice receiving socket messages from the BitPay server when invoice status changes. For example, subsequent to paying an invoice the BitPay server will update the status of the invoice and send that status via a direct socket connection between the BitPay server and the invoice presenting web browser client. When presenting a custom invoice this socket connection is not possible. The only means for updating the presentation of the invoice (e.g., to show ‘paid’ status) is to receive the invoice IPN at your server and then to update your invoice presentation (e.g., using AJAX) at the client.
+
+  h4 Generating a Custom QR Code Image
+  
+  p The QR code is a digitally encoded image that contains the Bitcoin payment URI. The BitPay server supports both the old style (BIP 72) Bitcoin protocol (for backwards compatibility) as well as the new style (BIP 73) Bitcoin Payment Protocol.
+  
+  p When choosing to generate your own QR code image you must make a choice between the two style of URI you wish to encode in the image. For maximum compatibility with wallets you should choose to encode the BIP 72 compatible URI. This URI scheme can be scanned successfully by all existing Bitcoin wallets. As more wallets provide support for the Bitcoin Payment Protocol you may choose to switch from using the BIP 72 compatible URI to the BIP 73 compatible URI. The density of a BIP 72 QR code is higher than that of a BIP 73 QR code and may result in increased scanning errors.
+
+  p Attached in the invoice payload are different #[code paymentUrls] which can be encoded according to your implementation preferences:
+  
+  pre.margin-bottom.
+    "paymentUrls": {
+      "BIP21": "bitcoin:mvYRECDxKPaPHnjNz9ZxiTpbx29xYNoRy4?amount=0.3745",
+      "BIP72": "bitcoin:mvYRECDxKPaPHnjNz9ZxiTpbx29xYNoRy4?amount=0.3745&r=https://bitpay.com/i/NKaqMuZWy3BAcP77RdkEEv",
+      "BIP72b": "bitcoin:?r=https://bitpay.com/i/NKaqMuZWy3BAcP77RdkEEv",
+      "BIP73": "https://bitpay.com/i/NKaqMuZWy3BAcP77RdkEEv"
+    }
+ 
+  a(href="/docs/invoice-callbacks").btn.btn-blue-border.uppercase.bold.arrow-blue.margin-top Instant Payment Notifications (IPNs)

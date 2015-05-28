@@ -9,34 +9,31 @@ append vars
 block content
   - var docsMenu = { 'Getting Started': '/docs', 'Selling Online': '/docs/ecommerce', 'Selling in Person': '/docs/retail', 'Banking & Settlements': '/docs/settlement' };
   - var usecaseMenu = { 'Email Billing': '/docs/billing', 'Donations': '/docs/donations'}
+  - var devMenu = { 'Creating Invoices': '/docs/create-invoice', 'Displaying Invoices': '/docs/display-invoice', 'Invoice Callbacks': '/docs/invoice-callbacks', 'Invoice States': '/docs/invoice-states'}
   - var resourceMenu = { 'Bitcoin Wallet Comparison': '/docs/wallets', 'BBB Exchange Rate': '/bitcoin-exchange-rates' }
+  
+  mixin linkList(menu)
+    each val, key in menu
+      li
+        if subpageSelected === key
+          a.active(href=val title=key target=_blank)= key
+        else
+          a(href=val title=key)= key
   
   .row.padding-vertical.medium-padding-bottom-most
     .column.large-5.xlarge-3
       ul.side-nav.large-border-right-gray.padding-right-less
         li.uppercase.h3 Documentation
-        each val, key in docsMenu
-          li
-            if subpageSelected === key
-              a.active(href=val title=key target=_blank)= key
-            else
-              a(href=val title=key)= key
+        +linkList(docsMenu)
         li.divider
         li.uppercase.h3 Use Cases
-        each val, key in usecaseMenu
-          li
-            if subpageSelected === key
-              a.active(href=val title=key target=_blank)= key
-            else
-              a(href=val title=key)= key
+        +linkList(usecaseMenu)
+        li.divider
+        li.uppercase.h3 Development
+        +linkList(devMenu)
         li.divider
         li.uppercase.h3 Resources
-        each val, key in resourceMenu
-          li
-            if subpageSelected === key
-              a.active(href=val title=key target=_blank)= key
-            else
-              a(href=val title=key)= key
+        +linkList(resourceMenu)
         li
           a(href="https://support.bitpay.com") Help &amp; Support
 
