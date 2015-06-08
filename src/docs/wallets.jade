@@ -29,13 +29,36 @@ block information
   p.lead True Wallets are bitcoin wallets with which users control the keys to their own bitcoin.
   p To send bitcoin, wallet software uses a <em>secret key</em>, much like a password, to move the bitcoin. The new owner's wallet software then stores its new secret key.
   
-  mixin wallet(name, platform, uri, pp, url)
-   tr.text-center
-     td.padding-top-less.text-left
-       a(href="#{url}") #{name}
-     td.padding-top-less #{platform}
-     td(class="padding-top-less #{uri}")
-     td(class="padding-top-less #{pp}")
+  mixin wallet(name, url)
+    tr.text-center
+      td.padding-top-less.text-left
+        a(href="#{url}") #{name}
+      block
+  
+  mixin ios()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-applestore.svg');")
+    
+  mixin android()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-playstore.svg');")
+    
+  mixin windowsPhone()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-winstore.svg');")
+
+  mixin chrome()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-chrome-app.svg');")
+
+  mixin mac()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-os-x.svg');")
+
+  mixin windows()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-microsoft.svg');")
+    
+  mixin linux()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-linux.svg');")
+
+  mixin web()
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-html5.svg');")
+
   
   table(style="width: 100%;").small-smaller-text.line-height-more
     tr.text-center.border-bottom-gray
@@ -43,22 +66,121 @@ block information
       th.small-4.padding-bottom-less Platform(s)
       th.small-2.padding-bottom-less Bitcoin URIs
       th.small-2.padding-bottom-less Payment Protocol
-    +wallet("Bitcoin Core (Satoshi client)", "Mac OS, Windows, Linux", "checkmark", "checkmark", "https://bitcoin.org/")
-    +wallet("Bitcoin Wallet (Schildbach)", "Android", "checkmark", "checkmark", "https://play.google.com/store/apps/details?id=de.schildbach.wallet")
-    +wallet("Breadwallet", "iOS", "checkmark", "checkmark", "https://itunes.apple.com/us/app/breadwallet-bitcoin-wallet/id885251393")
-    +wallet("GreenAddress", "Chrome, iOS, Android", "checkmark", "checkmark", "https://greenaddress.it/")
-    +wallet("Copay Bitcoin Wallet", "iOS, Android, Windows Phone, Chrome, Mac OS X, Windows, Linux", "checkmark", "checkmark", "https://copay.io")
-    +wallet("Hive", "Mac OS, iOS, Android, Web", "checkmark", "checkmark", "https://www.hivewallet.com/")  
-    +wallet("AirBitz", "iOS, Android", "checkmark", "", "https://airbitz.co/")
-    +wallet("Armory", "Mac OS, Windows, Linux", "checkmark", "", "https://bitcoinarmory.com/")
-    +wallet("Blockchain", "iOS, Android, Web", "checkmark", "", "https://blockchain.info/wallet")
-    +wallet("Coinomi", "Android", "checkmark", "", "https://coinomi.com/")
-    +wallet("Electrum", "Mac OS, Windows, Linux", "checkmark", "", "https://electrum.org/")
-    +wallet("KryptoKit", "Chrome", "checkmark", "", "https://chrome.google.com/webstore/detail/kryptokit-bitcoin-wallet/lhhipingoaiddcoalochnbjlkifbpmoj")
-    +wallet("Multibit", "Mac OS, Windows, Linux", "checkmark", "", "https://multibit.org/")
-    +wallet("Mycelium", "Android", "checkmark", "", "https://play.google.com/store/apps/details?id=com.mycelium.wallet")
-    +wallet("Pheeva", "Chrome, iOS, Android", "checkmark", "", "http://pheeva.com/")
-
+      
+    +wallet("Bitcoin Core (Satoshi client)", "https://bitcoin.org/")
+      td
+        +mac()
+        +windows()
+        +linux()
+      td.checkmark
+      td.checkmark
+        
+    +wallet("Bitcoin Wallet (Schildbach)", "https://play.google.com/store/apps/details?id=de.schildbach.wallet")
+      td
+        +android()
+      td.checkmark
+      td.checkmark
+    
+    +wallet("Breadwallet", "https://itunes.apple.com/us/app/breadwallet-bitcoin-wallet/id885251393")
+      td
+        +ios()
+      td.checkmark
+      td.checkmark
+    
+    +wallet("Copay Bitcoin Wallet", "https://copay.io")
+      td
+        +ios()
+        +android()
+        +windowsPhone()
+        +chrome()
+        +mac()
+        +windows()
+        +linux()
+      td.checkmark
+      td.checkmark
+        
+    +wallet("GreenAddress", "https://greenaddress.it/")
+      td
+        +ios()
+        +android()
+        +chrome()
+      td.checkmark
+      td.checkmark
+    
+    +wallet("Hive", "https://www.hivewallet.com/")
+      td
+        +ios()
+        +android()
+        +mac()
+        +web()
+      td.checkmark
+      td.checkmark
+        
+    +wallet("AirBitz", "https://airbitz.co/")
+      td
+        +ios()
+        +android()
+      td.checkmark
+      td
+    
+    +wallet("Armory", "https://bitcoinarmory.com/")
+      td
+        +mac()
+        +windows()
+        +linux()
+      td.checkmark
+      td
+    
+    +wallet("Blockchain", "https://blockchain.info/wallet")
+      td
+        +ios()
+        +android()
+        +web()
+      td.checkmark
+      td
+    
+    +wallet("Coinomi", "https://coinomi.com/")
+      td
+        +android()
+      td.checkmark
+      td
+    
+    +wallet("Electrum", "https://electrum.org/")
+      td
+        +mac()
+        +windows()
+        +linux()
+      td.checkmark
+      td
+    
+    +wallet("KryptoKit", "https://chrome.google.com/webstore/detail/kryptokit-bitcoin-wallet/lhhipingoaiddcoalochnbjlkifbpmoj")
+      td
+        +chrome()
+      td.checkmark
+      td
+    
+    +wallet("Multibit", "https://multibit.org/")
+      td
+        +mac()
+        +windows()
+        +linux()
+      td.checkmark
+      td
+        
+    +wallet("Mycelium", "https://play.google.com/store/apps/details?id=com.mycelium.wallet")
+      td
+        +ios()
+        +android()
+      td.checkmark
+      td
+      
+    +wallet("Pheeva", "http://pheeva.com/")
+      td
+        +ios()
+        +android()
+        +chrome()
+      td.checkmark
+      td
   
   h3.header__bottom-border-left.margin-top 2. Bitcoin Account Services
   p.lead Account services manage a bitcoin wallet on behalf of users, much like a bank manages a customer's funds.
@@ -70,9 +192,34 @@ block information
       th.small-4.padding-bottom-less Platform(s)
       th.small-2.padding-bottom-less Bitcoin URIs
       th.small-2.padding-bottom-less Payment Protocol
-    +wallet("Circle", "iOS, Android, Web", "checkmark", "", "https://www.circle.com")
-    +wallet("Coinbase", "iOS, Android, Web", "checkmark", "", "https://coinbase.com")
-    +wallet("Coinkite", "Web", "checkmark", "", "https://coinkite.com/")
-    +wallet("Xapo", "iOS, Android, Web", "checkmark", "", "https://xapo.com/wallet/")
+    +wallet("Circle", "https://www.circle.com")
+      td
+        +ios()
+        +android()
+        +web()
+      td.checkmark
+      td
+
+    +wallet("Coinbase", "https://coinbase.com")
+      td
+        +ios()
+        +android()
+        +web()
+      td.checkmark
+      td
+
+    +wallet("Coinkite", "https://coinkite.com/")
+      td
+        +web()
+      td.checkmark
+      td
+
+    +wallet("Xapo", "https://xapo.com/wallet/")
+      td
+        +ios()
+        +android()
+        +web()
+      td.checkmark
+      td
 
   p.margin-top If you are trying to make a payment from one of these services to a BitPay invoice, and the payment hasn't been sent, we recommend contacting the institution's support services. If you are unsure about the status of your payment, please feel free to contact our <a href="mailto:support@bitpay.com?Subject=Payment%20Delayed">support team</a>.
