@@ -36,7 +36,7 @@ block information
       block
   
   mixin ios()
-    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-applestore.svg');")
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-appstore.svg');")
     
   mixin android()
     span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-playstore.svg');")
@@ -48,7 +48,7 @@ block information
     span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-chrome-app.svg');")
 
   mixin mac()
-    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-os-x.svg');")
+    span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-apple.svg');")
 
   mixin windows()
     span.small-icon.background-contain(style="background-image: url('/images/platforms/icon-microsoft.svg');")
@@ -68,7 +68,7 @@ block information
       th.small-2.padding-bottom-less Payment Protocol
       
     +wallet("Bitcoin Core (Satoshi client)", "https://bitcoin.org/")
-      td
+      td.text-left
         +mac()
         +windows()
         +linux()
@@ -76,19 +76,19 @@ block information
       td.checkmark
         
     +wallet("Bitcoin Wallet (Schildbach)", "https://play.google.com/store/apps/details?id=de.schildbach.wallet")
-      td
+      td.text-left
         +android()
       td.checkmark
       td.checkmark
     
     +wallet("Breadwallet", "https://itunes.apple.com/us/app/breadwallet-bitcoin-wallet/id885251393")
-      td
+      td.text-left
         +ios()
       td.checkmark
       td.checkmark
     
     +wallet("Copay Bitcoin Wallet", "https://copay.io")
-      td
+      td.text-left
         +ios()
         +android()
         +windowsPhone()
@@ -100,7 +100,7 @@ block information
       td.checkmark
         
     +wallet("GreenAddress", "https://greenaddress.it/")
-      td
+      td.text-left
         +ios()
         +android()
         +chrome()
@@ -108,7 +108,7 @@ block information
       td.checkmark
     
     +wallet("Hive", "https://www.hivewallet.com/")
-      td
+      td.text-left
         +ios()
         +android()
         +mac()
@@ -117,14 +117,14 @@ block information
       td.checkmark
         
     +wallet("AirBitz", "https://airbitz.co/")
-      td
+      td.text-left
         +ios()
         +android()
       td.checkmark
       td
     
     +wallet("Armory", "https://bitcoinarmory.com/")
-      td
+      td.text-left
         +mac()
         +windows()
         +linux()
@@ -132,7 +132,7 @@ block information
       td
     
     +wallet("Blockchain", "https://blockchain.info/wallet")
-      td
+      td.text-left
         +ios()
         +android()
         +web()
@@ -140,13 +140,13 @@ block information
       td
     
     +wallet("Coinomi", "https://coinomi.com/")
-      td
+      td.text-left
         +android()
       td.checkmark
       td
     
     +wallet("Electrum", "https://electrum.org/")
-      td
+      td.text-left
         +mac()
         +windows()
         +linux()
@@ -154,13 +154,13 @@ block information
       td
     
     +wallet("KryptoKit", "https://chrome.google.com/webstore/detail/kryptokit-bitcoin-wallet/lhhipingoaiddcoalochnbjlkifbpmoj")
-      td
+      td.text-left
         +chrome()
       td.checkmark
       td
     
     +wallet("Multibit", "https://multibit.org/")
-      td
+      td.text-left
         +mac()
         +windows()
         +linux()
@@ -168,14 +168,14 @@ block information
       td
         
     +wallet("Mycelium", "https://play.google.com/store/apps/details?id=com.mycelium.wallet")
-      td
+      td.text-left
         +ios()
         +android()
       td.checkmark
       td
       
     +wallet("Pheeva", "http://pheeva.com/")
-      td
+      td.text-left
         +ios()
         +android()
         +chrome()
@@ -193,7 +193,7 @@ block information
       th.small-2.padding-bottom-less Bitcoin URIs
       th.small-2.padding-bottom-less Payment Protocol
     +wallet("Circle", "https://www.circle.com")
-      td
+      td.text-left
         +ios()
         +android()
         +web()
@@ -201,7 +201,7 @@ block information
       td
 
     +wallet("Coinbase", "https://coinbase.com")
-      td
+      td.text-left
         +ios()
         +android()
         +web()
@@ -209,13 +209,13 @@ block information
       td
 
     +wallet("Coinkite", "https://coinkite.com/")
-      td
+      td.text-left
         +web()
       td.checkmark
       td
 
     +wallet("Xapo", "https://xapo.com/wallet/")
-      td
+      td.text-left
         +ios()
         +android()
         +web()
