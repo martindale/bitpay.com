@@ -66,12 +66,11 @@
   content: '';
   display: inline-block;
   vertical-align: middle;
-  position: relative;
-  top: 2px;
-  padding: 12px;
-  background-repeat: no-repeat;
-  margin-right: 1em;
-  margin-left: .5em;
+  width: .7em;
+  height: .7em;
+  margin: 0 1em 0 .5em;
   background-image: url('/images/icons/external-link.svg');
-  background-size: 1em;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
 }
