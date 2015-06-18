@@ -1,0 +1,120 @@
+extends ../_layouts/primary
+
+block title
+  title Woocommerce Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #42a2ce;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left Woocommerce Plugin 
+        p.lead Accept bitcoin on your WordPress site with BitPay's open source plugin for Woocommerce.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/woocommerce.png'); width: 10em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Integration 
+        a(href="https://github.com/bitpay/woocommerce-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and Woocommerce 
+    .row
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/security.svg'); width:3.5em; height: 3.5em;")
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
+              
+  .section
+    .row
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
+          li 
+            a(href="#requirements" data-magellan-arrival="requirements") Requirements
+          li
+            a(href="#installation" data-magellan-arrival="installation") Installation
+          li
+            a(href="#configuration" data-magellan-arrival="configuration") Configuration
+          li
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced 
+            
+      .column.large-9
+        .row
+          .column
+            h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p You must also have already installed the #[a(href="https://wordpress.org/plugins/woocommerce/") Woocommerce plugin] from the WordPress Plugin Directory. 
+            .note 
+              p View the #[a(href="https://github.com/bitpay/woocommerce-plugin/blob/master/GUIDE.md#server-requirements") server requirements] for this plugin. 
+              
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
+
+              h4 
+              ol(type="1")
+                li
+                  p #[a(href="https://github.com/bitpay/woocommerce-plugin/releases") Download the latest version] of the BitPay plugin for Woocommerce. 
+                li
+                  p Navigate to your WordPress Admin Panel and select #[strong Plugins &gt; Add New &gt; Upload Plugin].
+                li 
+                  p Select the downloaded plugin and click #[strong Install Now]. Select #[strong Activate] to complete installation.
+                  
+              .warning  
+                p We always recommend that you backup your database before installing plugins.
+              .note      
+                p Merchants who have a previous version of the WooCommerce BitPay Payment Gateway will need to remove it. This can be done by navigating to Wordpress's #[strong Adminstration Panel &gt; Plugins]. Deactivate the old plugin, then delete it. 
+          
+        .row  
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and Woocommerce
+              
+              ol(type="1")
+                li  
+                  p Log in to your WordPress admin panel and select #[strong WooCommerce &gt; Settings &gt; Checkout &gt; BitPay] to access the configuration settings for the plugin. 
+                  img(src="/images/integrations/details/woocommercestep1.png", alt="Woocommerce Settings").margin-vertical
+                  p You can also access the configuration settings by navigating to #[strong Plugins] and clicking the #[strong Settings] link for this plugin. 
+                li 
+                  p Create a #[a(href="/dashboard/merchant/api-tokens") pairing code] in your BitPay merchant dashboard.
+                li 
+                  p Copy and paste this pairing code into the #[strong "Pairing Code"] field in your WordPress plugin admin dashboard to create an API token for BitPay transactions. 
+                  img(src="/images/integrations/details/woocommercestep2.png", alt="Woocommerce Settings").margin-vertical
+                  img(src="/images/integrations/details/woocommercestep3.png", alt="Woocommerce Settings").margin-vertical
+                  .note
+                    p Pairing codes are only valid for a short period of time. If a code expires before you get to use it, you can always create a new one and pair with it.
+                    p You will only need to do this once since each time you do this, the extension will generate public and private keys that are used to identify you when using the API.
+                  
+              p.lead Nice work! Your customers will now be able to check out with bitcoin on your WordPress site. 
+          
+        .row  
+          .column 
+            .section
+              h3.header__bottom-border-left#advanced(data-magellan-destination="advanced") Advanced Setup
+              h4 Order Status Customizaton
+              p You can customize how BitPay's IPNs (Instant Payment Notifications) display order statuses in your WooCommerce store.
+              img(src="/images/integrations/details/woocommercestep4.png", alt="Woocommerce Settings").margin-vertical
+              h4 Optimizing Plugin Performance
+              .note
+                p It is highly recommended that you #[a(herf="https://github.com/bitpay/woocommerce-plugin/blob/master/GUIDE.md#how-to-get-optimal-performance-from-the-plugin") install the GMP extension for PHP] to acheive maximum performance when using this plugin.
+                
+          .column.large-12.text-center.margin-top-more
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
+            a(href="https://github.com/bitpay/woocommerce-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin

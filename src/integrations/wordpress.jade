@@ -1,0 +1,123 @@
+extends ../_layouts/primary
+
+block title
+  title WordPress eCommerce Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #e05c5c;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left WordPress eCommerce Plugin  
+        p.lead Accept bitcoin on your WordPress site with BitPay's open source extension to the WP eCommerce Plugin.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/wpecommercelogo.png'); width: 6em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Integration 
+        a(href="https://github.com/bitpay/wordpress-ecommerce-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and WP eCommerce 
+    .row
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/security.svg'); width:3.5em; height: 3.5em;")
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
+              
+  .section
+    .row
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
+          li 
+            a(href="requirements" data-magellan-arrival="requirements") Requirements
+          li
+            a(href="#installation" data-magellan-arrival="installation") Installation
+          li
+            a(href="#configuration" data-magellan-arrival="configuration") Configuration
+          li 
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced
+
+      .column.large-9
+        .row
+          .column
+            h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p You must also have already installed the #[a(href="https://wordpress.org/plugins/wp-e-commerce/") WP eCommerce plugin] from the WordPress Plugin Directory. 
+
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
+              
+              h4 
+              ol(type="1")
+                li
+                  p #[a(href="https://github.com/bitpay/wordpress-ecommerce-plugin/releases") Download the latest release of the plugin] and extract the contents of the zip file.  
+                li 
+                  p Copy the wpsc-merchants folder and paste it into your active WP eCommerce instance #[strong (e.g. /var/www/html/wordpress/wp-content/plugins/wp-e-commerce)].
+              .note
+                p To install directly from GitHub, review the #[a(href="https://github.com/bitpay/wordpress-ecommerce-plugin/blob/master/GUIDE.md#installation-from-github") guide] in our repository for this plugin.
+              .warning  
+                p Do not attempt to install this BitPay file through the WordPress plugins control panel.
+
+        .row  
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and WP eCommerce
+
+              h4
+              ol(type="1")
+                li
+                  p Log into your WordPress admin panel and select #[strong "Settings" &gt; "Store" &gt; "Payments"].
+                  img(src="/images/integrations/details/wpecommercestep1.png", alt="WordPress Settings").margin-vertical
+                li
+                  p Check the box for #[strong "Bitcoin Payments by BitPay"] to activate it and click #[strong "Save Changes"] below.
+                li 
+                  p Click #[strong "Settings"] below the BitPay payment option.
+                li 
+                  p Edit #[strong "Display Name"] if desired.
+                  img(src="/images/integrations/details/wpecommercestep2.png", alt="WordPress Settings").margin-vertical
+                li 
+                  p Create a #[a(href="/dashboard/merchant/api-tokens") pairing code] in your BitPay merchant dashboard.
+                li 
+                  p Copy and paste this pairing code into the #[strong "Pairing Code"] field in your WordPress plugin admin dashboard to create an API token for BitPay transactions. 
+                  img(src="/images/integrations/details/wpecommercestep3.png", alt="WordPress Settings").margin-vertical
+                  img(src="/images/integrations/details/wpecommercestep4.png", alt="WordPress Settings").margin-vertical
+                li 
+                  p Select #[strong "Update"] to save all configured settings.
+                  
+                p.lead Nice work! Your customers will now be able to check out with bitcoin on your WordPress site. 
+                
+        .row  
+          .column 
+            .section
+              h3.header__bottom-border-left#advanced(data-magellan-destination="advanced") Advanced Setup   
+              h4 Set Transaction Speed Settings  
+              p Transaction speeds can be set to "High", "Medium, or "Low". "High" speed confirmations typically take 5-10 seconds and can be used for digital goods or low-risk items. "Low" speed confirmations take about 1 hour and should be used for high-value items.
+              img(src="/images/integrations/details/wpecommercestep5.png", alt="WordPress Settings").margin-vertical
+              h4 Designate a Redirect URL
+              p Enter the URL for the page to which customers should be directed after they have paid an invoice.
+              img(src="/images/integrations/details/wpecommercestep6.png", alt="WordPress Settings").margin-vertical
+
+          .column.large-12.text-center
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
+            a(href="https://github.com/bitpay/wordpress-ecommerce-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
+
+  
