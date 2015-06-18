@@ -12,13 +12,33 @@ block content
     .row.white
       .column.large-8
         h2.header__bottom-border-left Magento Plugin
-        p.lead BitPay's open source Magento Plugin helps you accept bitcoin on your Magento based e-commerce site.
+        p.lead Accept bitcoin on your Magento-based e-commerce site with BitPay's open source Magento Plugin.
       .column.large-4
         .h2.background-contain(style="background-image: url('/images/integrations/magento-white.png'); width: 6em; height: 2.5em;")
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom E-commerce Plugin
         a(href="#").arrow.white.btn.btn-white-border.uppercase.bold Integrate with BitPay
-          
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and Magento
+    .row
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/security.svg'); width:3.5em; height: 3.5em;")
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
   .section
     .row
       .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
@@ -39,15 +59,15 @@ block content
         .row
           .column
             h4 Prerequisites
-            p You must have a BitPay merchant account to use this plugin. It's free to #[a(href="/dashboard/signup") sign-up for a BitPay account].
+            p You must have a BitPay merchant account to use this plugin. It's free to #[a(href="/dashboard/signup") sign up for a BitPay account].
         
         .row
           .column        
             .section.border-bottom-gray#server-requirements(data-magellan-destination="server-requirements")
               h3.header__bottom-border-left Server Requirements
               ul
-                li #[a(href="http://magento.com/resources/system-requirements") Magento CE] 1.9.0.1 or higher. Older versions might work, however this plugin has been validated to work against the 1.9.0.1 Community Edition release.
-                li #[a(href="http://us2.php.net/gmp") GMP] or #[a(href="http://us2.php.net/manual/en/book.bc.php") BC Math] PHP extensions. GMP is preferred for performance reasons but you may have to install this as most servers do not come with it installed by default. BC Math is commonly installed however and the plugin will fall back to this method if GMP is not found.
+                li #[a(href="http://magento.com/resources/system-requirements") Magento CE] 1.9.0.1 or higher. Though older versions may work, this plugin has been validated to work against the 1.9.0.1 Community Edition release.
+                li #[a(href="http://us2.php.net/gmp") GMP] or #[a(href="http://us2.php.net/manual/en/book.bc.php") BC Math] PHP extensions. GMP is preferred for performance reasons but you may have to install this as most servers do not come with it installed by default. BC Math is commonly installed, however, and the plugin will fall back to this method if GMP is not found.
                 li #[a(href="http://us2.php.net/openssl") OpenSSL] Must be compiled with PHP and is used for certain cryptographic operations.
                 li #[a(href="http://us2.php.net/downloads.php") PHP 5.4] or higher. This plugin will not work on PHP 5.3 and below.
           
@@ -67,13 +87,13 @@ block content
           .column
             .section.border-bottom-gray#installation(data-magellan-destination="installation")
               h3.header__bottom-border-left Installation
-              p.lead There are 3 different ways you can install the BitPay plugin for Magento:
+              p.lead There are three different ways you can install the BitPay plugin for Magento:
               
               ol(type="A")
                 li
                   h4 From the Magento Connect Manager:
                   p Go to the #[a(href="http://www.magentocommerce.com/magento-connect/bitpay-payment-method.html") Magento Connect Manager] and click the #[em Install Now] link which will give you the #[em Extension Key] needed for the next step.
-                  p Once you have the key, log into your Magento Store's Admin Panel and navigate to #[strong System > Magento Connect > Magento Connect Manager].
+                  p Once you have the key, log into your Magento Store's Admin Panel and navigate to #[strong System &gt; Magento Connect &gt; Magento Connect Manager].
                   .note
                     p It may ask you to log in again using the same credentials that you use to log into the Admin Panel. All you need to do is paste the extension key and click on the #[em Install] button.
                   .warning
@@ -96,9 +116,9 @@ block content
           .column
             .section.border-bottom-gray#configuration(data-magellan-destination="configuration") 
               h3.header__bottom-border-left Configuration
-              p Configuration can be done using the Administrator section of your Magento store. Once Logged in, you will find the configuration settings under #[strong System > Configuration > Sales > Payment Methods].
+              p Configuration can be done using the Administrator section of your Magento store. Once Logged in, you will find the configuration settings under #[strong System &gt; Configuration &gt; Sales &gt; Payment Methods].
               img(src="/images/integrations/details/MagentoSettings.png", alt="Magento Settings").margin-vertical
-              p.small.padding-bottom-less.border-bottom-gray You can get to this settings page by logging in and going to #[strong System > Configuration > Sales > Payment Methods]
+              p.small.padding-bottom-less.border-bottom-gray You can get to this settings page by logging in and going to #[strong System &gt; Configuration &gt; Sales &gt; Payment Methods]
               p Here your will need to create a #[a(href="https://bitpay.com/api-tokens") pairing code] using your BitPay merchant account. Once you have a Pairing Code, put the code in the Pairing Code field. This will take care of the rest for you.
               .note 
                 p Pairing Codes are only valid for a short period of time. If it expires before you get to use it, you can always create a new one an use the new one.
