@@ -1,0 +1,103 @@
+extends ../_layouts/primary
+
+block title
+  title VirtueMart Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #008AD0;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left VirtueMart Plugin 
+        p.lead Accept bitcoin on your Joomla site with BitPay's open source plugin for VirtueMart.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/virtuemart.png'); width: 10em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Integration 
+        a(href="https://github.com/bitpay/virtuemart-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and VirtueMart
+    .row
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/security.svg'); width:3.5em; height: 3.5em;")
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
+              
+  .section
+    .row
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
+          li 
+            a(href="#requirements" data-magellan-arrival="requirements") Requirements
+          li
+            a(href="#installation" data-magellan-arrival="installation") Installation
+          li
+            a(href="#configuration" data-magellan-arrival="configuration") Configuration
+          li
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced 
+            
+      .column.large-9
+        .row
+          .column
+            h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p You must also have already installed the #[a(href="http://virtuemart.net/download") VirtueMart store software] on your Joomla site. 
+
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
+
+              h4 
+              ol(type="1")
+                li
+                  p Create a zip file of from the contents #[a(href="https://github.com/bitpay/virtuemart-plugin/releases") Download the latest version] of the BitPay plugin for VirtueMart. 
+                li
+                  p Log in to your VirtueMart store and navigate to your #[strong "Extension Manager" &gt; "Install"]
+                li 
+                  p Select the downloaded plugin zip file and click #[strong Upload &#38; Install]. Navigate to the #[strong "Manage"] section of your Extension Manager and select #[strong "Publish"].
+                  
+              .warning  
+                p We always recommend that you backup your database before installing plugins.
+              
+        .row  
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and VirtueMart
+              
+              ol(type="1")
+                li  
+                  p In your VirtueMart Extension Manager, navigate to #[strong "Components" &gt; "VirtueMart"].
+                li   
+                  p Select #[strong "Payment Methods" &gt; "New"]. Type in the required information for the new payment method, choosing #[strong "VMPAYMENT&#95;BITPAY"] as the name. 
+                li 
+                  p #[a(href="/dashboard/merchant/api-tokens") Create an API Key] in your BitPay merchant dashboard.
+                  img(src="/images/integrations/details/virtuemartstep6.png", alt="VirtueMart Settings").margin-vertical
+                li 
+                  p Navigate to #[strong "Configuration"] in the Extension Manager menu. Copy and paste this API Key ID to pair with your BitPay account. 
+                  .note
+                    p Pairing codes are only valid for a short period of time. If a code expires before you get to use it, you can always create a new one and pair with it.
+                    p You will only need to do this once since each time you do this, the extension will generate public 
+                p.lead Nice work! Your customers will now be able to check out with bitcoin on your VirtueMart site. 
+          
+          .column.large-12.text-center.margin-top-more
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
+            a(href="https://github.com/bitpay/virtuemart-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
