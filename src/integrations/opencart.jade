@@ -1,0 +1,99 @@
+extends ../_layouts/primary
+
+block title
+  title OpenCart Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #23A1D1;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left OpenCart Plugin  
+        p.lead Accept bitcoin on your OpenCart site with BitPay's open source plugin.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/opencart.png'); width: 6em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Integration 
+        a(href="https://github.com/bitpay/opencart-plugin/releases/tag/v2.0.0").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and OpenCart
+    .row
+      .column.large-4
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
+              
+  .section
+    .row
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
+          li 
+            a(href="requirements" data-magellan-arrival="requirements") Requirements
+          li
+            a(href="#installation" data-magellan-arrival="installation") Installation
+          li
+            a(href="#configuration" data-magellan-arrival="configuration") Configuration
+          li 
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced
+
+      .column.large-9
+        .row
+          .column
+            h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p You must also have already installed the #[a(href="https://www.prestashop.com/") OpenCart ecommerce store software]. 
+    
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
+              
+              h4 
+              ol(type="1")
+                li
+                  p #[a(href="https://github.com/bitpay/opencart-plugin/releases/tag/v2.0.0") Download the latest release of the plugin] and extract the contents of the zip file.  
+                li 
+                  p Navigate to #[strong "Extensions" &gt; "Extension Installer"] and upload #[code bitpay-opencart.ocmod.zip].
+                    .note 
+                      p You can also upload all files in the upload directory in #[code bitpay-opencart.ocmod.zip] to your OpenCart store's installation directory.
+
+        .row  
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and OpenCart
+
+              h4
+              ol(type="1")
+                li
+                  p Navigate to #[strong "Extensions" &gt; "Payments"]. Select the BitPay payment extension option and click #[strong "Install"]. The page will now be refreshed, and you will be notified that installation is complete.
+                li 
+                  p Select #[strong "Connect to BitPay"]. You will be redirected to your BitPay merchant dashboard to create an API Pairing Token. 
+                li 
+                  p When you select #[strong "Approve"], you will be redirected to OpenCart's plugin configuration page. 
+                li
+                  p Configure all payment plugin settings as desired using the tooltips provided on the configuration page.
+                li 
+                  p Set the plugin's status as #[strong "Enabled"] and select #[strong "Save"].
+
+                p.lead Nice work! Your customers will now be able to check out with bitcoin on your site. 
+
+          .column.large-12.text-center
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
+            a(href="https://github.com/bitpay/opencart-plugin/releases/tag/v2.0.0").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
+
+  

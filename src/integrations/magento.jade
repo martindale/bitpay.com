@@ -25,17 +25,14 @@ block content
         h3.header__bottom-border-left#bitpay-and-xero BitPay and Magento
     .row
       .column.large-4
-        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
         h5 Start selling everywhere.
         br
         p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
       .column.large-4
-        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/security.svg'); width:3.5em; height: 3.5em;")
         h5 Eliminate fraud and chargebacks.  
         br
         p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
       .column.large-4
-        .icon.h2.background-contain.margin-vertical-less(style="background-image: url('/images/global.svg'); width:3.5em; height: 3.5em;")
         h5 Get to checkout in no time flat. 
         br
         p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
@@ -69,7 +66,7 @@ block content
                 p Remember to back up your database before installing extensions.
               ol(type="1")
                 li
-                  p Go to the #[a(href="http://www.magentocommerce.com/magento-connect/bitpay-payment-method.html") Magento Connect Manager] and click the #[strong Install Now] link which will give you the #[strong Extension Key] needed for the next step.
+                  p Go to the #[a(href="http://www.magentocommerce.com/magento-connect/bitpay-payment-method.html") Magento Connect Manager] and click the #[strong "Install Now"] link which will give you the #[strong Extension Key] needed for the next step.
                   p Once you have the key, log into your Magento Store's Admin Panel and navigate to #[strong "System" &gt; "Magento Connect" &gt; "Magento Connect Manager"].
                   .note
                     p The Connect Manager may ask you to log in again using the same credentials that you use to log into the Admin Panel. All you need to do is paste the extension key and click on the #[em "Install"] button.
@@ -99,16 +96,29 @@ block content
               h3.header__bottom-border-left Advanced Setup
               
               h4 Installing the Plugin Using Modman
-              p Using #[a(href="https://github.com/colinmollenhour/modman") modman] you can install the BitPay Magento Plugin. Once you have modman installed, run #[code= 'modman init'] if you have not already done so. Next just run #[code= 'modman clone https://github.com/bitpay/magento-plugin.git'] in the root of the Magento installation. In this case it is #[code= '/var/www/magento'].
+              p You can also use the #[a(href="https://github.com/colinmollenhour/modman") modman] module management software to this plugin. 
+              ol(type="1")
+                li 
+                  p Once you have modman installed, run #[code= 'modman init'] if you have not already done so. 
+                li 
+                  p Run #[code= 'modman clone https://github.com/bitpay/magento-plugin.git'] in the root of the Magento installation. In this case it is #[code= '/var/www/magento'].
               
               h4 Order Status Customization
-              p You can configure how BitPay's IPN (Instant Payment Notifications) changes the order in your Magento store.
+              p Configure how BitPay's IPN (Instant Payment Notifications) settings change the order status in your Magento store.
               img(src="/images/integrations/details/MagentoInvoiceSettings.png", alt="Magento Invoice Settings").margin-vertical
-              p Configure how BitPay's IPN (Instant Payment Notifications) changes the order in your Magento store.
-              //- .h2.background-contain(style="background-image: url(''); height:8em;")
-              
-              p Once enabled, your customers will be given the option to pay with bitcoin. Once they checkout they are redirected to a full screen BitPay invoice to pay for the order.
-              p As a merchant, the orders in your Magento store can be treated as any other order. You may need to adjust the Invoice Settings depending on your order fulfillment.
+              h4 Transaction Speed Settings
+              p Select a tranasaction speed for bitcoin payments made in your Magento store. 
+                .note 
+                  p This setting only affects the time after which BitPay considers the payment fully confirmed and irrevocable on the Bitcoin network. Your customers will be immediately notified when their payments have been sent, and a typical transaction only takes a few seconds to complete.
+              ul
+                li 
+                  p #[strong "High"] speed confirmations will be sent as soon as a  transaction is received in the Bitcoin network (usually a few seconds). This speed should be used for digital or low-risk items. 
+                li
+                  p #[strong "Medium"] speed confirmations typically take 10 minutes and should be used for fulfillment processes with medium risk or items with median value.
+                li 
+                  p #[strong "Low"] speed confirmations take about 1 hour and should be used for high-value items.
+                  .note
+                    p #[a(href="https://en.bitcoin.it/wiki/Double-spending") Double-spending] on the Bitcoin network is extremely unlikely, but selecting slower transaction speeds will provide the greatest protection against them. 
               
           .column.large-12.text-center
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account

@@ -1,0 +1,114 @@
+extends ../_layouts/primary
+
+block title
+  title PrestaShop Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #26225d;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left PrestaShop Plugin  
+        p.lead Accept bitcoin on your PrestaShop site with BitPay's open source plugin.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/prestashop.png'); width: 6em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Integration 
+        a(href="https://github.com/bitpay/prestashop-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and PrestaShop 
+    .row
+      .column.large-4
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
+              
+  .section
+    .row
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
+          li 
+            a(href="requirements" data-magellan-arrival="requirements") Requirements
+          li
+            a(href="#installation" data-magellan-arrival="installation") Installation
+          li
+            a(href="#configuration" data-magellan-arrival="configuration") Configuration
+          li 
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced
+
+      .column.large-9
+        .row
+          .column
+            h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p You must also have already installed the #[a(href="https://www.prestashop.com/") Prestashop ecommerce store software]. 
+            .note 
+              p View the #[a(href="https://github.com/bitpay/prestashop-plugin/blob/master/GUIDE.md#server-requirements") server requirements] for this plugin. 
+
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
+              
+              h4 
+              ol(type="1")
+                li
+                  p #[a(href="https://github.com/bitpay/prestashop-plugin/releases") Download the latest release of the plugin].
+                li
+                  p Login to your PrestaShop admin page and select #[strong "Modules" &gt; "Modules" &gt; "Add A New Module"].    
+                li 
+                  p Upload the zip file containing the latest release of the BitPay plugin. 
+                li 
+                  p When the upload is complete, #[strong "BitPay"] will be listed as a PrestaShop module on this page. Select the #[strong "Install"] option to finish. 
+
+        .row  
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and PrestaShop
+
+              h4
+              ol(type="1")
+                li
+                  p Navigate to your PrestaShop admin page. Select #[strong "Modules" &gt; "BitPay" &gt; "Configure"].
+                  .note 
+                    p In PrestaShop versions 1.5 and lower, navigate from #[strong "Modules" &gt; "Payment Gateways" &gt; "BitPay"].               
+                li  
+                  p #[a(href="/dashboard/merchant/api-tokens") Create an API Key] in your BitPay merchant dashboard.
+                li 
+                  p Copy and paste the API Key into the required field to pair your accounts. 
+                li 
+                  p Select #[strong "Low" or "Medium"] transaction speed settings.
+                    .note
+                      p This setting only affects the time after which BitPay considers the payment fully confirmed and irrevocable on the Bitcoin network. You and your customer will be immediately notified when a payment is sent, and a typical transaction only takes a few seconds to complete.
+                  ul 
+                    li 
+                      p #[strong "Low"] speed confirmations take about 1 hour and should be used for high-value items.
+                    li 
+                      p #[strong "Medium"] speed confirmations typically take 10 minutes and should be used for fulfillment processes with medium risk or items with median value. 
+                    .warning 
+                      p #[a(href="https://en.bitcoin.it/wiki/Double-spending") Double-spending] on the Bitcoin network is extremely difficult, but selecting slower transaction speeds will provide the greatest protection against them. 
+                    .note
+                      p The #[strong "High"] order speed setting is not available for this integration.
+                  
+                p.lead Nice work! Your customers will now be able to check out with bitcoin on your PrestaShop site. 
+
+          .column.large-12.text-center
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
+            a(href="https://github.com/bitpay/prestashop-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
+
+  
