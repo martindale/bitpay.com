@@ -85,7 +85,8 @@ block content
               ol(type="1")
                 li
                   p Navigate to your PrestaShop admin page. Select #[strong "Modules" &gt; "BitPay" &gt; "Configure"].
-                  .note In Prestashop versions 1.5 and lower, navigate from #[strong "Modules" &gt; "Payment Gateways" &gt; BitPay].               
+                  .note 
+                    p In PrestaShop versions 1.5 and lower, navigate from #[strong "Modules" &gt; "Payment Gateways" &gt; "BitPay"].               
                 li  
                   p #[a(href="/dashboard/merchant/api-tokens") Create an API Key] in your BitPay merchant dashboard.
                 li 
@@ -98,20 +99,13 @@ block content
                     li 
                       p #[strong "Low"] speed confirmations take about 1 hour and should be used for high-value items.
                     li 
-                      p #[stong "Medium"] speed confirmations typically take 10 minutes and should be used for fulfillment processes with medium risk or items with median value. 
+                      p #[strong "Medium"] speed confirmations typically take 10 minutes and should be used for fulfillment processes with medium risk or items with median value. 
                     .warning 
                       p #[a(href="https://en.bitcoin.it/wiki/Double-spending") Double-spending] on the Bitcoin network is extremely difficult, but selecting slower transaction speeds will provide the greatest protection against them. 
                     .note
                       p The #[strong "High"] order speed setting is not available for this integration.
                   
                 p.lead Nice work! Your customers will now be able to check out with bitcoin on your PrestaShop site. 
-                
-        .row  
-          .column 
-            .section
-              h3.header__bottom-border-left#advanced(data-magellan-destination="advanced") Advanced Setup 
-              h4 Designate a Redirect URL
-              p Enter the URL for the page to which customers should be directed after they have paid an invoice.
 
           .column.large-12.text-center
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
