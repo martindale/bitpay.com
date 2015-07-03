@@ -1,0 +1,113 @@
+extends ../_layouts/primary
+
+block title
+  title Zen Cart Plugin | BitPay
+  
+append vars
+  -var pageSelected = 'Integrations'
+
+block content
+  // set background-color to one that matches the brand
+  .section(style="background-color: #2a3034;") 
+    .row.white
+      .column.large-8
+        h2.header__bottom-border-left Zen Cart Plugin 
+        p.lead Accept bitcoin in your Zen Cart shopping cart with BitPay's open source plugin.
+      .column.large-4
+        .h2.background-contain(style="background-image: url('/images/integrations/zencart.png'); width: 6em; height: 2.5em;")
+        h5.bold.uppercase.margin-top-less.margin-bottom-none Category
+        p.margin-bottom E-commerce Integration 
+        a(href="https://github.com/bitpay/zencart-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+        
+  .section.border-bottom-gray
+    .row            
+      .column
+        h3.header__bottom-border-left#bitpay-and-xero BitPay and Zen Cart 
+    .row
+      .column.large-4
+        h5 Start selling everywhere.
+        br
+        p If you can ship it there, you can sell it there. Bitcoin can be sent and received anywhere in the world by anyone with an internet connection. 
+      .column.large-4
+        h5 Eliminate fraud and chargebacks.  
+        br
+        p Bitcoin transactions don't contain any sensitive financial or personal information. No chargebacks for your business, no risk of data theft for your customers – everybody wins.
+      .column.large-4
+        h5 Get to checkout in no time flat. 
+        br
+        p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
+              
+  .section
+    .row
+      .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
+        ul.side-nav(role="navigation" data-magellan-expedition="fixed" data-options="destination_threshold: -80; toffset_by_height: false;")
+          h4 Guide Contents
+          li 
+            a(href="#requirements" data-magellan-arrival="requirements") Requirements
+          li
+            a(href="#installation" data-magellan-arrival="installation") Installation
+          li
+            a(href="#configuration" data-magellan-arrival="configuration") Configuration
+          li
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced 
+            
+      .column.large-9
+        .row
+          .column
+            h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p 'You must also already have the #[a(href="https://www.zen-cart.com") Zen Cart shopping cart software] installed. 
+        
+        .row
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
+              h4 
+              ol(type="1")
+                li
+                  p #[a(href="https://github.com/bitpay/zencart-plugin/releases") Download the latest version] of the BitPay plugin for Zen Cart. 
+                li
+                  p Unzip the downloaded file and copy its contents into the Zen Cart directory of your webserver to complete installation.
+          
+        .row  
+          .column 
+            .section.border-bottom-gray
+              h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and Zen Cart
+              
+              ol(type="1")
+                li
+                  p Navigate to the Admin panel in your Zen Cart store and select #[strong "Modules" &gt; "Payment" &gt; "Bitcoins" &gt; "Install"].
+                li 
+                  p Verify that the #[strong "Bitcoins"] module is enabled.
+                li  
+                  p #[a(href="/dashboard/merchant/api-tokens") Create an API Key] in your BitPay merchant dashboard.
+                li 
+                  p Copy and paste the API Key into the required field to pair your accounts.
+                    .note
+                      p Pairing codes are only valid for a short period of time. If a code expires before you get to use it, you can always create a new one and pair with it. You will only need to pair once.
+                       
+                li 
+                  p Select a transaction speed.
+                    .note 
+                      p This setting only affects the time after which BitPay considers the payment fully confirmed and irrevocable on the Bitcoin network. You and your customer will be immediately notified when a payment is sent, and a typical transaction only takes a few seconds to complete.
+                  ul
+                    li 
+                      p #[strong "High"]: A payment confirmation will be sent as soon as a  transaction is received in the Bitcoin network (usually a few seconds). This speed should be used for digital or low-risk items. 
+                    li
+                      p #[strong "Medium"] speed confirmations typically take 10 minutes and should be used for fulfillment processes with medium risk or items with median value.
+                    li 
+                      p #[strong "Low"] speed confirmations take about 1 hour and should be used for high-value items.
+                      .note
+                        p #[a(href="https://en.bitcoin.it/wiki/Double-spending") Double-spending] on the Bitcoin network is extremely difficult, but selecting slower transaction speeds will provide the greatest protection against them. 
+                li        
+                  p Choose a status for unpaid and paid orders (or leave the default values as defined).
+                li 
+                  p Select currency pricing. Before using currencies other than defaults, verify that these pricing options are supported by BitPay. 
+                li 
+                  p Choose a sort order for displaying this payment option to visitors. Lowest is displayed first.
+                  
+              p.lead Nice work! Your customers will now be able to check out with bitcoin on your website. 
+
+          .column.large-12.text-center.margin-top-more
+            a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
+            a(href="https://github.com/bitpay/zencart-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
