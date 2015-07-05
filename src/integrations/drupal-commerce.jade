@@ -71,10 +71,12 @@ block content
                   p Go to #[strong "Administration" &gt; "Site Settings" &gt; "Advanced Settings" &gt; "Modules" &gt; "Install New Module."] 
                 li
                   p In #[strong "Install from a URL"], enter #[code bitpay/bitpay-drupalcommerce/releases/download/v2.3.0/commerce_bitpay-7.x-2.3.0.zip]. Click #[strong "Install"] to finish.
+                  img(src="/images/integrations/details/drupalstep1.png", alt="Drupal Commerce Settings").margin-vertical
                 li 
                   p Go to #[strong "Administration" &gt; "Site Settings" &gt; "Advanced Settings" &gt; "Modules."] 
                 li 
                   p Type #[code bitpay] into the filter or search for the module in the #[strong Commerce (contrib)] tab. 
+                  img(src="/images/integrations/details/drupalstep2.png", alt="Drupal Commerce Settings").margin-vertical
                 li 
                   p Check #[strong "Enabled"] and then click #[strong "Save Configuration."] 
                 
@@ -85,17 +87,23 @@ block content
               
               ol(type="1")
                 li  
-                  p Scroll back to #[strong "Commerce BitPay"], and click the #[strong "Configure"] link to go to the BitPay Configuration Page 
+                  p Scroll back to #[strong "Commerce BitPay"], and click the #[strong "Configure"] link to go to the BitPay Configuration Page.
+                  img(src="/images/integrations/details/drupalstep3.png", alt="Drupal Commerce Settings").margin-vertical 
                 li 
-                  p At the BitPay Configuration Page, click #[strong "Connect To BitPay Live"], or #[strong "Connect To BitPay Test"]. You may be prompted to sign into your account here.
+                  p At the BitPay Configuration Page, click #[strong "Connect To BitPay Live"], or #[strong "Connect To BitPay Test."] You may be prompted to sign into your BitPay account to continue.
+                  img(src="/images/integrations/details/drupalstep4.png", alt="Drupal Commerce Settings").margin-vertical
                 li
-                  p At BitPay's API Token Request page, click #[strong "Approve"]. 
+                  p At BitPay's API Token Request page, click #[strong "Approve."] 
+                  img(src="/images/integrations/details/drupalstep5.png", alt="Drupal Commerce Settings").margin-vertical
+
                 li 
-                  p You will be returned to the BitPay Configuration Page on your Drupal Commerce site. You should see confirmation that your site is either #[strong "Connected to Livenet"] or #[strong "Connected to Testnet"]. 
+                  p You will be returned to the BitPay Configuration Page on your Drupal Commerce site. You should see confirmation that your site is either #[strong "Connected to Livenet"] or #[strong "Connected to Testnet."] 
+                  img(src="/images/integrations/details/drupalstep6.png", alt="Drupal Commerce Settings").margin-vertical
                 li 
-                  p Go to #[strong "Administration" &gt; "Store Settings" &gt; "Advanced Store Settings" &gt; "Payment Methods"].
+                  p Go to #[strong "Administration" &gt; "Store Settings" &gt; "Advanced Store Settings" &gt; "Payment Methods."]
+                  img(src="/images/integrations/details/drupalstep7.png", alt="Drupal Commerce Settings").margin-vertical
                 li 
-                  p Under #[strong "Disabled Payment Method Rules,"] find #[strong "BitPay"] and click #[strong "Enable"].
+                  p Under #[strong "Disabled Payment Method Rules,"] find #[strong "BitPay"] and click #[strong "Enable."]
                   
                 p.lead Nice work! Your customers will now be able to check out with bitcoin on your Drupal Commerce site. 
                 
@@ -125,6 +133,10 @@ block content
                   p Go to #[strong "Administration" &gt; "Store Settings" &gt; "Advanced Store Settings" &gt; "Currency Settings"]. 
                 li
                   p Expand #[strong "Enabled Currencies"], then scroll down to #[strong BTC - Bitcoin - B⃦] and check the box next to it. Click #[strong "Save Configuration"] to finish.
+                  img(src="/images/integrations/details/drupalstep8.png", alt="Drupal Commerce Settings").margin-vertical
+              
+              h4 Optimizing Plugin Performance
+              p It is highly recommended you #[a(href="https://github.com/bitpay/bitpay-drupalcommerce/blob/master/GUIDE.md#how-to-get-optimal-performance-from-the-plugin") install the GMP extension for PHP] to acheive maximum performance when using this plugin. 
           
           .column.large-12.text-center
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
