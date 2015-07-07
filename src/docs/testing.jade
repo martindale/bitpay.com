@@ -1,0 +1,82 @@
+extends ../_layouts/docs
+
+block title
+  title Testing | BitPay Documentation
+
+append vars
+  -var pageSelected = 'Docs'
+  -var subpageSelected = 'Testing'
+
+block information
+  h2.header__bottom-border-left Testing
+  p.lead For development and testing, BitPay users can access  #[a(href="https://test.bitpay.com/") test.bitpay.com], a mirror of our production site running on the the Bitcoin Testnet. 
+  p Developers must complete the normal signup process, but accounts on this server will be auto-approved. Any API requests must be directed to #[strong test.bitpay.com], and any clients must complete the client pairing process against this server as well. Finally, a testnet-compatible wallet must be used to make test payments.
+  p Below are some helpful pointers for getting started with #[strong test.bitpay.com]:
+
+  h3#setup Merchant Account Setup
+  p.lead Complete the following steps to setup your merchant account for testing:
+  ol(type="1")
+    li
+      p #[a(href="https://test.bitpay.com/dashboard/signup") Sign up for a BitPay testnet account].
+    li 
+      p Pair your client against the server at #[strong test.bitpay.com] by following the client pairing process provided by your sales engineer or detailed in the setup guide for #[a(href="https://bitpay.com/integrations/") your BitPay plugin or integration]. 
+      
+  h3#wallet Getting a Testnet Wallet
+  p Not every wallet supports the Bitcoin testnet. We recommend testing with our #[a(href="https://copay.io/") open source wallet Copay], but any testnet-compatible wallet can be used. 
+  ol(type="1")
+    li 
+      p Visit #[a(href="https://copay.io") Copay.io] and select #[strong "Get Copay."] Download the app for your chosen laptop or desktop OS, mobile platform, or browser. 
+      .note 
+        p When using Copay on a desktop or laptop, we recommend installing the #[a(href="https://chrome.google.com/webstore/detail/copay/cnidaodnidkbaplmghlelgikaiejfhja?hl=en") Chrome app version].
+    li 
+      p In the app, select #[strong "Start"] and open the left side menu. Select #[strong "Add Wallet" &gt; "Create New Wallet,"] verify that #[strong "Personal Wallet"] is selected, and provide a name for your testnet wallet. 
+    li 
+      p Select #[strong "Advanced Options"] and activate the #[strong "TESTNET"] option provided.
+    li 
+      p Click on #[strong "Create 1-of-1 Wallet"] and verify that #[strong "Testnet"] is displayed below the wallet name. 
+    li 
+      p Select the gear icon to open the app's settings, then scroll to #[strong “Global Settings”] and change #[strong "Unit"] to #[strong "BTC"] to match BitPay invoices.
+      
+    p.lead Nice work! Your wallet is active and is now ready for testing. 
+  
+  h3#coins Getting Testnet Coins 
+  ol(type="1")
+    li
+      p Open your Copay Wallet and click #[strong "Receive."] This displays an address at which you can receive funds. Copy this address to your clipboard. 
+    li 
+      p Find a testnet faucet and paste your testnet wallet address into the request form provided. The following testnet faucet options are recommended: 
+      ul
+        li 
+          p #[a(href="https://testnet.coinfaucet.eu/") testnet.coinfaucet.eu]
+        li
+          p #[a(href="https://tpfaucet.appspot.com/") tpfaucet.appspot.com]
+        li 
+          p If these options are unavailable, please contact your BitPay Sales Engineer.
+    
+    p.lead Select the send option for the testnet faucet, then return to your wallet to see the newly deposited test funds!
+  
+  h3#recycling Round Trip Testing 
+  p In order to recycle your test coins, set your #[strong test.bitpay.com] settlement address to your Copay wallet's receive address and set payment at 100&percnt; BTC. 
+  p Setting up your merchant account this way allows the bitcoin you send for payment to be circulated back to you the following day when merchant payouts are run.
+  
+  h3#testing Testing Considerations 
+  p Testing may involve not only the integration of the BitPay service and the payment of invoices but also how you handle common payment exceptions. 
+    .note 
+      p See the #[a(href="https://bitpay.com/downloads/bitpayApi.pdf") BitPay API Implementation Guide] for more information about payment exceptions.
+  p You should consider testing the following kinds of transactions:
+  ul 
+    li 
+      p A fully paid invoice, paid on time (within 15 minutes of invoice generation)
+    li
+      p A fully paid invoice, paid late (after 1 hour, after 24 hours)
+    li 
+      p An underpaid invoice (pay an amount less than the invoice requires.)
+    li  
+      p An overpaid invoice (pay an amount more than the invoice requires.)
+    li
+      p An invoice with and without wallet fees:
+      ul 
+        li 
+          p Try to force an invalid transaction using a low value invoice with no wallet fees. Invalid transactions are invoices that have been paid but which have zero confirmations within one hour of being received by the BitPay server. 
+
+  
