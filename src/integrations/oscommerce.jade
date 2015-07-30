@@ -2,7 +2,7 @@ extends ../_layouts/primary
 
 block title
   title osCommerce Plugin | BitPay
-  
+
 append vars
   -var pageSelected = 'Integrations'
 
@@ -18,7 +18,7 @@ block content
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom E-commerce Integration 
         a(href="https://github.com/bitpay/oscommerce-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
-        
+
   .section.border-bottom-gray
     .row            
       .column
@@ -36,7 +36,7 @@ block content
         h5 Get to checkout in no time flat. 
         br
         p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
-              
+
   .section
     .row
       .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
@@ -55,14 +55,14 @@ block content
         .row
           .column
             h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
-            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account]
             p You must also have already installed the #[a(href="http://www.oscommerce.com/") OSCommerce store software]. 
-        
+
         .row
           .column 
             .section.border-bottom-gray
               h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
-              
+
               h4 
               ol(type="1")
                 li
@@ -93,7 +93,7 @@ block content
                 p.lead Nice work! Your customers will now be able to check out with bitcoin on your osCommerce-enabled site. 
                   .note
                     p This extension does not provide a means of automatically pulling a current BTC exchange rate for presenting BTC prices to shoppers.
-                    
+
         .row  
           .column 
             .section
@@ -125,5 +125,3 @@ block content
           .column.large-12.text-center
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
             a(href="https://github.com/bitpay/oscommerce-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
-
-  
