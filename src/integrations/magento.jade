@@ -2,7 +2,7 @@ extends ../_layouts/primary
 
 block title
   title Magento Plugin | BitPay
-  
+
 append vars
   -var pageSelected = 'Integrations'
 
@@ -17,8 +17,8 @@ block content
         .h2.background-contain(style="background-image: url('/images/integrations/magento-white.png'); width: 6em; height: 2.5em;")
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom E-commerce Plugin
-        a(href="https://github.com/bitpay/magento-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
-        
+        a(href="http://www.magentocommerce.com/magento-connect/bitpay-bitcoin-payment-method.html").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
+
   .section.border-bottom-gray
     .row            
       .column
@@ -49,15 +49,15 @@ block content
             a(href="#configuration" data-magellan-arrival="configuration") Configuration
           li
             a(href="#advanced" data-magellan-arrival="advanced") Advanced
-            
+
       .column.large-9
         .row
           .column
             h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
-            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account]
             .note 
               p View the #[a(href="https://github.com/bitpay/magento-plugin/blob/master/GUIDE.md#server-requirements") server requirements] for this plugin. 
-          
+
         .row
           .column
             .section.border-bottom-gray#installation(data-magellan-destination="installation")
@@ -73,8 +73,8 @@ block content
                   .warning
                     p #[strong Very Important:] You must complete remove any previous versions of the Bitpay Magento plugin before installing this new updated version.
                     p The plugin has been completely re-written to work with BitPay's new cryptographically secure RESTful API and will conflict with any previous plugin versions which use the old API. 
-                    p To help you remove the old plugin files from your system, we have created a convenient shell script for Unix/Linux/Mac OS systems which will scan your webserver for these older files and delete them. You can #[a(href="https://github.com/bitpay/magento-plugin/blob/master/scripts/delete.sh") download this delete script from Github].      
-            
+                    p To help you remove the old plugin files from your system, we have created a convenient shell script for Unix/Linux/Mac OS systems which will scan your webserver for these older files and delete them. You can #[a(href="https://github.com/bitpay/magento-plugin/blob/master/scripts/delete.sh") download this delete script from GitHub].      
+
         .row
           .column
             .section.border-bottom-gray#configuration(data-magellan-destination="configuration") 
@@ -89,12 +89,12 @@ block content
                   p Copy and paste this pairing code into the #[strong "Pairing Code"] field in your Magento admin dashboard to create an API token for BitPay transactions. 
                   .note 
                     p Unused pairing codes are only valid for twenty-four hours. If one expires before you get to use it, you can always create a new one. You will only need to pair once for each installation of the extension.
-                    
+
         .row
           .column
             .section#advanced(data-magellan-destination="advanced")
               h3.header__bottom-border-left Advanced Setup
-              
+
               h4 Installing the Plugin Using Modman
               p You can also use the #[a(href="https://github.com/colinmollenhour/modman") modman] module management software to this plugin. 
               ol(type="1")
@@ -102,9 +102,9 @@ block content
                   p Once you have modman installed, run #[code= 'modman init'] if you have not already done so. 
                 li 
                   p Run #[code= 'modman clone https://github.com/bitpay/magento-plugin.git'] in the root of the Magento installation. In this case it is #[code= '/var/www/magento'].
-              
+
               h4 Order Status Customization
-              p Configure how BitPay's IPN (Instant Payment Notifications) settings change the order status in your Magento store.
+              p Configure how BitPay's IPN (Instant Payment Notification) settings change the order status in your Magento store.
               img(src="/images/integrations/details/MagentoInvoiceSettings.png", alt="Magento Invoice Settings").margin-vertical
               h4 Transaction Speed Settings
               p Select a tranasaction speed for bitcoin payments made in your Magento store. 
@@ -119,7 +119,7 @@ block content
                   p #[strong "Low"] speed confirmations take about 1 hour and should be used for high-value items.
                   .note
                     p #[a(href="https://en.bitcoin.it/wiki/Double-spending") Double-spending] on the Bitcoin network is extremely unlikely, but selecting slower transaction speeds will provide the greatest protection against them. 
-              
+
           .column.large-12.text-center
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
-            a(href="https://github.com/bitpay/magento-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
+            a(href="http://www.magentocommerce.com/magento-connect/bitpay-payment-method.html").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
