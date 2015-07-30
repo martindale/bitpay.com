@@ -2,7 +2,7 @@ extends ../_layouts/primary
 
 block title
   title OpenCart Plugin | BitPay
-  
+
 append vars
   -var pageSelected = 'Integrations'
 
@@ -18,7 +18,7 @@ block content
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom E-commerce Integration 
         a(href="https://github.com/bitpay/opencart-plugin/releases/tag/v2.0.0").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
-        
+
   .section.border-bottom-gray
     .row            
       .column
@@ -55,18 +55,18 @@ block content
         .row
           .column
             h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
-            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
-            p You must also have already installed the #[a(href="https://www.prestashop.com/") OpenCart ecommerce store software]. 
-    
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account]
+            p You must also have already installed the #[a(href="http://www.opencart.com/index.php?route=download/download") OpenCart e-commerce store software].
+
         .row
           .column 
             .section.border-bottom-gray
               h3.header__bottom-border-left#installation(data-magellan-destination="installation") Installing the Plugin
-              
+
               h4 
               ol(type="1")
                 li
-                  p #[a(href="https://github.com/bitpay/opencart-plugin/releases/tag/v2.0.0") Download the latest release of the plugin] and extract the contents of the zip file.  
+                  p #[a(href="https://github.com/bitpay/opencart-plugin/releases/latest") Download the latest release of the plugin] and extract the contents of the zip file.  
                 li 
                   p Navigate to #[strong "Extensions" &gt; "Extension Installer"] and upload #[code bitpay-opencart.ocmod.zip].
                     .note 
@@ -94,6 +94,4 @@ block content
 
           .column.large-12.text-center
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
-            a(href="https://github.com/bitpay/opencart-plugin/releases/tag/v2.0.0").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
-
-  
+            a(href="https://github.com/bitpay/opencart-plugin/releases/latest").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
