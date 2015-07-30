@@ -2,7 +2,7 @@ extends ../_layouts/primary
 
 block title
   title Woocommerce Plugin | BitPay
-  
+
 append vars
   -var pageSelected = 'Integrations'
 
@@ -18,7 +18,7 @@ block content
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom E-commerce Integration 
         a(href="https://github.com/bitpay/woocommerce-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
-        
+
   .section.border-bottom-gray
     .row            
       .column
@@ -36,7 +36,7 @@ block content
         h5 Get to checkout in no time flat. 
         br
         p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
-              
+
   .section
     .row
       .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
@@ -49,17 +49,17 @@ block content
           li
             a(href="#configuration" data-magellan-arrival="configuration") Configuration
           li
-            a(href="#advanced" data-magellan-arrival="advanced") Advanced 
-            
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced
+
       .column.large-9
         .row
           .column
             h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
-            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account]
             p You must also have already installed the #[a(href="https://wordpress.org/plugins/woocommerce/") Woocommerce plugin] from the WordPress Plugin Directory. 
             .note 
               p View the #[a(href="https://github.com/bitpay/woocommerce-plugin/blob/master/GUIDE.md#server-requirements") server requirements] for this plugin. 
-              
+
         .row
           .column 
             .section.border-bottom-gray
@@ -73,17 +73,17 @@ block content
                   p Navigate to your WordPress Admin Panel and select #[strong Plugins &gt; Add New &gt; Upload Plugin].
                 li 
                   p Select the downloaded plugin and click #[strong "Install Now"]. Select #[strong "Activate"] to complete installation.
-                  
+
               .warning  
                 p We always recommend that you backup your database before installing plugins.
               .note      
                 p Merchants who have a previous version of the WooCommerce BitPay Payment Gateway will need to remove it. This can be done by navigating to Wordpress's #[strong Adminstration Panel &gt; Plugins]. Deactivate the old plugin, then delete it. 
-          
+
         .row  
           .column 
             .section.border-bottom-gray
               h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and Woocommerce
-              
+
               ol(type="1")
                 li  
                   p Log in to your WordPress admin panel and select #[strong "WooCommerce" &gt; "Settings" &gt; "Checkout" &gt; "BitPay"] to access the configuration settings for the plugin. 
@@ -98,9 +98,9 @@ block content
                   .note
                     p Pairing codes are only valid for a short period of time. If a code expires before you get to use it, you can always create a new one and pair with it.
                     p You will only need to do this once since each time you do this, the extension will generate public and private keys that are used to identify you when using the API.
-                  
+
               p.lead Nice work! Your customers will now be able to check out with bitcoin on your WordPress site. 
-          
+
         .row  
           .column 
             .section
@@ -111,7 +111,7 @@ block content
               h4 Optimizing Plugin Performance
               .note
                 p It is highly recommended that you #[a(herf="https://github.com/bitpay/woocommerce-plugin/blob/master/GUIDE.md#how-to-get-optimal-performance-from-the-plugin") install the GMP extension for PHP] to acheive maximum performance when using this plugin.
-                
+
           .column.large-12.text-center.margin-top-more
             a(href="/dashboard/signup").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Create an Account
             a(href="https://github.com/bitpay/woocommerce-plugin/releases").white.btn.btn-blue-solid.uppercase.bold.arrow.btn-margin Get the Plugin
