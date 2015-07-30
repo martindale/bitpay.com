@@ -2,7 +2,7 @@ extends ../_layouts/primary
 
 block title
   title Zen Cart Plugin | BitPay
-  
+
 append vars
   -var pageSelected = 'Integrations'
 
@@ -18,7 +18,7 @@ block content
         h5.bold.uppercase.margin-top-less.margin-bottom-none Category
         p.margin-bottom E-commerce Integration 
         a(href="https://github.com/bitpay/zencart-plugin/releases").arrow.white.btn.btn-white-border.uppercase.bold Get the Plugin
-        
+
   .section.border-bottom-gray
     .row            
       .column
@@ -36,7 +36,7 @@ block content
         h5 Get to checkout in no time flat. 
         br
         p BitPay's scan-to-pay bitcoin invoices give your customers a faster, simpler way to pay from any device in seconds – no data entry required. 
-              
+
   .section
     .row
       .column.large-3.hide-for-small.hide-for-medium(style="position: relative; z-index: 0")
@@ -49,15 +49,15 @@ block content
           li
             a(href="#configuration" data-magellan-arrival="configuration") Configuration
           li
-            a(href="#advanced" data-magellan-arrival="advanced") Advanced 
-            
+            a(href="#advanced" data-magellan-arrival="advanced") Advanced
+
       .column.large-9
         .row
           .column
             h3.header__bottom-border-left#requirements(data-magellan-destination="requirements") Integration Requirements
-            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account].
+            p.lead Get started by #[a.arrow-blue(href="/dashboard/signup") signing up for a BitPay merchant account]
             p 'You must also already have the #[a(href="https://www.zen-cart.com") Zen Cart shopping cart software] installed. 
-        
+
         .row
           .column 
             .section.border-bottom-gray
@@ -68,12 +68,12 @@ block content
                   p #[a(href="https://github.com/bitpay/zencart-plugin/releases") Download the latest version] of the BitPay plugin for Zen Cart. 
                 li
                   p Unzip the downloaded file and copy its contents into the Zen Cart directory of your webserver to complete installation.
-          
+
         .row  
           .column 
             .section.border-bottom-gray
               h3.header__bottom-border-left#configuration(data-magellan-destination="configuration") Connecting BitPay and Zen Cart
-              
+
               ol(type="1")
                 li
                   p Navigate to the Admin panel in your Zen Cart store and select #[strong "Modules" &gt; "Payment" &gt; "Bitcoins" &gt; "Install"].
@@ -85,7 +85,7 @@ block content
                   p Copy and paste the API Key into the required field to pair your accounts.
                     .note
                       p Pairing codes are only valid for a short period of time. If a code expires before you get to use it, you can always create a new one and pair with it. You will only need to pair once.
-                       
+
                 li 
                   p Select a transaction speed.
                     .note 
@@ -105,7 +105,7 @@ block content
                   p Select currency pricing. Before using currencies other than defaults, verify that these pricing options are supported by BitPay. 
                 li 
                   p Choose a sort order for displaying this payment option to visitors. Lowest is displayed first.
-                  
+
               p.lead Nice work! Your customers will now be able to check out with bitcoin on your website. 
 
           .column.large-12.text-center.margin-top-more
